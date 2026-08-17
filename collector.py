@@ -209,13 +209,15 @@ def build_snapshot() -> dict[str,Any]:
     latest=max(trade_times) if trade_times else None; trade_date=latest.date().isoformat() if latest else None
     current=bool(latest and latest.date()==generated.date()); freshness=max(0,(generated-latest).total_seconds()) if latest else None
     previous_count=safe_int(((previous or {}).get("market") or {}).get("universe_count")) or 0; floor=max(5000,math.floor(previous_count*.95))
-    ratio=market["valid_count"]/len(stocks) if stocks else 0; p95=percentile(diffs,.95)
-    coverage=len(stocks)>=floor and ratio>=.95; cross=matches>=30 and p95 is not None and p95<=.003
+    ratio=market["valid_count"]/len(stocks) if stocks else 0; p95=percentile(diffs,.95); time_p95=percentile(time_diffs,.95)
+    coverage=len(stocks)>=floor and ratio>=.95
+    cross=matches>=30 and p95 is not None and p95<=.003 and time_p95 is not None and time_p95<=300
     fresh=freshness is not None and freshness<=240; index_pass=len(indices)==len(INDEX_SYMBOLS)
     checks={"current_trade_day":current,"latest_trade_time":iso(latest),"freshness_seconds":round(freshness,1) if freshness is not None else None,
             "freshness_limit_seconds":240,"freshness_pass":fresh,"coverage_floor":floor,"coverage_ratio":round(ratio,4),"coverage_pass":coverage,
             "index_pass":index_pass,"cross_source_matches":matches,"cross_source_price_diff_p95":round(p95,6) if p95 is not None else None,
-            "cross_source_time_diff_p95_seconds":round(percentile(time_diffs,.95) or 0,1) if time_diffs else None,"cross_source_pass":cross,"sector_data_pass":False}
+            "cross_source_time_diff_p95_seconds":round(time_p95,1) if time_p95 is not None else None,"cross_source_time_pass":bool(time_p95 is not None and time_p95<=300),
+            "cross_source_pass":cross,"sector_data_pass":False}
     valid=all((current,fresh,coverage,index_pass,cross))
     if not fresh:warnings.append("Quote timestamp is stale for tail-session use")
     if not coverage:warnings.append("Full-market detailed quote coverage below threshold")

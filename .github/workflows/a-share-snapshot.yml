@@ -1,6 +1,12 @@
 name: A-share tail snapshot
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - collector.py
+      - test_collector.py
+      - .github/workflows/a-share-snapshot.yml
   schedule:
     # 14:30, 14:35, 14:40 and 14:45 Asia/Shanghai (UTC+8).
     - cron: "30,35,40,45 6 * * 1-5"

@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": null,
+  "trade_date": null,
+  "is_trading_day": false,
+  "valid_for_tail_selection": false,
+  "validation": {
+    "status": "awaiting_first_workflow_run"
+  },
+  "market": {},
+  "indices": {},
+  "industries": [],
+  "concepts": [],
+  "top_industry_members": {},
+  "candidates": [],
+  "sources": {},
+  "warnings": [
+    "No live snapshot has been collected yet"
+  ],
+  "errors": [],
+  "timeline": []
+}

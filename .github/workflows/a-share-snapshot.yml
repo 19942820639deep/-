@@ -8,8 +8,15 @@ on:
       - test_collector.py
       - .github/workflows/a-share-snapshot.yml
   schedule:
-    # 14:30, 14:35, 14:40 and 14:45 Asia/Shanghai (UTC+8).
-    - cron: "30,35,40,45 6 * * 1-5"
+    # All cron entries are UTC; comments show Asia/Shanghai.
+    # 10:20, 10:25, 10:30.
+    - cron: "20,25,30 2 * * 1-5"
+    # 11:25, 11:30, 11:35 (morning close snapshot).
+    - cron: "25,30,35 3 * * 1-5"
+    # 14:20 through 14:45 every five minutes.
+    - cron: "20,25,30,35,40,45 6 * * 1-5"
+    # 15:00 and 15:05 (final close snapshot for the next premarket plan).
+    - cron: "0,5 7 * * 1-5"
   workflow_dispatch:
 
 permissions:

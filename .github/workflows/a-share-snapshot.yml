@@ -31,6 +31,22 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
+      - name: Probe Tencent quote schema
+        run: |
+          python - <<'PY'
+          import json
+          from urllib.parse import urlencode
+          from urllib.request import Request, urlopen
+          url = "https://proxy.finance.qq.com/cgi/cgi-bin/rank/hs/getBoardRankList?" + urlencode({
+              "_appver": "11.17.0", "board_code": "aStock", "sort_type": "price",
+              "direct": "down", "offset": "0", "count": "2"
+          })
+          req = Request(url, headers={"User-Agent": "Mozilla/5.0", "Referer": "https://stockapp.finance.qq.com/"})
+          with urlopen(req, timeout=20) as response:
+              payload = json.loads(response.read().decode("utf-8"))
+          rows = payload["data"]["rank_list"]
+          print(json.dumps({"total": payload["data"]["total"], "sample": rows[:2]}, ensure_ascii=False))
+          PY
       - name: Collect and validate
         run: python collector.py
       - name: Run logic tests

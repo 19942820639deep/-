@@ -38,13 +38,17 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/latest.json
-          if git diff --cached --quiet; then
-            exit 0
-          fi
-          git commit -m "data: refresh A-share tail snapshot"
+          cp data/latest.json /tmp/a-share-latest.json
           for attempt in 1 2 3; do
-            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/a-share-latest.json data/latest.json
+            git add data/latest.json
+            if git diff --cached --quiet; then
+              exit 0
+            fi
+            git commit -m "data: refresh A-share tail snapshot"
+            git push origin HEAD:main && exit 0
             sleep $((attempt * 2))
           done
           exit 1

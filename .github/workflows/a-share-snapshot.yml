@@ -1,0 +1,45 @@
+name: A-share tail snapshot
+
+on:
+  schedule:
+    # 14:30, 14:35, 14:40 and 14:45 Asia/Shanghai (UTC+8).
+    - cron: "30,35,40,45 6 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: a-share-tail-snapshot
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Collect and validate
+        run: python collector.py
+      - name: Run logic tests
+        run: python -m unittest -v test_collector.py
+      - name: Publish latest snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/latest.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "data: refresh A-share tail snapshot"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep $((attempt * 2))
+          done
+          exit 1

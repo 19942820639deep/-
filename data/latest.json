@@ -1,13 +1,13 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-08-17T20:48:33+08:00",
+  "generated_at": "2026-08-17T20:52:57+08:00",
   "trade_date": "2026-08-17",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-08-17T16:15:00+08:00",
-    "freshness_seconds": 16413.1,
+    "freshness_seconds": 16677.7,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5266,
@@ -17,7 +17,8 @@
     "cross_source_matches": 120,
     "cross_source_price_diff_p95": 0.0,
     "cross_source_time_diff_p95_seconds": 2399.0,
-    "cross_source_pass": true,
+    "cross_source_time_pass": false,
+    "cross_source_pass": false,
     "sector_data_pass": false
   },
   "market": {
@@ -4357,7 +4358,7 @@
       "volume_ratio": 1.83,
       "amount": 558529748.0,
       "volume": 68380.0,
-      "speed": 0.37,
+      "speed": 0.34,
       "pe_ttm": -530.4,
       "float_mv": 3618000000.0,
       "total_mv": 7475000000.0,
@@ -8026,7 +8027,7 @@
         "volume_ratio": 1.83,
         "amount": 558529748.0,
         "volume": 68380.0,
-        "speed": 0.37,
+        "speed": 0.34,
         "pe_ttm": -530.4,
         "float_mv": 3618000000.0,
         "total_mv": 7475000000.0,
@@ -8103,20 +8104,20 @@
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-08-17T20:48:57+08:00",
+      "fetched_at": "2026-08-17T20:53:29+08:00",
       "reported_total": 5544,
       "rows": 5544,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-08-17T20:49:55+08:00",
+      "fetched_at": "2026-08-17T20:54:43+08:00",
       "requested": 5548,
       "matches": 5548,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-08-17T20:49:57+08:00",
+      "fetched_at": "2026-08-17T20:54:45+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
@@ -8125,6 +8126,7 @@
   },
   "warnings": [
     "Quote timestamp is stale for tail-session use",
+    "Tencent/Sina price cross-check failed",
     "No independently verified live sector taxonomy; confirm a separate sector table and multiple constituents"
   ],
   "errors": [],

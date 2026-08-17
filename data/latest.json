@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-08-17T21:30:55+08:00",
+  "generated_at": "2026-08-17T21:32:24+08:00",
   "trade_date": "2026-08-17",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,7 +13,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-08-17T16:15:00+08:00",
-    "freshness_seconds": 18955.2,
+    "freshness_seconds": 19044.1,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5266,
@@ -5104,7 +5104,7 @@
       "pct_60d": 3.6,
       "prev_close": 130.85,
       "open": 131.0,
-      "trade_time": "2026-08-17T15:36:45+08:00",
+      "trade_time": "2026-08-17T15:37:00+08:00",
       "high": 141.3,
       "low": 129.81
     },
@@ -8098,7 +8098,7 @@
         "pct_60d": 3.6,
         "prev_close": 130.85,
         "open": 131.0,
-        "trade_time": "2026-08-17T15:36:45+08:00",
+        "trade_time": "2026-08-17T15:37:00+08:00",
         "high": 141.3,
         "low": 129.81
       }
@@ -8110,20 +8110,20 @@
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-08-17T21:31:17+08:00",
+      "fetched_at": "2026-08-17T21:32:55+08:00",
       "reported_total": 5544,
       "rows": 5544,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-08-17T21:32:10+08:00",
+      "fetched_at": "2026-08-17T21:34:09+08:00",
       "requested": 5548,
       "matches": 5548,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-08-17T21:32:12+08:00",
+      "fetched_at": "2026-08-17T21:34:15+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,

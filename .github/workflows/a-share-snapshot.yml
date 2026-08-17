@@ -46,6 +46,16 @@ jobs:
               payload = json.loads(response.read().decode("utf-8"))
           rows = payload["data"]["rank_list"]
           print(json.dumps({"total": payload["data"]["total"], "sample": rows[:2]}, ensure_ascii=False))
+          for quote_url, referer, encoding in [
+              ("https://qt.gtimg.cn/q=sh688808,sz300308", "https://gu.qq.com/", "gbk"),
+              ("https://hq.sinajs.cn/list=sh688808,sz300308", "https://finance.sina.com.cn/", "gbk"),
+          ]:
+              qreq = Request(quote_url, headers={"User-Agent": "Mozilla/5.0", "Referer": referer})
+              try:
+                  with urlopen(qreq, timeout=20) as response:
+                      print("QUOTE_PROBE", quote_url, response.read().decode(encoding, errors="ignore")[:3000])
+              except Exception as exc:
+                  print("QUOTE_PROBE_ERROR", quote_url, type(exc).__name__, str(exc))
           PY
       - name: Collect and validate
         run: python collector.py

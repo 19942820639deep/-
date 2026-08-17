@@ -22,7 +22,7 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,32 +31,6 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-      - name: Probe Tencent quote schema
-        run: |
-          python - <<'PY'
-          import json
-          from urllib.parse import urlencode
-          from urllib.request import Request, urlopen
-          url = "https://proxy.finance.qq.com/cgi/cgi-bin/rank/hs/getBoardRankList?" + urlencode({
-              "_appver": "11.17.0", "board_code": "aStock", "sort_type": "price",
-              "direct": "down", "offset": "0", "count": "2"
-          })
-          req = Request(url, headers={"User-Agent": "Mozilla/5.0", "Referer": "https://stockapp.finance.qq.com/"})
-          with urlopen(req, timeout=20) as response:
-              payload = json.loads(response.read().decode("utf-8"))
-          rows = payload["data"]["rank_list"]
-          print(json.dumps({"total": payload["data"]["total"], "sample": rows[:2]}, ensure_ascii=False))
-          for quote_url, referer, encoding in [
-              ("https://qt.gtimg.cn/q=sh688808,sz300308", "https://gu.qq.com/", "gbk"),
-              ("https://hq.sinajs.cn/list=sh688808,sz300308", "https://finance.sina.com.cn/", "gbk"),
-          ]:
-              qreq = Request(quote_url, headers={"User-Agent": "Mozilla/5.0", "Referer": referer})
-              try:
-                  with urlopen(qreq, timeout=20) as response:
-                      print("QUOTE_PROBE", quote_url, response.read().decode(encoding, errors="ignore")[:3000])
-              except Exception as exc:
-                  print("QUOTE_PROBE_ERROR", quote_url, type(exc).__name__, str(exc))
-          PY
       - name: Collect and validate
         run: python collector.py
       - name: Run logic tests

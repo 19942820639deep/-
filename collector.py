@@ -210,9 +210,15 @@ def build_snapshot() -> dict[str,Any]:
     current=bool(latest and latest.date()==generated.date()); freshness=max(0,(generated-latest).total_seconds()) if latest else None
     previous_count=safe_int(((previous or {}).get("market") or {}).get("universe_count")) or 0; floor=max(5000,math.floor(previous_count*.95))
     ratio=market["valid_count"]/len(stocks) if stocks else 0; p95=percentile(diffs,.95); time_p95=percentile(time_diffs,.95)
-    coverage=len(stocks)>=floor and ratio>=.95
-    cross=matches>=30 and p95 is not None and p95<=.003 and time_p95 is not None and time_p95<=300
-    fresh=freshness is not None and freshness<=240; index_pass=len(indices)==len(INDEX_SYMBOLS)
+    coverage=len(stocks)>=floor and ratio>=.95; index_pass=len(indices)==len(INDEX_SYMBOLS)
+    price_cross=matches>=30 and p95 is not None and p95<=.003
+    time_cross=time_p95 is not None and time_p95<=300
+    cross=price_cross and time_cross
+    fresh=freshness is not None and freshness<=240
+    core=coverage and index_pass and price_cross
+    live_analysis=bool(current and core and time_cross and freshness is not None and freshness<=300)
+    midday_analysis=bool(current and core and latest and latest.hour==11 and 29<=latest.minute<=35 and generated.hour==11)
+    previous_close_analysis=bool(core and latest and (latest.hour>14 or (latest.hour==14 and latest.minute>=55)))
     checks={"current_trade_day":current,"latest_trade_time":iso(latest),"freshness_seconds":round(freshness,1) if freshness is not None else None,
             "freshness_limit_seconds":240,"freshness_pass":fresh,"coverage_floor":floor,"coverage_ratio":round(ratio,4),"coverage_pass":coverage,
             "index_pass":index_pass,"cross_source_matches":matches,"cross_source_price_diff_p95":round(p95,6) if p95 is not None else None,
@@ -224,7 +230,8 @@ def build_snapshot() -> dict[str,Any]:
     if not cross:warnings.append("Tencent/Sina price cross-check failed")
     warnings.append("No independently verified live sector taxonomy; confirm a separate sector table and multiple constituents")
     return {"schema_version":"2.0.0","generated_at":iso(generated),"trade_date":trade_date,"is_trading_day":current,
-            "valid_for_tail_selection":valid,"validation":checks,"market":market,"indices":indices,"candidates":candidates,
+            "valid_for_tail_selection":valid,"validity_profiles":{"live_intraday":live_analysis,"midday_close":midday_analysis,
+            "previous_close":previous_close_analysis,"core_market_data":core},"validation":checks,"market":market,"indices":indices,"candidates":candidates,
             "market_segments":{"main":[s for s in candidates if s["code"].startswith(("600","601","603","605","000","001","002","003"))][:30],
                                "chinext":[s for s in candidates if s["code"].startswith(("300","301"))][:30],
                                "star":[s for s in candidates if s["code"].startswith(("688","689"))][:30],

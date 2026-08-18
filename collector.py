@@ -50,6 +50,24 @@ def percentile(values: list[float], q: float) -> float | None:
     ordered = sorted(values); pos = (len(ordered)-1)*q; lo, hi = math.floor(pos), math.ceil(pos)
     return ordered[lo] if lo == hi else ordered[lo]*(hi-pos)+ordered[hi]*(pos-lo)
 
+def median_datetime(values: list[datetime]) -> datetime | None:
+    if not values: return None
+    ordered = sorted(values)
+    return ordered[len(ordered)//2]
+
+def minute_of_day(value: datetime) -> int:
+    return value.hour*60+value.minute
+
+def midday_close_profile(generated: datetime, primary_latest: datetime | None,
+                          secondary_anchor: datetime | None, core: bool,
+                          price_cross: bool) -> bool:
+    if not all((primary_latest, secondary_anchor, core, price_cross)): return False
+    assert primary_latest is not None and secondary_anchor is not None
+    execution_minute=minute_of_day(generated); secondary_minute=minute_of_day(secondary_anchor)
+    return bool(primary_latest.date()==generated.date()==secondary_anchor.date()
+                and 11*60+29<=execution_minute<=13*60
+                and 11*60+29<=secondary_minute<=11*60+35)
+
 def get_json(client: HttpClient, url: str, params: dict[str, Any], retries: int = 3) -> Any:
     error = None
     for attempt in range(1, retries+1):
@@ -215,14 +233,17 @@ def build_snapshot() -> dict[str,Any]:
     except Exception as exc:errors.append(f"Tencent candidate refresh: {exc}")
     try: secondary,sina_meta=fetch_sina_quotes(client,list(INDEX_SYMBOLS.values())+[s["symbol"] for s in candidates[:120]])
     except Exception as exc:errors.append(f"Sina cross-check: {exc}")
-    diffs=[]; time_diffs=[]; matches=0
+    diffs=[]; time_diffs=[]; secondary_trade_times=[]; matches=0
     for s in candidates:
         alt=secondary.get(s["symbol"])
         if alt and alt.get("last") and s.get("last"):
             matches+=1; diff=abs(s["last"]-alt["last"])/s["last"]; diffs.append(diff)
             s.update({"secondary_last":alt["last"],"secondary_trade_time":alt.get("trade_time"),"source_price_diff":round(diff,6)})
+            if alt.get("trade_time"):
+                secondary_trade_times.append(datetime.fromisoformat(alt["trade_time"]))
             if alt.get("trade_time") and s.get("trade_time"):
                 time_diffs.append(abs((datetime.fromisoformat(s["trade_time"])-datetime.fromisoformat(alt["trade_time"])).total_seconds()))
+    secondary_close_anchor=median_datetime(secondary_trade_times)
     latest=max(trade_times) if trade_times else None; trade_date=latest.date().isoformat() if latest else None
     current=bool(latest and latest.date()==generated.date()); freshness=max(0,(generated-latest).total_seconds()) if latest else None
     previous_count=safe_int(((previous or {}).get("market") or {}).get("universe_count")) or 0; floor=max(5000,math.floor(previous_count*.95))
@@ -234,17 +255,29 @@ def build_snapshot() -> dict[str,Any]:
     fresh=freshness is not None and freshness<=240
     core=coverage and index_pass and price_cross
     live_analysis=bool(current and core and time_cross and freshness is not None and freshness<=300)
-    midday_analysis=bool(current and core and latest and latest.hour==11 and 29<=latest.minute<=35 and generated.hour==11)
+    midday_execution_window=bool(11*60+29<=minute_of_day(generated)<=13*60)
+    midday_secondary_time_pass=bool(secondary_close_anchor
+                                    and secondary_close_anchor.date()==generated.date()
+                                    and 11*60+29<=minute_of_day(secondary_close_anchor)<=11*60+35)
+    midday_analysis=midday_close_profile(generated,latest,secondary_close_anchor,core,price_cross)
     previous_close_analysis=bool(core and latest and (latest.hour>14 or (latest.hour==14 and latest.minute>=55)))
     checks={"current_trade_day":current,"latest_trade_time":iso(latest),"freshness_seconds":round(freshness,1) if freshness is not None else None,
             "freshness_limit_seconds":240,"freshness_pass":fresh,"coverage_floor":floor,"coverage_ratio":round(ratio,4),"coverage_pass":coverage,
             "index_pass":index_pass,"cross_source_matches":matches,"cross_source_price_diff_p95":round(p95,6) if p95 is not None else None,
             "cross_source_time_diff_p95_seconds":round(time_p95,1) if time_p95 is not None else None,"cross_source_time_pass":bool(time_p95 is not None and time_p95<=300),
-            "cross_source_pass":cross,"sector_data_pass":False}
+            "cross_source_pass":cross,"midday_close_anchor_time":iso(secondary_close_anchor),
+            "midday_execution_window_pass":midday_execution_window,
+            "midday_secondary_time_pass":midday_secondary_time_pass,
+            "midday_price_cross_pass":price_cross,"midday_close_pass":midday_analysis,
+            "sector_data_pass":False}
     valid=all((current,fresh,coverage,index_pass,cross))
     if not fresh:warnings.append("Quote timestamp is stale for tail-session use")
     if not coverage:warnings.append("Full-market detailed quote coverage below threshold")
-    if not cross:warnings.append("Tencent/Sina price cross-check failed")
+    if not price_cross:warnings.append("Tencent/Sina price cross-check failed")
+    elif not time_cross and midday_analysis:
+        warnings.append("Live cross-source timestamps diverge during lunch; midday close accepted from the 11:30 secondary anchor and matching prices")
+    elif not time_cross:
+        warnings.append("Tencent/Sina timestamps are not synchronized for live intraday use")
     warnings.append("No independently verified live sector taxonomy; confirm a separate sector table and multiple constituents")
     return {"schema_version":"2.0.0","generated_at":iso(generated),"trade_date":trade_date,"is_trading_day":current,
             "valid_for_tail_selection":valid,"validity_profiles":{"live_intraday":live_analysis,"midday_close":midday_analysis,
@@ -258,7 +291,8 @@ def build_snapshot() -> dict[str,Any]:
                        "tencent_candidate_refresh":refresh_meta,"sina_independent_check":sina_meta},
             "warnings":warnings,"errors":errors,"methodology":{"primary":"Tencent full-market rank plus detailed quotes","secondary":"Sina detailed quotes for liquid candidates",
             "breadth_limits_turnover":"recomputed from full-market detailed quotes","sector_limit":"sector taxonomy not asserted without an independent source",
-            "cross_source_timing":"Liquid candidates are refreshed from Tencent immediately before the Sina check to compare near-synchronous quotes.",
+            "cross_source_timing":"Live intraday use requires near-synchronous quotes. During the lunch break, the 11:30 Sina consensus timestamp anchors the close while Tencent may advance its display timestamp; prices must still match.",
+            "midday_close":"Valid from 11:29 through 13:00 when the secondary consensus timestamp is 11:29-11:35 on the trade date and cross-source prices pass.",
             "technical":"EMA is auxiliary and omitted while no stable free 60-minute source is verified"}}
 
 def write_json(path: Path, payload: dict[str,Any]) -> None:

@@ -19,6 +19,7 @@ from zoneinfo import ZoneInfo
 SH_TZ = ZoneInfo("Asia/Shanghai")
 ROOT = Path(__file__).resolve().parent
 LATEST_PATH = ROOT / "data" / "latest.json"
+STATUS_PATH = ROOT / "data" / "status.json"
 TX_RANK = "https://proxy.finance.qq.com/cgi/cgi-bin/rank/hs/getBoardRankList"
 TX_QUOTE = "https://qt.gtimg.cn/q="
 SINA_QUOTE = "https://hq.sinajs.cn/list="
@@ -242,12 +243,41 @@ def build_snapshot() -> dict[str,Any]:
             "breadth_limits_turnover":"recomputed from full-market detailed quotes","sector_limit":"sector taxonomy not asserted without an independent source",
             "technical":"EMA is auxiliary and omitted while no stable free 60-minute source is verified"}}
 
+def write_json(path: Path, payload: dict[str,Any]) -> None:
+    path.parent.mkdir(parents=True,exist_ok=True); temp=path.with_suffix(path.suffix+".tmp")
+    temp.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding="utf-8"); os.replace(temp,path)
+
 def write_snapshot(snapshot: dict[str,Any]) -> None:
-    LATEST_PATH.parent.mkdir(parents=True,exist_ok=True); temp=LATEST_PATH.with_suffix(".json.tmp")
-    temp.write_text(json.dumps(snapshot,ensure_ascii=False,indent=2),encoding="utf-8"); os.replace(temp,LATEST_PATH)
+    write_json(LATEST_PATH,snapshot)
+
+def write_status(status: dict[str,Any]) -> None:
+    write_json(STATUS_PATH,status)
+
+def workflow_context() -> dict[str,Any]:
+    repository=os.environ.get("GITHUB_REPOSITORY"); run_id=os.environ.get("GITHUB_RUN_ID")
+    return {"repository":repository,"run_id":run_id,"run_attempt":os.environ.get("GITHUB_RUN_ATTEMPT"),
+            "event_name":os.environ.get("GITHUB_EVENT_NAME"),
+            "workflow_url":f"https://github.com/{repository}/actions/runs/{run_id}" if repository and run_id else None}
+
 def main() -> int:
+    started=now_shanghai(); context=workflow_context()
     try:
-        s=build_snapshot();write_snapshot(s);print(json.dumps({"generated_at":s["generated_at"],"trade_date":s["trade_date"],"valid":s["valid_for_tail_selection"],
+        s=build_snapshot(); completed=now_shanghai()
+        s["pipeline_status"]={"run_status":"success","completed_at":iso(completed),**context}
+        write_snapshot(s)
+        write_status({"schema_version":"1.0.0","run_status":"success","started_at":iso(started),
+                      "completed_at":iso(completed),"snapshot_updated":True,"snapshot_generated_at":s["generated_at"],
+                      "trade_date":s["trade_date"],"valid_for_tail_selection":s["valid_for_tail_selection"],
+                      "validity_profiles":s["validity_profiles"],"validation":s["validation"],
+                      "errors":s["errors"],**context})
+        print(json.dumps({"generated_at":s["generated_at"],"trade_date":s["trade_date"],"valid":s["valid_for_tail_selection"],
             "universe":s["market"]["universe_count"],"checks":s["validation"],"errors":s["errors"]},ensure_ascii=False));return 0
-    except Exception as exc:print(f"collector failed: {type(exc).__name__}: {exc}",file=sys.stderr);return 1
+    except Exception as exc:
+        completed=now_shanghai(); previous=load_previous(); message=f"{type(exc).__name__}: {exc}"
+        write_status({"schema_version":"1.0.0","run_status":"collector_failed","started_at":iso(started),
+                      "completed_at":iso(completed),"snapshot_updated":False,
+                      "previous_snapshot_generated_at":(previous or {}).get("generated_at"),
+                      "previous_snapshot_trade_date":(previous or {}).get("trade_date"),
+                      "error":message,**context})
+        print(f"collector failed: {message}",file=sys.stderr);return 1
 if __name__=="__main__":raise SystemExit(main())

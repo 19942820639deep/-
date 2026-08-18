@@ -11,8 +11,11 @@ on:
     # All cron entries are UTC; comments show Asia/Shanghai.
     # 10:05 through 10:35 every five minutes. Multiple early runs absorb scheduler delay.
     - cron: "5,10,15,20,25,30,35 2 * * 1-5"
-    # 11:15 through 11:35 every five minutes (morning close snapshot).
-    - cron: "15,20,25,30,35 3 * * 1-5"
+    # 11:15 through 11:55 every five minutes (morning close snapshot).
+    # Extra retries absorb GitHub Actions schedule delays around the half-hour.
+    - cron: "15,20,25,30,35,40,45,50,55 3 * * 1-5"
+    # 12:00 through 12:10 backup runs; lunch-close validation accepts delayed execution.
+    - cron: "0,5,10 4 * * 1-5"
     # 14:10 through 14:50 every five minutes.
     - cron: "10,15,20,25,30,35,40,45,50 6 * * 1-5"
     # 15:00 through 15:10 every five minutes (final close snapshot for the next premarket plan).

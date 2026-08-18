@@ -9,17 +9,18 @@ on:
       - .github/workflows/a-share-snapshot.yml
   schedule:
     # All cron entries are UTC; comments show Asia/Shanghai.
-    # 10:05 through 10:35 every five minutes. Multiple early runs absorb scheduler delay.
-    - cron: "5,10,15,20,25,30,35 2 * * 1-5"
-    # 11:15 through 11:55 every five minutes (morning close snapshot).
-    # Extra retries absorb GitHub Actions schedule delays around the half-hour.
-    - cron: "15,20,25,30,35,40,45,50,55 3 * * 1-5"
-    # 12:00 through 12:10 backup runs; lunch-close validation accepts delayed execution.
-    - cron: "0,5,10 4 * * 1-5"
-    # 14:10 through 14:50 every five minutes.
-    - cron: "10,15,20,25,30,35,40,45,50 6 * * 1-5"
-    # 15:00 through 15:10 every five minutes (final close snapshot for the next premarket plan).
-    - cron: "0,5,10 7 * * 1-5"
+    # Avoid minute 00/05/10 etc. GitHub documents heavier schedule delay near
+    # common clock boundaries; odd offsets materially reduce queue contention.
+    # 10:12 through 10:32 every five minutes.
+    - cron: "12,17,22,27,32 2 * * 1-5"
+    # 11:42 through 11:57 (morning close snapshot).
+    - cron: "42,47,52,57 3 * * 1-5"
+    # 12:02 through 12:12 backup runs; lunch-close validation accepts delay.
+    - cron: "2,7,12 4 * * 1-5"
+    # 14:12 through 14:52 every five minutes.
+    - cron: "12,17,22,27,32,37,42,47,52 6 * * 1-5"
+    # 15:02 through 15:12 (final close snapshot for the next premarket plan).
+    - cron: "2,7,12 7 * * 1-5"
   workflow_dispatch:
 
 permissions:
@@ -27,7 +28,9 @@ permissions:
 
 concurrency:
   group: a-share-tail-snapshot
-  cancel-in-progress: true
+  # Do not let a newly released delayed cron cancel a collector that is already
+  # close to publishing. One pending run is enough to catch up afterwards.
+  cancel-in-progress: false
 
 jobs:
   collect:

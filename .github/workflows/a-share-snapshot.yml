@@ -9,14 +9,14 @@ on:
       - .github/workflows/a-share-snapshot.yml
   schedule:
     # All cron entries are UTC; comments show Asia/Shanghai.
-    # 10:20, 10:25, 10:30.
-    - cron: "20,25,30 2 * * 1-5"
-    # 11:25, 11:30, 11:35 (morning close snapshot).
-    - cron: "25,30,35 3 * * 1-5"
-    # 14:20 through 14:45 every five minutes.
-    - cron: "20,25,30,35,40,45 6 * * 1-5"
-    # 15:00 and 15:05 (final close snapshot for the next premarket plan).
-    - cron: "0,5 7 * * 1-5"
+    # 10:05 through 10:35 every five minutes. Multiple early runs absorb scheduler delay.
+    - cron: "5,10,15,20,25,30,35 2 * * 1-5"
+    # 11:15 through 11:35 every five minutes (morning close snapshot).
+    - cron: "15,20,25,30,35 3 * * 1-5"
+    # 14:10 through 14:50 every five minutes.
+    - cron: "10,15,20,25,30,35,40,45,50 6 * * 1-5"
+    # 15:00 through 15:10 every five minutes (final close snapshot for the next premarket plan).
+    - cron: "0,5,10 7 * * 1-5"
   workflow_dispatch:
 
 permissions:
@@ -24,7 +24,7 @@ permissions:
 
 concurrency:
   group: a-share-tail-snapshot
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   collect:
@@ -38,24 +38,35 @@ jobs:
         with:
           python-version: "3.12"
       - name: Collect and validate
+        id: collect
+        continue-on-error: true
         run: python collector.py
       - name: Run logic tests
+        id: tests
+        continue-on-error: true
         run: python -m unittest -v test_collector.py
-      - name: Publish latest snapshot
+      - name: Publish snapshot and run status
+        id: publish
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           cp data/latest.json /tmp/a-share-latest.json
+          cp data/status.json /tmp/a-share-status.json
           for attempt in 1 2 3; do
             git fetch origin main
             git reset --hard origin/main
             cp /tmp/a-share-latest.json data/latest.json
-            git add data/latest.json
+            cp /tmp/a-share-status.json data/status.json
+            git add data/latest.json data/status.json
             if git diff --cached --quiet; then
               exit 0
             fi
-            git commit -m "data: refresh A-share tail snapshot"
+            git commit -m "data: refresh A-share snapshot status"
             git push origin HEAD:main && exit 0
             sleep $((attempt * 2))
           done
           exit 1
+      - name: Preserve failure conclusion
+        if: always() && (steps.collect.outcome != 'success' || steps.tests.outcome != 'success' || steps.publish.outcome != 'success')
+        run: exit 1

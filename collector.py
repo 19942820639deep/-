@@ -7,6 +7,7 @@ checks liquid candidates. A stale or incomplete snapshot is never marked valid.
 from __future__ import annotations
 
 import json, math, os, re, statistics, sys, time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
@@ -77,16 +78,24 @@ def get_json(client: HttpClient, url: str, params: dict[str, Any], retries: int 
             if attempt < retries: time.sleep(attempt)
     raise CollectorError(f"GET {url} failed: {error}")
 
-def fetch_tencent_rank(client: HttpClient, count: int = 200) -> tuple[list[dict[str,Any]],dict[str,Any]]:
+def fetch_tencent_rank(client: HttpClient, count: int = 200, workers: int = 6) -> tuple[list[dict[str,Any]],dict[str,Any]]:
     base = {"_appver":"11.17.0", "board_code":"aStock", "sort_type":"price", "direct":"down", "count":count}
     first = get_json(client, TX_RANK, {**base,"offset":0}); data = (first or {}).get("data") or {}
     total = safe_int(data.get("total")) or 0; rows = list(data.get("rank_list") or [])
     if not rows: raise CollectorError("Tencent rank returned no rows")
-    for offset in range(count, total, count):
+    offsets = list(range(count, total, count))
+    def fetch_page(offset: int) -> list[dict[str,Any]]:
         payload = get_json(client, TX_RANK, {**base,"offset":offset})
-        chunk = (((payload or {}).get("data") or {}).get("rank_list") or [])
-        if not chunk: break
-        rows.extend(chunk); time.sleep(.04)
+        return list((((payload or {}).get("data") or {}).get("rank_list") or []))
+    # A small pool removes the two-minute serial bottleneck while staying well
+    # below the burst level that commonly triggers public-endpoint throttling.
+    with ThreadPoolExecutor(max_workers=min(workers, max(1, len(offsets)))) as pool:
+        future_to_offset = {pool.submit(fetch_page, offset): offset for offset in offsets}
+        pages = {}
+        for future in as_completed(future_to_offset):
+            pages[future_to_offset[future]] = future.result()
+    for offset in offsets:
+        rows.extend(pages.get(offset) or [])
     rows = list({str(x.get("code")):x for x in rows if x.get("code")}.values())
     return rows, {"fetched_at":iso(now_shanghai()),"reported_total":total,"rows":len(rows),"endpoint":"Tencent getBoardRankList"}
 
@@ -117,23 +126,28 @@ def parse_tx_line(line: str) -> dict[str,Any] | None:
             "open":safe_float(p[5]),"volume":safe_float(p[6]),"trade_time":iso(stamp),"change":safe_float(p[31]),
             "pct":safe_float(p[32]),"high":safe_float(p[33]),"low":safe_float(p[34]),"amount":amount}
 
-def fetch_tencent_detail(client: HttpClient, symbols: list[str], batch: int = 80) -> tuple[dict[str,dict[str,Any]],dict[str,Any]]:
-    output = {}; calls = 0
-    for start in range(0,len(symbols),batch):
-        query = ",".join(symbols[start:start+batch]); error = None
+def fetch_tencent_detail(client: HttpClient, symbols: list[str], batch: int = 80,
+                         workers: int = 6) -> tuple[dict[str,dict[str,Any]],dict[str,Any]]:
+    output = {}; batches = [symbols[start:start+batch] for start in range(0,len(symbols),batch)]
+    def fetch_batch(batch_symbols: list[str]) -> list[dict[str,Any]]:
+        query = ",".join(batch_symbols); error = None
         for attempt in range(1,4):
             try:
-                text = client.get(TX_QUOTE+query).decode("gbk",errors="ignore"); calls += 1
-                for line in text.splitlines():
+                payload = client.get(TX_QUOTE+query).decode("gbk",errors="ignore")
+                parsed = []
+                for line in payload.splitlines():
                     q = parse_tx_line(line)
-                    if q: output[q["symbol"]] = q
-                error = None; break
+                    if q: parsed.append(q)
+                return parsed
             except (HTTPError,URLError,TimeoutError,OSError) as exc:
                 error = exc
                 if attempt < 3: time.sleep(attempt)
-        if error: raise CollectorError(f"Tencent detail failed: {error}")
-        time.sleep(.04)
-    return output,{"fetched_at":iso(now_shanghai()),"requested":len(symbols),"matches":len(output),"calls":calls,"endpoint":"Tencent qt.gtimg.cn"}
+        raise CollectorError(f"Tencent detail failed: {error}")
+    with ThreadPoolExecutor(max_workers=min(workers, max(1, len(batches)))) as pool:
+        futures = [pool.submit(fetch_batch, item) for item in batches]
+        for future in as_completed(futures):
+            for q in future.result(): output[q["symbol"]] = q
+    return output,{"fetched_at":iso(now_shanghai()),"requested":len(symbols),"matches":len(output),"calls":len(batches),"endpoint":"Tencent qt.gtimg.cn"}
 
 def parse_sina_line(line: str) -> dict[str,Any] | None:
     m = re.search(r'var hq_str_((?:sh|sz|bj)\d+)="(.*)";',line)

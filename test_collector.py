@@ -1,11 +1,13 @@
 import json
 import tempfile
 import unittest
+from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 from unittest import mock
 
 import collector
-from collector import CollectorError, ema, limit_price, market_summary, price_limit_ratio
+from collector import CollectorError, ema, limit_price, market_summary, midday_close_profile, price_limit_ratio
 
 
 class CollectorLogicTests(unittest.TestCase):
@@ -31,6 +33,34 @@ class CollectorLogicTests(unittest.TestCase):
         self.assertEqual(summary["non_st_count"], 2)
         self.assertEqual(summary["limit_up_non_st"], 2)
         self.assertEqual(summary["turnover_amount"], 3.1e9)
+
+    def test_midday_accepts_tencent_clock_advance_when_sina_anchors_close(self):
+        tz = ZoneInfo("Asia/Shanghai")
+        generated = datetime(2026, 8, 18, 11, 55, tzinfo=tz)
+        primary_latest = datetime(2026, 8, 18, 11, 56, 58, tzinfo=tz)
+        secondary_anchor = datetime(2026, 8, 18, 11, 30, tzinfo=tz)
+        self.assertTrue(midday_close_profile(generated, primary_latest, secondary_anchor, True, True))
+
+    def test_midday_accepts_delayed_action_after_noon(self):
+        tz = ZoneInfo("Asia/Shanghai")
+        generated = datetime(2026, 8, 18, 12, 5, tzinfo=tz)
+        primary_latest = datetime(2026, 8, 18, 12, 4, 58, tzinfo=tz)
+        secondary_anchor = datetime(2026, 8, 18, 11, 30, tzinfo=tz)
+        self.assertTrue(midday_close_profile(generated, primary_latest, secondary_anchor, True, True))
+
+    def test_midday_rejects_previous_trade_day_anchor(self):
+        tz = ZoneInfo("Asia/Shanghai")
+        generated = datetime(2026, 8, 18, 12, 0, tzinfo=tz)
+        primary_latest = datetime(2026, 8, 18, 11, 59, tzinfo=tz)
+        stale_anchor = datetime(2026, 8, 17, 11, 30, tzinfo=tz)
+        self.assertFalse(midday_close_profile(generated, primary_latest, stale_anchor, True, True))
+
+    def test_midday_rejects_cross_source_price_mismatch(self):
+        tz = ZoneInfo("Asia/Shanghai")
+        generated = datetime(2026, 8, 18, 12, 0, tzinfo=tz)
+        primary_latest = datetime(2026, 8, 18, 11, 59, tzinfo=tz)
+        secondary_anchor = datetime(2026, 8, 18, 11, 30, tzinfo=tz)
+        self.assertFalse(midday_close_profile(generated, primary_latest, secondary_anchor, True, False))
 
     def test_failure_writes_fresh_status_without_overwriting_snapshot(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -197,6 +197,22 @@ def build_snapshot() -> dict[str,Any]:
             indices[name]=q
             if q.get("trade_time"):trade_times.append(datetime.fromisoformat(q["trade_time"]))
     market=market_summary(stocks); candidates=choose_candidates(stocks); secondary={}; sina_meta={"matches":0}
+    refresh_meta={"requested":0,"matches":0,"calls":0,"endpoint":"Tencent qt.gtimg.cn candidate refresh"}
+    refresh_symbols=list(INDEX_SYMBOLS.values())+[s["symbol"] for s in candidates[:120]]
+    try:
+        refreshed,refresh_meta=fetch_tencent_detail(client,refresh_symbols)
+        refresh_meta["endpoint"]="Tencent qt.gtimg.cn candidate refresh"
+        for s in candidates[:120]:
+            q=refreshed.get(s["symbol"])
+            if q:
+                s.update({k:v for k,v in q.items() if v is not None})
+                if q.get("trade_time"):trade_times.append(datetime.fromisoformat(q["trade_time"]))
+        for name,symbol in INDEX_SYMBOLS.items():
+            q=refreshed.get(symbol)
+            if q:
+                indices[name]=q
+                if q.get("trade_time"):trade_times.append(datetime.fromisoformat(q["trade_time"]))
+    except Exception as exc:errors.append(f"Tencent candidate refresh: {exc}")
     try: secondary,sina_meta=fetch_sina_quotes(client,list(INDEX_SYMBOLS.values())+[s["symbol"] for s in candidates[:120]])
     except Exception as exc:errors.append(f"Sina cross-check: {exc}")
     diffs=[]; time_diffs=[]; matches=0
@@ -238,9 +254,11 @@ def build_snapshot() -> dict[str,Any]:
                                "star":[s for s in candidates if s["code"].startswith(("688","689"))][:30],
                                "beijing":[s for s in candidates if s["symbol"].startswith("bj")][:20]},
             "sector_data":{"status":"unavailable","rule":"Do not infer a main line from this snapshot alone; verify a live sector table and multiple constituents."},
-            "sources":{"tencent_full_market":rank_meta,"tencent_detailed_quotes":detail_meta,"sina_independent_check":sina_meta},
+            "sources":{"tencent_full_market":rank_meta,"tencent_detailed_quotes":detail_meta,
+                       "tencent_candidate_refresh":refresh_meta,"sina_independent_check":sina_meta},
             "warnings":warnings,"errors":errors,"methodology":{"primary":"Tencent full-market rank plus detailed quotes","secondary":"Sina detailed quotes for liquid candidates",
             "breadth_limits_turnover":"recomputed from full-market detailed quotes","sector_limit":"sector taxonomy not asserted without an independent source",
+            "cross_source_timing":"Liquid candidates are refreshed from Tencent immediately before the Sina check to compare near-synchronous quotes.",
             "technical":"EMA is auxiliary and omitted while no stable free 60-minute source is verified"}}
 
 def write_json(path: Path, payload: dict[str,Any]) -> None:

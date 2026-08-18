@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "run_status": "success",
+  "started_at": "2026-08-18T10:44:35+08:00",
+  "completed_at": "2026-08-18T10:46:10+08:00",
+  "snapshot_updated": true,
+  "snapshot_generated_at": "2026-08-18T10:44:35+08:00",
+  "trade_date": "2026-08-18",
+  "valid_for_tail_selection": false,
+  "validity_profiles": {
+    "live_intraday": false,
+    "midday_close": false,
+    "previous_close": false,
+    "core_market_data": false
+  },
+  "validation": {
+    "current_trade_day": true,
+    "latest_trade_time": "2026-08-18T10:46:06+08:00",
+    "freshness_seconds": 0,
+    "freshness_limit_seconds": 240,
+    "freshness_pass": true,
+    "coverage_floor": 5266,
+    "coverage_ratio": 1.0,
+    "coverage_pass": true,
+    "index_pass": true,
+    "cross_source_matches": 120,
+    "cross_source_price_diff_p95": 0.005188,
+    "cross_source_time_diff_p95_seconds": 68.0,
+    "cross_source_time_pass": true,
+    "cross_source_pass": false,
+    "sector_data_pass": false
+  },
+  "errors": [],
+  "repository": "19942820639deep/-",
+  "run_id": "32092918140",
+  "run_attempt": "1",
+  "event_name": "push",
+  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/32092918140"
+}

@@ -1,21 +1,21 @@
 {
   "schema_version": "1.0.0",
   "run_status": "success",
-  "started_at": "2026-08-18T15:35:48+08:00",
-  "completed_at": "2026-08-18T15:36:08+08:00",
+  "started_at": "2026-08-19T11:07:44+08:00",
+  "completed_at": "2026-08-19T11:08:01+08:00",
   "snapshot_updated": true,
-  "snapshot_generated_at": "2026-08-18T15:35:48+08:00",
-  "trade_date": "2026-08-18",
+  "snapshot_generated_at": "2026-08-19T11:07:44+08:00",
+  "trade_date": "2026-08-19",
   "valid_for_tail_selection": true,
   "validity_profiles": {
     "live_intraday": true,
     "midday_close": false,
-    "previous_close": true,
+    "previous_close": false,
     "core_market_data": true
   },
   "validation": {
     "current_trade_day": true,
-    "latest_trade_time": "2026-08-18T15:36:05+08:00",
+    "latest_trade_time": "2026-08-19T11:07:58+08:00",
     "freshness_seconds": 0,
     "freshness_limit_seconds": 240,
     "freshness_pass": true,
@@ -24,11 +24,11 @@
     "coverage_pass": true,
     "index_pass": true,
     "cross_source_matches": 120,
-    "cross_source_price_diff_p95": 0.0,
-    "cross_source_time_diff_p95_seconds": 63.0,
+    "cross_source_price_diff_p95": 0.000945,
+    "cross_source_time_diff_p95_seconds": 3.0,
     "cross_source_time_pass": true,
     "cross_source_pass": true,
-    "midday_close_anchor_time": "2026-08-18T15:35:00+08:00",
+    "midday_close_anchor_time": "2026-08-19T11:07:57+08:00",
     "midday_execution_window_pass": false,
     "midday_secondary_time_pass": false,
     "midday_price_cross_pass": true,
@@ -37,8 +37,8 @@
   },
   "errors": [],
   "repository": "19942820639deep/-",
-  "run_id": "32112185029",
+  "run_id": "32211024086",
   "run_attempt": "1",
   "event_name": "schedule",
-  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/32112185029"
+  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/32211024086"
 }

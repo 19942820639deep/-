@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-08-20T12:20:18+08:00",
+  "generated_at": "2026-08-20T12:36:43+08:00",
   "trade_date": "2026-08-20",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,10 +13,10 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-08-20T12:05:59+08:00",
-    "freshness_seconds": 859.8,
+    "freshness_seconds": 1844.1,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
-    "coverage_floor": 5267,
+    "coverage_floor": 5270,
     "coverage_ratio": 1.0,
     "coverage_pass": true,
     "index_pass": true,
@@ -4272,7 +4272,7 @@
       "pct_60d": -5.54,
       "prev_close": 13.96,
       "open": 13.96,
-      "trade_time": "2026-08-20T12:05:59+08:00",
+      "trade_time": "2026-08-20T12:05:29+08:00",
       "high": 15.36,
       "low": 13.75
     },
@@ -5298,7 +5298,7 @@
       "pct_60d": 97.28,
       "prev_close": 29.75,
       "open": 32.0,
-      "trade_time": "2026-08-20T12:05:36+08:00",
+      "trade_time": "2026-08-20T12:05:45+08:00",
       "high": 34.1,
       "low": 30.73
     },
@@ -8103,7 +8103,7 @@
         "pct_60d": 97.28,
         "prev_close": 29.75,
         "open": 32.0,
-        "trade_time": "2026-08-20T12:05:36+08:00",
+        "trade_time": "2026-08-20T12:05:45+08:00",
         "high": 34.1,
         "low": 30.73
       }
@@ -8115,27 +8115,27 @@
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-08-20T12:20:24+08:00",
+      "fetched_at": "2026-08-20T12:36:48+08:00",
       "reported_total": 5548,
       "rows": 5548,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-08-20T12:20:33+08:00",
+      "fetched_at": "2026-08-20T12:36:58+08:00",
       "requested": 5552,
       "matches": 5552,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-08-20T12:20:34+08:00",
+      "fetched_at": "2026-08-20T12:36:59+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-08-20T12:20:36+08:00",
+      "fetched_at": "2026-08-20T12:37:00+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
@@ -8159,11 +8159,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-08-20T12:20:36+08:00",
+    "completed_at": "2026-08-20T12:37:00+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "32331509191",
+    "run_id": "32332505149",
     "run_attempt": "1",
     "event_name": "schedule",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/32331509191"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/32332505149"
   }
 }

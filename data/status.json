@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "run_status": "success",
-  "started_at": "2026-08-20T12:20:18+08:00",
-  "completed_at": "2026-08-20T12:20:36+08:00",
+  "started_at": "2026-08-20T12:36:43+08:00",
+  "completed_at": "2026-08-20T12:37:00+08:00",
   "snapshot_updated": true,
-  "snapshot_generated_at": "2026-08-20T12:20:18+08:00",
+  "snapshot_generated_at": "2026-08-20T12:36:43+08:00",
   "trade_date": "2026-08-20",
   "valid_for_tail_selection": false,
   "validity_profiles": {
@@ -16,10 +16,10 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-08-20T12:05:59+08:00",
-    "freshness_seconds": 859.8,
+    "freshness_seconds": 1844.1,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
-    "coverage_floor": 5267,
+    "coverage_floor": 5270,
     "coverage_ratio": 1.0,
     "coverage_pass": true,
     "index_pass": true,
@@ -37,8 +37,8 @@
   },
   "errors": [],
   "repository": "19942820639deep/-",
-  "run_id": "32331509191",
+  "run_id": "32332505149",
   "run_attempt": "1",
   "event_name": "schedule",
-  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/32331509191"
+  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/32332505149"
 }

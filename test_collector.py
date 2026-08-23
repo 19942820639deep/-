@@ -7,10 +7,40 @@ from zoneinfo import ZoneInfo
 from unittest import mock
 
 import collector
-from collector import CollectorError, ema, limit_price, market_summary, midday_close_profile, price_limit_ratio
+from collector import (CollectorError, ema, fetch_hithink_price_cross, get_ths_json,
+                       limit_price, market_summary, midday_close_profile,
+                       price_limit_ratio, thscode_to_tx, tx_to_thscode)
 
 
 class CollectorLogicTests(unittest.TestCase):
+    def test_symbol_conversion_for_all_a_share_venues(self):
+        self.assertEqual(tx_to_thscode("sh600000"), "600000.SH")
+        self.assertEqual(tx_to_thscode("sz000001"), "000001.SZ")
+        self.assertEqual(tx_to_thscode("bj920001"), "920001.BJ")
+        self.assertEqual(thscode_to_tx("688001.SH"), "sh688001")
+
+    def test_hithink_key_is_header_only(self):
+        class FakeClient:
+            def __init__(self): self.call = None
+            def get(self, url, params=None, timeout=25, referer=None, headers=None):
+                self.call = {"url":url,"params":params,"headers":headers}
+                return b'{"code":0,"message":"ok","data":{"item":[]}}'
+        client=FakeClient()
+        data=get_ths_json(client,"/api/test",{"ticker":"600000"},"secret-value",retries=1)
+        self.assertEqual(data["item"],[])
+        self.assertEqual(client.call["headers"]["X-api-key"],"secret-value")
+        self.assertNotIn("secret-value",client.call["url"])
+        self.assertNotIn("secret-value",json.dumps(client.call["params"]))
+
+    def test_hithink_price_cross_requires_thirty_matching_quotes(self):
+        candidates=[{"symbol":f"sh{600000+i:06d}","last":10+i/100} for i in range(30)]
+        rows=[{"thscode":tx_to_thscode(x["symbol"]),"last_price":x["last"]} for x in candidates]
+        with mock.patch.object(collector,"ths_snapshot_batches",return_value=(rows,[1])):
+            result=fetch_hithink_price_cross(mock.Mock(),"key",candidates)
+        self.assertTrue(result["pass"])
+        self.assertEqual(result["matches"],30)
+        self.assertEqual(result["price_diff_p95"],0.0)
+
     def test_price_limits(self):
         self.assertEqual(limit_price(10.01, price_limit_ratio("600000"), True), 11.01)
         self.assertEqual(limit_price(10.01, price_limit_ratio("300001"), True), 12.01)

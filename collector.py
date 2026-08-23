@@ -449,7 +449,7 @@ def build_snapshot() -> dict[str,Any]:
         warnings.append("HiThink candidate price cross-check did not pass")
     if not hithink_sectors.get("pass"):
         warnings.append("HiThink sector breadth verification did not pass; do not assert a main line from this snapshot")
-    return {"schema_version":"2.0.0","generated_at":iso(generated),"trade_date":trade_date,"is_trading_day":current,
+    return {"schema_version":"2.1.0","generated_at":iso(generated),"trade_date":trade_date,"is_trading_day":current,
             "valid_for_tail_selection":tail_valid,"validity_profiles":{"live_intraday":live_analysis,"midday_close":midday_analysis,
             "previous_close":previous_close_analysis,"core_market_data":core},"validation":checks,"market":market,"indices":indices,"candidates":candidates,
             "market_segments":{"main":[s for s in candidates if s["code"].startswith(("600","601","603","605","000","001","002","003"))][:30],

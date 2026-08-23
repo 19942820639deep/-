@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1.0",
-  "generated_at": "2026-08-24T00:22:57+08:00",
+  "generated_at": "2026-08-24T00:28:30+08:00",
   "trade_date": "2026-08-21",
   "is_trading_day": false,
   "valid_for_tail_selection": false,
@@ -13,7 +13,7 @@
   "validation": {
     "current_trade_day": false,
     "latest_trade_time": "2026-08-21T16:15:00+08:00",
-    "freshness_seconds": 202077.4,
+    "freshness_seconds": 202410.7,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5271,
@@ -30,12 +30,12 @@
     "midday_secondary_time_pass": false,
     "midday_price_cross_pass": true,
     "midday_close_pass": false,
-    "hithink_configured": false,
-    "hithink_price_cross_matches": 0,
-    "hithink_price_diff_p95": null,
-    "hithink_price_cross_pass": false,
-    "hithink_sector_count": 0,
-    "sector_data_pass": false
+    "hithink_configured": true,
+    "hithink_price_cross_matches": 120,
+    "hithink_price_diff_p95": 0.0,
+    "hithink_price_cross_pass": true,
+    "hithink_sector_count": 12,
+    "sector_data_pass": true
   },
   "market": {
     "universe_count": 5549,
@@ -142,7 +142,9 @@
       "low": 901.4,
       "secondary_last": 943.0,
       "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 943.0,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300502",
@@ -172,7 +174,9 @@
       "low": 420.06,
       "secondary_last": 442.0,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 442.0,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688825",
@@ -202,7 +206,9 @@
       "low": 57.21,
       "secondary_last": 58.0,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 58.0,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300394",
@@ -232,7 +238,9 @@
       "low": 269.65,
       "secondary_last": 273.08,
       "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 273.08,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh603986",
@@ -262,7 +270,9 @@
       "low": 400.1,
       "secondary_last": 409.06,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 409.06,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688256",
@@ -292,7 +302,9 @@
       "low": 996.0,
       "secondary_last": 1035.0,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 1035.0,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002384",
@@ -322,7 +334,9 @@
       "low": 196.0,
       "secondary_last": 201.08,
       "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 201.08,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh601899",
@@ -352,7 +366,9 @@
       "low": 33.6,
       "secondary_last": 34.74,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 34.74,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600487",
@@ -382,7 +398,9 @@
       "low": 59.48,
       "secondary_last": 62.18,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 62.18,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh603259",
@@ -412,7 +430,9 @@
       "low": 162.11,
       "secondary_last": 162.86,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 162.86,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300285",
@@ -442,7 +462,9 @@
       "low": 63.73,
       "secondary_last": 67.86,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 67.86,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600183",
@@ -472,7 +494,9 @@
       "low": 124.88,
       "secondary_last": 132.8,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 132.8,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600176",
@@ -502,7 +526,9 @@
       "low": 39.15,
       "secondary_last": 42.04,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 42.04,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300142",
@@ -532,7 +558,9 @@
       "low": 15.3,
       "secondary_last": 16.1,
       "secondary_trade_time": "2026-08-21T16:29:45+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 16.1,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300750",
@@ -562,7 +590,9 @@
       "low": 383.05,
       "secondary_last": 391.15,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 391.15,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz000725",
@@ -592,7 +622,9 @@
       "low": 5.79,
       "secondary_last": 6.0,
       "secondary_trade_time": "2026-08-21T16:29:45+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 6.0,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300570",
@@ -622,7 +654,9 @@
       "low": 205.48,
       "secondary_last": 214.46,
       "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 214.46,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600584",
@@ -652,7 +686,9 @@
       "low": 77.51,
       "secondary_last": 78.57,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 78.57,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002491",
@@ -682,7 +718,9 @@
       "low": 19.47,
       "secondary_last": 21.2,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 21.2,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz000636",
@@ -712,7 +750,9 @@
       "low": 51.88,
       "secondary_last": 54.67,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 54.67,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002156",
@@ -742,7 +782,9 @@
       "low": 63.01,
       "secondary_last": 63.88,
       "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 63.88,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002428",
@@ -772,7 +814,9 @@
       "low": 99.69,
       "secondary_last": 100.88,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 100.88,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz001309",
@@ -802,7 +846,9 @@
       "low": 393.0,
       "secondary_last": 415.12,
       "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 415.12,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600276",
@@ -832,7 +878,9 @@
       "low": 47.55,
       "secondary_last": 47.74,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 47.74,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002281",
@@ -862,7 +910,9 @@
       "low": 173.26,
       "secondary_last": 178.58,
       "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 178.58,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002463",
@@ -892,7 +942,9 @@
       "low": 113.39,
       "secondary_last": 121.21,
       "secondary_trade_time": "2026-08-21T16:29:45+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 121.21,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh601318",
@@ -922,7 +974,9 @@
       "low": 52.8,
       "secondary_last": 53.35,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 53.35,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688766",
@@ -952,7 +1006,9 @@
       "low": 454.71,
       "secondary_last": 463.65,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 463.65,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300476",
@@ -982,7 +1038,9 @@
       "low": 248.51,
       "secondary_last": 253.74,
       "secondary_trade_time": "2026-08-21T16:29:45+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 253.74,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz000657",
@@ -1012,7 +1070,9 @@
       "low": 63.91,
       "secondary_last": 68.14,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 68.14,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600206",
@@ -1042,7 +1102,9 @@
       "low": 53.44,
       "secondary_last": 54.24,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 54.24,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz000938",
@@ -1072,7 +1134,9 @@
       "low": 35.2,
       "secondary_last": 36.44,
       "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 36.44,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688498",
@@ -1102,7 +1166,9 @@
       "low": 1540.01,
       "secondary_last": 1587.0,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 1587.0,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600547",
@@ -1132,7 +1198,9 @@
       "low": 34.8,
       "secondary_last": 37.05,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 37.05,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002475",
@@ -1162,7 +1230,9 @@
       "low": 52.81,
       "secondary_last": 54.65,
       "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 54.65,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688012",
@@ -1192,7 +1262,9 @@
       "low": 359.5,
       "secondary_last": 362.5,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 362.5,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688041",
@@ -1222,7 +1294,9 @@
       "low": 242.22,
       "secondary_last": 246.21,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 246.21,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600522",
@@ -1252,7 +1326,9 @@
       "low": 32.02,
       "secondary_last": 33.43,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 33.43,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz000426",
@@ -1282,7 +1358,9 @@
       "low": 39.22,
       "secondary_last": 40.88,
       "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 40.88,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh601138",
@@ -1312,7 +1390,9 @@
       "low": 61.38,
       "secondary_last": 62.84,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 62.84,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600988",
@@ -1342,7 +1422,9 @@
       "low": 46.11,
       "secondary_last": 49.43,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 49.43,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh603083",
@@ -1372,7 +1454,9 @@
       "low": 177.48,
       "secondary_last": 180.97,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 180.97,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300408",
@@ -1402,7 +1486,9 @@
       "low": 109.64,
       "secondary_last": 113.9,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 113.9,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688313",
@@ -1432,7 +1518,9 @@
       "low": 156.78,
       "secondary_last": 158.0,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 158.0,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh603186",
@@ -1462,7 +1550,9 @@
       "low": 163.38,
       "secondary_last": 172.37,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 172.37,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600105",
@@ -1492,7 +1582,9 @@
       "low": 37.97,
       "secondary_last": 39.72,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 39.72,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300759",
@@ -1522,7 +1614,9 @@
       "low": 47.19,
       "secondary_last": 47.98,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 47.98,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002407",
@@ -1552,7 +1646,9 @@
       "low": 34.87,
       "secondary_last": 36.15,
       "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 36.15,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002436",
@@ -1582,7 +1678,9 @@
       "low": 33.4,
       "secondary_last": 35.35,
       "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 35.35,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600498",
@@ -1612,7 +1710,9 @@
       "low": 37.95,
       "secondary_last": 40.7,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 40.7,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh603629",
@@ -1642,7 +1742,9 @@
       "low": 125.0,
       "secondary_last": 125.97,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 125.97,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002716",
@@ -1672,7 +1774,9 @@
       "low": 9.4,
       "secondary_last": 10.42,
       "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 10.42,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600519",
@@ -1702,7 +1806,9 @@
       "low": 1272.01,
       "secondary_last": 1272.83,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 1272.83,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688008",
@@ -1732,7 +1838,9 @@
       "low": 199.11,
       "secondary_last": 200.55,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 200.55,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002851",
@@ -1762,7 +1870,9 @@
       "low": 117.06,
       "secondary_last": 128.06,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 128.06,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688525",
@@ -1792,7 +1902,9 @@
       "low": 232.27,
       "secondary_last": 238.96,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 238.96,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600667",
@@ -1822,7 +1934,9 @@
       "low": 20.8,
       "secondary_last": 21.44,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 21.44,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002371",
@@ -1852,7 +1966,9 @@
       "low": 709.0,
       "secondary_last": 714.43,
       "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 714.43,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh603228",
@@ -1882,7 +1998,9 @@
       "low": 88.4,
       "secondary_last": 94.84,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 94.84,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz301526",
@@ -1912,7 +2030,9 @@
       "low": 31.13,
       "secondary_last": 32.43,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 32.43,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300390",
@@ -1942,7 +2062,9 @@
       "low": 60.02,
       "secondary_last": 65.47,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 65.47,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz301308",
@@ -1972,7 +2094,9 @@
       "low": 373.62,
       "secondary_last": 380.66,
       "secondary_trade_time": "2026-08-21T16:29:45+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 380.66,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300548",
@@ -2002,7 +2126,9 @@
       "low": 197.0,
       "secondary_last": 197.42,
       "secondary_trade_time": "2026-08-21T16:29:45+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 197.42,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz000977",
@@ -2032,7 +2158,9 @@
       "low": 74.25,
       "secondary_last": 76.35,
       "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 76.35,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002241",
@@ -2062,7 +2190,9 @@
       "low": 22.29,
       "secondary_last": 23.4,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 23.4,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688146",
@@ -2092,7 +2222,9 @@
       "low": 256.57,
       "secondary_last": 263.09,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 263.09,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688143",
@@ -2122,7 +2254,9 @@
       "low": 147.0,
       "secondary_last": 158.8,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 158.8,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300433",
@@ -2152,7 +2286,9 @@
       "low": 36.47,
       "secondary_last": 37.19,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 37.19,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688981",
@@ -2182,7 +2318,9 @@
       "low": 124.2,
       "secondary_last": 124.8,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 124.8,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh601872",
@@ -2212,7 +2350,9 @@
       "low": 18.49,
       "secondary_last": 19.78,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 19.78,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600353",
@@ -2242,7 +2382,9 @@
       "low": 33.5,
       "secondary_last": 38.28,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 38.28,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz000988",
@@ -2272,7 +2414,9 @@
       "low": 103.5,
       "secondary_last": 106.78,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 106.78,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600664",
@@ -2302,7 +2446,9 @@
       "low": 8.17,
       "secondary_last": 8.17,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 8.17,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600869",
@@ -2332,7 +2478,9 @@
       "low": 16.01,
       "secondary_last": 16.92,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 16.92,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300604",
@@ -2362,7 +2510,9 @@
       "low": 270.02,
       "secondary_last": 279.42,
       "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 279.42,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300139",
@@ -2392,7 +2542,9 @@
       "low": 49.46,
       "secondary_last": 53.68,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 53.68,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh601869",
@@ -2422,7 +2574,9 @@
       "low": 350.88,
       "secondary_last": 363.6,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 363.6,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002821",
@@ -2452,7 +2606,9 @@
       "low": 166.22,
       "secondary_last": 168.1,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 168.1,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688072",
@@ -2482,7 +2638,9 @@
       "low": 670.3,
       "secondary_last": 673.5,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 673.5,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300274",
@@ -2512,7 +2670,9 @@
       "low": 109.71,
       "secondary_last": 113.08,
       "secondary_trade_time": "2026-08-21T16:29:45+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 113.08,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300223",
@@ -2542,7 +2702,9 @@
       "low": 136.71,
       "secondary_last": 138.48,
       "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 138.48,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz000603",
@@ -2572,7 +2734,9 @@
       "low": 33.55,
       "secondary_last": 36.61,
       "secondary_trade_time": "2026-08-21T16:29:45+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 36.61,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002484",
@@ -2602,7 +2766,9 @@
       "low": 59.11,
       "secondary_last": 64.33,
       "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 64.33,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600549",
@@ -2632,7 +2798,9 @@
       "low": 53.29,
       "secondary_last": 55.58,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 55.58,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002460",
@@ -2662,7 +2830,9 @@
       "low": 50.81,
       "secondary_last": 54.12,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 54.12,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600489",
@@ -2692,7 +2862,9 @@
       "low": 26.47,
       "secondary_last": 27.18,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 27.18,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh603993",
@@ -2722,7 +2894,9 @@
       "low": 18.19,
       "secondary_last": 18.62,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 18.62,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688167",
@@ -2752,7 +2926,9 @@
       "low": 276.0,
       "secondary_last": 281.07,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 281.07,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688347",
@@ -2782,7 +2958,9 @@
       "low": 229.02,
       "secondary_last": 233.22,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 233.22,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300418",
@@ -2812,7 +2990,9 @@
       "low": 42.97,
       "secondary_last": 43.82,
       "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 43.82,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300765",
@@ -2842,7 +3022,9 @@
       "low": 47.6,
       "secondary_last": 49.0,
       "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 49.0,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz301183",
@@ -2872,7 +3054,9 @@
       "low": 226.55,
       "secondary_last": 242.41,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 242.41,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688676",
@@ -2902,7 +3086,9 @@
       "low": 70.68,
       "secondary_last": 76.0,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 76.0,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600460",
@@ -2932,7 +3118,9 @@
       "low": 32.22,
       "secondary_last": 35.89,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 35.89,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688114",
@@ -2962,7 +3150,9 @@
       "low": 68.1,
       "secondary_last": 74.79,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 74.79,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002396",
@@ -2992,7 +3182,9 @@
       "low": 30.35,
       "secondary_last": 33.17,
       "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 33.17,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600110",
@@ -3022,7 +3214,9 @@
       "low": 9.47,
       "secondary_last": 10.74,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 10.74,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz003031",
@@ -3052,7 +3246,9 @@
       "low": 126.11,
       "secondary_last": 142.04,
       "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 142.04,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh601212",
@@ -3082,7 +3278,9 @@
       "low": 5.56,
       "secondary_last": 6.09,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 6.09,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002192",
@@ -3112,7 +3310,9 @@
       "low": 65.33,
       "secondary_last": 72.51,
       "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 72.51,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688185",
@@ -3142,7 +3342,9 @@
       "low": 67.5,
       "secondary_last": 77.32,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 77.32,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600397",
@@ -3172,7 +3374,9 @@
       "low": 16.37,
       "secondary_last": 18.14,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 18.14,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300454",
@@ -3202,7 +3406,9 @@
       "low": 115.39,
       "secondary_last": 120.6,
       "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 120.6,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002536",
@@ -3232,7 +3438,9 @@
       "low": 44.7,
       "secondary_last": 46.97,
       "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 46.97,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300122",
@@ -3262,7 +3470,9 @@
       "low": 13.2,
       "secondary_last": 13.9,
       "secondary_trade_time": "2026-08-21T16:29:45+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 13.9,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600500",
@@ -3292,7 +3502,9 @@
       "low": 4.99,
       "secondary_last": 5.51,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 5.51,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh603580",
@@ -3322,7 +3534,9 @@
       "low": 73.0,
       "secondary_last": 80.78,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 80.78,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300607",
@@ -3352,7 +3566,9 @@
       "low": 31.94,
       "secondary_last": 35.57,
       "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 35.57,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300109",
@@ -3382,7 +3598,9 @@
       "low": 14.87,
       "secondary_last": 16.4,
       "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 16.4,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688598",
@@ -3412,7 +3630,9 @@
       "low": 33.6,
       "secondary_last": 39.85,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 39.85,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300534",
@@ -3442,7 +3662,9 @@
       "low": 16.88,
       "secondary_last": 18.35,
       "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 18.35,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300016",
@@ -3472,7 +3694,9 @@
       "low": 8.48,
       "secondary_last": 10.44,
       "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 10.44,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002655",
@@ -3502,7 +3726,9 @@
       "low": 33.82,
       "secondary_last": 37.77,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 37.77,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh603330",
@@ -3532,7 +3758,9 @@
       "low": 8.59,
       "secondary_last": 9.97,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 9.97,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688328",
@@ -3562,7 +3790,9 @@
       "low": 76.01,
       "secondary_last": 91.16,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 91.16,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh600577",
@@ -3592,7 +3822,9 @@
       "low": 7.73,
       "secondary_last": 8.66,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 8.66,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh688828",
@@ -3622,7 +3854,9 @@
       "low": 79.0,
       "secondary_last": 89.59,
       "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 89.59,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz000688",
@@ -3652,7 +3886,9 @@
       "low": 30.57,
       "secondary_last": 33.28,
       "secondary_trade_time": "2026-08-21T16:29:45+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 33.28,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz300004",
@@ -3682,7 +3918,9 @@
       "low": 8.58,
       "secondary_last": 9.88,
       "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 9.88,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002903",
@@ -3712,7 +3950,9 @@
       "low": 30.76,
       "secondary_last": 33.74,
       "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-      "source_price_diff": 0.0
+      "source_price_diff": 0.0,
+      "hithink_last": 33.74,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sh603626",
@@ -4871,7 +5111,7 @@
       "pct_60d": 37.01,
       "prev_close": 24.76,
       "open": 23.5,
-      "trade_time": "2026-08-21T15:33:40+08:00",
+      "trade_time": "2026-08-21T15:33:13+08:00",
       "high": 27.6,
       "low": 23.15
     },
@@ -5365,7 +5605,9 @@
         "low": 400.1,
         "secondary_last": 409.06,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 409.06,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz002384",
@@ -5395,7 +5637,9 @@
         "low": 196.0,
         "secondary_last": 201.08,
         "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 201.08,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh601899",
@@ -5425,7 +5669,9 @@
         "low": 33.6,
         "secondary_last": 34.74,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 34.74,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh600487",
@@ -5455,7 +5701,9 @@
         "low": 59.48,
         "secondary_last": 62.18,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 62.18,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh603259",
@@ -5485,7 +5733,9 @@
         "low": 162.11,
         "secondary_last": 162.86,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 162.86,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh600183",
@@ -5515,7 +5765,9 @@
         "low": 124.88,
         "secondary_last": 132.8,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 132.8,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh600176",
@@ -5545,7 +5797,9 @@
         "low": 39.15,
         "secondary_last": 42.04,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 42.04,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz000725",
@@ -5575,7 +5829,9 @@
         "low": 5.79,
         "secondary_last": 6.0,
         "secondary_trade_time": "2026-08-21T16:29:45+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 6.0,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh600584",
@@ -5605,7 +5861,9 @@
         "low": 77.51,
         "secondary_last": 78.57,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 78.57,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz002491",
@@ -5635,7 +5893,9 @@
         "low": 19.47,
         "secondary_last": 21.2,
         "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 21.2,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz000636",
@@ -5665,7 +5925,9 @@
         "low": 51.88,
         "secondary_last": 54.67,
         "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 54.67,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz002156",
@@ -5695,7 +5957,9 @@
         "low": 63.01,
         "secondary_last": 63.88,
         "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 63.88,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz002428",
@@ -5725,7 +5989,9 @@
         "low": 99.69,
         "secondary_last": 100.88,
         "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 100.88,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz001309",
@@ -5755,7 +6021,9 @@
         "low": 393.0,
         "secondary_last": 415.12,
         "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 415.12,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh600276",
@@ -5785,7 +6053,9 @@
         "low": 47.55,
         "secondary_last": 47.74,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 47.74,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz002281",
@@ -5815,7 +6085,9 @@
         "low": 173.26,
         "secondary_last": 178.58,
         "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 178.58,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz002463",
@@ -5845,7 +6117,9 @@
         "low": 113.39,
         "secondary_last": 121.21,
         "secondary_trade_time": "2026-08-21T16:29:45+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 121.21,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh601318",
@@ -5875,7 +6149,9 @@
         "low": 52.8,
         "secondary_last": 53.35,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 53.35,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz000657",
@@ -5905,7 +6181,9 @@
         "low": 63.91,
         "secondary_last": 68.14,
         "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 68.14,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh600206",
@@ -5935,7 +6213,9 @@
         "low": 53.44,
         "secondary_last": 54.24,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 54.24,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz000938",
@@ -5965,7 +6245,9 @@
         "low": 35.2,
         "secondary_last": 36.44,
         "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 36.44,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh600547",
@@ -5995,7 +6277,9 @@
         "low": 34.8,
         "secondary_last": 37.05,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 37.05,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz002475",
@@ -6025,7 +6309,9 @@
         "low": 52.81,
         "secondary_last": 54.65,
         "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 54.65,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh600522",
@@ -6055,7 +6341,9 @@
         "low": 32.02,
         "secondary_last": 33.43,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 33.43,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz000426",
@@ -6085,7 +6373,9 @@
         "low": 39.22,
         "secondary_last": 40.88,
         "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 40.88,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh601138",
@@ -6115,7 +6405,9 @@
         "low": 61.38,
         "secondary_last": 62.84,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 62.84,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh600988",
@@ -6145,7 +6437,9 @@
         "low": 46.11,
         "secondary_last": 49.43,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 49.43,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh603083",
@@ -6175,7 +6469,9 @@
         "low": 177.48,
         "secondary_last": 180.97,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 180.97,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh603186",
@@ -6205,7 +6501,9 @@
         "low": 163.38,
         "secondary_last": 172.37,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 172.37,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh600105",
@@ -6235,7 +6533,9 @@
         "low": 37.97,
         "secondary_last": 39.72,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 39.72,
+        "hithink_price_diff": 0.0
       }
     ],
     "chinext": [
@@ -6267,7 +6567,9 @@
         "low": 901.4,
         "secondary_last": 943.0,
         "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 943.0,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300502",
@@ -6297,7 +6599,9 @@
         "low": 420.06,
         "secondary_last": 442.0,
         "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 442.0,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300394",
@@ -6327,7 +6631,9 @@
         "low": 269.65,
         "secondary_last": 273.08,
         "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 273.08,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300285",
@@ -6357,7 +6663,9 @@
         "low": 63.73,
         "secondary_last": 67.86,
         "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 67.86,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300142",
@@ -6387,7 +6695,9 @@
         "low": 15.3,
         "secondary_last": 16.1,
         "secondary_trade_time": "2026-08-21T16:29:45+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 16.1,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300750",
@@ -6417,7 +6727,9 @@
         "low": 383.05,
         "secondary_last": 391.15,
         "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 391.15,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300570",
@@ -6447,7 +6759,9 @@
         "low": 205.48,
         "secondary_last": 214.46,
         "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 214.46,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300476",
@@ -6477,7 +6791,9 @@
         "low": 248.51,
         "secondary_last": 253.74,
         "secondary_trade_time": "2026-08-21T16:29:45+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 253.74,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300408",
@@ -6507,7 +6823,9 @@
         "low": 109.64,
         "secondary_last": 113.9,
         "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 113.9,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300759",
@@ -6537,7 +6855,9 @@
         "low": 47.19,
         "secondary_last": 47.98,
         "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 47.98,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz301526",
@@ -6567,7 +6887,9 @@
         "low": 31.13,
         "secondary_last": 32.43,
         "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 32.43,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300390",
@@ -6597,7 +6919,9 @@
         "low": 60.02,
         "secondary_last": 65.47,
         "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 65.47,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz301308",
@@ -6627,7 +6951,9 @@
         "low": 373.62,
         "secondary_last": 380.66,
         "secondary_trade_time": "2026-08-21T16:29:45+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 380.66,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300548",
@@ -6657,7 +6983,9 @@
         "low": 197.0,
         "secondary_last": 197.42,
         "secondary_trade_time": "2026-08-21T16:29:45+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 197.42,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300433",
@@ -6687,7 +7015,9 @@
         "low": 36.47,
         "secondary_last": 37.19,
         "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 37.19,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300604",
@@ -6717,7 +7047,9 @@
         "low": 270.02,
         "secondary_last": 279.42,
         "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 279.42,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300139",
@@ -6747,7 +7079,9 @@
         "low": 49.46,
         "secondary_last": 53.68,
         "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 53.68,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300274",
@@ -6777,7 +7111,9 @@
         "low": 109.71,
         "secondary_last": 113.08,
         "secondary_trade_time": "2026-08-21T16:29:45+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 113.08,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300223",
@@ -6807,7 +7143,9 @@
         "low": 136.71,
         "secondary_last": 138.48,
         "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 138.48,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300418",
@@ -6837,7 +7175,9 @@
         "low": 42.97,
         "secondary_last": 43.82,
         "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 43.82,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300765",
@@ -6867,7 +7207,9 @@
         "low": 47.6,
         "secondary_last": 49.0,
         "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 49.0,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz301183",
@@ -6897,7 +7239,9 @@
         "low": 226.55,
         "secondary_last": 242.41,
         "secondary_trade_time": "2026-08-21T16:29:00+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 242.41,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300454",
@@ -6927,7 +7271,9 @@
         "low": 115.39,
         "secondary_last": 120.6,
         "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 120.6,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300122",
@@ -6957,7 +7303,9 @@
         "low": 13.2,
         "secondary_last": 13.9,
         "secondary_trade_time": "2026-08-21T16:29:45+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 13.9,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300607",
@@ -6987,7 +7335,9 @@
         "low": 31.94,
         "secondary_last": 35.57,
         "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 35.57,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300109",
@@ -7017,7 +7367,9 @@
         "low": 14.87,
         "secondary_last": 16.4,
         "secondary_trade_time": "2026-08-21T16:29:15+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 16.4,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300534",
@@ -7047,7 +7399,9 @@
         "low": 16.88,
         "secondary_last": 18.35,
         "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 18.35,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300016",
@@ -7077,7 +7431,9 @@
         "low": 8.48,
         "secondary_last": 10.44,
         "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 10.44,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300004",
@@ -7107,7 +7463,9 @@
         "low": 8.58,
         "secondary_last": 9.88,
         "secondary_trade_time": "2026-08-21T16:29:30+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 9.88,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sz300214",
@@ -7166,7 +7524,9 @@
         "low": 57.21,
         "secondary_last": 58.0,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 58.0,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688256",
@@ -7196,7 +7556,9 @@
         "low": 996.0,
         "secondary_last": 1035.0,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 1035.0,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688766",
@@ -7226,7 +7588,9 @@
         "low": 454.71,
         "secondary_last": 463.65,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 463.65,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688498",
@@ -7256,7 +7620,9 @@
         "low": 1540.01,
         "secondary_last": 1587.0,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 1587.0,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688012",
@@ -7286,7 +7652,9 @@
         "low": 359.5,
         "secondary_last": 362.5,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 362.5,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688041",
@@ -7316,7 +7684,9 @@
         "low": 242.22,
         "secondary_last": 246.21,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 246.21,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688313",
@@ -7346,7 +7716,9 @@
         "low": 156.78,
         "secondary_last": 158.0,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 158.0,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688008",
@@ -7376,7 +7748,9 @@
         "low": 199.11,
         "secondary_last": 200.55,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 200.55,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688525",
@@ -7406,7 +7780,9 @@
         "low": 232.27,
         "secondary_last": 238.96,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 238.96,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688146",
@@ -7436,7 +7812,9 @@
         "low": 256.57,
         "secondary_last": 263.09,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 263.09,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688143",
@@ -7466,7 +7844,9 @@
         "low": 147.0,
         "secondary_last": 158.8,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 158.8,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688981",
@@ -7496,7 +7876,9 @@
         "low": 124.2,
         "secondary_last": 124.8,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 124.8,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688072",
@@ -7526,7 +7908,9 @@
         "low": 670.3,
         "secondary_last": 673.5,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 673.5,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688167",
@@ -7556,7 +7940,9 @@
         "low": 276.0,
         "secondary_last": 281.07,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 281.07,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688347",
@@ -7586,7 +7972,9 @@
         "low": 229.02,
         "secondary_last": 233.22,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 233.22,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688676",
@@ -7616,7 +8004,9 @@
         "low": 70.68,
         "secondary_last": 76.0,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 76.0,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688114",
@@ -7646,7 +8036,9 @@
         "low": 68.1,
         "secondary_last": 74.79,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 74.79,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688185",
@@ -7676,7 +8068,9 @@
         "low": 67.5,
         "secondary_last": 77.32,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 77.32,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688598",
@@ -7706,7 +8100,9 @@
         "low": 33.6,
         "secondary_last": 39.85,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 39.85,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688328",
@@ -7736,7 +8132,9 @@
         "low": 76.01,
         "secondary_last": 91.16,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 91.16,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688828",
@@ -7766,7 +8164,9 @@
         "low": 79.0,
         "secondary_last": 89.59,
         "secondary_trade_time": "2026-08-21T15:34:58+08:00",
-        "source_price_diff": 0.0
+        "source_price_diff": 0.0,
+        "hithink_last": 89.59,
+        "hithink_price_diff": 0.0
       },
       {
         "symbol": "sh688137",
@@ -8036,67 +8436,1614 @@
         "pct_60d": 37.01,
         "prev_close": 24.76,
         "open": 23.5,
-        "trade_time": "2026-08-21T15:33:40+08:00",
+        "trade_time": "2026-08-21T15:33:13+08:00",
         "high": 27.6,
         "low": 23.15
       }
     ]
   },
   "sector_data": {
-    "status": "not_configured",
-    "pass": false,
-    "top_sectors": []
+    "status": "verified",
+    "verified_count": 12,
+    "pass": true,
+    "top_sectors": [
+      {
+        "thscode": "884286.TI",
+        "name": "锂",
+        "tag": "industry",
+        "pct": 6.513984,
+        "last": 23070.814,
+        "amount": 13379294200.0,
+        "constituent_count": 8,
+        "priced_count": 8,
+        "up": 8,
+        "down": 0,
+        "flat": 0,
+        "breadth_up_ratio": 1.0,
+        "median_constituent_pct": 6.065,
+        "average_constituent_pct": 6.5163,
+        "constituent_turnover": 13379294140.0,
+        "capacity_leaders": [
+          {
+            "symbol": "sz002460",
+            "code": "002460",
+            "name": "赣锋锂业",
+            "pct": 5.56,
+            "amount": 3291579501.0,
+            "last": 54.12
+          },
+          {
+            "symbol": "sz002466",
+            "code": "002466",
+            "name": "天齐锂业",
+            "pct": 5.11,
+            "amount": 3165705200.0,
+            "last": 48.38
+          },
+          {
+            "symbol": "sz002240",
+            "code": "002240",
+            "name": "盛新锂能",
+            "pct": 6.57,
+            "amount": 2105448556.0,
+            "last": 33.75
+          },
+          {
+            "symbol": "sz002192",
+            "code": "002192",
+            "name": "融捷股份",
+            "pct": 10.0,
+            "amount": 1971905868.0,
+            "last": 72.51
+          },
+          {
+            "symbol": "sh603399",
+            "code": "603399",
+            "name": "永杉锂业",
+            "pct": 7.04,
+            "amount": 1107132168.0,
+            "last": 15.06
+          }
+        ]
+      },
+      {
+        "thscode": "881169.TI",
+        "name": "贵金属",
+        "tag": "industry",
+        "pct": 5.338351,
+        "last": 6185.232,
+        "amount": 47051216000.0,
+        "constituent_count": 14,
+        "priced_count": 14,
+        "up": 13,
+        "down": 0,
+        "flat": 1,
+        "breadth_up_ratio": 0.9286,
+        "median_constituent_pct": 4.915,
+        "average_constituent_pct": 4.9571,
+        "constituent_turnover": 47051213920.0,
+        "capacity_leaders": [
+          {
+            "symbol": "sh601899",
+            "code": "601899",
+            "name": "XD紫金矿",
+            "pct": 2.69,
+            "amount": 10338560003.0,
+            "last": 34.74
+          },
+          {
+            "symbol": "sh600547",
+            "code": "600547",
+            "name": "XD山东黄",
+            "pct": 4.96,
+            "amount": 5440377565.0,
+            "last": 37.05
+          },
+          {
+            "symbol": "sz000426",
+            "code": "000426",
+            "name": "兴业银锡",
+            "pct": 6.02,
+            "amount": 5061402066.0,
+            "last": 40.88
+          },
+          {
+            "symbol": "sh600988",
+            "code": "600988",
+            "name": "赤峰黄金",
+            "pct": 7.22,
+            "amount": 4924164708.0,
+            "last": 49.43
+          },
+          {
+            "symbol": "sz002716",
+            "code": "002716",
+            "name": "湖南白银",
+            "pct": 10.03,
+            "amount": 4312985678.0,
+            "last": 10.42
+          }
+        ]
+      },
+      {
+        "thscode": "884282.TI",
+        "name": "钨",
+        "tag": "industry",
+        "pct": 4.895525,
+        "last": 9300.204,
+        "amount": 11265967700.0,
+        "constituent_count": 4,
+        "priced_count": 4,
+        "up": 4,
+        "down": 0,
+        "flat": 0,
+        "breadth_up_ratio": 1.0,
+        "median_constituent_pct": 4.945,
+        "average_constituent_pct": 4.8975,
+        "constituent_turnover": 11265967755.0,
+        "capacity_leaders": [
+          {
+            "symbol": "sz000657",
+            "code": "000657",
+            "name": "中钨高新",
+            "pct": 5.73,
+            "amount": 5579749736.0,
+            "last": 68.14
+          },
+          {
+            "symbol": "sh600549",
+            "code": "600549",
+            "name": "厦门钨业",
+            "pct": 4.3,
+            "amount": 3300039130.0,
+            "last": 55.58
+          },
+          {
+            "symbol": "sz002842",
+            "code": "002842",
+            "name": "翔鹭钨业",
+            "pct": 5.59,
+            "amount": 1488701794.0,
+            "last": 39.47
+          },
+          {
+            "symbol": "sz002378",
+            "code": "002378",
+            "name": "章源钨业",
+            "pct": 3.97,
+            "amount": 897477095.0,
+            "last": 26.2
+          }
+        ]
+      },
+      {
+        "thscode": "881267.TI",
+        "name": "能源金属",
+        "tag": "industry",
+        "pct": 4.507101,
+        "last": 32499.054,
+        "amount": 18606534000.0,
+        "constituent_count": 13,
+        "priced_count": 13,
+        "up": 11,
+        "down": 2,
+        "flat": 0,
+        "breadth_up_ratio": 0.8462,
+        "median_constituent_pct": 4.6,
+        "average_constituent_pct": 4.5077,
+        "constituent_turnover": 18606533685.0,
+        "capacity_leaders": [
+          {
+            "symbol": "sz002460",
+            "code": "002460",
+            "name": "赣锋锂业",
+            "pct": 5.56,
+            "amount": 3291579501.0,
+            "last": 54.12
+          },
+          {
+            "symbol": "sz002466",
+            "code": "002466",
+            "name": "天齐锂业",
+            "pct": 5.11,
+            "amount": 3165705200.0,
+            "last": 48.38
+          },
+          {
+            "symbol": "sh603799",
+            "code": "603799",
+            "name": "华友钴业",
+            "pct": 3.15,
+            "amount": 2566543538.0,
+            "last": 40.59
+          },
+          {
+            "symbol": "sz002240",
+            "code": "002240",
+            "name": "盛新锂能",
+            "pct": 6.57,
+            "amount": 2105448556.0,
+            "last": 33.75
+          },
+          {
+            "symbol": "sz002192",
+            "code": "002192",
+            "name": "融捷股份",
+            "pct": 10.0,
+            "amount": 1971905868.0,
+            "last": 72.51
+          }
+        ]
+      },
+      {
+        "thscode": "884283.TI",
+        "name": "钼",
+        "tag": "industry",
+        "pct": 4.394165,
+        "last": 6255.836,
+        "amount": 2107696400.0,
+        "constituent_count": 3,
+        "priced_count": 3,
+        "up": 3,
+        "down": 0,
+        "flat": 0,
+        "breadth_up_ratio": 1.0,
+        "median_constituent_pct": 4.35,
+        "average_constituent_pct": 4.3933,
+        "constituent_turnover": 2107696353.0,
+        "capacity_leaders": [
+          {
+            "symbol": "sz000688",
+            "code": "000688",
+            "name": "国城矿业",
+            "pct": 8.19,
+            "amount": 971341563.0,
+            "last": 33.28
+          },
+          {
+            "symbol": "sh601958",
+            "code": "601958",
+            "name": "金钼股份",
+            "pct": 0.64,
+            "amount": 813126722.0,
+            "last": 21.94
+          },
+          {
+            "symbol": "sz001257",
+            "code": "001257",
+            "name": "盛龙股份",
+            "pct": 4.35,
+            "amount": 323228068.0,
+            "last": 25.2
+          }
+        ]
+      },
+      {
+        "thscode": "884055.TI",
+        "name": "铅锌",
+        "tag": "industry",
+        "pct": 3.829452,
+        "last": 3763.882,
+        "amount": 9059786100.0,
+        "constituent_count": 12,
+        "priced_count": 12,
+        "up": 11,
+        "down": 1,
+        "flat": 0,
+        "breadth_up_ratio": 0.9167,
+        "median_constituent_pct": 3.73,
+        "average_constituent_pct": 3.83,
+        "constituent_turnover": 9059786139.0,
+        "capacity_leaders": [
+          {
+            "symbol": "sz000603",
+            "code": "000603",
+            "name": "盛达资源",
+            "pct": 10.01,
+            "amount": 3354818490.0,
+            "last": 36.61
+          },
+          {
+            "symbol": "sh600497",
+            "code": "600497",
+            "name": "驰宏锌锗",
+            "pct": 3.79,
+            "amount": 1429076132.0,
+            "last": 10.12
+          },
+          {
+            "symbol": "sh600531",
+            "code": "600531",
+            "name": "豫光金铅",
+            "pct": 6.19,
+            "amount": 1237244607.0,
+            "last": 13.9
+          },
+          {
+            "symbol": "sh600338",
+            "code": "600338",
+            "name": "西藏珠峰",
+            "pct": 5.73,
+            "amount": 786960731.0,
+            "last": 13.85
+          },
+          {
+            "symbol": "sz000060",
+            "code": "000060",
+            "name": "中金岭南",
+            "pct": 2.61,
+            "amount": 764060591.0,
+            "last": 6.68
+          }
+        ]
+      },
+      {
+        "thscode": "885971.TI",
+        "name": "金属铅",
+        "tag": "cn_concept",
+        "pct": 3.604465,
+        "last": 1993.64,
+        "amount": 51217911000.0,
+        "constituent_count": 38,
+        "priced_count": 38,
+        "up": 32,
+        "down": 4,
+        "flat": 2,
+        "breadth_up_ratio": 0.8421,
+        "median_constituent_pct": 2.845,
+        "average_constituent_pct": 3.5097,
+        "constituent_turnover": 51217910354.0,
+        "capacity_leaders": [
+          {
+            "symbol": "sh601899",
+            "code": "601899",
+            "name": "XD紫金矿",
+            "pct": 2.69,
+            "amount": 10338560003.0,
+            "last": 34.74
+          },
+          {
+            "symbol": "sz000426",
+            "code": "000426",
+            "name": "兴业银锡",
+            "pct": 6.02,
+            "amount": 5061402066.0,
+            "last": 40.88
+          },
+          {
+            "symbol": "sh600988",
+            "code": "600988",
+            "name": "赤峰黄金",
+            "pct": 7.22,
+            "amount": 4924164708.0,
+            "last": 49.43
+          },
+          {
+            "symbol": "sz002716",
+            "code": "002716",
+            "name": "湖南白银",
+            "pct": 10.03,
+            "amount": 4312985678.0,
+            "last": 10.42
+          },
+          {
+            "symbol": "sz000603",
+            "code": "000603",
+            "name": "盛达资源",
+            "pct": 10.01,
+            "amount": 3354818490.0,
+            "last": 36.61
+          }
+        ]
+      },
+      {
+        "thscode": "885970.TI",
+        "name": "金属锌",
+        "tag": "cn_concept",
+        "pct": 3.343961,
+        "last": 2239.537,
+        "amount": 47907695000.0,
+        "constituent_count": 43,
+        "priced_count": 43,
+        "up": 37,
+        "down": 4,
+        "flat": 2,
+        "breadth_up_ratio": 0.8605,
+        "median_constituent_pct": 2.61,
+        "average_constituent_pct": 3.2663,
+        "constituent_turnover": 47907694411.0,
+        "capacity_leaders": [
+          {
+            "symbol": "sh601899",
+            "code": "601899",
+            "name": "XD紫金矿",
+            "pct": 2.69,
+            "amount": 10338560003.0,
+            "last": 34.74
+          },
+          {
+            "symbol": "sz000426",
+            "code": "000426",
+            "name": "兴业银锡",
+            "pct": 6.02,
+            "amount": 5061402066.0,
+            "last": 40.88
+          },
+          {
+            "symbol": "sz002716",
+            "code": "002716",
+            "name": "湖南白银",
+            "pct": 10.03,
+            "amount": 4312985678.0,
+            "last": 10.42
+          },
+          {
+            "symbol": "sz000603",
+            "code": "000603",
+            "name": "盛达资源",
+            "pct": 10.01,
+            "amount": 3354818490.0,
+            "last": 36.61
+          },
+          {
+            "symbol": "sz000975",
+            "code": "000975",
+            "name": "山金国际",
+            "pct": 2.44,
+            "amount": 2032401883.0,
+            "last": 28.58
+          }
+        ]
+      },
+      {
+        "thscode": "885530.TI",
+        "name": "黄金概念",
+        "tag": "cn_concept",
+        "pct": 2.4595,
+        "last": 3820.266,
+        "amount": 85096038000.0,
+        "constituent_count": 82,
+        "priced_count": 82,
+        "up": 61,
+        "down": 18,
+        "flat": 3,
+        "breadth_up_ratio": 0.7439,
+        "median_constituent_pct": 2.465,
+        "average_constituent_pct": 2.43,
+        "constituent_turnover": 85096034425.0,
+        "capacity_leaders": [
+          {
+            "symbol": "sh601899",
+            "code": "601899",
+            "name": "XD紫金矿",
+            "pct": 2.69,
+            "amount": 10338560003.0,
+            "last": 34.74
+          },
+          {
+            "symbol": "sh600547",
+            "code": "600547",
+            "name": "XD山东黄",
+            "pct": 4.96,
+            "amount": 5440377565.0,
+            "last": 37.05
+          },
+          {
+            "symbol": "sz000426",
+            "code": "000426",
+            "name": "兴业银锡",
+            "pct": 6.02,
+            "amount": 5061402066.0,
+            "last": 40.88
+          },
+          {
+            "symbol": "sh600988",
+            "code": "600988",
+            "name": "赤峰黄金",
+            "pct": 7.22,
+            "amount": 4924164708.0,
+            "last": 49.43
+          },
+          {
+            "symbol": "sz002716",
+            "code": "002716",
+            "name": "湖南白银",
+            "pct": 10.03,
+            "amount": 4312985678.0,
+            "last": 10.42
+          }
+        ]
+      },
+      {
+        "thscode": "885973.TI",
+        "name": "金属铜",
+        "tag": "cn_concept",
+        "pct": 2.308037,
+        "last": 1830.921,
+        "amount": 87157244000.0,
+        "constituent_count": 93,
+        "priced_count": 93,
+        "up": 77,
+        "down": 15,
+        "flat": 1,
+        "breadth_up_ratio": 0.828,
+        "median_constituent_pct": 1.89,
+        "average_constituent_pct": 2.3084,
+        "constituent_turnover": 87157241991.0,
+        "capacity_leaders": [
+          {
+            "symbol": "sh601899",
+            "code": "601899",
+            "name": "XD紫金矿",
+            "pct": 2.69,
+            "amount": 10338560003.0,
+            "last": 34.74
+          },
+          {
+            "symbol": "sz000657",
+            "code": "000657",
+            "name": "中钨高新",
+            "pct": 5.73,
+            "amount": 5579749736.0,
+            "last": 68.14
+          },
+          {
+            "symbol": "sz000426",
+            "code": "000426",
+            "name": "兴业银锡",
+            "pct": 6.02,
+            "amount": 5061402066.0,
+            "last": 40.88
+          },
+          {
+            "symbol": "sh600988",
+            "code": "600988",
+            "name": "赤峰黄金",
+            "pct": 7.22,
+            "amount": 4924164708.0,
+            "last": 49.43
+          },
+          {
+            "symbol": "sz002716",
+            "code": "002716",
+            "name": "湖南白银",
+            "pct": 10.03,
+            "amount": 4312985678.0,
+            "last": 10.42
+          }
+        ]
+      },
+      {
+        "thscode": "885552.TI",
+        "name": "小金属概念",
+        "tag": "cn_concept",
+        "pct": 1.87001,
+        "last": 3574.964,
+        "amount": 148260960000.0,
+        "constituent_count": 171,
+        "priced_count": 171,
+        "up": 129,
+        "down": 39,
+        "flat": 3,
+        "breadth_up_ratio": 0.7544,
+        "median_constituent_pct": 1.45,
+        "average_constituent_pct": 1.8594,
+        "constituent_turnover": 148260955691.0,
+        "capacity_leaders": [
+          {
+            "symbol": "sh601899",
+            "code": "601899",
+            "name": "XD紫金矿",
+            "pct": 2.69,
+            "amount": 10338560003.0,
+            "last": 34.74
+          },
+          {
+            "symbol": "sz000636",
+            "code": "000636",
+            "name": "风华高科",
+            "pct": 2.98,
+            "amount": 6781464751.0,
+            "last": 54.67
+          },
+          {
+            "symbol": "sz002428",
+            "code": "002428",
+            "name": "云南锗业",
+            "pct": -2.59,
+            "amount": 6230669095.0,
+            "last": 100.88
+          },
+          {
+            "symbol": "sz000657",
+            "code": "000657",
+            "name": "中钨高新",
+            "pct": 5.73,
+            "amount": 5579749736.0,
+            "last": 68.14
+          },
+          {
+            "symbol": "sz000426",
+            "code": "000426",
+            "name": "兴业银锡",
+            "pct": 6.02,
+            "amount": 5061402066.0,
+            "last": 40.88
+          }
+        ]
+      },
+      {
+        "thscode": "886112.TI",
+        "name": "MLCC概念",
+        "tag": "cn_concept",
+        "pct": 1.805873,
+        "last": 1154.219,
+        "amount": 45379884000.0,
+        "constituent_count": 35,
+        "priced_count": 35,
+        "up": 30,
+        "down": 5,
+        "flat": 0,
+        "breadth_up_ratio": 0.8571,
+        "median_constituent_pct": 1.19,
+        "average_constituent_pct": 1.8057,
+        "constituent_turnover": 45379883674.0,
+        "capacity_leaders": [
+          {
+            "symbol": "sz300285",
+            "code": "300285",
+            "name": "国瓷材料",
+            "pct": 7.85,
+            "amount": 9172724540.0,
+            "last": 67.86
+          },
+          {
+            "symbol": "sz000636",
+            "code": "000636",
+            "name": "风华高科",
+            "pct": 2.98,
+            "amount": 6781464751.0,
+            "last": 54.67
+          },
+          {
+            "symbol": "sz300408",
+            "code": "300408",
+            "name": "三环集团",
+            "pct": 2.14,
+            "amount": 4805231758.0,
+            "last": 113.9
+          },
+          {
+            "symbol": "sh600549",
+            "code": "600549",
+            "name": "厦门钨业",
+            "pct": 4.3,
+            "amount": 3300039130.0,
+            "last": 55.58
+          },
+          {
+            "symbol": "sz300136",
+            "code": "300136",
+            "name": "信维通信",
+            "pct": 2.25,
+            "amount": 2571520273.0,
+            "last": 60.96
+          }
+        ]
+      }
+    ],
+    "data_timestamps_ms": [
+      1787502528817,
+      1787502529500,
+      1787502530000,
+      1787502531000,
+      1787502532000,
+      1787502532000,
+      1787502533000,
+      1787502534000,
+      1787502535000,
+      1787502536000,
+      1787502537000,
+      1787502540041,
+      1787502540694,
+      1787502541358,
+      1787502541994,
+      1787502542661,
+      1787502543301,
+      1787502543951,
+      1787502544605,
+      1787502545242,
+      1787502545920,
+      1787502546575,
+      1787502547260
+    ],
+    "rule": "Sector conclusions require index strength, constituent breadth and at least three priced constituents.",
+    "endpoint": "HiThink THS index catalog/snapshot/constituents"
   },
   "special_data": {
-    "status": "not_configured"
+    "limit_up": {
+      "total": 54,
+      "item": [
+        {
+          "thscode": "003031.SZ",
+          "ticker": "003031",
+          "name": "中瓷电子",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 142.04,
+          "price_change_ratio_pct": 9.9977,
+          "limit_up_time": "13:12",
+          "limit_up_reason": "CPO+电子陶瓷+央企",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 134898370,
+          "max_seal_money": 452227236.08
+        },
+        {
+          "thscode": "688356.SH",
+          "ticker": "688356",
+          "name": "键凯科技",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 107.34,
+          "price_change_ratio_pct": 20,
+          "limit_up_time": "09:25",
+          "limit_up_reason": "mRNA疫苗+LNP递送+聚乙二醇+创新药",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 472387020,
+          "max_seal_money": 3288042744.24
+        },
+        {
+          "thscode": "688328.SH",
+          "ticker": "688328",
+          "name": "深科达",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 91.16,
+          "price_change_ratio_pct": 19.9947,
+          "limit_up_time": "13:02",
+          "limit_up_reason": "半导体设备+存储芯片+CPO+中报增长",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 121109615,
+          "max_seal_money": 356821753.76
+        },
+        {
+          "thscode": "688137.SH",
+          "ticker": "688137",
+          "name": "近岸蛋白",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 80.99,
+          "price_change_ratio_pct": 20.003,
+          "limit_up_time": "10:18",
+          "limit_up_reason": "mRNA肿瘤疫苗+合成生物+mRNA原料酶",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 27153112,
+          "max_seal_money": 121371614.0
+        },
+        {
+          "thscode": "002192.SZ",
+          "ticker": "002192",
+          "name": "融捷股份",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 72.51,
+          "price_change_ratio_pct": 9.997,
+          "limit_up_time": "10:15",
+          "limit_up_reason": "锂矿+半年报增长+实控人增持",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 80008477,
+          "max_seal_money": 1116234892.2
+        },
+        {
+          "thscode": "603052.SH",
+          "ticker": "603052",
+          "name": "可川科技",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 61.46,
+          "price_change_ratio_pct": 10.0054,
+          "limit_up_time": "09:40",
+          "limit_up_reason": "硅光芯片+CPO+功能性器件",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 157220830,
+          "max_seal_money": 531352430.0
+        },
+        {
+          "thscode": "603045.SH",
+          "ticker": "603045",
+          "name": "福达合金",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 57.24,
+          "price_change_ratio_pct": 9.9923,
+          "limit_up_time": "09:56",
+          "limit_up_reason": "AI数据中心+电接触材料+黄金概念+半年报预增",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 69409224,
+          "max_seal_money": 285438708.0
+        },
+        {
+          "thscode": "002536.SZ",
+          "ticker": "002536",
+          "name": "飞龙股份",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 46.97,
+          "price_change_ratio_pct": 10,
+          "limit_up_time": "09:41",
+          "limit_up_reason": "液冷服务器+汽车热管理+机器人",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 241451210,
+          "max_seal_money": 1397435000.5
+        },
+        {
+          "thscode": "002971.SZ",
+          "ticker": "002971",
+          "name": "和远气体",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 46.61,
+          "price_change_ratio_pct": 10.0071,
+          "limit_up_time": "09:32",
+          "limit_up_reason": "定增获批+电子特气+大宗气体",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 120107678,
+          "max_seal_money": 474140225.0
+        },
+        {
+          "thscode": "000628.SZ",
+          "ticker": "000628",
+          "name": "高新发展",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 45.35,
+          "price_change_ratio_pct": 9.9927,
+          "limit_up_time": "11:00",
+          "limit_up_reason": "功率半导体+此前拟收购华鲲振宇股权+虚拟电厂+成都国资",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 116098041,
+          "max_seal_money": 650432375.0
+        },
+        {
+          "thscode": "003018.SZ",
+          "ticker": "003018",
+          "name": "金富科技",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 43.02,
+          "price_change_ratio_pct": 9.9974,
+          "limit_up_time": "09:45",
+          "limit_up_reason": "液冷服务器+定增扩产+中报预增",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 58269687,
+          "max_seal_money": 269386077.6
+        },
+        {
+          "thscode": "600353.SH",
+          "ticker": "600353",
+          "name": "旭光电子",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 38.28,
+          "price_change_ratio_pct": 10,
+          "limit_up_time": "09:56",
+          "limit_up_reason": "氮化铝+真空灭弧室+可控核聚变+定增过会",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 107624603,
+          "max_seal_money": 1246664645.16
+        },
+        {
+          "thscode": "301591.SZ",
+          "ticker": "301591",
+          "name": "肯特股份",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 37.78,
+          "price_change_ratio_pct": 20.0127,
+          "limit_up_time": "14:37",
+          "limit_up_reason": "PCB覆铜板+PEEK材料+高性能工程塑料",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 92171488,
+          "max_seal_money": 210659768.8
+        },
+        {
+          "thscode": "002655.SZ",
+          "ticker": "002655",
+          "name": "共达电声",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 37.77,
+          "price_change_ratio_pct": 9.9884,
+          "limit_up_time": "09:57",
+          "limit_up_reason": "AI算力+电声元器件+苹果概念+汽车电子",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 112784997,
+          "max_seal_money": 657333972.0
+        },
+        {
+          "thscode": "000603.SZ",
+          "ticker": "000603",
+          "name": "盛达资源",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 36.61,
+          "price_change_ratio_pct": 10.006,
+          "limit_up_time": "13:56",
+          "limit_up_reason": "黄金+白银龙头+铜金矿投产+半年报增长",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 42009975,
+          "max_seal_money": 495439908.32
+        },
+        {
+          "thscode": "600460.SH",
+          "ticker": "600460",
+          "name": "士兰微",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 35.89,
+          "price_change_ratio_pct": 9.9908,
+          "limit_up_time": "09:36",
+          "limit_up_reason": "SiC+功率半导体+IDM模式",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 483488620,
+          "max_seal_money": 3309168828.32
+        },
+        {
+          "thscode": "002903.SZ",
+          "ticker": "002903",
+          "name": "宇环数控",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 33.74,
+          "price_change_ratio_pct": 10.0098,
+          "limit_up_time": "11:02",
+          "limit_up_reason": "机器人+消费电子+数控机床",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 51301670,
+          "max_seal_money": 230842332.0
+        },
+        {
+          "thscode": "002396.SZ",
+          "ticker": "002396",
+          "name": "星网锐捷",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 33.17,
+          "price_change_ratio_pct": 10.0166,
+          "limit_up_time": "09:44",
+          "limit_up_reason": "数据中心交换机+CPO+半年报增长+福建国资",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 239018840,
+          "max_seal_money": 1641867467.39
+        },
+        {
+          "thscode": "002988.SZ",
+          "ticker": "002988",
+          "name": "豪美新材",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 24.11,
+          "price_change_ratio_pct": 9.9909,
+          "limit_up_time": "10:06",
+          "limit_up_reason": "机器人轻量化+AI产业基金+汽车轻量化",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 14796307,
+          "max_seal_money": 261294536.0
+        },
+        {
+          "thscode": "002886.SZ",
+          "ticker": "002886",
+          "name": "沃特股份",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 21.24,
+          "price_change_ratio_pct": 9.9948,
+          "limit_up_time": "14:32",
+          "limit_up_reason": "PTFE薄膜+PCB概念+人形机器人+半年报增长",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 103426056,
+          "max_seal_money": 321435540.0
+        },
+        {
+          "thscode": "002491.SZ",
+          "ticker": "002491",
+          "name": "通鼎互联",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 21.2,
+          "price_change_ratio_pct": 10.0156,
+          "limit_up_time": "14:27",
+          "limit_up_reason": "中报扭亏+光纤光缆+储能安防",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 151230140,
+          "max_seal_money": 930293078.8
+        },
+        {
+          "thscode": "603958.SH",
+          "ticker": "603958",
+          "name": "哈森股份",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 20.55,
+          "price_change_ratio_pct": 10.0107,
+          "limit_up_time": "09:30",
+          "limit_up_reason": "苹果产业链+机器人概念+重组+中报预计扭亏",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 57480405,
+          "max_seal_money": 120404505.0
+        },
+        {
+          "thscode": "603626.SH",
+          "ticker": "603626",
+          "name": "科森科技",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 18.65,
+          "price_change_ratio_pct": 10.0295,
+          "limit_up_time": "09:34",
+          "limit_up_reason": "折叠屏+机器人+消费电子+中报扭亏",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 144720270,
+          "max_seal_money": 296279495.0
+        },
+        {
+          "thscode": "600397.SH",
+          "ticker": "600397",
+          "name": "江钨装备",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 18.14,
+          "price_change_ratio_pct": 10.0061,
+          "limit_up_time": "09:48",
+          "limit_up_reason": "钨钽铌资产注入+磁选装备+江西国资",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 115029368,
+          "max_seal_money": 1176582168.0
+        },
+        {
+          "thscode": "603065.SH",
+          "ticker": "603065",
+          "name": "宿迁联盛",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 17.33,
+          "price_change_ratio_pct": 10.0317,
+          "limit_up_time": "09:49",
+          "limit_up_reason": "磷化铟衬底+光稳定剂",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 16865556,
+          "max_seal_money": 285109694.0
+        },
+        {
+          "thscode": "603095.SH",
+          "ticker": "603095",
+          "name": "越剑智能",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 15.26,
+          "price_change_ratio_pct": 10.0216,
+          "limit_up_time": "09:35",
+          "limit_up_reason": "AI验布机+纺织机械+高端装备",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 65965379,
+          "max_seal_money": 204690010.0
+        },
+        {
+          "thscode": "002017.SZ",
+          "ticker": "002017",
+          "name": "东信和平",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 14.53,
+          "price_change_ratio_pct": 9.9924,
+          "limit_up_time": "09:45",
+          "limit_up_reason": "数字货币+eSIM+央企",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 30427273,
+          "max_seal_money": 256597852.98
+        },
+        {
+          "thscode": "603079.SH",
+          "ticker": "603079",
+          "name": "圣达生物",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 14.03,
+          "price_change_ratio_pct": 10.0392,
+          "limit_up_time": "09:37",
+          "limit_up_reason": "维生素+合成生物+生物保鲜剂+回购",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 267394960,
+          "max_seal_money": 503455326.0
+        },
+        {
+          "thscode": "601177.SH",
+          "ticker": "601177",
+          "name": "杭齿前进",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 13.95,
+          "price_change_ratio_pct": 10.0158,
+          "limit_up_time": "09:30",
+          "limit_up_reason": "半年报增长+机器人关节+齿轮箱龙头+杭州国资",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 38831220,
+          "max_seal_money": 93449655.0
+        },
+        {
+          "thscode": "002209.SZ",
+          "ticker": "002209",
+          "name": "达 意 隆",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 13.16,
+          "price_change_ratio_pct": 10.0334,
+          "limit_up_time": "09:25",
+          "limit_up_reason": "半年报增长+机器人+液态包装装备",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 23922248,
+          "max_seal_money": 243007296.0
+        },
+        {
+          "thscode": "300214.SZ",
+          "ticker": "300214",
+          "name": "日科化学",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 12.9,
+          "price_change_ratio_pct": 20,
+          "limit_up_time": "10:17",
+          "limit_up_reason": "半年报增长+算力租赁+电解液+拟收购亘元新材",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 33102690,
+          "max_seal_money": 395779740.0
+        },
+        {
+          "thscode": "003040.SZ",
+          "ticker": "003040",
+          "name": "楚天龙",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 12.79,
+          "price_change_ratio_pct": 9.9742,
+          "limit_up_time": "09:30",
+          "limit_up_reason": "数字人民币+AI应用+数字政务",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 86539698,
+          "max_seal_money": 364463545.83
+        },
+        {
+          "thscode": "300839.SZ",
+          "ticker": "300839",
+          "name": "博汇股份",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 12.47,
+          "price_change_ratio_pct": 20.0192,
+          "limit_up_time": "09:56",
+          "limit_up_reason": "液冷算力+燃料油深加工+项目投资",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 44995501,
+          "max_seal_money": 307441615.0
+        },
+        {
+          "thscode": "603758.SH",
+          "ticker": "603758",
+          "name": "秦安股份",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 11.76,
+          "price_change_ratio_pct": 10.0094,
+          "limit_up_time": "13:36",
+          "limit_up_reason": "人形机器人+汽车零部件+真空镀膜+超跌反弹",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 34234536,
+          "max_seal_money": 178327464.0
+        },
+        {
+          "thscode": "603803.SH",
+          "ticker": "603803",
+          "name": "瑞斯康达",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 11.32,
+          "price_change_ratio_pct": 10.0097,
+          "limit_up_time": "09:43",
+          "limit_up_reason": "光网络+算力+半年报减亏",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 77434313,
+          "max_seal_money": 372320312.84
+        },
+        {
+          "thscode": "600110.SH",
+          "ticker": "600110",
+          "name": "诺德股份",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 10.74,
+          "price_change_ratio_pct": 10.041,
+          "limit_up_time": "13:27",
+          "limit_up_reason": "铜箔+AI服务器+固态电池+半年报扭亏",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 185503430,
+          "max_seal_money": 1433877165.84
+        },
+        {
+          "thscode": "300016.SZ",
+          "ticker": "300016",
+          "name": "北陆药业",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 10.44,
+          "price_change_ratio_pct": 20,
+          "limit_up_time": "14:30",
+          "limit_up_reason": "集采拟中选+化药+中药",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 56110751,
+          "max_seal_money": 494891182.8
+        },
+        {
+          "thscode": "002716.SZ",
+          "ticker": "002716",
+          "name": "湖南白银",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 10.42,
+          "price_change_ratio_pct": 10.0317,
+          "limit_up_time": "10:40",
+          "limit_up_reason": "半年报增长+白银+湖南国资",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 163236800,
+          "max_seal_money": 1145386458.5
+        },
+        {
+          "thscode": "000710.SZ",
+          "ticker": "000710",
+          "name": "贝瑞基因",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 10.31,
+          "price_change_ratio_pct": 10.032,
+          "limit_up_time": "09:30",
+          "limit_up_reason": "AI医疗+基因测序+三代测序",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 75897065,
+          "max_seal_money": 177766051.0
+        },
+        {
+          "thscode": "002412.SZ",
+          "ticker": "002412",
+          "name": "汉森制药",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 10.19,
+          "price_change_ratio_pct": 10.0432,
+          "limit_up_time": "09:25",
+          "limit_up_reason": "创新药+中药+中报预增",
+          "continue_day_text": "3连板",
+          "continue_day_cnt": 3,
+          "seal_money": 150393620,
+          "max_seal_money": 261038778.88
+        },
+        {
+          "thscode": "603330.SH",
+          "ticker": "603330",
+          "name": "天洋新材",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 9.97,
+          "price_change_ratio_pct": 10.0442,
+          "limit_up_time": "10:06",
+          "limit_up_reason": "CPO+电子胶+半年报预盈+超跌反弹",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 36467169,
+          "max_seal_money": 418570510.0
+        },
+        {
+          "thscode": "603333.SH",
+          "ticker": "603333",
+          "name": "福华尚纬",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 9.85,
+          "price_change_ratio_pct": 10.0559,
+          "limit_up_time": "09:31",
+          "limit_up_reason": "定增落地+特种电缆+电子级氢氟酸",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 58961115,
+          "max_seal_money": 139032750.0
+        },
+        {
+          "thscode": "600785.SH",
+          "ticker": "600785",
+          "name": "新华百货",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 9.74,
+          "price_change_ratio_pct": 10.0565,
+          "limit_up_time": "09:25",
+          "limit_up_reason": "回购+新质零售+区域零售",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 136694240,
+          "max_seal_money": 285847377.2
+        },
+        {
+          "thscode": "002631.SZ",
+          "ticker": "002631",
+          "name": "德尔未来",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 9.54,
+          "price_change_ratio_pct": 10.0346,
+          "limit_up_time": "14:34",
+          "limit_up_reason": "石墨烯+家居+半年报预计减亏",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 111458682,
+          "max_seal_money": 272558754.0
+        },
+        {
+          "thscode": "603318.SH",
+          "ticker": "603318",
+          "name": "水发燃气",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 9.54,
+          "price_change_ratio_pct": 10.0346,
+          "limit_up_time": "09:38",
+          "limit_up_reason": "氦气+燃气轮机+天然气+山东国资",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 38095052,
+          "max_seal_money": 257169274.38
+        },
+        {
+          "thscode": "002045.SZ",
+          "ticker": "002045",
+          "name": "国光电器",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 9.11,
+          "price_change_ratio_pct": 10.0242,
+          "limit_up_time": "14:26",
+          "limit_up_reason": "AI眼镜+智能音箱+PCB概念+锂电池",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 110878038,
+          "max_seal_money": 436156554.8
+        },
+        {
+          "thscode": "600577.SH",
+          "ticker": "600577",
+          "name": "精达股份",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 8.66,
+          "price_change_ratio_pct": 10.0381,
+          "limit_up_time": "10:39",
+          "limit_up_reason": "电磁线+人形机器人+数据中心+可转债赎回完成",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 139346150,
+          "max_seal_money": 606765498.0
+        },
+        {
+          "thscode": "000017.SZ",
+          "ticker": "000017",
+          "name": "深中华A",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 7.11,
+          "price_change_ratio_pct": 10.0619,
+          "limit_up_time": "09:25",
+          "limit_up_reason": "黄金珠宝+黄金涨价+年报增长",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 39809601,
+          "max_seal_money": 138280257.0
+        },
+        {
+          "thscode": "002038.SZ",
+          "ticker": "002038",
+          "name": "双鹭药业",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 7.08,
+          "price_change_ratio_pct": 9.9379,
+          "limit_up_time": "09:25",
+          "limit_up_reason": "mRNA平台+GLP-1+创新药+国企改革",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 127471619,
+          "max_seal_money": 307043606.28
+        },
+        {
+          "thscode": "002449.SZ",
+          "ticker": "002449",
+          "name": "国星光电",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 7.07,
+          "price_change_ratio_pct": 9.9533,
+          "limit_up_time": "11:29",
+          "limit_up_reason": "Micro LED+光耦+先进光电封装+广东国资",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 41063592,
+          "max_seal_money": 135627345.0
+        },
+        {
+          "thscode": "002686.SZ",
+          "ticker": "002686",
+          "name": "亿利达",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 6.72,
+          "price_change_ratio_pct": 9.9836,
+          "limit_up_time": "09:31",
+          "limit_up_reason": "控制权变更+数据中心+风机龙头+国企改革",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 33017712,
+          "max_seal_money": 254059680.0
+        },
+        {
+          "thscode": "601212.SH",
+          "ticker": "601212",
+          "name": "白银有色",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 6.09,
+          "price_change_ratio_pct": 9.9278,
+          "limit_up_time": "09:41",
+          "limit_up_reason": "白银+黄金+多金属综合+锂电材料",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 138522530,
+          "max_seal_money": 566706807.45
+        },
+        {
+          "thscode": "000931.SZ",
+          "ticker": "000931",
+          "name": "中 关 村",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 5.09,
+          "price_change_ratio_pct": 9.9352,
+          "limit_up_time": "09:30",
+          "limit_up_reason": "mRNA疫苗平台+创新药+麻精镇痛+药品获批",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 28100948,
+          "max_seal_money": 108352173.76
+        },
+        {
+          "thscode": "002638.SZ",
+          "ticker": "002638",
+          "name": "勤上股份",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 4.13,
+          "price_change_ratio_pct": 10.1333,
+          "limit_up_time": "14:11",
+          "limit_up_reason": "半导体照明+LED照明+车路云协同+储能",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 32699275,
+          "max_seal_money": 158503618.0
+        }
+      ]
+    },
+    "limit_down": {
+      "total": 0,
+      "item": []
+    },
+    "limit_break": {
+      "total": 0,
+      "item": []
+    },
+    "status": "success",
+    "data_timestamps_ms": [
+      1787502510132,
+      1787502510715,
+      1787502530337
+    ],
+    "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-08-24T00:23:03+08:00",
+      "fetched_at": "2026-08-24T00:28:36+08:00",
       "reported_total": 5549,
       "rows": 5549,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-08-24T00:23:15+08:00",
+      "fetched_at": "2026-08-24T00:28:45+08:00",
       "requested": 5553,
       "matches": 5553,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-08-24T00:23:16+08:00",
+      "fetched_at": "2026-08-24T00:28:46+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-08-24T00:23:19+08:00",
+      "fetched_at": "2026-08-24T00:28:47+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
       "endpoint": "Sina hq.sinajs.cn"
     },
     "hithink_price_check": {
-      "status": "not_configured",
-      "pass": false,
-      "matches": 0
+      "status": "success",
+      "requested": 120,
+      "matches": 120,
+      "price_diff_p95": 0.0,
+      "pass": true,
+      "data_timestamps_ms": [
+        1787502528000,
+        1787502529000
+      ],
+      "endpoint": "HiThink A-share prices snapshot"
     },
     "hithink_sector_source": {
-      "status": "not_configured",
-      "endpoint": null
+      "status": "verified",
+      "endpoint": "HiThink THS index catalog/snapshot/constituents"
     },
     "hithink_special_source": {
-      "status": "not_configured",
-      "endpoint": null
+      "status": "success",
+      "endpoint": "HiThink limit-up/down/break pools"
     }
   },
   "warnings": [
     "Quote timestamp is stale for tail-session use",
-    "Tencent/Sina timestamps are not synchronized for live intraday use",
-    "THS_API_KEY is not configured; independently classified sector breadth is unavailable",
-    "HiThink sector breadth verification did not pass; do not assert a main line from this snapshot"
+    "Tencent/Sina timestamps are not synchronized for live intraday use"
   ],
   "errors": [],
   "methodology": {
@@ -8110,11 +10057,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-08-24T00:23:19+08:00",
+    "completed_at": "2026-08-24T00:29:07+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "32651482694",
+    "run_id": "32651767774",
     "run_attempt": "1",
     "event_name": "push",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/32651482694"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/32651767774"
   }
 }

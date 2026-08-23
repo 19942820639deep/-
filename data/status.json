@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "run_status": "success",
-  "started_at": "2026-08-24T00:22:57+08:00",
-  "completed_at": "2026-08-24T00:23:19+08:00",
+  "started_at": "2026-08-24T00:28:30+08:00",
+  "completed_at": "2026-08-24T00:29:07+08:00",
   "snapshot_updated": true,
-  "snapshot_generated_at": "2026-08-24T00:22:57+08:00",
+  "snapshot_generated_at": "2026-08-24T00:28:30+08:00",
   "trade_date": "2026-08-21",
   "valid_for_tail_selection": false,
   "validity_profiles": {
@@ -16,7 +16,7 @@
   "validation": {
     "current_trade_day": false,
     "latest_trade_time": "2026-08-21T16:15:00+08:00",
-    "freshness_seconds": 202077.4,
+    "freshness_seconds": 202410.7,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5271,
@@ -33,17 +33,17 @@
     "midday_secondary_time_pass": false,
     "midday_price_cross_pass": true,
     "midday_close_pass": false,
-    "hithink_configured": false,
-    "hithink_price_cross_matches": 0,
-    "hithink_price_diff_p95": null,
-    "hithink_price_cross_pass": false,
-    "hithink_sector_count": 0,
-    "sector_data_pass": false
+    "hithink_configured": true,
+    "hithink_price_cross_matches": 120,
+    "hithink_price_diff_p95": 0.0,
+    "hithink_price_cross_pass": true,
+    "hithink_sector_count": 12,
+    "sector_data_pass": true
   },
   "errors": [],
   "repository": "19942820639deep/-",
-  "run_id": "32651482694",
+  "run_id": "32651767774",
   "run_attempt": "1",
   "event_name": "push",
-  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/32651482694"
+  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/32651767774"
 }

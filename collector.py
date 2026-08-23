@@ -4,7 +4,7 @@
 Tencent provides the full universe and detailed quotes. Sina independently
 checks liquid candidates. When ``THS_API_KEY`` is configured, the official
 HiThink Financial API adds independently classified sector breadth and special
-market pools. A stale or incomplete snapshot is never marked valid.
+market pools. GitHub Actions injects the repository secret as ``THS_API_KEY``. A stale or incomplete snapshot is never marked valid.
 """
 from __future__ import annotations
 

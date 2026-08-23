@@ -1,6 +1,6 @@
 {
-  "schema_version": "2.0.0",
-  "generated_at": "2026-08-24T00:12:04+08:00",
+  "schema_version": "2.1.0",
+  "generated_at": "2026-08-24T00:22:57+08:00",
   "trade_date": "2026-08-21",
   "is_trading_day": false,
   "valid_for_tail_selection": false,
@@ -13,7 +13,7 @@
   "validation": {
     "current_trade_day": false,
     "latest_trade_time": "2026-08-21T16:15:00+08:00",
-    "freshness_seconds": 201424.4,
+    "freshness_seconds": 202077.4,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5271,
@@ -4871,7 +4871,7 @@
       "pct_60d": 37.01,
       "prev_close": 24.76,
       "open": 23.5,
-      "trade_time": "2026-08-21T15:33:13+08:00",
+      "trade_time": "2026-08-21T15:33:40+08:00",
       "high": 27.6,
       "low": 23.15
     },
@@ -8036,7 +8036,7 @@
         "pct_60d": 37.01,
         "prev_close": 24.76,
         "open": 23.5,
-        "trade_time": "2026-08-21T15:33:13+08:00",
+        "trade_time": "2026-08-21T15:33:40+08:00",
         "high": 27.6,
         "low": 23.15
       }
@@ -8052,27 +8052,27 @@
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-08-24T00:12:10+08:00",
+      "fetched_at": "2026-08-24T00:23:03+08:00",
       "reported_total": 5549,
       "rows": 5549,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-08-24T00:12:23+08:00",
+      "fetched_at": "2026-08-24T00:23:15+08:00",
       "requested": 5553,
       "matches": 5553,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-08-24T00:12:23+08:00",
+      "fetched_at": "2026-08-24T00:23:16+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-08-24T00:12:26+08:00",
+      "fetched_at": "2026-08-24T00:23:19+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
@@ -8110,11 +8110,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-08-24T00:12:26+08:00",
+    "completed_at": "2026-08-24T00:23:19+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "32650921475",
+    "run_id": "32651482694",
     "run_attempt": "1",
     "event_name": "push",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/32650921475"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/32651482694"
   }
 }

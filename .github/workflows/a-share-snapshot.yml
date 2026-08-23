@@ -46,6 +46,10 @@ jobs:
       - name: Collect and validate
         id: collect
         continue-on-error: true
+        env:
+          # Configure in Settings > Secrets and variables > Actions.
+          # GitHub masks the value; collector.py never serializes it.
+          THS_API_KEY: ${{ secrets.THS_API_KEY }}
         run: python collector.py
       - name: Run logic tests
         id: tests

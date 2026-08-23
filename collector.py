@@ -2,7 +2,9 @@
 """Build a free, timestamped A-share snapshot on GitHub Actions.
 
 Tencent provides the full universe and detailed quotes. Sina independently
-checks liquid candidates. A stale or incomplete snapshot is never marked valid.
+checks liquid candidates. When ``THS_API_KEY`` is configured, the official
+HiThink Financial API adds independently classified sector breadth and special
+market pools. A stale or incomplete snapshot is never marked valid.
 """
 from __future__ import annotations
 
@@ -24,16 +26,19 @@ STATUS_PATH = ROOT / "data" / "status.json"
 TX_RANK = "https://proxy.finance.qq.com/cgi/cgi-bin/rank/hs/getBoardRankList"
 TX_QUOTE = "https://qt.gtimg.cn/q="
 SINA_QUOTE = "https://hq.sinajs.cn/list="
+THS_BASE = "https://fuyao.aicubes.cn"
 INDEX_SYMBOLS = {"上证指数":"sh000001", "深证成指":"sz399001", "创业板指":"sz399006", "科创50":"sh000688"}
 
 class CollectorError(RuntimeError): pass
 
 class HttpClient:
     def get(self, url: str, params: dict[str, Any] | None = None, timeout: float = 25,
-            referer: str = "https://gu.qq.com/") -> bytes:
+            referer: str = "https://gu.qq.com/", headers: dict[str,str] | None = None) -> bytes:
         if params: url = f"{url}?{urlencode(params)}"
-        req = Request(url, headers={"User-Agent":"Mozilla/5.0 AppleWebKit/537.36 Chrome/124 Safari/537.36",
-                                    "Accept":"application/json,text/plain,*/*", "Referer":referer})
+        request_headers={"User-Agent":"Mozilla/5.0 AppleWebKit/537.36 Chrome/124 Safari/537.36",
+                         "Accept":"application/json,text/plain,*/*", "Referer":referer}
+        request_headers.update(headers or {})
+        req = Request(url, headers=request_headers)
         with urlopen(req, timeout=timeout) as response: return response.read()
 
 def now_shanghai() -> datetime: return datetime.now(tz=SH_TZ)
@@ -77,6 +82,130 @@ def get_json(client: HttpClient, url: str, params: dict[str, Any], retries: int 
             error = exc
             if attempt < retries: time.sleep(attempt)
     raise CollectorError(f"GET {url} failed: {error}")
+
+def get_ths_json(client: HttpClient, path: str, params: dict[str,Any], api_key: str,
+                 retries: int = 3) -> dict[str,Any]:
+    """Call the official HiThink REST API without ever serializing the key."""
+    error = None
+    for attempt in range(1,retries+1):
+        try:
+            raw=client.get(THS_BASE+path,params=params,referer=THS_BASE+"/",
+                           headers={"X-api-key":api_key})
+            payload=json.loads(raw.decode("utf-8"))
+            if safe_int(payload.get("code")) != 0:
+                raise CollectorError(f"HiThink {path}: code={payload.get('code')} message={payload.get('message')}")
+            data=payload.get("data")
+            if not isinstance(data,dict): raise CollectorError(f"HiThink {path}: missing data object")
+            return data
+        except (HTTPError,URLError,TimeoutError,OSError,ValueError,CollectorError) as exc:
+            error=exc
+            if attempt < retries: time.sleep(attempt)
+    raise CollectorError(f"HiThink {path} failed: {error}")
+
+def tx_to_thscode(symbol: str) -> str | None:
+    if not re.fullmatch(r"(?:sh|sz|bj)\d{6}",symbol): return None
+    suffix={"sh":"SH","sz":"SZ","bj":"BJ"}[symbol[:2]]
+    return f"{symbol[2:]}.{suffix}"
+
+def thscode_to_tx(thscode: str) -> str | None:
+    m=re.fullmatch(r"(\d{6})\.(SH|SZ|BJ)",str(thscode).upper())
+    if not m:return None
+    return {"SH":"sh","SZ":"sz","BJ":"bj"}[m.group(2)]+m.group(1)
+
+def ths_snapshot_batches(client: HttpClient, path: str, codes: list[str], api_key: str,
+                         batch: int = 80) -> tuple[list[dict[str,Any]],list[int]]:
+    rows=[]; timestamps=[]
+    for start in range(0,len(codes),batch):
+        data=get_ths_json(client,path,{"thscodes":",".join(codes[start:start+batch])},api_key)
+        rows.extend(data.get("item") or [])
+        stamp=safe_int(data.get("timestamp"))
+        if stamp:timestamps.append(stamp)
+    return rows,timestamps
+
+def fetch_hithink_price_cross(client: HttpClient, api_key: str,
+                              candidates: list[dict[str,Any]]) -> dict[str,Any]:
+    selected=candidates[:120]
+    codes=[x for x in (tx_to_thscode(s["symbol"]) for s in selected) if x]
+    rows,timestamps=ths_snapshot_batches(client,"/api/a-share/prices/snapshot",codes,api_key)
+    by_symbol={thscode_to_tx(str(row.get("thscode") or "")):row for row in rows}
+    diffs=[]; matches=0
+    for stock in selected:
+        alt=by_symbol.get(stock["symbol"])
+        primary=safe_float(stock.get("last")); secondary=safe_float((alt or {}).get("last_price"))
+        if primary and secondary:
+            diff=abs(primary-secondary)/primary; diffs.append(diff); matches+=1
+            stock["hithink_last"]=secondary
+            stock["hithink_price_diff"]=round(diff,6)
+    p95=percentile(diffs,.95)
+    return {"status":"success","requested":len(codes),"matches":matches,
+            "price_diff_p95":round(p95,6) if p95 is not None else None,
+            "pass":bool(matches>=30 and p95 is not None and p95<=.003),
+            "data_timestamps_ms":timestamps,"endpoint":"HiThink A-share prices snapshot"}
+
+def fetch_hithink_special_pools(client: HttpClient, api_key: str) -> dict[str,Any]:
+    output={}; timestamps=[]
+    for name,path in (("limit_up","limit-up-pool"),("limit_down","limit-down-pool"),
+                      ("limit_break","limit-break-pool")):
+        data=get_ths_json(client,f"/api/a-share/special-data/{path}",{"page":1,"size":200},api_key)
+        page=data.get("pagination") or {}; rows=data.get("item") or []
+        output[name]={"total":safe_int(page.get("total")) if page else len(rows),"item":rows}
+        stamp=safe_int(data.get("timestamp"))
+        if stamp:timestamps.append(stamp)
+    output.update({"status":"success","data_timestamps_ms":timestamps,
+                   "endpoint":"HiThink limit-up/down/break pools"})
+    return output
+
+def fetch_hithink_sectors(client: HttpClient, api_key: str,
+                          stocks: list[dict[str,Any]], top_n: int = 6) -> dict[str,Any]:
+    """Rank THS industry/concept indices, then verify leaders with constituent breadth."""
+    catalog=[]; timestamps=[]
+    for tag in ("industry","cn_concept"):
+        data=get_ths_json(client,"/api/a-share-index/catalog/ths-index-list",{"tag":tag},api_key)
+        stamp=safe_int(data.get("timestamp"))
+        if stamp:timestamps.append(stamp)
+        for row in data.get("item") or []:
+            if row.get("thscode"):catalog.append({**row,"tag":tag})
+    codes=[str(row["thscode"]) for row in catalog]
+    prices,price_timestamps=ths_snapshot_batches(client,"/api/a-share-index/prices/snapshot",codes,api_key)
+    timestamps.extend(price_timestamps)
+    meta={str(row["thscode"]):row for row in catalog}
+    ranked=[]
+    for row in prices:
+        pct=safe_float(row.get("price_change_ratio_pct")); code=str(row.get("thscode") or "")
+        if pct is None or code not in meta:continue
+        ranked.append({**meta[code],"pct":pct,"last":safe_float(row.get("last_price")),
+                       "amount":safe_float(row.get("turnover"))})
+    # Keep both taxonomies represented; duplicates by name are de-duplicated.
+    selected=[]; seen=set()
+    for tag in ("industry","cn_concept"):
+        for row in sorted((x for x in ranked if x["tag"]==tag),key=lambda x:x["pct"],reverse=True)[:top_n]:
+            if row["name"] not in seen:selected.append(row);seen.add(row["name"])
+    stock_map={s["symbol"]:s for s in stocks}; verified=[]
+    for sector in selected:
+        data=get_ths_json(client,"/api/a-share-index/constituents/ths-stock-list",
+                          {"thscode":sector["thscode"]},api_key)
+        stamp=safe_int(data.get("timestamp"))
+        if stamp:timestamps.append(stamp)
+        members=[]
+        for member in data.get("item") or []:
+            symbol=thscode_to_tx(str(member.get("thscode") or "")); quote=stock_map.get(symbol or "")
+            if quote and quote.get("pct") is not None:
+                members.append({"symbol":symbol,"code":quote["code"],"name":member.get("name") or quote.get("name"),
+                                "pct":quote["pct"],"amount":quote.get("amount"),"last":quote.get("last")})
+        if len(members)<3:continue
+        pcts=[float(x["pct"]) for x in members]; up=sum(x>0 for x in pcts); down=sum(x<0 for x in pcts)
+        leaders=sorted(members,key=lambda x:(x.get("amount") or 0),reverse=True)[:5]
+        verified.append({**sector,"constituent_count":len(data.get("item") or []),"priced_count":len(members),
+                         "up":up,"down":down,"flat":len(members)-up-down,"breadth_up_ratio":round(up/len(members),4),
+                         "median_constituent_pct":round(statistics.median(pcts),4),
+                         "average_constituent_pct":round(statistics.fmean(pcts),4),
+                         "constituent_turnover":round(sum(x.get("amount") or 0 for x in members),2),
+                         "capacity_leaders":leaders})
+    verified.sort(key=lambda x:(x["pct"],x["breadth_up_ratio"]),reverse=True)
+    return {"status":"verified" if len(verified)>=6 else "insufficient","verified_count":len(verified),
+            "pass":len(verified)>=6,"top_sectors":verified,"data_timestamps_ms":timestamps,
+            "rule":"Sector conclusions require index strength, constituent breadth and at least three priced constituents.",
+            "endpoint":"HiThink THS index catalog/snapshot/constituents"}
 
 def fetch_tencent_rank(client: HttpClient, count: int = 200, workers: int = 6) -> tuple[list[dict[str,Any]],dict[str,Any]]:
     base = {"_appver":"11.17.0", "board_code":"aStock", "sort_type":"price", "direct":"down", "count":count}
@@ -214,6 +343,7 @@ def choose_candidates(stocks: list[dict[str,Any]]) -> list[dict[str,Any]]:
 
 def build_snapshot() -> dict[str,Any]:
     generated=now_shanghai(); previous=load_previous(); client=HttpClient(); warnings=[]; errors=[]
+    ths_api_key=os.environ.get("THS_API_KEY","").strip()
     raw,rank_meta=fetch_tencent_rank(client); stocks=[normalize_rank(x) for x in raw]; stocks=[s for s in stocks if s["symbol"] and s["name"]]
     details,detail_meta=fetch_tencent_detail(client,[s["symbol"] for s in stocks]+list(INDEX_SYMBOLS.values()))
     trade_times=[]
@@ -257,6 +387,22 @@ def build_snapshot() -> dict[str,Any]:
                 secondary_trade_times.append(datetime.fromisoformat(alt["trade_time"]))
             if alt.get("trade_time") and s.get("trade_time"):
                 time_diffs.append(abs((datetime.fromisoformat(s["trade_time"])-datetime.fromisoformat(alt["trade_time"])).total_seconds()))
+    hithink_price={"status":"not_configured","pass":False,"matches":0}
+    hithink_sectors={"status":"not_configured","pass":False,"top_sectors":[]}
+    hithink_special={"status":"not_configured"}
+    if ths_api_key:
+        with ThreadPoolExecutor(max_workers=3) as pool:
+            jobs={"price":pool.submit(fetch_hithink_price_cross,client,ths_api_key,candidates),
+                  "sectors":pool.submit(fetch_hithink_sectors,client,ths_api_key,stocks),
+                  "special":pool.submit(fetch_hithink_special_pools,client,ths_api_key)}
+            for name,future in jobs.items():
+                try:
+                    result=future.result()
+                    if name=="price":hithink_price=result
+                    elif name=="sectors":hithink_sectors=result
+                    else:hithink_special=result
+                except Exception as exc:
+                    errors.append(f"HiThink {name}: {exc}")
     secondary_close_anchor=median_datetime(secondary_trade_times)
     latest=max(trade_times) if trade_times else None; trade_date=latest.date().isoformat() if latest else None
     current=bool(latest and latest.date()==generated.date()); freshness=max(0,(generated-latest).total_seconds()) if latest else None
@@ -283,8 +429,13 @@ def build_snapshot() -> dict[str,Any]:
             "midday_execution_window_pass":midday_execution_window,
             "midday_secondary_time_pass":midday_secondary_time_pass,
             "midday_price_cross_pass":price_cross,"midday_close_pass":midday_analysis,
-            "sector_data_pass":False}
+            "hithink_configured":bool(ths_api_key),"hithink_price_cross_matches":safe_int(hithink_price.get("matches")) or 0,
+            "hithink_price_diff_p95":safe_float(hithink_price.get("price_diff_p95")),
+            "hithink_price_cross_pass":bool(hithink_price.get("pass")),
+            "hithink_sector_count":safe_int(hithink_sectors.get("verified_count")) or 0,
+            "sector_data_pass":bool(hithink_sectors.get("pass"))}
     valid=all((current,fresh,coverage,index_pass,cross))
+    tail_valid=bool(valid and hithink_price.get("pass") and hithink_sectors.get("pass"))
     if not fresh:warnings.append("Quote timestamp is stale for tail-session use")
     if not coverage:warnings.append("Full-market detailed quote coverage below threshold")
     if not price_cross:warnings.append("Tencent/Sina price cross-check failed")
@@ -292,19 +443,28 @@ def build_snapshot() -> dict[str,Any]:
         warnings.append("Live cross-source timestamps diverge during lunch; midday close accepted from the 11:30 secondary anchor and matching prices")
     elif not time_cross:
         warnings.append("Tencent/Sina timestamps are not synchronized for live intraday use")
-    warnings.append("No independently verified live sector taxonomy; confirm a separate sector table and multiple constituents")
+    if not ths_api_key:
+        warnings.append("THS_API_KEY is not configured; independently classified sector breadth is unavailable")
+    elif not hithink_price.get("pass"):
+        warnings.append("HiThink candidate price cross-check did not pass")
+    if not hithink_sectors.get("pass"):
+        warnings.append("HiThink sector breadth verification did not pass; do not assert a main line from this snapshot")
     return {"schema_version":"2.0.0","generated_at":iso(generated),"trade_date":trade_date,"is_trading_day":current,
-            "valid_for_tail_selection":valid,"validity_profiles":{"live_intraday":live_analysis,"midday_close":midday_analysis,
+            "valid_for_tail_selection":tail_valid,"validity_profiles":{"live_intraday":live_analysis,"midday_close":midday_analysis,
             "previous_close":previous_close_analysis,"core_market_data":core},"validation":checks,"market":market,"indices":indices,"candidates":candidates,
             "market_segments":{"main":[s for s in candidates if s["code"].startswith(("600","601","603","605","000","001","002","003"))][:30],
                                "chinext":[s for s in candidates if s["code"].startswith(("300","301"))][:30],
                                "star":[s for s in candidates if s["code"].startswith(("688","689"))][:30],
                                "beijing":[s for s in candidates if s["symbol"].startswith("bj")][:20]},
-            "sector_data":{"status":"unavailable","rule":"Do not infer a main line from this snapshot alone; verify a live sector table and multiple constituents."},
+            "sector_data":hithink_sectors,"special_data":hithink_special,
             "sources":{"tencent_full_market":rank_meta,"tencent_detailed_quotes":detail_meta,
-                       "tencent_candidate_refresh":refresh_meta,"sina_independent_check":sina_meta},
-            "warnings":warnings,"errors":errors,"methodology":{"primary":"Tencent full-market rank plus detailed quotes","secondary":"Sina detailed quotes for liquid candidates",
-            "breadth_limits_turnover":"recomputed from full-market detailed quotes","sector_limit":"sector taxonomy not asserted without an independent source",
+                       "tencent_candidate_refresh":refresh_meta,"sina_independent_check":sina_meta,
+                       "hithink_price_check":hithink_price,
+                       "hithink_sector_source":{"status":hithink_sectors.get("status"),"endpoint":hithink_sectors.get("endpoint")},
+                       "hithink_special_source":{"status":hithink_special.get("status"),"endpoint":hithink_special.get("endpoint")}},
+            "warnings":warnings,"errors":errors,"methodology":{"primary":"Tencent full-market rank plus detailed quotes","secondary":"Sina and HiThink candidate-price checks",
+            "breadth_limits_turnover":"recomputed from full-market detailed quotes; HiThink special pools retained separately",
+            "sector_limit":"HiThink sector index strength is verified against Tencent constituent breadth and capacity leaders",
             "cross_source_timing":"Live intraday use requires near-synchronous quotes. During the lunch break, the 11:30 Sina consensus timestamp anchors the close while Tencent may advance its display timestamp; prices must still match.",
             "midday_close":"Valid from 11:29 through 13:00 when the secondary consensus timestamp is 11:29-11:35 on the trade date and cross-source prices pass.",
             "technical":"EMA is auxiliary and omitted while no stable free 60-minute source is verified"}}

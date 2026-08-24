@@ -17,7 +17,7 @@ on:
     - cron: "42,47,52,57 3 * * 1-5"
     # 12:02 through 12:12 backup runs; lunch-close validation accepts delay.
     - cron: "2,7,12 4 * * 1-5"
-    # 14:12 through 14:52 every five minutes.
+    # 14:12 through 14:52 every five minutes; odd-minute retries reduce missed tail snapshots.
     - cron: "12,17,22,27,32,37,42,47,52 6 * * 1-5"
     # 15:02 through 15:12 (final close snapshot for the next premarket plan).
     - cron: "2,7,12 7 * * 1-5"

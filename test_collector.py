@@ -9,7 +9,8 @@ from unittest import mock
 import collector
 from collector import (CollectorError, ema, fetch_hithink_price_cross, get_ths_json,
                        limit_price, market_summary, midday_close_profile,
-                       price_limit_ratio, thscode_to_tx, tx_to_thscode)
+                       price_limit_ratio, reprice_cached_sector_breadth,
+                       thscode_to_tx, tx_to_thscode)
 
 
 class CollectorLogicTests(unittest.TestCase):
@@ -63,6 +64,33 @@ class CollectorLogicTests(unittest.TestCase):
         self.assertEqual(summary["non_st_count"], 2)
         self.assertEqual(summary["limit_up_non_st"], 2)
         self.assertEqual(summary["turnover_amount"], 3.1e9)
+
+    def test_cached_sector_memberships_are_repriced_with_live_quotes(self):
+        previous={"trade_date":"2026-08-26","generated_at":"2026-08-26T12:00:00+08:00",
+                  "sector_data":{"top_sectors":[]}}
+        stocks=[]
+        for sector_index in range(6):
+            members=[]
+            for member_index in range(3):
+                code=f"60{sector_index}{member_index:03d}"; symbol=f"sh{code}"
+                members.append({"symbol":symbol,"code":code,"name":f"股票{sector_index}-{member_index}"})
+                stocks.append({"symbol":symbol,"code":code,"name":f"股票{sector_index}-{member_index}",
+                               "pct":float(sector_index+member_index+1),"amount":1e9+member_index,"last":10.0})
+            previous["sector_data"]["top_sectors"].append(
+                {"thscode":f"884{sector_index:03d}.TI","name":f"板块{sector_index}",
+                 "tag":"industry","constituents":members})
+        result=reprice_cached_sector_breadth(previous,stocks,"2026-08-26")
+        self.assertTrue(result["pass"])
+        self.assertEqual(result["verified_count"],6)
+        self.assertFalse(result["supports_new_sector_discovery"])
+        self.assertEqual(result["top_sectors"][0]["name"],"板块5")
+        self.assertEqual(result["top_sectors"][0]["priced_count"],3)
+
+    def test_cached_sector_fallback_rejects_other_trade_day(self):
+        previous={"trade_date":"2026-08-25","sector_data":{"top_sectors":[]}}
+        result=reprice_cached_sector_breadth(previous,[],"2026-08-26")
+        self.assertFalse(result["pass"])
+        self.assertEqual(result["status"],"cache_unavailable")
 
     def test_midday_accepts_tencent_clock_advance_when_sina_anchors_close(self):
         tz = ZoneInfo("Asia/Shanghai")

@@ -186,9 +186,13 @@ def fetch_hithink_sectors(client: HttpClient, api_key: str,
                           {"thscode":sector["thscode"]},api_key)
         stamp=safe_int(data.get("timestamp"))
         if stamp:timestamps.append(stamp)
-        members=[]
+        constituents=[]; members=[]
         for member in data.get("item") or []:
-            symbol=thscode_to_tx(str(member.get("thscode") or "")); quote=stock_map.get(symbol or "")
+            symbol=thscode_to_tx(str(member.get("thscode") or ""))
+            if symbol:
+                constituents.append({"symbol":symbol,"code":symbol[2:],
+                                     "name":member.get("name")})
+            quote=stock_map.get(symbol or "")
             if quote and quote.get("pct") is not None:
                 members.append({"symbol":symbol,"code":quote["code"],"name":member.get("name") or quote.get("name"),
                                 "pct":quote["pct"],"amount":quote.get("amount"),"last":quote.get("last")})
@@ -200,12 +204,59 @@ def fetch_hithink_sectors(client: HttpClient, api_key: str,
                          "median_constituent_pct":round(statistics.median(pcts),4),
                          "average_constituent_pct":round(statistics.fmean(pcts),4),
                          "constituent_turnover":round(sum(x.get("amount") or 0 for x in members),2),
-                         "capacity_leaders":leaders})
+                         "capacity_leaders":leaders,"constituents":constituents})
     verified.sort(key=lambda x:(x["pct"],x["breadth_up_ratio"]),reverse=True)
     return {"status":"verified" if len(verified)>=6 else "insufficient","verified_count":len(verified),
             "pass":len(verified)>=6,"top_sectors":verified,"data_timestamps_ms":timestamps,
+            "supports_new_sector_discovery":True,
             "rule":"Sector conclusions require index strength, constituent breadth and at least three priced constituents.",
             "endpoint":"HiThink THS index catalog/snapshot/constituents"}
+
+def reprice_cached_sector_breadth(previous: dict[str,Any] | None,
+                                  stocks: list[dict[str,Any]],
+                                  trade_date: str | None,
+                                  minimum_sectors: int = 6) -> dict[str,Any]:
+    """Recompute same-day cached sector memberships from current stock quotes."""
+    prior_sector=(previous or {}).get("sector_data") or {}
+    if not trade_date or (previous or {}).get("trade_date") != trade_date:
+        return {"status":"cache_unavailable","pass":False,"verified_count":0,
+                "top_sectors":[],"supports_new_sector_discovery":False}
+    stock_map={s.get("symbol"):s for s in stocks if s.get("symbol")}
+    verified=[]
+    for sector in prior_sector.get("top_sectors") or []:
+        constituents=sector.get("constituents") or []
+        members=[]
+        for member in constituents:
+            quote=stock_map.get(member.get("symbol"))
+            if quote and quote.get("pct") is not None:
+                members.append({"symbol":quote["symbol"],"code":quote["code"],
+                                "name":member.get("name") or quote.get("name"),
+                                "pct":quote["pct"],"amount":quote.get("amount"),
+                                "last":quote.get("last")})
+        expected=len(constituents)
+        if len(members)<3 or not expected or len(members)/expected<.8:continue
+        pcts=[float(x["pct"]) for x in members]; up=sum(x>0 for x in pcts); down=sum(x<0 for x in pcts)
+        leaders=sorted(members,key=lambda x:x.get("amount") or 0,reverse=True)[:5]
+        average=round(statistics.fmean(pcts),4)
+        verified.append({"thscode":sector.get("thscode"),"name":sector.get("name"),
+                         "tag":sector.get("tag"),"pct":average,"last":None,
+                         "amount":round(sum(x.get("amount") or 0 for x in members),2),
+                         "constituent_count":expected,"priced_count":len(members),
+                         "up":up,"down":down,"flat":len(members)-up-down,
+                         "breadth_up_ratio":round(up/len(members),4),
+                         "median_constituent_pct":round(statistics.median(pcts),4),
+                         "average_constituent_pct":average,
+                         "constituent_turnover":round(sum(x.get("amount") or 0 for x in members),2),
+                         "capacity_leaders":leaders,"constituents":constituents,
+                         "index_method":"live constituent equal-weight proxy"})
+    verified.sort(key=lambda x:(x["average_constituent_pct"],x["breadth_up_ratio"]),reverse=True)
+    passed=len(verified)>=minimum_sectors
+    return {"status":"cached_classification_live_reprice" if passed else "cache_insufficient",
+            "verified_count":len(verified),"pass":passed,"top_sectors":verified,
+            "classification_generated_at":(previous or {}).get("generated_at"),
+            "classification_trade_date":trade_date,"supports_new_sector_discovery":False,
+            "rule":"Same-day verified memberships are cached; all breadth, strength and leaders are recomputed from live full-market quotes.",
+            "endpoint":"cached HiThink constituents + Tencent live quotes"}
 
 def fetch_tencent_rank(client: HttpClient, count: int = 200, workers: int = 6) -> tuple[list[dict[str,Any]],dict[str,Any]]:
     base = {"_appver":"11.17.0", "board_code":"aStock", "sort_type":"price", "direct":"down", "count":count}
@@ -405,6 +456,10 @@ def build_snapshot() -> dict[str,Any]:
                     errors.append(f"HiThink {name}: {exc}")
     secondary_close_anchor=median_datetime(secondary_trade_times)
     latest=max(trade_times) if trade_times else None; trade_date=latest.date().isoformat() if latest else None
+    sector_data=hithink_sectors
+    if not hithink_sectors.get("pass"):
+        cached_sectors=reprice_cached_sector_breadth(previous,stocks,trade_date)
+        if cached_sectors.get("pass"):sector_data=cached_sectors
     current=bool(latest and latest.date()==generated.date()); freshness=max(0,(generated-latest).total_seconds()) if latest else None
     previous_count=safe_int(((previous or {}).get("market") or {}).get("universe_count")) or 0; floor=max(5000,math.floor(previous_count*.95))
     ratio=market["valid_count"]/len(stocks) if stocks else 0; p95=percentile(diffs,.95); time_p95=percentile(time_diffs,.95)
@@ -433,9 +488,11 @@ def build_snapshot() -> dict[str,Any]:
             "hithink_price_diff_p95":safe_float(hithink_price.get("price_diff_p95")),
             "hithink_price_cross_pass":bool(hithink_price.get("pass")),
             "hithink_sector_count":safe_int(hithink_sectors.get("verified_count")) or 0,
-            "sector_data_pass":bool(hithink_sectors.get("pass"))}
+            "sector_data_pass":bool(sector_data.get("pass")),
+            "sector_data_source":sector_data.get("status"),
+            "sector_supports_new_sector_discovery":bool(sector_data.get("supports_new_sector_discovery"))}
     valid=all((current,fresh,coverage,index_pass,cross))
-    tail_valid=bool(valid and hithink_price.get("pass") and hithink_sectors.get("pass"))
+    tail_valid=bool(valid and sector_data.get("pass"))
     if not fresh:warnings.append("Quote timestamp is stale for tail-session use")
     if not coverage:warnings.append("Full-market detailed quote coverage below threshold")
     if not price_cross:warnings.append("Tencent/Sina price cross-check failed")
@@ -443,12 +500,16 @@ def build_snapshot() -> dict[str,Any]:
         warnings.append("Live cross-source timestamps diverge during lunch; midday close accepted from the 11:30 secondary anchor and matching prices")
     elif not time_cross:
         warnings.append("Tencent/Sina timestamps are not synchronized for live intraday use")
-    if not ths_api_key:
+    if not ths_api_key and not sector_data.get("pass"):
         warnings.append("THS_API_KEY is not configured; independently classified sector breadth is unavailable")
-    elif not hithink_price.get("pass"):
-        warnings.append("HiThink candidate price cross-check did not pass")
-    if not hithink_sectors.get("pass"):
+    elif not ths_api_key:
+        warnings.append("THS_API_KEY is unavailable; same-day cached classifications were repriced with live full-market quotes")
+    if ths_api_key and not hithink_price.get("pass"):
+        warnings.append("Optional HiThink tertiary candidate price cross-check did not pass; Tencent/Sina cross-check remains authoritative")
+    if not sector_data.get("pass"):
         warnings.append("HiThink sector breadth verification did not pass; do not assert a main line from this snapshot")
+    elif not sector_data.get("supports_new_sector_discovery"):
+        warnings.append("Cached sector fallback verifies known same-day leaders but cannot discover a brand-new afternoon sector")
     return {"schema_version":"2.1.0","generated_at":iso(generated),"trade_date":trade_date,"is_trading_day":current,
             "valid_for_tail_selection":tail_valid,"validity_profiles":{"live_intraday":live_analysis,"midday_close":midday_analysis,
             "previous_close":previous_close_analysis,"core_market_data":core},"validation":checks,"market":market,"indices":indices,"candidates":candidates,
@@ -456,7 +517,7 @@ def build_snapshot() -> dict[str,Any]:
                                "chinext":[s for s in candidates if s["code"].startswith(("300","301"))][:30],
                                "star":[s for s in candidates if s["code"].startswith(("688","689"))][:30],
                                "beijing":[s for s in candidates if s["symbol"].startswith("bj")][:20]},
-            "sector_data":hithink_sectors,"special_data":hithink_special,
+            "sector_data":sector_data,"special_data":hithink_special,
             "sources":{"tencent_full_market":rank_meta,"tencent_detailed_quotes":detail_meta,
                        "tencent_candidate_refresh":refresh_meta,"sina_independent_check":sina_meta,
                        "hithink_price_check":hithink_price,

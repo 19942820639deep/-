@@ -215,10 +215,18 @@ def fetch_hithink_sectors(client: HttpClient, api_key: str,
 def reprice_cached_sector_breadth(previous: dict[str,Any] | None,
                                   stocks: list[dict[str,Any]],
                                   trade_date: str | None,
-                                  minimum_sectors: int = 6) -> dict[str,Any]:
-    """Recompute same-day cached sector memberships from current stock quotes."""
+                                  minimum_sectors: int = 6,
+                                  max_classification_age_days: int = 7) -> dict[str,Any]:
+    """Recompute recent cached sector memberships from current stock quotes."""
     prior_sector=(previous or {}).get("sector_data") or {}
-    if not trade_date or (previous or {}).get("trade_date") != trade_date:
+    classification_trade_date=(prior_sector.get("classification_trade_date")
+                               or (previous or {}).get("trade_date"))
+    try:
+        age_days=(datetime.fromisoformat(str(trade_date)).date()
+                  - datetime.fromisoformat(str(classification_trade_date)).date()).days
+    except (TypeError,ValueError):
+        age_days=max_classification_age_days+1
+    if age_days<0 or age_days>max_classification_age_days:
         return {"status":"cache_unavailable","pass":False,"verified_count":0,
                 "top_sectors":[],"supports_new_sector_discovery":False}
     stock_map={s.get("symbol"):s for s in stocks if s.get("symbol")}
@@ -253,9 +261,11 @@ def reprice_cached_sector_breadth(previous: dict[str,Any] | None,
     passed=len(verified)>=minimum_sectors
     return {"status":"cached_classification_live_reprice" if passed else "cache_insufficient",
             "verified_count":len(verified),"pass":passed,"top_sectors":verified,
-            "classification_generated_at":(previous or {}).get("generated_at"),
-            "classification_trade_date":trade_date,"supports_new_sector_discovery":False,
-            "rule":"Same-day verified memberships are cached; all breadth, strength and leaders are recomputed from live full-market quotes.",
+            "classification_generated_at":(prior_sector.get("classification_generated_at")
+                                             or (previous or {}).get("generated_at")),
+            "classification_trade_date":classification_trade_date,
+            "classification_age_days":age_days,"supports_new_sector_discovery":False,
+            "rule":"Recent verified memberships are cached; all breadth, strength and leaders are recomputed from live full-market quotes.",
             "endpoint":"cached HiThink constituents + Tencent live quotes"}
 
 def fetch_tencent_rank(client: HttpClient, count: int = 200, workers: int = 6) -> tuple[list[dict[str,Any]],dict[str,Any]]:
@@ -503,7 +513,7 @@ def build_snapshot() -> dict[str,Any]:
     if not ths_api_key and not sector_data.get("pass"):
         warnings.append("THS_API_KEY is not configured; independently classified sector breadth is unavailable")
     elif not ths_api_key:
-        warnings.append("THS_API_KEY is unavailable; same-day cached classifications were repriced with live full-market quotes")
+        warnings.append("THS_API_KEY is unavailable; recent cached classifications were repriced with live full-market quotes")
     if ths_api_key and not hithink_price.get("pass"):
         warnings.append("Optional HiThink tertiary candidate price cross-check did not pass; Tencent/Sina cross-check remains authoritative")
     if not sector_data.get("pass"):

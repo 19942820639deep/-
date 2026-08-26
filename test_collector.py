@@ -86,8 +86,8 @@ class CollectorLogicTests(unittest.TestCase):
         self.assertEqual(result["top_sectors"][0]["name"],"板块5")
         self.assertEqual(result["top_sectors"][0]["priced_count"],3)
 
-    def test_cached_sector_fallback_rejects_other_trade_day(self):
-        previous={"trade_date":"2026-08-25","sector_data":{"top_sectors":[]}}
+    def test_cached_sector_fallback_rejects_expired_classification(self):
+        previous={"trade_date":"2026-08-10","sector_data":{"top_sectors":[]}}
         result=reprice_cached_sector_breadth(previous,[],"2026-08-26")
         self.assertFalse(result["pass"])
         self.assertEqual(result["status"],"cache_unavailable")

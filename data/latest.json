@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1.0",
-  "generated_at": "2026-08-28T23:39:28+08:00",
+  "generated_at": "2026-08-28T23:56:03+08:00",
   "trade_date": "2026-08-28",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,7 +13,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-08-28T16:15:00+08:00",
-    "freshness_seconds": 26668.2,
+    "freshness_seconds": 27663.9,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5273,
@@ -3125,38 +3125,6 @@
       "hithink_price_diff": 0.0
     },
     {
-      "symbol": "sz000603",
-      "code": "000603",
-      "name": "盛达资源",
-      "last": 38.59,
-      "change": 0.61,
-      "pct": 1.61,
-      "amplitude": 6.71,
-      "turnover_rate": 10.17,
-      "volume_ratio": 0.7,
-      "amount": 2577448318.0,
-      "volume": 677792.0,
-      "speed": 0.49,
-      "pe_ttm": 31.24,
-      "float_mv": 25729000000.000004,
-      "total_mv": 26626000000.0,
-      "main_net_hint": 7236.67,
-      "pct_5d": 5.41,
-      "pct_10d": 20.26,
-      "pct_20d": 51.93,
-      "pct_60d": 28.63,
-      "prev_close": 37.98,
-      "open": 38.56,
-      "trade_time": "2026-08-28T16:14:48+08:00",
-      "high": 39.44,
-      "low": 36.89,
-      "secondary_last": 38.59,
-      "secondary_trade_time": "2026-08-28T15:35:45+08:00",
-      "source_price_diff": 0.0,
-      "hithink_last": 38.59,
-      "hithink_price_diff": 0.0
-    },
-    {
       "symbol": "sz003040",
       "code": "003040",
       "name": "楚天龙",
@@ -3981,7 +3949,12 @@
       "open": 4.04,
       "trade_time": "2026-08-28T16:14:57+08:00",
       "high": 4.46,
-      "low": 4.01
+      "low": 4.01,
+      "secondary_last": 4.46,
+      "secondary_trade_time": "2026-08-28T15:34:58+08:00",
+      "source_price_diff": 0.0,
+      "hithink_last": 4.46,
+      "hithink_price_diff": 0.0
     },
     {
       "symbol": "sz002212",
@@ -5575,6 +5548,33 @@
       "trade_time": "2026-08-28T16:14:32+08:00",
       "high": 2.94,
       "low": 2.65
+    },
+    {
+      "symbol": "sh603029",
+      "code": "603029",
+      "name": "天鹅股份",
+      "last": 18.28,
+      "change": 1.66,
+      "pct": 9.99,
+      "amplitude": 11.49,
+      "turnover_rate": 10.41,
+      "volume_ratio": 4.48,
+      "amount": 223641987.0,
+      "volume": 126279.0,
+      "speed": 0.0,
+      "pe_ttm": 29.2,
+      "float_mv": 2218000000.0,
+      "total_mv": 2218000000.0,
+      "main_net_hint": 3376.97,
+      "pct_5d": 15.55,
+      "pct_10d": 17.56,
+      "pct_20d": 28.1,
+      "pct_60d": 14.36,
+      "prev_close": 16.62,
+      "open": 16.47,
+      "trade_time": "2026-08-28T16:14:59+08:00",
+      "high": 18.28,
+      "low": 16.37
     }
   ],
   "market_segments": {
@@ -9988,29 +9988,29 @@
       }
     ],
     "data_timestamps_ms": [
-      1787931590478,
-      1787931591350,
-      1787931592000,
-      1787931592000,
-      1787931593000,
-      1787931594000,
-      1787931595000,
-      1787931596000,
-      1787931597000,
-      1787931597000,
-      1787931598000,
-      1787931599653,
-      1787931600257,
-      1787931600922,
-      1787931601522,
-      1787931602099,
-      1787931602716,
-      1787931603403,
-      1787931603995,
-      1787931604673,
-      1787931605318,
-      1787931605922,
-      1787931606532
+      1787932585715,
+      1787932586548,
+      1787932587000,
+      1787932588000,
+      1787932589000,
+      1787932590000,
+      1787932591000,
+      1787932592000,
+      1787932593000,
+      1787932594000,
+      1787932595000,
+      1787932596847,
+      1787932597598,
+      1787932598339,
+      1787932599100,
+      1787932599871,
+      1787932600611,
+      1787932601364,
+      1787932602118,
+      1787932602881,
+      1787932603609,
+      1787932604362,
+      1787932605148
     ],
     "supports_new_sector_discovery": true,
     "rule": "Sector conclusions require index strength, constituent breadth and at least three priced constituents.",
@@ -11419,35 +11419,35 @@
     },
     "status": "success",
     "data_timestamps_ms": [
-      1787931564454,
-      1787931590485,
-      1787931591179
+      1787932584440,
+      1787932586848,
+      1787932573534
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-08-28T23:39:34+08:00",
+      "fetched_at": "2026-08-28T23:56:10+08:00",
       "reported_total": 5551,
       "rows": 5551,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-08-28T23:39:45+08:00",
+      "fetched_at": "2026-08-28T23:56:21+08:00",
       "requested": 5555,
       "matches": 5555,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-08-28T23:39:46+08:00",
+      "fetched_at": "2026-08-28T23:56:22+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-08-28T23:39:48+08:00",
+      "fetched_at": "2026-08-28T23:56:24+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
@@ -11460,8 +11460,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1787931589000,
-        1787931590000
+        1787932585000,
+        1787932586000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -11490,11 +11490,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-08-28T23:40:06+08:00",
+    "completed_at": "2026-08-28T23:56:45+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "33186204636",
+    "run_id": "33187526096",
     "run_attempt": "1",
     "event_name": "schedule",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/33186204636"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/33187526096"
   }
 }

@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
   "run_status": "success",
-  "started_at": "2026-08-29T03:14:12+08:00",
-  "completed_at": "2026-08-29T03:14:54+08:00",
+  "started_at": "2026-08-31T16:35:44+08:00",
+  "completed_at": "2026-08-31T16:36:24+08:00",
   "snapshot_updated": true,
-  "snapshot_generated_at": "2026-08-29T03:14:12+08:00",
-  "trade_date": "2026-08-28",
+  "snapshot_generated_at": "2026-08-31T16:35:44+08:00",
+  "trade_date": "2026-08-31",
   "valid_for_tail_selection": false,
   "validity_profiles": {
     "live_intraday": false,
@@ -14,9 +14,9 @@
     "core_market_data": true
   },
   "validation": {
-    "current_trade_day": false,
-    "latest_trade_time": "2026-08-28T16:15:00+08:00",
-    "freshness_seconds": 39552.7,
+    "current_trade_day": true,
+    "latest_trade_time": "2026-08-31T16:15:00+08:00",
+    "freshness_seconds": 1244.3,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5273,
@@ -25,10 +25,10 @@
     "index_pass": true,
     "cross_source_matches": 120,
     "cross_source_price_diff_p95": 0.0,
-    "cross_source_time_diff_p95_seconds": 2399.0,
+    "cross_source_time_diff_p95_seconds": 2397.1,
     "cross_source_time_pass": false,
     "cross_source_pass": false,
-    "midday_close_anchor_time": "2026-08-28T16:29:00+08:00",
+    "midday_close_anchor_time": "2026-08-31T15:35:15+08:00",
     "midday_execution_window_pass": false,
     "midday_secondary_time_pass": false,
     "midday_price_cross_pass": true,
@@ -37,15 +37,15 @@
     "hithink_price_cross_matches": 120,
     "hithink_price_diff_p95": 0.0,
     "hithink_price_cross_pass": true,
-    "hithink_sector_count": 11,
+    "hithink_sector_count": 12,
     "sector_data_pass": true,
     "sector_data_source": "verified",
     "sector_supports_new_sector_discovery": true
   },
   "errors": [],
   "repository": "19942820639deep/-",
-  "run_id": "33202953095",
+  "run_id": "33373630328",
   "run_attempt": "1",
   "event_name": "schedule",
-  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/33202953095"
+  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/33373630328"
 }

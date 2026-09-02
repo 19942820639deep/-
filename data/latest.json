@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1.0",
-  "generated_at": "2026-09-02T16:27:54+08:00",
+  "generated_at": "2026-09-02T19:13:02+08:00",
   "trade_date": "2026-09-02",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,7 +13,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-09-02T16:15:00+08:00",
-    "freshness_seconds": 774.6,
+    "freshness_seconds": 10682.3,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5276,
@@ -4168,7 +4168,7 @@
       "pct_60d": 1.93,
       "prev_close": 70.86,
       "open": 68.79,
-      "trade_time": "2026-09-02T15:35:45+08:00",
+      "trade_time": "2026-09-02T15:36:00+08:00",
       "high": 82.88,
       "low": 68.08
     },
@@ -4681,7 +4681,7 @@
       "pct_60d": 12.38,
       "prev_close": 42.82,
       "open": 49.22,
-      "trade_time": "2026-09-02T15:35:45+08:00",
+      "trade_time": "2026-09-02T15:36:00+08:00",
       "high": 49.5,
       "low": 46.2
     },
@@ -4924,7 +4924,7 @@
       "pct_60d": 96.08,
       "prev_close": 26.32,
       "open": 25.0,
-      "trade_time": "2026-09-02T15:36:00+08:00",
+      "trade_time": "2026-09-02T15:35:45+08:00",
       "high": 31.4,
       "low": 23.58
     },
@@ -5064,6 +5064,33 @@
       "low": 21.11
     },
     {
+      "symbol": "sz301345",
+      "code": "301345",
+      "name": "涛涛车业",
+      "last": 225.79,
+      "change": -10.71,
+      "pct": -4.53,
+      "amplitude": 5.03,
+      "turnover_rate": 3.36,
+      "volume_ratio": 1.14,
+      "amount": 268512403.0,
+      "volume": 11776.0,
+      "speed": 0.53,
+      "pe_ttm": 24.27,
+      "float_mv": 7909000000.0,
+      "total_mv": 24622000000.0,
+      "main_net_hint": 1576.54,
+      "pct_5d": -9.37,
+      "pct_10d": -11.66,
+      "pct_20d": -8.39,
+      "pct_60d": 13.06,
+      "prev_close": 236.5,
+      "open": 234.95,
+      "trade_time": "2026-09-02T16:14:18+08:00",
+      "high": 236.4,
+      "low": 224.5
+    },
+    {
       "symbol": "sh603216",
       "code": "603216",
       "name": "梦天家居",
@@ -5113,7 +5140,7 @@
       "pct_60d": 31.89,
       "prev_close": 17.09,
       "open": 17.06,
-      "trade_time": "2026-09-02T15:35:45+08:00",
+      "trade_time": "2026-09-02T15:36:00+08:00",
       "high": 22.21,
       "low": 16.82
     },
@@ -5183,7 +5210,7 @@
       "volume_ratio": 3.82,
       "amount": 252500040.0,
       "volume": 132418.0,
-      "speed": 0.54,
+      "speed": 0.38,
       "pe_ttm": 30.38,
       "float_mv": 1532000000.0,
       "total_mv": 2349000000.0,
@@ -5275,7 +5302,7 @@
       "pct_60d": 177.15,
       "prev_close": 21.0,
       "open": 21.1,
-      "trade_time": "2026-09-02T15:36:00+08:00",
+      "trade_time": "2026-09-02T15:35:45+08:00",
       "high": 23.33,
       "low": 20.95
     },
@@ -5329,7 +5356,7 @@
       "pct_60d": 218.86,
       "prev_close": 54.36,
       "open": 54.36,
-      "trade_time": "2026-09-02T15:35:45+08:00",
+      "trade_time": "2026-09-02T15:36:00+08:00",
       "high": 70.66,
       "low": 53.41
     },
@@ -5356,7 +5383,7 @@
       "pct_60d": -47.7,
       "prev_close": 44.67,
       "open": 43.56,
-      "trade_time": "2026-09-02T15:35:45+08:00",
+      "trade_time": "2026-09-02T15:36:00+08:00",
       "high": 51.38,
       "low": 43.13
     },
@@ -5372,7 +5399,7 @@
       "volume_ratio": 2.75,
       "amount": 219823802.0,
       "volume": 70809.0,
-      "speed": -0.27,
+      "speed": -0.52,
       "pe_ttm": -39.01,
       "float_mv": 2062000000.0,
       "total_mv": 2510000000.0,
@@ -5383,7 +5410,7 @@
       "pct_60d": 21.19,
       "prev_close": 26.89,
       "open": 26.74,
-      "trade_time": "2026-09-02T15:36:00+08:00",
+      "trade_time": "2026-09-02T15:35:45+08:00",
       "high": 33.98,
       "low": 26.37
     },
@@ -5437,7 +5464,7 @@
       "pct_60d": 66.59,
       "prev_close": 19.5,
       "open": 19.15,
-      "trade_time": "2026-09-02T15:35:45+08:00",
+      "trade_time": "2026-09-02T15:36:00+08:00",
       "high": 22.89,
       "low": 19.15
     },
@@ -5491,7 +5518,7 @@
       "pct_60d": -36.86,
       "prev_close": 20.13,
       "open": 19.98,
-      "trade_time": "2026-09-02T15:36:00+08:00",
+      "trade_time": "2026-09-02T15:35:45+08:00",
       "high": 23.52,
       "low": 19.77
     },
@@ -5548,33 +5575,6 @@
       "trade_time": "2026-09-02T16:14:12+08:00",
       "high": 19.96,
       "low": 17.12
-    },
-    {
-      "symbol": "sz002825",
-      "code": "002825",
-      "name": "纳尔股份",
-      "last": 9.9,
-      "change": 0.62,
-      "pct": 6.68,
-      "amplitude": 10.67,
-      "turnover_rate": 7.44,
-      "volume_ratio": 6.63,
-      "amount": 187391833.0,
-      "volume": 191848.0,
-      "speed": -0.3,
-      "pe_ttm": 47.22,
-      "float_mv": 2552000000.0,
-      "total_mv": 3385000000.0,
-      "main_net_hint": 2456.5,
-      "pct_5d": 9.27,
-      "pct_10d": 13.14,
-      "pct_20d": 17.3,
-      "pct_60d": 1.42,
-      "prev_close": 9.28,
-      "open": 9.3,
-      "trade_time": "2026-09-02T16:14:03+08:00",
-      "high": 10.15,
-      "low": 9.16
     }
   ],
   "market_segments": {
@@ -7440,31 +7440,31 @@
         "low": 11.88
       },
       {
-        "symbol": "sz300572",
-        "code": "300572",
-        "name": "安车检测",
-        "last": 24.11,
-        "change": 1.93,
-        "pct": 8.7,
-        "amplitude": 10.96,
-        "turnover_rate": 5.3,
-        "volume_ratio": 1.41,
-        "amount": 225029756.0,
-        "volume": 96137.0,
-        "speed": 0.04,
-        "pe_ttm": -27.37,
-        "float_mv": 4372000000.0,
-        "total_mv": 5521000000.0,
-        "main_net_hint": 1841.43,
-        "pct_5d": 18.89,
-        "pct_10d": 30.18,
-        "pct_20d": 18.36,
-        "pct_60d": -9.87,
-        "prev_close": 22.18,
-        "open": 22.0,
-        "trade_time": "2026-09-02T16:14:24+08:00",
-        "high": 24.16,
-        "low": 21.73
+        "symbol": "sz301345",
+        "code": "301345",
+        "name": "涛涛车业",
+        "last": 225.79,
+        "change": -10.71,
+        "pct": -4.53,
+        "amplitude": 5.03,
+        "turnover_rate": 3.36,
+        "volume_ratio": 1.14,
+        "amount": 268512403.0,
+        "volume": 11776.0,
+        "speed": 0.53,
+        "pe_ttm": 24.27,
+        "float_mv": 7909000000.0,
+        "total_mv": 24622000000.0,
+        "main_net_hint": 1576.54,
+        "pct_5d": -9.37,
+        "pct_10d": -11.66,
+        "pct_20d": -8.39,
+        "pct_60d": 13.06,
+        "prev_close": 236.5,
+        "open": 234.95,
+        "trade_time": "2026-09-02T16:14:18+08:00",
+        "high": 236.4,
+        "low": 224.5
       }
     ],
     "star": [
@@ -7926,7 +7926,7 @@
         "pct_60d": 1.93,
         "prev_close": 70.86,
         "open": 68.79,
-        "trade_time": "2026-09-02T15:35:45+08:00",
+        "trade_time": "2026-09-02T15:36:00+08:00",
         "high": 82.88,
         "low": 68.08
       },
@@ -7980,7 +7980,7 @@
         "pct_60d": 12.38,
         "prev_close": 42.82,
         "open": 49.22,
-        "trade_time": "2026-09-02T15:35:45+08:00",
+        "trade_time": "2026-09-02T15:36:00+08:00",
         "high": 49.5,
         "low": 46.2
       },
@@ -8007,7 +8007,7 @@
         "pct_60d": 96.08,
         "prev_close": 26.32,
         "open": 25.0,
-        "trade_time": "2026-09-02T15:36:00+08:00",
+        "trade_time": "2026-09-02T15:35:45+08:00",
         "high": 31.4,
         "low": 23.58
       },
@@ -8034,7 +8034,7 @@
         "pct_60d": 31.89,
         "prev_close": 17.09,
         "open": 17.06,
-        "trade_time": "2026-09-02T15:35:45+08:00",
+        "trade_time": "2026-09-02T15:36:00+08:00",
         "high": 22.21,
         "low": 16.82
       },
@@ -8050,7 +8050,7 @@
         "volume_ratio": 3.82,
         "amount": 252500040.0,
         "volume": 132418.0,
-        "speed": 0.54,
+        "speed": 0.38,
         "pe_ttm": 30.38,
         "float_mv": 1532000000.0,
         "total_mv": 2349000000.0,
@@ -8088,7 +8088,7 @@
         "pct_60d": 177.15,
         "prev_close": 21.0,
         "open": 21.1,
-        "trade_time": "2026-09-02T15:36:00+08:00",
+        "trade_time": "2026-09-02T15:35:45+08:00",
         "high": 23.33,
         "low": 20.95
       },
@@ -8115,7 +8115,7 @@
         "pct_60d": 218.86,
         "prev_close": 54.36,
         "open": 54.36,
-        "trade_time": "2026-09-02T15:35:45+08:00",
+        "trade_time": "2026-09-02T15:36:00+08:00",
         "high": 70.66,
         "low": 53.41
       },
@@ -8142,7 +8142,7 @@
         "pct_60d": -47.7,
         "prev_close": 44.67,
         "open": 43.56,
-        "trade_time": "2026-09-02T15:35:45+08:00",
+        "trade_time": "2026-09-02T15:36:00+08:00",
         "high": 51.38,
         "low": 43.13
       },
@@ -8158,7 +8158,7 @@
         "volume_ratio": 2.75,
         "amount": 219823802.0,
         "volume": 70809.0,
-        "speed": -0.27,
+        "speed": -0.52,
         "pe_ttm": -39.01,
         "float_mv": 2062000000.0,
         "total_mv": 2510000000.0,
@@ -8169,7 +8169,7 @@
         "pct_60d": 21.19,
         "prev_close": 26.89,
         "open": 26.74,
-        "trade_time": "2026-09-02T15:36:00+08:00",
+        "trade_time": "2026-09-02T15:35:45+08:00",
         "high": 33.98,
         "low": 26.37
       },
@@ -8196,7 +8196,7 @@
         "pct_60d": 66.59,
         "prev_close": 19.5,
         "open": 19.15,
-        "trade_time": "2026-09-02T15:35:45+08:00",
+        "trade_time": "2026-09-02T15:36:00+08:00",
         "high": 22.89,
         "low": 19.15
       },
@@ -8223,7 +8223,7 @@
         "pct_60d": -36.86,
         "prev_close": 20.13,
         "open": 19.98,
-        "trade_time": "2026-09-02T15:36:00+08:00",
+        "trade_time": "2026-09-02T15:35:45+08:00",
         "high": 23.52,
         "low": 19.77
       }
@@ -12288,29 +12288,29 @@
       }
     ],
     "data_timestamps_ms": [
-      1788337691991,
-      1788337692645,
-      1788337693000,
-      1788337694000,
-      1788337695000,
-      1788337696000,
-      1788337696000,
-      1788337697000,
-      1788337698000,
-      1788337699000,
-      1788337700000,
-      1788337701480,
-      1788337702116,
-      1788337702743,
-      1788337703362,
-      1788337704099,
-      1788337706343,
-      1788337707006,
-      1788337707665,
-      1788337708354,
-      1788337709014,
-      1788337709999,
-      1788337710737
+      1788347603149,
+      1788347603928,
+      1788347604000,
+      1788347605000,
+      1788347606000,
+      1788347607000,
+      1788347608000,
+      1788347609000,
+      1788347610000,
+      1788347611000,
+      1788347612000,
+      1788347614041,
+      1788347614803,
+      1788347615473,
+      1788347616223,
+      1788347616909,
+      1788347617657,
+      1788347618392,
+      1788347619172,
+      1788347619891,
+      1788347620622,
+      1788347621360,
+      1788347622154
     ],
     "supports_new_sector_discovery": true,
     "rule": "Sector conclusions require index strength, constituent breadth and at least three priced constituents.",
@@ -13299,35 +13299,35 @@
     },
     "status": "success",
     "data_timestamps_ms": [
-      1788337673555,
-      1788337686218,
-      1788337672929
+      1788347581100,
+      1788347583657,
+      1788347590729
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-09-02T16:27:59+08:00",
+      "fetched_at": "2026-09-02T19:13:08+08:00",
       "reported_total": 5554,
       "rows": 5554,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-09-02T16:28:08+08:00",
+      "fetched_at": "2026-09-02T19:13:19+08:00",
       "requested": 5558,
       "matches": 5558,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-09-02T16:28:09+08:00",
+      "fetched_at": "2026-09-02T19:13:20+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-09-02T16:28:11+08:00",
+      "fetched_at": "2026-09-02T19:13:22+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
@@ -13340,8 +13340,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1788337691000,
-        1788337692000
+        1788347603000,
+        1788347604000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -13370,11 +13370,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-09-02T16:28:31+08:00",
+    "completed_at": "2026-09-02T19:13:42+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "33608833637",
+    "run_id": "33623436287",
     "run_attempt": "1",
     "event_name": "schedule",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/33608833637"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/33623436287"
   }
 }

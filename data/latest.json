@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1.0",
-  "generated_at": "2026-09-02T19:13:02+08:00",
+  "generated_at": "2026-09-02T19:56:24+08:00",
   "trade_date": "2026-09-02",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,7 +13,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-09-02T16:15:00+08:00",
-    "freshness_seconds": 10682.3,
+    "freshness_seconds": 13284.2,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5276,
@@ -4168,7 +4168,7 @@
       "pct_60d": 1.93,
       "prev_close": 70.86,
       "open": 68.79,
-      "trade_time": "2026-09-02T15:36:00+08:00",
+      "trade_time": "2026-09-02T15:35:45+08:00",
       "high": 82.88,
       "low": 68.08
     },
@@ -4333,6 +4333,33 @@
       "trade_time": "2026-09-02T16:14:30+08:00",
       "high": 31.77,
       "low": 28.2
+    },
+    {
+      "symbol": "sh603087",
+      "code": "603087",
+      "name": "甘李药业",
+      "last": 69.6,
+      "change": -1.47,
+      "pct": -2.07,
+      "amplitude": 3.79,
+      "turnover_rate": 1.23,
+      "volume_ratio": 0.75,
+      "amount": 485990604.0,
+      "volume": 69275.0,
+      "speed": 0.53,
+      "pe_ttm": 36.17,
+      "float_mv": 39075000000.0,
+      "total_mv": 41581000000.0,
+      "main_net_hint": -1878.05,
+      "pct_5d": -2.38,
+      "pct_10d": -2.25,
+      "pct_20d": -1.14,
+      "pct_60d": 24.46,
+      "prev_close": 71.07,
+      "open": 70.37,
+      "trade_time": "2026-09-02T16:14:40+08:00",
+      "high": 71.78,
+      "low": 69.09
     },
     {
       "symbol": "sh600699",
@@ -4670,7 +4697,7 @@
       "volume_ratio": 1.57,
       "amount": 379007728.0,
       "volume": 79590.0,
-      "speed": 0.26,
+      "speed": 0.22,
       "pe_ttm": 94.46,
       "float_mv": 1501000000.0,
       "total_mv": 4086999999.9999995,
@@ -4681,7 +4708,7 @@
       "pct_60d": 12.38,
       "prev_close": 42.82,
       "open": 49.22,
-      "trade_time": "2026-09-02T15:36:00+08:00",
+      "trade_time": "2026-09-02T15:35:45+08:00",
       "high": 49.5,
       "low": 46.2
     },
@@ -5140,7 +5167,7 @@
       "pct_60d": 31.89,
       "prev_close": 17.09,
       "open": 17.06,
-      "trade_time": "2026-09-02T15:36:00+08:00",
+      "trade_time": "2026-09-02T15:35:45+08:00",
       "high": 22.21,
       "low": 16.82
     },
@@ -5210,7 +5237,7 @@
       "volume_ratio": 3.82,
       "amount": 252500040.0,
       "volume": 132418.0,
-      "speed": 0.38,
+      "speed": 0.54,
       "pe_ttm": 30.38,
       "float_mv": 1532000000.0,
       "total_mv": 2349000000.0,
@@ -5291,7 +5318,7 @@
       "volume_ratio": 2.09,
       "amount": 225731536.0,
       "volume": 101039.0,
-      "speed": 0.04,
+      "speed": 0.09,
       "pe_ttm": 32.14,
       "float_mv": 1914999999.9999998,
       "total_mv": 3190000000.0,
@@ -5302,7 +5329,7 @@
       "pct_60d": 177.15,
       "prev_close": 21.0,
       "open": 21.1,
-      "trade_time": "2026-09-02T15:35:45+08:00",
+      "trade_time": "2026-09-02T15:36:00+08:00",
       "high": 23.33,
       "low": 20.95
     },
@@ -5356,7 +5383,7 @@
       "pct_60d": 218.86,
       "prev_close": 54.36,
       "open": 54.36,
-      "trade_time": "2026-09-02T15:36:00+08:00",
+      "trade_time": "2026-09-02T15:35:45+08:00",
       "high": 70.66,
       "low": 53.41
     },
@@ -5383,7 +5410,7 @@
       "pct_60d": -47.7,
       "prev_close": 44.67,
       "open": 43.56,
-      "trade_time": "2026-09-02T15:36:00+08:00",
+      "trade_time": "2026-09-02T15:35:45+08:00",
       "high": 51.38,
       "low": 43.13
     },
@@ -5518,7 +5545,7 @@
       "pct_60d": -36.86,
       "prev_close": 20.13,
       "open": 19.98,
-      "trade_time": "2026-09-02T15:35:45+08:00",
+      "trade_time": "2026-09-02T15:36:00+08:00",
       "high": 23.52,
       "low": 19.77
     },
@@ -5548,33 +5575,6 @@
       "trade_time": "2026-09-02T16:14:21+08:00",
       "high": 7.28,
       "low": 7.28
-    },
-    {
-      "symbol": "sz300950",
-      "code": "300950",
-      "name": "德固特",
-      "last": 19.28,
-      "change": 1.8,
-      "pct": 10.3,
-      "amplitude": 16.25,
-      "turnover_rate": 10.35,
-      "volume_ratio": 5.38,
-      "amount": 190593479.0,
-      "volume": 101046.0,
-      "speed": 0.05,
-      "pe_ttm": 54.79,
-      "float_mv": 1882000000.0,
-      "total_mv": 2962000000.0,
-      "main_net_hint": 2773.91,
-      "pct_5d": 12.95,
-      "pct_10d": 19.16,
-      "pct_20d": 15.17,
-      "pct_60d": 9.17,
-      "prev_close": 17.48,
-      "open": 17.33,
-      "trade_time": "2026-09-02T16:14:12+08:00",
-      "high": 19.96,
-      "low": 17.12
     }
   ],
   "market_segments": {
@@ -7926,7 +7926,7 @@
         "pct_60d": 1.93,
         "prev_close": 70.86,
         "open": 68.79,
-        "trade_time": "2026-09-02T15:36:00+08:00",
+        "trade_time": "2026-09-02T15:35:45+08:00",
         "high": 82.88,
         "low": 68.08
       },
@@ -7969,7 +7969,7 @@
         "volume_ratio": 1.57,
         "amount": 379007728.0,
         "volume": 79590.0,
-        "speed": 0.26,
+        "speed": 0.22,
         "pe_ttm": 94.46,
         "float_mv": 1501000000.0,
         "total_mv": 4086999999.9999995,
@@ -7980,7 +7980,7 @@
         "pct_60d": 12.38,
         "prev_close": 42.82,
         "open": 49.22,
-        "trade_time": "2026-09-02T15:36:00+08:00",
+        "trade_time": "2026-09-02T15:35:45+08:00",
         "high": 49.5,
         "low": 46.2
       },
@@ -8034,7 +8034,7 @@
         "pct_60d": 31.89,
         "prev_close": 17.09,
         "open": 17.06,
-        "trade_time": "2026-09-02T15:36:00+08:00",
+        "trade_time": "2026-09-02T15:35:45+08:00",
         "high": 22.21,
         "low": 16.82
       },
@@ -8050,7 +8050,7 @@
         "volume_ratio": 3.82,
         "amount": 252500040.0,
         "volume": 132418.0,
-        "speed": 0.38,
+        "speed": 0.54,
         "pe_ttm": 30.38,
         "float_mv": 1532000000.0,
         "total_mv": 2349000000.0,
@@ -8077,7 +8077,7 @@
         "volume_ratio": 2.09,
         "amount": 225731536.0,
         "volume": 101039.0,
-        "speed": 0.04,
+        "speed": 0.09,
         "pe_ttm": 32.14,
         "float_mv": 1914999999.9999998,
         "total_mv": 3190000000.0,
@@ -8088,7 +8088,7 @@
         "pct_60d": 177.15,
         "prev_close": 21.0,
         "open": 21.1,
-        "trade_time": "2026-09-02T15:35:45+08:00",
+        "trade_time": "2026-09-02T15:36:00+08:00",
         "high": 23.33,
         "low": 20.95
       },
@@ -8115,7 +8115,7 @@
         "pct_60d": 218.86,
         "prev_close": 54.36,
         "open": 54.36,
-        "trade_time": "2026-09-02T15:36:00+08:00",
+        "trade_time": "2026-09-02T15:35:45+08:00",
         "high": 70.66,
         "low": 53.41
       },
@@ -8142,7 +8142,7 @@
         "pct_60d": -47.7,
         "prev_close": 44.67,
         "open": 43.56,
-        "trade_time": "2026-09-02T15:36:00+08:00",
+        "trade_time": "2026-09-02T15:35:45+08:00",
         "high": 51.38,
         "low": 43.13
       },
@@ -8223,7 +8223,7 @@
         "pct_60d": -36.86,
         "prev_close": 20.13,
         "open": 19.98,
-        "trade_time": "2026-09-02T15:35:45+08:00",
+        "trade_time": "2026-09-02T15:36:00+08:00",
         "high": 23.52,
         "low": 19.77
       }
@@ -12288,29 +12288,29 @@
       }
     ],
     "data_timestamps_ms": [
-      1788347603149,
-      1788347603928,
-      1788347604000,
-      1788347605000,
-      1788347606000,
-      1788347607000,
-      1788347608000,
-      1788347609000,
-      1788347610000,
-      1788347611000,
-      1788347612000,
-      1788347614041,
-      1788347614803,
-      1788347615473,
-      1788347616223,
-      1788347616909,
-      1788347617657,
-      1788347618392,
-      1788347619172,
-      1788347619891,
-      1788347620622,
-      1788347621360,
-      1788347622154
+      1788350208458,
+      1788350209313,
+      1788350210000,
+      1788350211000,
+      1788350212000,
+      1788350213000,
+      1788350214000,
+      1788350215000,
+      1788350216000,
+      1788350218000,
+      1788350219000,
+      1788350220560,
+      1788350221435,
+      1788350222272,
+      1788350223070,
+      1788350223898,
+      1788350224742,
+      1788350225556,
+      1788350226478,
+      1788350227283,
+      1788350228095,
+      1788350229065,
+      1788350229859
     ],
     "supports_new_sector_discovery": true,
     "rule": "Sector conclusions require index strength, constituent breadth and at least three priced constituents.",
@@ -13299,35 +13299,35 @@
     },
     "status": "success",
     "data_timestamps_ms": [
-      1788347581100,
-      1788347583657,
-      1788347590729
+      1788350206963,
+      1788350209512,
+      1788350194130
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-09-02T19:13:08+08:00",
+      "fetched_at": "2026-09-02T19:56:31+08:00",
       "reported_total": 5554,
       "rows": 5554,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-09-02T19:13:19+08:00",
+      "fetched_at": "2026-09-02T19:56:43+08:00",
       "requested": 5558,
       "matches": 5558,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-09-02T19:13:20+08:00",
+      "fetched_at": "2026-09-02T19:56:44+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-09-02T19:13:22+08:00",
+      "fetched_at": "2026-09-02T19:56:46+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
@@ -13340,8 +13340,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1788347603000,
-        1788347604000
+        1788350208000,
+        1788350209000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -13370,11 +13370,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-09-02T19:13:42+08:00",
+    "completed_at": "2026-09-02T19:57:10+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "33623436287",
+    "run_id": "33627204150",
     "run_attempt": "1",
     "event_name": "schedule",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/33623436287"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/33627204150"
   }
 }

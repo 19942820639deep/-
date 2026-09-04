@@ -8,7 +8,8 @@ from unittest import mock
 
 import collector
 from collector import (CollectorError, ema, fetch_hithink_price_cross, get_ths_json,
-                       limit_price, market_summary, midday_close_profile,
+                       fetch_sina_sectors, limit_price, market_summary, midday_close_profile,
+                       parse_sina_sector_catalog,
                        price_limit_ratio, reprice_cached_sector_breadth,
                        thscode_to_tx, tx_to_thscode)
 
@@ -41,6 +42,45 @@ class CollectorLogicTests(unittest.TestCase):
         self.assertTrue(result["pass"])
         self.assertEqual(result["matches"],30)
         self.assertEqual(result["price_diff_p95"],0.0)
+
+    def test_sina_sector_catalog_parser_reads_complete_directory_rows(self):
+        raw='var sectors = {"new_a":"new_a,行业A,3,0,0,2.5,0,123456",' \
+            '"new_b":"new_b,行业B,8,0,0,-1.2,0,654321"};'
+        rows=parse_sina_sector_catalog(raw,"industry")
+        self.assertEqual(len(rows),2)
+        self.assertEqual(rows[0]["name"],"行业A")
+        self.assertEqual(rows[0]["member_count"],3)
+        self.assertEqual(rows[0]["catalog_pct"],2.5)
+
+    def test_sina_full_catalog_discovers_sector_outside_old_cache(self):
+        industries=[
+            {"node":"i1","name":"行业一","tag":"industry","member_count":3,"catalog_pct":1.0,"catalog_amount":1e9},
+            {"node":"i2","name":"行业二","tag":"industry","member_count":3,"catalog_pct":2.0,"catalog_amount":2e9},
+        ]
+        concepts=[
+            {"node":"c1","name":"旧方向","tag":"concept","member_count":3,"catalog_pct":.5,"catalog_amount":1e9},
+            {"node":"c2","name":"全新方向","tag":"concept","member_count":3,"catalog_pct":5.0,"catalog_amount":3e9},
+        ]
+        members={};stocks=[]
+        for sector_index,node in enumerate(("i1","i2","c1","c2")):
+            members[node]=[]
+            for member_index in range(3):
+                code=f"60{sector_index}{member_index:03d}";symbol=f"sh{code}"
+                members[node].append({"symbol":symbol,"code":code,"name":f"{node}-{member_index}"})
+                stocks.append({"symbol":symbol,"code":code,"name":f"{node}-{member_index}",
+                               "pct":float(sector_index+member_index+1),"amount":1e9+member_index,"last":10.0})
+        def catalog_side_effect(_client,_url,tag):
+            return industries if tag=="industry" else concepts
+        with mock.patch.object(collector,"fetch_sina_sector_catalog",side_effect=catalog_side_effect), \
+             mock.patch.object(collector,"fetch_sina_sector_members",side_effect=lambda _client,node:members[node]):
+            result=fetch_sina_sectors(mock.Mock(),stocks,leaders_per_tag=2,top_n=4,
+                                      minimum_catalog=4,minimum_industries=2,minimum_concepts=2,
+                                      minimum_candidates=4,minimum_verified=4,minimum_output=4)
+        self.assertTrue(result["pass"])
+        self.assertTrue(result["supports_new_sector_discovery"])
+        self.assertEqual(result["catalog_count"],4)
+        self.assertEqual(result["verified_count"],4)
+        self.assertIn("全新方向",[x["name"] for x in result["top_sectors"]])
 
     def test_price_limits(self):
         self.assertEqual(limit_price(10.01, price_limit_ratio("600000"), True), 11.01)

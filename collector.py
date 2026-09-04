@@ -26,6 +26,9 @@ STATUS_PATH = ROOT / "data" / "status.json"
 TX_RANK = "https://proxy.finance.qq.com/cgi/cgi-bin/rank/hs/getBoardRankList"
 TX_QUOTE = "https://qt.gtimg.cn/q="
 SINA_QUOTE = "https://hq.sinajs.cn/list="
+SINA_INDUSTRY_CATALOG = "https://vip.stock.finance.sina.com.cn/q/view/newSinaHy.php"
+SINA_CONCEPT_CATALOG = "https://money.finance.sina.com.cn/q/view/newFLJK.php?param=class"
+SINA_SECTOR_MEMBERS = "https://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeData"
 THS_BASE = "https://fuyao.aicubes.cn"
 INDEX_SYMBOLS = {"上证指数":"sh000001", "深证成指":"sz399001", "创业板指":"sz399006", "科创50":"sh000688"}
 
@@ -206,9 +209,15 @@ def fetch_hithink_sectors(client: HttpClient, api_key: str,
                          "constituent_turnover":round(sum(x.get("amount") or 0 for x in members),2),
                          "capacity_leaders":leaders,"constituents":constituents})
     verified.sort(key=lambda x:(x["pct"],x["breadth_up_ratio"]),reverse=True)
+    industry_count=sum(x["tag"]=="industry" for x in catalog)
+    concept_count=sum(x["tag"]=="cn_concept" for x in catalog)
+    catalog_complete=bool(len(catalog)>=100 and industry_count>=30 and concept_count>=60)
     return {"status":"verified" if len(verified)>=6 else "insufficient","verified_count":len(verified),
             "pass":len(verified)>=6,"top_sectors":verified,"data_timestamps_ms":timestamps,
-            "supports_new_sector_discovery":True,
+            "catalog_count":len(catalog),
+            "industry_count":industry_count,"concept_count":concept_count,
+            "catalog_candidates_checked":len(selected),
+            "supports_new_sector_discovery":bool(len(verified)>=6 and catalog_complete),
             "rule":"Sector conclusions require index strength, constituent breadth and at least three priced constituents.",
             "endpoint":"HiThink THS index catalog/snapshot/constituents"}
 
@@ -361,6 +370,127 @@ def fetch_sina_quotes(client: HttpClient, symbols: list[str], batch: int = 80) -
         time.sleep(.08)
     return output,{"fetched_at":iso(now_shanghai()),"requested":len(symbols),"matches":len(output),"calls":calls,"endpoint":"Sina hq.sinajs.cn"}
 
+def fetch_sina_text(client: HttpClient, url: str,
+                    params: dict[str,Any] | None = None, retries: int = 3) -> str:
+    error = None
+    for attempt in range(1,retries+1):
+        try:
+            return client.get(url,params=params,referer="https://finance.sina.com.cn/").decode("gb18030",errors="replace")
+        except (HTTPError,URLError,TimeoutError,OSError) as exc:
+            error=exc
+            if attempt < retries:time.sleep(attempt)
+    raise CollectorError(f"Sina sector GET {url} failed: {error}")
+
+def parse_sina_sector_catalog(text: str, tag: str) -> list[dict[str,Any]]:
+    match=re.search(r"=\s*(\{.*\})\s*;?\s*$",text,re.S)
+    if not match:raise CollectorError(f"Sina {tag} catalog parse failed")
+    try:payload=json.loads(match.group(1))
+    except ValueError as exc:raise CollectorError(f"Sina {tag} catalog JSON invalid: {exc}") from exc
+    output=[]
+    for node,value in payload.items():
+        parts=str(value).split(",")
+        if len(parts)<8:continue
+        member_count=safe_int(parts[2]); pct=safe_float(parts[5]); amount=safe_float(parts[7])
+        if not node or not parts[1] or member_count is None or pct is None:continue
+        output.append({"node":str(node),"name":parts[1].strip(),"tag":tag,
+                       "member_count":member_count,"catalog_pct":pct,
+                       "catalog_amount":amount or 0})
+    return output
+
+def fetch_sina_sector_catalog(client: HttpClient, url: str, tag: str) -> list[dict[str,Any]]:
+    return parse_sina_sector_catalog(fetch_sina_text(client,url),tag)
+
+def fetch_sina_sector_members(client: HttpClient, node: str) -> list[dict[str,str]]:
+    text=fetch_sina_text(client,SINA_SECTOR_MEMBERS,
+                         {"page":1,"num":500,"sort":"symbol","asc":1,
+                          "node":node,"symbol":"","_s_r_a":"page"})
+    try:rows=json.loads(text.strip() or "[]")
+    except ValueError as exc:raise CollectorError(f"Sina sector members invalid for {node}: {exc}") from exc
+    output=[];seen=set()
+    for row in rows if isinstance(rows,list) else []:
+        symbol=str(row.get("symbol") or "").lower()
+        if not re.fullmatch(r"(?:sh|sz|bj)\d{6}",symbol) or symbol in seen:continue
+        seen.add(symbol)
+        output.append({"symbol":symbol,"code":symbol[2:],"name":str(row.get("name") or "")})
+    return output
+
+def fetch_sina_sectors(client: HttpClient, stocks: list[dict[str,Any]],
+                       leaders_per_tag: int = 20, top_n: int = 20,
+                       minimum_catalog: int = 180, minimum_industries: int = 40,
+                       minimum_concepts: int = 120, minimum_candidates: int = 30,
+                       minimum_verified: int = 12, minimum_output: int = 6) -> dict[str,Any]:
+    """Discover leaders from Sina's full catalogs, then reprice members with Tencent."""
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        industry_job=pool.submit(fetch_sina_sector_catalog,client,SINA_INDUSTRY_CATALOG,"industry")
+        concept_job=pool.submit(fetch_sina_sector_catalog,client,SINA_CONCEPT_CATALOG,"concept")
+        industries=industry_job.result();concepts=concept_job.result()
+    catalog=industries+concepts
+    selected=[]
+    for tag in ("industry","concept"):
+        ranked=sorted((x for x in catalog if x["tag"]==tag),
+                      key=lambda x:(x["catalog_pct"],x["catalog_amount"]),reverse=True)
+        selected.extend(ranked[:leaders_per_tag])
+    member_sets={};failures=[]
+    with ThreadPoolExecutor(max_workers=min(10,max(1,len(selected)))) as pool:
+        jobs={pool.submit(fetch_sina_sector_members,client,row["node"]):row for row in selected}
+        for future in as_completed(jobs):
+            row=jobs[future]
+            try:member_sets[row["node"]]=future.result()
+            except Exception as exc:failures.append({"node":row["node"],"name":row["name"],"error":str(exc)})
+    stock_map={s.get("symbol"):s for s in stocks if s.get("symbol")};verified=[]
+    for sector in selected:
+        constituents=member_sets.get(sector["node"]) or []
+        expected=max(sector["member_count"],len(constituents))
+        if len(constituents)<3 or not expected or len(constituents)/expected<.8:continue
+        members=[]
+        for member in constituents:
+            quote=stock_map.get(member["symbol"])
+            if quote and quote.get("pct") is not None:
+                members.append({"symbol":quote["symbol"],"code":quote["code"],
+                                "name":member.get("name") or quote.get("name"),
+                                "pct":quote["pct"],"amount":quote.get("amount"),
+                                "last":quote.get("last")})
+        if len(members)<3 or len(members)/len(constituents)<.8:continue
+        pcts=[float(x["pct"]) for x in members];up=sum(x>0 for x in pcts);down=sum(x<0 for x in pcts)
+        leaders=sorted(members,key=lambda x:x.get("amount") or 0,reverse=True)[:5]
+        average=statistics.fmean(pcts);median=statistics.median(pcts)
+        capacity_positive=sum(float(x["pct"])>0 for x in leaders)/len(leaders)
+        score=.34*average+.24*median+2*(up/len(members))+.8*capacity_positive+.12*max(0,sector["catalog_pct"])
+        verified.append({"node":sector["node"],"name":sector["name"],"tag":sector["tag"],
+                         "pct":round(average,4),"catalog_pct":round(sector["catalog_pct"],4),
+                         "catalog_amount":round(sector["catalog_amount"],2),"score":round(score,6),
+                         "constituent_count":len(constituents),"priced_count":len(members),
+                         "up":up,"down":down,"flat":len(members)-up-down,
+                         "breadth_up_ratio":round(up/len(members),4),
+                         "median_constituent_pct":round(median,4),
+                         "average_constituent_pct":round(average,4),
+                         "constituent_turnover":round(sum(x.get("amount") or 0 for x in members),2),
+                         "capacity_leaders":leaders,"constituents":constituents,
+                         "index_method":"Sina full-catalog discovery + Tencent live constituent equal-weight proxy"})
+    verified.sort(key=lambda x:(x["score"],x["average_constituent_pct"]),reverse=True)
+    deduplicated=[]
+    for sector in verified:
+        symbols={x["symbol"] for x in sector["constituents"]}
+        duplicate=False
+        for kept in deduplicated:
+            other={x["symbol"] for x in kept["constituents"]}
+            if len(symbols & other)/max(1,min(len(symbols),len(other)))>=.72:
+                duplicate=True;break
+        if not duplicate:deduplicated.append(sector)
+        if len(deduplicated)>=top_n:break
+    catalog_complete=(len(catalog)>=minimum_catalog and len(industries)>=minimum_industries
+                      and len(concepts)>=minimum_concepts)
+    supports_discovery=bool(catalog_complete and len(selected)>=minimum_candidates
+                            and len(verified)>=minimum_verified and len(deduplicated)>=minimum_output)
+    return {"status":"sina_full_catalog_tencent_reprice" if supports_discovery else "sina_sector_incomplete",
+            "pass":supports_discovery,"verified_count":len(verified),"top_sectors":deduplicated,
+            "catalog_count":len(catalog),"industry_count":len(industries),"concept_count":len(concepts),
+            "catalog_candidates_checked":len(selected),"member_fetch_failures":failures[:10],
+            "supports_new_sector_discovery":supports_discovery,
+            "classification_generated_at":iso(now_shanghai()),
+            "rule":"All Sina industry/concept catalogs are ranked live; leading candidates require >=80% Tencent constituent coverage and at least three priced members.",
+            "endpoint":"Sina complete industry/concept catalogs + Sina memberships + Tencent live quotes"}
+
 def is_special(s: dict[str,Any]) -> bool:
     name = str(s.get("name") or "").upper().strip()
     return "ST" in name or "退" in name or name.startswith(("N","C"))
@@ -451,6 +581,8 @@ def build_snapshot() -> dict[str,Any]:
     hithink_price={"status":"not_configured","pass":False,"matches":0}
     hithink_sectors={"status":"not_configured","pass":False,"top_sectors":[]}
     hithink_special={"status":"not_configured"}
+    sina_sectors={"status":"not_attempted","pass":False,"top_sectors":[],
+                  "supports_new_sector_discovery":False}
     if ths_api_key:
         with ThreadPoolExecutor(max_workers=3) as pool:
             jobs={"price":pool.submit(fetch_hithink_price_cross,client,ths_api_key,candidates),
@@ -467,9 +599,20 @@ def build_snapshot() -> dict[str,Any]:
     secondary_close_anchor=median_datetime(secondary_trade_times)
     latest=max(trade_times) if trade_times else None; trade_date=latest.date().isoformat() if latest else None
     sector_data=hithink_sectors
-    if not hithink_sectors.get("pass"):
-        cached_sectors=reprice_cached_sector_breadth(previous,stocks,trade_date)
-        if cached_sectors.get("pass"):sector_data=cached_sectors
+    if not hithink_sectors.get("supports_new_sector_discovery"):
+        try:sina_sectors=fetch_sina_sectors(client,stocks)
+        except Exception as exc:
+            errors.append(f"Sina sectors: {exc}")
+            sina_sectors={"status":"failed","pass":False,"top_sectors":[],
+                          "supports_new_sector_discovery":False,"error":str(exc)}
+        if sina_sectors.get("pass"):
+            sector_data=sina_sectors
+        elif not hithink_sectors.get("pass"):
+            cached_sectors=reprice_cached_sector_breadth(previous,stocks,trade_date)
+            if cached_sectors.get("pass"):sector_data=cached_sectors
+    if sector_data.get("pass") and not sector_data.get("classification_trade_date"):
+        sector_data["classification_trade_date"]=trade_date
+    generated=now_shanghai()
     current=bool(latest and latest.date()==generated.date()); freshness=max(0,(generated-latest).total_seconds()) if latest else None
     previous_count=safe_int(((previous or {}).get("market") or {}).get("universe_count")) or 0; floor=max(5000,math.floor(previous_count*.95))
     ratio=market["valid_count"]/len(stocks) if stocks else 0; p95=percentile(diffs,.95); time_p95=percentile(time_diffs,.95)
@@ -500,6 +643,11 @@ def build_snapshot() -> dict[str,Any]:
             "hithink_sector_count":safe_int(hithink_sectors.get("verified_count")) or 0,
             "sector_data_pass":bool(sector_data.get("pass")),
             "sector_data_source":sector_data.get("status"),
+            "sector_catalog_count":safe_int(sector_data.get("catalog_count")) or 0,
+            "sector_industry_count":safe_int(sector_data.get("industry_count")) or 0,
+            "sector_concept_count":safe_int(sector_data.get("concept_count")) or 0,
+            "sector_candidates_checked":safe_int(sector_data.get("catalog_candidates_checked")) or 0,
+            "sector_verified_count":safe_int(sector_data.get("verified_count")) or 0,
             "sector_supports_new_sector_discovery":bool(sector_data.get("supports_new_sector_discovery"))}
     valid=all((current,fresh,coverage,index_pass,cross))
     tail_valid=bool(valid and sector_data.get("pass"))
@@ -511,16 +659,19 @@ def build_snapshot() -> dict[str,Any]:
     elif not time_cross:
         warnings.append("Tencent/Sina timestamps are not synchronized for live intraday use")
     if not ths_api_key and not sector_data.get("pass"):
-        warnings.append("THS_API_KEY is not configured; independently classified sector breadth is unavailable")
-    elif not ths_api_key:
-        warnings.append("THS_API_KEY is unavailable; recent cached classifications were repriced with live full-market quotes")
+        warnings.append("THS_API_KEY is not configured and Sina full-sector discovery failed; independently classified sector breadth is unavailable")
+    elif sector_data.get("status")=="cached_classification_live_reprice":
+        warnings.append("Live sector discovery failed; recent cached classifications were repriced with live full-market quotes")
     if ths_api_key and not hithink_price.get("pass"):
         warnings.append("Optional HiThink tertiary candidate price cross-check did not pass; Tencent/Sina cross-check remains authoritative")
     if not sector_data.get("pass"):
-        warnings.append("HiThink sector breadth verification did not pass; do not assert a main line from this snapshot")
+        warnings.append("Sector breadth verification did not pass; do not assert a main line from this snapshot")
     elif not sector_data.get("supports_new_sector_discovery"):
-        warnings.append("Cached sector fallback verifies known same-day leaders but cannot discover a brand-new afternoon sector")
-    return {"schema_version":"2.1.0","generated_at":iso(generated),"trade_date":trade_date,"is_trading_day":current,
+        if sector_data.get("status")=="cached_classification_live_reprice":
+            warnings.append("Cached sector fallback verifies known same-day leaders but cannot discover a brand-new afternoon sector")
+        else:
+            warnings.append("Sector leaders were verified, but the full directory was incomplete; do not claim complete new-direction discovery")
+    return {"schema_version":"2.2.0","generated_at":iso(generated),"trade_date":trade_date,"is_trading_day":current,
             "valid_for_tail_selection":tail_valid,"validity_profiles":{"live_intraday":live_analysis,"midday_close":midday_analysis,
             "previous_close":previous_close_analysis,"core_market_data":core},"validation":checks,"market":market,"indices":indices,"candidates":candidates,
             "market_segments":{"main":[s for s in candidates if s["code"].startswith(("600","601","603","605","000","001","002","003"))][:30],
@@ -532,10 +683,13 @@ def build_snapshot() -> dict[str,Any]:
                        "tencent_candidate_refresh":refresh_meta,"sina_independent_check":sina_meta,
                        "hithink_price_check":hithink_price,
                        "hithink_sector_source":{"status":hithink_sectors.get("status"),"endpoint":hithink_sectors.get("endpoint")},
+                       "sina_sector_source":{"status":sina_sectors.get("status"),"endpoint":sina_sectors.get("endpoint"),
+                                             "catalog_count":sina_sectors.get("catalog_count"),
+                                             "verified_count":sina_sectors.get("verified_count")},
                        "hithink_special_source":{"status":hithink_special.get("status"),"endpoint":hithink_special.get("endpoint")}},
             "warnings":warnings,"errors":errors,"methodology":{"primary":"Tencent full-market rank plus detailed quotes","secondary":"Sina and HiThink candidate-price checks",
             "breadth_limits_turnover":"recomputed from full-market detailed quotes; HiThink special pools retained separately",
-            "sector_limit":"HiThink sector index strength is verified against Tencent constituent breadth and capacity leaders",
+            "sector_limit":"HiThink is preferred; without it, the complete Sina industry/concept catalogs discover leaders and Tencent quotes verify constituent breadth and capacity leaders",
             "cross_source_timing":"Live intraday use requires near-synchronous quotes. During the lunch break, the 11:30 Sina consensus timestamp anchors the close while Tencent may advance its display timestamp; prices must still match.",
             "midday_close":"Valid from 11:29 through 13:00 when the secondary consensus timestamp is 11:29-11:35 on the trade date and cross-source prices pass.",
             "technical":"EMA is auxiliary and omitted while no stable free 60-minute source is verified"}}

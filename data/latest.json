@@ -1,6 +1,6 @@
 {
   "schema_version": "2.2.0",
-  "generated_at": "2026-09-07T20:24:57+08:00",
+  "generated_at": "2026-09-07T21:16:53+08:00",
   "trade_date": "2026-09-07",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,7 +13,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-09-07T16:15:00+08:00",
-    "freshness_seconds": 14997.0,
+    "freshness_seconds": 18113.4,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5280,
@@ -3493,7 +3493,7 @@
       "volume_ratio": 1.54,
       "amount": 1246160883.0,
       "volume": 24076.0,
-      "speed": 0.33,
+      "speed": 0.43,
       "pe_ttm": 112.24,
       "float_mv": 15484000000.0,
       "total_mv": 52366999999.99999,
@@ -3504,7 +3504,7 @@
       "pct_60d": 63.0,
       "prev_close": 462.3,
       "open": 479.0,
-      "trade_time": "2026-09-07T15:35:30+08:00",
+      "trade_time": "2026-09-07T15:35:42+08:00",
       "high": 555.1,
       "low": 473.0,
       "secondary_last": 549.5,
@@ -4988,6 +4988,33 @@
       "low": 13.35
     },
     {
+      "symbol": "sh688208",
+      "code": "688208",
+      "name": "道通科技",
+      "last": 27.3,
+      "change": 1.62,
+      "pct": 6.31,
+      "amplitude": 9.27,
+      "turnover_rate": 2.36,
+      "volume_ratio": 2.48,
+      "amount": 417508410.0,
+      "volume": 15783421.0,
+      "speed": 0.55,
+      "pe_ttm": 20.58,
+      "float_mv": 18296000000.0,
+      "total_mv": 18296000000.0,
+      "main_net_hint": 6326.09,
+      "pct_5d": 4.64,
+      "pct_10d": 11.11,
+      "pct_20d": -2.47,
+      "pct_60d": 1.22,
+      "prev_close": 25.68,
+      "open": 25.71,
+      "trade_time": "2026-09-07T16:14:38+08:00",
+      "high": 27.65,
+      "low": 25.27
+    },
+    {
       "symbol": "sz002212",
       "code": "002212",
       "name": "天融信",
@@ -5334,7 +5361,7 @@
       "pct_60d": 12.08,
       "prev_close": 18.15,
       "open": 18.29,
-      "trade_time": "2026-09-07T15:35:42+08:00",
+      "trade_time": "2026-09-07T15:35:21+08:00",
       "high": 23.59,
       "low": 18.27
     },
@@ -5553,33 +5580,6 @@
       "trade_time": "2026-09-07T16:14:57+08:00",
       "high": 100.8,
       "low": 91.01
-    },
-    {
-      "symbol": "sh605577",
-      "code": "605577",
-      "name": "龙版传媒",
-      "last": 17.11,
-      "change": 1.56,
-      "pct": 10.03,
-      "amplitude": 3.54,
-      "turnover_rate": 3.34,
-      "volume_ratio": 0.5,
-      "amount": 250953708.0,
-      "volume": 148385.0,
-      "speed": 0.0,
-      "pe_ttm": 41.62,
-      "float_mv": 7604000000.000001,
-      "total_mv": 7604000000.000001,
-      "main_net_hint": 1588.31,
-      "pct_5d": 61.11,
-      "pct_10d": 76.39,
-      "pct_20d": 75.13,
-      "pct_60d": 76.03,
-      "prev_close": 15.55,
-      "open": 16.56,
-      "trade_time": "2026-09-07T16:14:38+08:00",
-      "high": 17.11,
-      "low": 16.56
     }
   ],
   "market_segments": {
@@ -8472,7 +8472,7 @@
         "volume_ratio": 1.54,
         "amount": 1246160883.0,
         "volume": 24076.0,
-        "speed": 0.33,
+        "speed": 0.43,
         "pe_ttm": 112.24,
         "float_mv": 15484000000.0,
         "total_mv": 52366999999.99999,
@@ -8483,7 +8483,7 @@
         "pct_60d": 63.0,
         "prev_close": 462.3,
         "open": 479.0,
-        "trade_time": "2026-09-07T15:35:30+08:00",
+        "trade_time": "2026-09-07T15:35:42+08:00",
         "high": 555.1,
         "low": 473.0,
         "secondary_last": 549.5,
@@ -8542,7 +8542,7 @@
         "pct_60d": 12.08,
         "prev_close": 18.15,
         "open": 18.29,
-        "trade_time": "2026-09-07T15:35:42+08:00",
+        "trade_time": "2026-09-07T15:35:21+08:00",
         "high": 23.59,
         "low": 18.27
       }
@@ -13111,29 +13111,29 @@
       }
     ],
     "data_timestamps_ms": [
-      1788783877444,
-      1788783878261,
-      1788783879000,
-      1788783880000,
-      1788783881000,
-      1788783882000,
-      1788783883000,
-      1788783884000,
-      1788783885000,
-      1788783886000,
-      1788783887000,
-      1788783888410,
-      1788783889139,
-      1788783889844,
-      1788783890615,
-      1788783891381,
-      1788783892341,
-      1788783893083,
-      1788783893835,
-      1788783894615,
-      1788783895440,
-      1788783896181,
-      1788783896902
+      1788786995562,
+      1788786996341,
+      1788786997000,
+      1788786998000,
+      1788786999000,
+      1788786999000,
+      1788787000000,
+      1788787001000,
+      1788787002000,
+      1788787003000,
+      1788787004000,
+      1788787005661,
+      1788787006324,
+      1788787007009,
+      1788787007670,
+      1788787008361,
+      1788787009064,
+      1788787009762,
+      1788787010435,
+      1788787011139,
+      1788787011878,
+      1788787012558,
+      1788787013241
     ],
     "catalog_count": 710,
     "industry_count": 320,
@@ -14752,35 +14752,35 @@
     },
     "status": "success",
     "data_timestamps_ms": [
-      1788783857487,
-      1788783871884,
-      1788783868981
+      1788786976572,
+      1788786988272,
+      1788786997097
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-09-07T20:24:21+08:00",
+      "fetched_at": "2026-09-07T21:16:21+08:00",
       "reported_total": 5558,
       "rows": 5558,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-09-07T20:24:32+08:00",
+      "fetched_at": "2026-09-07T21:16:31+08:00",
       "requested": 5562,
       "matches": 5562,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-09-07T20:24:34+08:00",
+      "fetched_at": "2026-09-07T21:16:32+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-09-07T20:24:36+08:00",
+      "fetched_at": "2026-09-07T21:16:34+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
@@ -14793,8 +14793,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1788783877000,
-        1788783878000
+        1788786995000,
+        1788786996000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -14829,11 +14829,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-09-07T20:24:57+08:00",
+    "completed_at": "2026-09-07T21:16:53+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "34121661235",
+    "run_id": "34126443883",
     "run_attempt": "1",
     "event_name": "schedule",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/34121661235"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/34126443883"
   }
 }

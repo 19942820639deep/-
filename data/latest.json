@@ -1,6 +1,6 @@
 {
   "schema_version": "2.2.0",
-  "generated_at": "2026-09-08T16:39:30+08:00",
+  "generated_at": "2026-09-08T19:12:41+08:00",
   "trade_date": "2026-09-08",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,7 +13,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-09-08T16:15:00+08:00",
-    "freshness_seconds": 1470.3,
+    "freshness_seconds": 10661.5,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5280,
@@ -5361,7 +5361,7 @@
       "pct_60d": 38.01,
       "prev_close": 8.69,
       "open": 9.28,
-      "trade_time": "2026-09-08T15:34:14+08:00",
+      "trade_time": "2026-09-08T15:34:02+08:00",
       "high": 10.54,
       "low": 9.11
     },
@@ -5415,7 +5415,7 @@
       "pct_60d": 157.2,
       "prev_close": 26.01,
       "open": 25.57,
-      "trade_time": "2026-09-08T15:34:20+08:00",
+      "trade_time": "2026-09-08T15:34:14+08:00",
       "high": 27.28,
       "low": 24.7
     },
@@ -5550,7 +5550,7 @@
       "pct_60d": 127.41,
       "prev_close": 28.3,
       "open": 28.0,
-      "trade_time": "2026-09-08T15:34:14+08:00",
+      "trade_time": "2026-09-08T15:34:02+08:00",
       "high": 30.6,
       "low": 27.5
     },
@@ -8167,7 +8167,7 @@
         "pct_60d": 38.01,
         "prev_close": 8.69,
         "open": 9.28,
-        "trade_time": "2026-09-08T15:34:14+08:00",
+        "trade_time": "2026-09-08T15:34:02+08:00",
         "high": 10.54,
         "low": 9.11
       },
@@ -8194,7 +8194,7 @@
         "pct_60d": 157.2,
         "prev_close": 26.01,
         "open": 25.57,
-        "trade_time": "2026-09-08T15:34:20+08:00",
+        "trade_time": "2026-09-08T15:34:14+08:00",
         "high": 27.28,
         "low": 24.7
       },
@@ -8221,7 +8221,7 @@
         "pct_60d": 127.41,
         "prev_close": 28.3,
         "open": 28.0,
-        "trade_time": "2026-09-08T15:34:14+08:00",
+        "trade_time": "2026-09-08T15:34:02+08:00",
         "high": 30.6,
         "low": 27.5
       }
@@ -8744,15 +8744,15 @@
         "pct": 5.18447,
         "last": 1001.982,
         "amount": 7190059400.0,
-        "constituent_count": 24,
-        "priced_count": 24,
-        "up": 23,
+        "constituent_count": 25,
+        "priced_count": 25,
+        "up": 24,
         "down": 1,
         "flat": 0,
-        "breadth_up_ratio": 0.9583,
-        "median_constituent_pct": 4.26,
-        "average_constituent_pct": 5.185,
-        "constituent_turnover": 7190059309.0,
+        "breadth_up_ratio": 0.96,
+        "median_constituent_pct": 4.3,
+        "average_constituent_pct": 5.162,
+        "constituent_turnover": 7221470828.0,
         "capacity_leaders": [
           {
             "symbol": "sh600500",
@@ -8915,6 +8915,11 @@
             "symbol": "sh688101",
             "code": "688101",
             "name": "三达膜"
+          },
+          {
+            "symbol": "bj920230",
+            "code": "920230",
+            "name": "欧康医药"
           }
         ]
       },
@@ -10045,29 +10050,29 @@
       }
     ],
     "data_timestamps_ms": [
-      1788856752173,
-      1788856752893,
-      1788856753000,
-      1788856754000,
-      1788856755000,
-      1788856756000,
-      1788856757000,
-      1788856758000,
-      1788856759000,
-      1788856760000,
-      1788856761000,
-      1788856762489,
-      1788856763186,
-      1788856763908,
-      1788856764623,
-      1788856765305,
-      1788856765993,
-      1788856766674,
-      1788856767352,
-      1788856768040,
-      1788856768723,
-      1788856769433,
-      1788856770132
+      1788865945102,
+      1788865945731,
+      1788865946000,
+      1788865947000,
+      1788865948000,
+      1788865949000,
+      1788865950000,
+      1788865950000,
+      1788865951000,
+      1788865952000,
+      1788865953000,
+      1788865954410,
+      1788865955021,
+      1788865955633,
+      1788865956260,
+      1788865956887,
+      1788865957518,
+      1788865958147,
+      1788865958787,
+      1788865959441,
+      1788865960091,
+      1788865960721,
+      1788865961344
     ],
     "catalog_count": 710,
     "industry_count": 320,
@@ -11545,35 +11550,35 @@
     },
     "status": "success",
     "data_timestamps_ms": [
-      1788856733316,
-      1788856744923,
-      1788856746651
+      1788865940116,
+      1788865923139,
+      1788865926425
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-09-08T16:38:57+08:00",
+      "fetched_at": "2026-09-08T19:12:12+08:00",
       "reported_total": 5558,
       "rows": 5558,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-09-08T16:39:08+08:00",
+      "fetched_at": "2026-09-08T19:12:21+08:00",
       "requested": 5562,
       "matches": 5562,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-09-08T16:39:09+08:00",
+      "fetched_at": "2026-09-08T19:12:22+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-09-08T16:39:10+08:00",
+      "fetched_at": "2026-09-08T19:12:23+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
@@ -11586,8 +11591,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1788856749000,
-        1788856749000
+        1788865941000,
+        1788865945000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -11622,11 +11627,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-09-08T16:39:30+08:00",
+    "completed_at": "2026-09-08T19:12:41+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "34205621667",
+    "run_id": "34219427052",
     "run_attempt": "1",
     "event_name": "schedule",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/34205621667"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/34219427052"
   }
 }

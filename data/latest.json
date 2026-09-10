@@ -1,6 +1,6 @@
 {
   "schema_version": "2.2.0",
-  "generated_at": "2026-09-10T16:42:37+08:00",
+  "generated_at": "2026-09-10T19:14:20+08:00",
   "trade_date": "2026-09-10",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,7 +13,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-09-10T16:15:00+08:00",
-    "freshness_seconds": 1657.4,
+    "freshness_seconds": 10760.9,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5282,
@@ -5258,33 +5258,6 @@
       "low": 36.14
     },
     {
-      "symbol": "bj920895",
-      "code": "920895",
-      "name": "花溪科技",
-      "last": 29.76,
-      "change": -1.64,
-      "pct": -5.22,
-      "amplitude": 19.68,
-      "turnover_rate": 35.79,
-      "volume_ratio": 1.09,
-      "amount": 336040803.0,
-      "volume": 102839.0,
-      "speed": 0.54,
-      "pe_ttm": 1506.86,
-      "float_mv": 855000000.0000001,
-      "total_mv": 1682000000.0,
-      "main_net_hint": 0.0,
-      "pct_5d": -0.8,
-      "pct_10d": 83.14,
-      "pct_20d": 130.7,
-      "pct_60d": 125.97,
-      "prev_close": 31.4,
-      "open": 32.99,
-      "trade_time": "2026-09-10T15:33:45+08:00",
-      "high": 35.5,
-      "low": 29.32
-    },
-    {
       "symbol": "sh605177",
       "code": "605177",
       "name": "东亚药业",
@@ -5580,6 +5553,33 @@
       "trade_time": "2026-09-10T15:33:42+08:00",
       "high": 34.94,
       "low": 27.23
+    },
+    {
+      "symbol": "sh603105",
+      "code": "603105",
+      "name": "芯能科技",
+      "last": 8.38,
+      "change": 0.76,
+      "pct": 9.97,
+      "amplitude": 10.5,
+      "turnover_rate": 6.19,
+      "volume_ratio": 1.66,
+      "amount": 256112593.0,
+      "volume": 309563.0,
+      "speed": 0.0,
+      "pe_ttm": 35.05,
+      "float_mv": 4190000000.0,
+      "total_mv": 4190000000.0,
+      "main_net_hint": 11722.74,
+      "pct_5d": 3.58,
+      "pct_10d": 6.35,
+      "pct_20d": 16.88,
+      "pct_60d": 10.12,
+      "prev_close": 7.62,
+      "open": 7.6,
+      "trade_time": "2026-09-10T16:14:37+08:00",
+      "high": 8.38,
+      "low": 7.58
     }
   ],
   "market_segments": {
@@ -8164,33 +8164,6 @@
       }
     ],
     "beijing": [
-      {
-        "symbol": "bj920895",
-        "code": "920895",
-        "name": "花溪科技",
-        "last": 29.76,
-        "change": -1.64,
-        "pct": -5.22,
-        "amplitude": 19.68,
-        "turnover_rate": 35.79,
-        "volume_ratio": 1.09,
-        "amount": 336040803.0,
-        "volume": 102839.0,
-        "speed": 0.54,
-        "pe_ttm": 1506.86,
-        "float_mv": 855000000.0000001,
-        "total_mv": 1682000000.0,
-        "main_net_hint": 0.0,
-        "pct_5d": -0.8,
-        "pct_10d": 83.14,
-        "pct_20d": 130.7,
-        "pct_60d": 125.97,
-        "prev_close": 31.4,
-        "open": 32.99,
-        "trade_time": "2026-09-10T15:33:45+08:00",
-        "high": 35.5,
-        "low": 29.32
-      },
       {
         "symbol": "bj920268",
         "code": "920268",
@@ -11484,29 +11457,29 @@
       }
     ],
     "data_timestamps_ms": [
-      1789029738220,
-      1789029739273,
-      1789029740000,
-      1789029741000,
-      1789029742000,
-      1789029743000,
-      1789029744000,
-      1789029746000,
-      1789029747000,
-      1789029747000,
-      1789029749000,
-      1789029750041,
-      1789029751128,
-      1789029751740,
-      1789029752349,
-      1789029752998,
-      1789029753624,
-      1789029754197,
-      1789029754803,
-      1789029755454,
-      1789029756059,
-      1789029756654,
-      1789029757263
+      1789038842940,
+      1789038843701,
+      1789038844000,
+      1789038845000,
+      1789038846000,
+      1789038847000,
+      1789038848000,
+      1789038849000,
+      1789038850000,
+      1789038851000,
+      1789038852000,
+      1789038853037,
+      1789038853743,
+      1789038854608,
+      1789038855282,
+      1789038855977,
+      1789038856701,
+      1789038857375,
+      1789038858061,
+      1789038858760,
+      1789038859476,
+      1789038860154,
+      1789038860847
     ],
     "catalog_count": 710,
     "industry_count": 320,
@@ -12375,35 +12348,35 @@
     },
     "status": "success",
     "data_timestamps_ms": [
-      1789029732438,
-      1789029739240,
-      1789029717483
+      1789038830172,
+      1789038841404,
+      1789038844340
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-09-10T16:42:04+08:00",
+      "fetched_at": "2026-09-10T19:13:45+08:00",
       "reported_total": 5561,
       "rows": 5561,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-09-10T16:42:14+08:00",
+      "fetched_at": "2026-09-10T19:13:58+08:00",
       "requested": 5565,
       "matches": 5565,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-09-10T16:42:14+08:00",
+      "fetched_at": "2026-09-10T19:13:59+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-09-10T16:42:16+08:00",
+      "fetched_at": "2026-09-10T19:14:01+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
@@ -12416,8 +12389,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1789029734000,
-        1789029737000
+        1789038842000,
+        1789038842000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -12452,11 +12425,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-09-10T16:42:37+08:00",
+    "completed_at": "2026-09-10T19:14:20+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "34456522536",
+    "run_id": "34470166343",
     "run_attempt": "1",
     "event_name": "schedule",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/34456522536"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/34470166343"
   }
 }

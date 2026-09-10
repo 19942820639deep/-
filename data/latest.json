@@ -1,6 +1,6 @@
 {
   "schema_version": "2.2.0",
-  "generated_at": "2026-09-10T16:24:07+08:00",
+  "generated_at": "2026-09-10T16:42:37+08:00",
   "trade_date": "2026-09-10",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,7 +13,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-09-10T16:15:00+08:00",
-    "freshness_seconds": 547.3,
+    "freshness_seconds": 1657.4,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5282,
@@ -5280,7 +5280,7 @@
       "pct_60d": 125.97,
       "prev_close": 31.4,
       "open": 32.99,
-      "trade_time": "2026-09-10T15:33:42+08:00",
+      "trade_time": "2026-09-10T15:33:45+08:00",
       "high": 35.5,
       "low": 29.32
     },
@@ -8187,7 +8187,7 @@
         "pct_60d": 125.97,
         "prev_close": 31.4,
         "open": 32.99,
-        "trade_time": "2026-09-10T15:33:42+08:00",
+        "trade_time": "2026-09-10T15:33:45+08:00",
         "high": 35.5,
         "low": 29.32
       },
@@ -11484,29 +11484,29 @@
       }
     ],
     "data_timestamps_ms": [
-      1789028622976,
-      1789028624514,
-      1789028625000,
-      1789028627000,
-      1789028628000,
-      1789028630000,
-      1789028631000,
-      1789028633000,
-      1789028634000,
-      1789028635000,
-      1789028636000,
-      1789028637834,
-      1789028638762,
-      1789028639545,
-      1789028640537,
-      1789028641288,
-      1789028642111,
-      1789028642864,
-      1789028643618,
-      1789028644395,
-      1789028645186,
-      1789028646406,
-      1789028647116
+      1789029738220,
+      1789029739273,
+      1789029740000,
+      1789029741000,
+      1789029742000,
+      1789029743000,
+      1789029744000,
+      1789029746000,
+      1789029747000,
+      1789029747000,
+      1789029749000,
+      1789029750041,
+      1789029751128,
+      1789029751740,
+      1789029752349,
+      1789029752998,
+      1789029753624,
+      1789029754197,
+      1789029754803,
+      1789029755454,
+      1789029756059,
+      1789029756654,
+      1789029757263
     ],
     "catalog_count": 710,
     "industry_count": 320,
@@ -12375,35 +12375,35 @@
     },
     "status": "success",
     "data_timestamps_ms": [
-      1789028617359,
-      1789028599244,
-      1789028609441
+      1789029732438,
+      1789029739240,
+      1789029717483
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-09-10T16:23:25+08:00",
+      "fetched_at": "2026-09-10T16:42:04+08:00",
       "reported_total": 5561,
       "rows": 5561,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-09-10T16:23:37+08:00",
+      "fetched_at": "2026-09-10T16:42:14+08:00",
       "requested": 5565,
       "matches": 5565,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-09-10T16:23:38+08:00",
+      "fetched_at": "2026-09-10T16:42:14+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-09-10T16:23:41+08:00",
+      "fetched_at": "2026-09-10T16:42:16+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
@@ -12416,8 +12416,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1789028621000,
-        1789028621000
+        1789029734000,
+        1789029737000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -12452,11 +12452,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-09-10T16:24:07+08:00",
+    "completed_at": "2026-09-10T16:42:37+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "34454873016",
+    "run_id": "34456522536",
     "run_attempt": "1",
     "event_name": "schedule",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/34454873016"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/34456522536"
   }
 }

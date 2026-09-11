@@ -1,6 +1,6 @@
 {
   "schema_version": "2.2.0",
-  "generated_at": "2026-09-11T16:18:38+08:00",
+  "generated_at": "2026-09-11T16:40:06+08:00",
   "trade_date": "2026-09-11",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,10 +13,10 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-09-11T16:15:00+08:00",
-    "freshness_seconds": 219.0,
+    "freshness_seconds": 1506.0,
     "freshness_limit_seconds": 240,
-    "freshness_pass": true,
-    "coverage_floor": 5279,
+    "freshness_pass": false,
+    "coverage_floor": 5283,
     "coverage_ratio": 1.0,
     "coverage_pass": true,
     "index_pass": true,
@@ -67,7 +67,7 @@
       "prev_close": 3934.4,
       "open": 3910.92,
       "volume": 579123145.0,
-      "trade_time": "2026-09-11T16:14:03+08:00",
+      "trade_time": "2026-09-11T16:14:33+08:00",
       "change": -46.29,
       "pct": -1.18,
       "high": 3912.32,
@@ -112,7 +112,7 @@
       "prev_close": 1569.22,
       "open": 1548.7,
       "volume": 9973991.0,
-      "trade_time": "2026-09-11T16:14:15+08:00",
+      "trade_time": "2026-09-11T16:14:45+08:00",
       "change": -15.83,
       "pct": -1.01,
       "high": 1556.68,
@@ -3685,7 +3685,7 @@
       "volume_ratio": 1.14,
       "amount": 1240854818.0,
       "volume": 22654.0,
-      "speed": -0.14,
+      "speed": -0.1,
       "pe_ttm": 119.13,
       "float_mv": 16434000000.0,
       "total_mv": 55579000000.0,
@@ -5080,7 +5080,7 @@
       "volume_ratio": 0.0,
       "amount": 392724481.0,
       "volume": 101979.0,
-      "speed": -1.12,
+      "speed": -1.14,
       "pe_ttm": 30.21,
       "float_mv": 600000000.0,
       "total_mv": 2249000000.0,
@@ -5091,7 +5091,7 @@
       "pct_60d": 142.69,
       "prev_close": 34.94,
       "open": 35.5,
-      "trade_time": "2026-09-11T15:34:02+08:00",
+      "trade_time": "2026-09-11T15:34:17+08:00",
       "high": 44.98,
       "low": 33.33
     },
@@ -5361,7 +5361,7 @@
       "pct_60d": 11.72,
       "prev_close": 21.96,
       "open": 21.39,
-      "trade_time": "2026-09-11T15:34:02+08:00",
+      "trade_time": "2026-09-11T15:34:14+08:00",
       "high": 26.4,
       "low": 21.12
     },
@@ -8402,7 +8402,7 @@
         "volume_ratio": 1.14,
         "amount": 1240854818.0,
         "volume": 22654.0,
-        "speed": -0.14,
+        "speed": -0.1,
         "pe_ttm": 119.13,
         "float_mv": 16434000000.0,
         "total_mv": 55579000000.0,
@@ -8434,7 +8434,7 @@
         "volume_ratio": 0.0,
         "amount": 392724481.0,
         "volume": 101979.0,
-        "speed": -1.12,
+        "speed": -1.14,
         "pe_ttm": 30.21,
         "float_mv": 600000000.0,
         "total_mv": 2249000000.0,
@@ -8445,7 +8445,7 @@
         "pct_60d": 142.69,
         "prev_close": 34.94,
         "open": 35.5,
-        "trade_time": "2026-09-11T15:34:02+08:00",
+        "trade_time": "2026-09-11T15:34:17+08:00",
         "high": 44.98,
         "low": 33.33
       },
@@ -8472,7 +8472,7 @@
         "pct_60d": 11.72,
         "prev_close": 21.96,
         "open": 21.39,
-        "trade_time": "2026-09-11T15:34:02+08:00",
+        "trade_time": "2026-09-11T15:34:14+08:00",
         "high": 26.4,
         "low": 21.12
       }
@@ -11197,29 +11197,29 @@
       }
     ],
     "data_timestamps_ms": [
-      1789114694189,
-      1789114695073,
-      1789114696000,
-      1789114697000,
-      1789114698000,
-      1789114699000,
-      1789114701000,
-      1789114702000,
-      1789114703000,
-      1789114705000,
-      1789114706000,
-      1789114707178,
-      1789114708209,
-      1789114708952,
-      1789114709753,
-      1789114712400,
-      1789114713148,
-      1789114713896,
-      1789114715656,
-      1789114716520,
-      1789114717359,
-      1789114718121,
-      1789114718857
+      1789115973054,
+      1789115975151,
+      1789115976000,
+      1789115977000,
+      1789115979000,
+      1789115980000,
+      1789115981000,
+      1789115983000,
+      1789115984000,
+      1789115987000,
+      1789115988000,
+      1789115989674,
+      1789115990871,
+      1789115991867,
+      1789115992837,
+      1789115994933,
+      1789115997008,
+      1789115997887,
+      1789115999242,
+      1789116001165,
+      1789116002622,
+      1789116003913,
+      1789116005843
     ],
     "catalog_count": 710,
     "industry_count": 320,
@@ -12062,7 +12062,7 @@
           "price_change_ratio_pct": 8.3333,
           "open_times": 3,
           "turnover_ratio_pct": 28.136,
-          "turnover": 3374888000.0
+          "turnover": 3374887900.0
         },
         {
           "thscode": "002297.SZ",
@@ -12238,35 +12238,35 @@
     },
     "status": "success",
     "data_timestamps_ms": [
-      1789114684549,
-      1789114668380,
-      1789114689811
+      1789115963352,
+      1789115960043,
+      1789115950151
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-09-11T16:18:01+08:00",
+      "fetched_at": "2026-09-11T16:39:14+08:00",
       "reported_total": 5562,
       "rows": 5562,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-09-11T16:18:10+08:00",
+      "fetched_at": "2026-09-11T16:39:27+08:00",
       "requested": 5566,
       "matches": 5566,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-09-11T16:18:11+08:00",
+      "fetched_at": "2026-09-11T16:39:28+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-09-11T16:18:12+08:00",
+      "fetched_at": "2026-09-11T16:39:31+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
@@ -12279,8 +12279,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1789114692000,
-        1789114693000
+        1789115973000,
+        1789115973000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -12300,6 +12300,7 @@
     }
   },
   "warnings": [
+    "Quote timestamp is stale for tail-session use",
     "Tencent/Sina timestamps are not synchronized for live intraday use"
   ],
   "errors": [],
@@ -12314,11 +12315,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-09-11T16:18:39+08:00",
+    "completed_at": "2026-09-11T16:40:06+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "34578479311",
+    "run_id": "34580227658",
     "run_attempt": "1",
     "event_name": "schedule",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/34578479311"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/34580227658"
   }
 }

@@ -11,6 +11,8 @@ on:
     # All cron entries are UTC; comments show Asia/Shanghai.
     # Avoid minute 00/05/10 etc. GitHub documents heavier schedule delay near
     # common clock boundaries; odd offsets materially reduce queue contention.
+    # 09:32 through 09:52 every five minutes: prime 09:45 PRE and NEW decisions.
+    - cron: "32,37,42,47,52 1 * * 1-5"
     # 10:12 through 10:32 every five minutes.
     - cron: "12,17,22,27,32 2 * * 1-5"
     # 11:42 through 11:57 (morning close snapshot).

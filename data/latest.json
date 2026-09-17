@@ -1,6 +1,6 @@
 {
   "schema_version": "2.2.0",
-  "generated_at": "2026-09-17T12:06:27+08:00",
+  "generated_at": "2026-09-17T12:11:07+08:00",
   "trade_date": "2026-09-17",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,16 +13,16 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-09-17T12:05:59+08:00",
-    "freshness_seconds": 29.0,
+    "freshness_seconds": 308.5,
     "freshness_limit_seconds": 240,
-    "freshness_pass": true,
-    "coverage_floor": 5285,
+    "freshness_pass": false,
+    "coverage_floor": 5286,
     "coverage_ratio": 1.0,
     "coverage_pass": true,
     "index_pass": true,
     "cross_source_matches": 120,
     "cross_source_price_diff_p95": 0.0,
-    "cross_source_time_diff_p95_seconds": 2155.1,
+    "cross_source_time_diff_p95_seconds": 2157.0,
     "cross_source_time_pass": false,
     "cross_source_pass": false,
     "midday_close_anchor_time": "2026-09-17T11:30:00+08:00",
@@ -496,7 +496,7 @@
       "pct_60d": 22.49,
       "prev_close": 32.17,
       "open": 31.8,
-      "trade_time": "2026-09-17T12:05:59+08:00",
+      "trade_time": "2026-09-17T12:05:29+08:00",
       "high": 32.0,
       "low": 30.51,
       "secondary_last": 30.77,
@@ -2128,7 +2128,7 @@
       "pct_60d": 148.84,
       "prev_close": 7.36,
       "open": 7.36,
-      "trade_time": "2026-09-17T12:05:59+08:00",
+      "trade_time": "2026-09-17T12:05:29+08:00",
       "high": 7.63,
       "low": 7.25,
       "secondary_last": 7.49,
@@ -2704,7 +2704,7 @@
       "pct_60d": 28.04,
       "prev_close": 25.22,
       "open": 25.16,
-      "trade_time": "2026-09-17T12:05:29+08:00",
+      "trade_time": "2026-09-17T12:05:59+08:00",
       "high": 25.2,
       "low": 23.34,
       "secondary_last": 23.6,
@@ -2928,7 +2928,7 @@
       "pct_60d": -3.48,
       "prev_close": 17.84,
       "open": 17.6,
-      "trade_time": "2026-09-17T12:05:28+08:00",
+      "trade_time": "2026-09-17T12:05:58+08:00",
       "high": 17.77,
       "low": 17.28,
       "secondary_last": 17.35,
@@ -3312,7 +3312,7 @@
       "pct_60d": -15.21,
       "prev_close": 75.08,
       "open": 74.48,
-      "trade_time": "2026-09-17T12:05:28+08:00",
+      "trade_time": "2026-09-17T12:05:58+08:00",
       "high": 81.79,
       "low": 74.28,
       "secondary_last": 79.41,
@@ -3728,7 +3728,7 @@
       "pct_60d": 48.19,
       "prev_close": 15.05,
       "open": 14.75,
-      "trade_time": "2026-09-17T12:05:28+08:00",
+      "trade_time": "2026-09-17T12:05:58+08:00",
       "high": 16.56,
       "low": 14.53,
       "secondary_last": 16.55,
@@ -3984,7 +3984,7 @@
       "pct_60d": -13.59,
       "prev_close": 89.9,
       "open": 91.13,
-      "trade_time": "2026-09-17T12:04:57+08:00",
+      "trade_time": "2026-09-17T12:05:57+08:00",
       "high": 93.93,
       "low": 90.0
     },
@@ -4335,7 +4335,7 @@
       "pct_60d": 0.0,
       "prev_close": 17.15,
       "open": 17.05,
-      "trade_time": "2026-09-17T12:04:51+08:00",
+      "trade_time": "2026-09-17T12:05:51+08:00",
       "high": 18.37,
       "low": 17.0
     },
@@ -4632,7 +4632,7 @@
       "pct_60d": 26.74,
       "prev_close": 11.87,
       "open": 11.82,
-      "trade_time": "2026-09-17T12:04:54+08:00",
+      "trade_time": "2026-09-17T12:05:54+08:00",
       "high": 12.68,
       "low": 11.7
     },
@@ -4767,7 +4767,7 @@
       "pct_60d": 43.86,
       "prev_close": 11.09,
       "open": 11.09,
-      "trade_time": "2026-09-17T12:05:26+08:00",
+      "trade_time": "2026-09-17T12:05:56+08:00",
       "high": 11.65,
       "low": 10.74
     },
@@ -4821,7 +4821,7 @@
       "pct_60d": 42.9,
       "prev_close": 182.22,
       "open": 181.0,
-      "trade_time": "2026-09-17T12:05:23+08:00",
+      "trade_time": "2026-09-17T12:05:53+08:00",
       "high": 184.3,
       "low": 177.88
     },
@@ -5010,7 +5010,7 @@
       "pct_60d": -27.06,
       "prev_close": 45.14,
       "open": 44.6,
-      "trade_time": "2026-09-17T12:04:54+08:00",
+      "trade_time": "2026-09-17T12:05:54+08:00",
       "high": 50.3,
       "low": 44.6
     },
@@ -5226,7 +5226,7 @@
       "pct_60d": 59.36,
       "prev_close": 14.49,
       "open": 14.6,
-      "trade_time": "2026-09-17T12:05:46+08:00",
+      "trade_time": "2026-09-17T12:05:31+08:00",
       "high": 16.02,
       "low": 14.01
     },
@@ -5550,7 +5550,7 @@
       "pct_60d": 7.2,
       "prev_close": 16.67,
       "open": 16.67,
-      "trade_time": "2026-09-17T12:05:22+08:00",
+      "trade_time": "2026-09-17T12:05:52+08:00",
       "high": 18.34,
       "low": 16.52
     },
@@ -5831,7 +5831,7 @@
         "pct_60d": 22.49,
         "prev_close": 32.17,
         "open": 31.8,
-        "trade_time": "2026-09-17T12:05:59+08:00",
+        "trade_time": "2026-09-17T12:05:29+08:00",
         "high": 32.0,
         "low": 30.51,
         "secondary_last": 30.77,
@@ -7433,7 +7433,7 @@
         "pct_60d": -13.59,
         "prev_close": 89.9,
         "open": 91.13,
-        "trade_time": "2026-09-17T12:04:57+08:00",
+        "trade_time": "2026-09-17T12:05:57+08:00",
         "high": 93.93,
         "low": 90.0
       },
@@ -7932,7 +7932,7 @@
         "pct_60d": -15.21,
         "prev_close": 75.08,
         "open": 74.48,
-        "trade_time": "2026-09-17T12:05:28+08:00",
+        "trade_time": "2026-09-17T12:05:58+08:00",
         "high": 81.79,
         "low": 74.28,
         "secondary_last": 79.41,
@@ -8246,7 +8246,7 @@
         "pct_60d": 59.36,
         "prev_close": 14.49,
         "open": 14.6,
-        "trade_time": "2026-09-17T12:05:46+08:00",
+        "trade_time": "2026-09-17T12:05:31+08:00",
         "high": 16.02,
         "low": 14.01
       }
@@ -10702,29 +10702,29 @@
       }
     ],
     "data_timestamps_ms": [
-      1789617964154,
-      1789617965762,
-      1789617967000,
-      1789617968000,
-      1789617970000,
-      1789617971000,
-      1789617972000,
-      1789617973000,
-      1789617974000,
-      1789617975000,
-      1789617976000,
-      1789617977666,
-      1789617979173,
-      1789617980480,
-      1789617981155,
-      1789617981830,
-      1789617982541,
-      1789617983269,
-      1789617983972,
-      1789617984635,
-      1789617985525,
-      1789617986663,
-      1789617987860
+      1789618246260,
+      1789618247409,
+      1789618248000,
+      1789618250000,
+      1789618250000,
+      1789618251000,
+      1789618252000,
+      1789618254000,
+      1789618254000,
+      1789618255000,
+      1789618256000,
+      1789618257896,
+      1789618258634,
+      1789618259422,
+      1789618260133,
+      1789618260843,
+      1789618261556,
+      1789618262283,
+      1789618263031,
+      1789618263712,
+      1789618265227,
+      1789618266552,
+      1789618267346
     ],
     "catalog_count": 710,
     "industry_count": 320,
@@ -11438,35 +11438,35 @@
     },
     "status": "success",
     "data_timestamps_ms": [
-      1789617963167,
-      1789617953893,
-      1789617946991
+      1789618236616,
+      1789618235031,
+      1789618226901
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-09-17T12:05:49+08:00",
+      "fetched_at": "2026-09-17T12:10:30+08:00",
       "reported_total": 5565,
       "rows": 5565,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-09-17T12:05:59+08:00",
+      "fetched_at": "2026-09-17T12:10:40+08:00",
       "requested": 5569,
       "matches": 5569,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-09-17T12:06:00+08:00",
+      "fetched_at": "2026-09-17T12:10:41+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-09-17T12:06:02+08:00",
+      "fetched_at": "2026-09-17T12:10:44+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
@@ -11479,8 +11479,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1789617961000,
-        1789617965000
+        1789618244000,
+        1789618244000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -11500,6 +11500,7 @@
     }
   },
   "warnings": [
+    "Quote timestamp is stale for tail-session use",
     "Live cross-source timestamps diverge during lunch; midday close accepted from the 11:30 secondary anchor and matching prices"
   ],
   "errors": [],
@@ -11514,11 +11515,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-09-17T12:06:27+08:00",
+    "completed_at": "2026-09-17T12:11:07+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "35180607621",
+    "run_id": "35180898139",
     "run_attempt": "1",
     "event_name": "push",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/35180607621"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/35180898139"
   }
 }

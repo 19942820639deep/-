@@ -1,22 +1,22 @@
 {
   "schema_version": "1.0.0",
   "run_status": "success",
-  "started_at": "2026-09-22T14:43:44+08:00",
-  "completed_at": "2026-09-22T14:44:52+08:00",
+  "started_at": "2026-09-22T15:39:21+08:00",
+  "completed_at": "2026-09-22T15:40:41+08:00",
   "snapshot_updated": true,
-  "snapshot_generated_at": "2026-09-22T14:44:52+08:00",
+  "snapshot_generated_at": "2026-09-22T15:40:41+08:00",
   "trade_date": "2026-09-22",
   "valid_for_tail_selection": true,
   "validity_profiles": {
     "live_intraday": true,
     "midday_close": false,
-    "previous_close": false,
+    "previous_close": true,
     "core_market_data": true
   },
   "validation": {
     "current_trade_day": true,
-    "latest_trade_time": "2026-09-22T14:44:03+08:00",
-    "freshness_seconds": 49.2,
+    "latest_trade_time": "2026-09-22T15:39:41+08:00",
+    "freshness_seconds": 60.5,
     "freshness_limit_seconds": 240,
     "freshness_pass": true,
     "coverage_floor": 5286,
@@ -24,18 +24,18 @@
     "coverage_pass": true,
     "index_pass": true,
     "cross_source_matches": 120,
-    "cross_source_price_diff_p95": 0.000629,
-    "cross_source_time_diff_p95_seconds": 6.0,
+    "cross_source_price_diff_p95": 0.0,
+    "cross_source_time_diff_p95_seconds": 280.0,
     "cross_source_time_pass": true,
     "cross_source_pass": true,
-    "midday_close_anchor_time": "2026-09-22T14:44:03+08:00",
+    "midday_close_anchor_time": "2026-09-22T15:35:00+08:00",
     "midday_execution_window_pass": false,
     "midday_secondary_time_pass": false,
     "midday_price_cross_pass": true,
     "midday_close_pass": false,
     "hithink_configured": true,
     "hithink_price_cross_matches": 120,
-    "hithink_price_diff_p95": 0.001612,
+    "hithink_price_diff_p95": 0.0,
     "hithink_price_cross_pass": true,
     "hithink_sector_count": 12,
     "sector_data_pass": true,
@@ -48,11 +48,11 @@
     "sector_supports_new_sector_discovery": true
   },
   "errors": [
-    "HiThink special: HiThink /api/a-share/special-data/limit-down-pool failed: HiThink /api/a-share/special-data/limit-down-pool: code=5003 message=hotspot_focus unknown market_id=22, ticker=603378"
+    "HiThink special: HiThink /api/a-share/special-data/limit-down-pool failed: HTTP Error 429: Too Many Requests"
   ],
   "repository": "19942820639deep/-",
-  "run_id": "35696150012",
+  "run_id": "35700684188",
   "run_attempt": "1",
   "event_name": "schedule",
-  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/35696150012"
+  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/35700684188"
 }

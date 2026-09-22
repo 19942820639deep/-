@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0.0",
   "run_status": "success",
-  "started_at": "2026-09-22T15:39:21+08:00",
-  "completed_at": "2026-09-22T15:40:41+08:00",
+  "started_at": "2026-09-22T16:42:20+08:00",
+  "completed_at": "2026-09-22T16:43:26+08:00",
   "snapshot_updated": true,
-  "snapshot_generated_at": "2026-09-22T15:40:41+08:00",
+  "snapshot_generated_at": "2026-09-22T16:43:26+08:00",
   "trade_date": "2026-09-22",
-  "valid_for_tail_selection": true,
+  "valid_for_tail_selection": false,
   "validity_profiles": {
-    "live_intraday": true,
+    "live_intraday": false,
     "midday_close": false,
     "previous_close": true,
     "core_market_data": true
   },
   "validation": {
     "current_trade_day": true,
-    "latest_trade_time": "2026-09-22T15:39:41+08:00",
-    "freshness_seconds": 60.5,
+    "latest_trade_time": "2026-09-22T16:15:00+08:00",
+    "freshness_seconds": 1706.9,
     "freshness_limit_seconds": 240,
-    "freshness_pass": true,
-    "coverage_floor": 5286,
+    "freshness_pass": false,
+    "coverage_floor": 5288,
     "coverage_ratio": 1.0,
     "coverage_pass": true,
     "index_pass": true,
     "cross_source_matches": 120,
     "cross_source_price_diff_p95": 0.0,
-    "cross_source_time_diff_p95_seconds": 280.0,
-    "cross_source_time_pass": true,
-    "cross_source_pass": true,
+    "cross_source_time_diff_p95_seconds": 2398.0,
+    "cross_source_time_pass": false,
+    "cross_source_pass": false,
     "midday_close_anchor_time": "2026-09-22T15:35:00+08:00",
     "midday_execution_window_pass": false,
     "midday_secondary_time_pass": false,
@@ -48,11 +48,11 @@
     "sector_supports_new_sector_discovery": true
   },
   "errors": [
-    "HiThink special: HiThink /api/a-share/special-data/limit-down-pool failed: HTTP Error 429: Too Many Requests"
+    "HiThink special: HiThink /api/a-share/special-data/limit-down-pool failed: HiThink /api/a-share/special-data/limit-down-pool: code=5003 message=hotspot_focus unknown market_id=22, ticker=603378"
   ],
   "repository": "19942820639deep/-",
-  "run_id": "35700684188",
+  "run_id": "35706246636",
   "run_attempt": "1",
   "event_name": "schedule",
-  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/35700684188"
+  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/35706246636"
 }

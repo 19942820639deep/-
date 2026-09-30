@@ -1,6 +1,6 @@
 {
   "schema_version": "2.2.0",
-  "generated_at": "2026-09-30T17:55:06+08:00",
+  "generated_at": "2026-09-30T18:19:44+08:00",
   "trade_date": "2026-09-30",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,7 +13,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-09-30T16:15:00+08:00",
-    "freshness_seconds": 6006.5,
+    "freshness_seconds": 7484.5,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5293,
@@ -4929,7 +4929,7 @@
       "pct_60d": 16.73,
       "prev_close": 21.03,
       "open": 21.11,
-      "trade_time": "2026-09-30T15:34:39+08:00",
+      "trade_time": "2026-09-30T15:34:30+08:00",
       "high": 26.46,
       "low": 20.88
     },
@@ -8465,7 +8465,7 @@
         "pct_60d": 16.73,
         "prev_close": 21.03,
         "open": 21.11,
-        "trade_time": "2026-09-30T15:34:39+08:00",
+        "trade_time": "2026-09-30T15:34:30+08:00",
         "high": 26.46,
         "low": 20.88
       },
@@ -11290,15 +11290,15 @@
         "pct": 2.953645,
         "last": 1698.521,
         "amount": 19270127000.0,
-        "constituent_count": 62,
-        "priced_count": 62,
+        "constituent_count": 61,
+        "priced_count": 61,
         "up": 60,
         "down": 1,
-        "flat": 1,
-        "breadth_up_ratio": 0.9677,
-        "median_constituent_pct": 2.27,
-        "average_constituent_pct": 2.954,
-        "constituent_turnover": 19270127393.0,
+        "flat": 0,
+        "breadth_up_ratio": 0.9836,
+        "median_constituent_pct": 2.29,
+        "average_constituent_pct": 3.0025,
+        "constituent_turnover": 19243265286.0,
         "capacity_leaders": [
           {
             "symbol": "sh603127",
@@ -11358,9 +11358,14 @@
             "name": "长春高新"
           },
           {
-            "symbol": "sz000726",
-            "code": "000726",
-            "name": "鲁泰Ａ"
+            "symbol": "sz000813",
+            "code": "000813",
+            "name": "德展健康"
+          },
+          {
+            "symbol": "sz000931",
+            "code": "000931",
+            "name": "中关村"
           },
           {
             "symbol": "sz002007",
@@ -11398,6 +11403,21 @@
             "name": "东方嘉盛"
           },
           {
+            "symbol": "sz300006",
+            "code": "300006",
+            "name": "莱美药业"
+          },
+          {
+            "symbol": "sz300009",
+            "code": "300009",
+            "name": "安科生物"
+          },
+          {
+            "symbol": "sz300109",
+            "code": "300109",
+            "name": "新开源"
+          },
+          {
             "symbol": "sz300122",
             "code": "300122",
             "name": "智飞生物"
@@ -11408,9 +11428,19 @@
             "name": "沃森生物"
           },
           {
+            "symbol": "sz300171",
+            "code": "300171",
+            "name": "东富龙"
+          },
+          {
             "symbol": "sz300238",
             "code": "300238",
             "name": "冠昊生物"
+          },
+          {
+            "symbol": "sz300289",
+            "code": "300289",
+            "name": "利德曼"
           },
           {
             "symbol": "sz300294",
@@ -11423,9 +11453,19 @@
             "name": "博晖创新"
           },
           {
+            "symbol": "sz300347",
+            "code": "300347",
+            "name": "泰格医药"
+          },
+          {
             "symbol": "sz300485",
             "code": "300485",
             "name": "赛升药业"
+          },
+          {
+            "symbol": "sz300487",
+            "code": "300487",
+            "name": "蓝晓科技"
           },
           {
             "symbol": "sz300601",
@@ -11441,6 +11481,11 @@
             "symbol": "sz300723",
             "code": "300723",
             "name": "一品红"
+          },
+          {
+            "symbol": "sz300765",
+            "code": "300765",
+            "name": "石药创新"
           },
           {
             "symbol": "sz300841",
@@ -11466,6 +11511,11 @@
             "symbol": "sh600211",
             "code": "600211",
             "name": "西藏药业"
+          },
+          {
+            "symbol": "sh600252",
+            "code": "600252",
+            "name": "中恒集团"
           },
           {
             "symbol": "sh600332",
@@ -11498,6 +11548,11 @@
             "name": "梅花生物"
           },
           {
+            "symbol": "sh600881",
+            "code": "600881",
+            "name": "亚泰集团"
+          },
+          {
             "symbol": "sh601216",
             "code": "601216",
             "name": "君正集团"
@@ -11528,6 +11583,16 @@
             "name": "步长制药"
           },
           {
+            "symbol": "sh688091",
+            "code": "688091",
+            "name": "上海谊众"
+          },
+          {
+            "symbol": "sh688180",
+            "code": "688180",
+            "name": "君实生物-U"
+          },
+          {
             "symbol": "sh688185",
             "code": "688185",
             "name": "康希诺"
@@ -11536,6 +11601,16 @@
             "symbol": "sh688276",
             "code": "688276",
             "name": "百克生物"
+          },
+          {
+            "symbol": "sh688278",
+            "code": "688278",
+            "name": "特宝生物"
+          },
+          {
+            "symbol": "sh688298",
+            "code": "688298",
+            "name": "东方生物"
           },
           {
             "symbol": "sh688319",
@@ -11548,6 +11623,16 @@
             "name": "神州细胞"
           },
           {
+            "symbol": "sh688526",
+            "code": "688526",
+            "name": "科前生物"
+          },
+          {
+            "symbol": "sh688658",
+            "code": "688658",
+            "name": "悦康药业"
+          },
+          {
             "symbol": "sh688670",
             "code": "688670",
             "name": "金迪克"
@@ -11558,99 +11643,9 @@
             "name": "成大生物"
           },
           {
-            "symbol": "sz000813",
-            "code": "000813",
-            "name": "德展健康"
-          },
-          {
-            "symbol": "sz300487",
-            "code": "300487",
-            "name": "蓝晓科技"
-          },
-          {
-            "symbol": "sz300171",
-            "code": "300171",
-            "name": "东富龙"
-          },
-          {
-            "symbol": "sh688180",
-            "code": "688180",
-            "name": "君实生物-U"
-          },
-          {
-            "symbol": "sz300347",
-            "code": "300347",
-            "name": "泰格医药"
-          },
-          {
-            "symbol": "sh688298",
-            "code": "688298",
-            "name": "东方生物"
-          },
-          {
-            "symbol": "sh600881",
-            "code": "600881",
-            "name": "亚泰集团"
-          },
-          {
-            "symbol": "sz300009",
-            "code": "300009",
-            "name": "安科生物"
-          },
-          {
-            "symbol": "sh600252",
-            "code": "600252",
-            "name": "中恒集团"
-          },
-          {
-            "symbol": "sz300109",
-            "code": "300109",
-            "name": "新开源"
-          },
-          {
-            "symbol": "sh688526",
-            "code": "688526",
-            "name": "科前生物"
-          },
-          {
             "symbol": "bj920575",
             "code": "920575",
             "name": "*ST康乐"
-          },
-          {
-            "symbol": "sz300289",
-            "code": "300289",
-            "name": "利德曼"
-          },
-          {
-            "symbol": "sz300765",
-            "code": "300765",
-            "name": "石药创新"
-          },
-          {
-            "symbol": "sh688658",
-            "code": "688658",
-            "name": "悦康药业"
-          },
-          {
-            "symbol": "sh688278",
-            "code": "688278",
-            "name": "特宝生物"
-          },
-          {
-            "symbol": "sh688091",
-            "code": "688091",
-            "name": "上海谊众"
-          },
-          {
-            "symbol": "sz000931",
-            "code": "000931",
-            "name": "中关村"
-          },
-          {
-            "symbol": "sz300006",
-            "code": "300006",
-            "name": "莱美药业"
           }
         ]
       },
@@ -11822,29 +11817,29 @@
       }
     ],
     "data_timestamps_ms": [
-      1790762078179,
-      1790762079604,
-      1790762080000,
-      1790762083000,
-      1790762084000,
-      1790762085000,
-      1790762087000,
-      1790762088000,
-      1790762089000,
-      1790762091000,
-      1790762092000,
-      1790762093730,
-      1790762095076,
-      1790762095677,
-      1790762097038,
-      1790762097732,
-      1790762099047,
-      1790762099745,
-      1790762100390,
-      1790762101104,
-      1790762102534,
-      1790762105768,
-      1790762106440
+      1790763557402,
+      1790763559046,
+      1790763560000,
+      1790763562000,
+      1790763563000,
+      1790763564000,
+      1790763566000,
+      1790763568000,
+      1790763569000,
+      1790763570000,
+      1790763571000,
+      1790763573065,
+      1790763573908,
+      1790763575458,
+      1790763577050,
+      1790763578050,
+      1790763578858,
+      1790763579643,
+      1790763580430,
+      1790763581874,
+      1790763582696,
+      1790763583523,
+      1790763584325
     ],
     "catalog_count": 710,
     "industry_count": 320,
@@ -12943,35 +12938,35 @@
     },
     "status": "success",
     "data_timestamps_ms": [
-      1790762068202,
-      1790762061668,
-      1790762062250
+      1790763534671,
+      1790763535069,
+      1790763548995
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-09-30T17:54:20+08:00",
+      "fetched_at": "2026-09-30T18:18:59+08:00",
       "reported_total": 5572,
       "rows": 5572,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-09-30T17:54:33+08:00",
+      "fetched_at": "2026-09-30T18:19:11+08:00",
       "requested": 5576,
       "matches": 5576,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-09-30T17:54:34+08:00",
+      "fetched_at": "2026-09-30T18:19:12+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-09-30T17:54:36+08:00",
+      "fetched_at": "2026-09-30T18:19:14+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
@@ -12984,8 +12979,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1790762074000,
-        1790762078000
+        1790763556000,
+        1790763556000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -13020,11 +13015,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-09-30T17:55:06+08:00",
+    "completed_at": "2026-09-30T18:19:44+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "36699053476",
+    "run_id": "36701640878",
     "run_attempt": "1",
     "event_name": "schedule",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/36699053476"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/36701640878"
   }
 }

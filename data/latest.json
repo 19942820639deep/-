@@ -1,6 +1,6 @@
 {
   "schema_version": "2.2.0",
-  "generated_at": "2026-10-09T21:11:00+08:00",
+  "generated_at": "2026-10-09T22:07:50+08:00",
   "trade_date": "2026-10-09",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,7 +13,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-10-09T16:15:00+08:00",
-    "freshness_seconds": 17760.5,
+    "freshness_seconds": 21170.8,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5294,
@@ -1511,8 +1511,8 @@
       "volume": 885752.0,
       "speed": 0.04,
       "pe_ttm": 20.7,
-      "float_mv": 348825000000.0,
-      "total_mv": 368467000000.0,
+      "float_mv": 348838000000.0,
+      "total_mv": 368483000000.0,
       "main_net_hint": -7940.27,
       "pct_5d": -8.48,
       "pct_10d": -8.71,
@@ -4983,7 +4983,7 @@
       "pct_60d": 84.31,
       "prev_close": 14.89,
       "open": 14.83,
-      "trade_time": "2026-10-09T15:35:42+08:00",
+      "trade_time": "2026-10-09T15:35:30+08:00",
       "high": 17.3,
       "low": 14.75
     },
@@ -6430,8 +6430,8 @@
         "volume": 885752.0,
         "speed": 0.04,
         "pe_ttm": 20.7,
-        "float_mv": 348825000000.0,
-        "total_mv": 368467000000.0,
+        "float_mv": 348838000000.0,
+        "total_mv": 368483000000.0,
         "main_net_hint": -7940.27,
         "pct_5d": -8.48,
         "pct_10d": -8.71,
@@ -8234,7 +8234,7 @@
         "pct_60d": 84.31,
         "prev_close": 14.89,
         "open": 14.83,
-        "trade_time": "2026-10-09T15:35:42+08:00",
+        "trade_time": "2026-10-09T15:35:30+08:00",
         "high": 17.3,
         "low": 14.75
       },
@@ -12151,7 +12151,7 @@
     "catalog_candidates_checked": 40,
     "member_fetch_failures": [],
     "supports_new_sector_discovery": true,
-    "classification_generated_at": "2026-10-09T21:11:00+08:00",
+    "classification_generated_at": "2026-10-09T22:07:50+08:00",
     "rule": "All Sina industry/concept catalogs are ranked live; leading candidates require >=80% Tencent constituent coverage and at least three priced members.",
     "endpoint": "Sina complete industry/concept catalogs + Sina memberships + Tencent live quotes",
     "classification_trade_date": "2026-10-09"
@@ -13484,35 +13484,35 @@
     },
     "status": "success",
     "data_timestamps_ms": [
-      1791551428683,
-      1791551421659,
-      1791551427795
+      1791554828312,
+      1791554835127,
+      1791554832137
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-10-09T21:10:23+08:00",
+      "fetched_at": "2026-10-09T22:07:10+08:00",
       "reported_total": 5573,
       "rows": 5573,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-10-09T21:10:32+08:00",
+      "fetched_at": "2026-10-09T22:07:20+08:00",
       "requested": 5577,
       "matches": 5577,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-10-09T21:10:33+08:00",
+      "fetched_at": "2026-10-09T22:07:21+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-10-09T21:10:35+08:00",
+      "fetched_at": "2026-10-09T22:07:23+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
@@ -13525,8 +13525,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1791551434000,
-        1791551437000
+        1791554844000,
+        1791554844000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -13563,11 +13563,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-10-09T21:11:00+08:00",
+    "completed_at": "2026-10-09T22:07:50+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "37934934466",
+    "run_id": "37941783049",
     "run_attempt": "1",
     "event_name": "schedule",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/37934934466"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/37941783049"
   }
 }

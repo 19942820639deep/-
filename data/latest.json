@@ -1,6 +1,6 @@
 {
   "schema_version": "2.2.0",
-  "generated_at": "2026-10-09T18:48:22+08:00",
+  "generated_at": "2026-10-09T19:10:00+08:00",
   "trade_date": "2026-10-09",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,7 +13,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-10-09T16:15:00+08:00",
-    "freshness_seconds": 9202.9,
+    "freshness_seconds": 10500.6,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5294,
@@ -4421,33 +4421,6 @@
       "low": 16.08
     },
     {
-      "symbol": "sz301697",
-      "code": "301697",
-      "name": "贝特利",
-      "last": 30.1,
-      "change": -1.41,
-      "pct": -4.47,
-      "amplitude": 5.65,
-      "turnover_rate": 46.49,
-      "volume_ratio": 1.3,
-      "amount": 612084936.0,
-      "volume": 204508.0,
-      "speed": 0.67,
-      "pe_ttm": 47.98,
-      "float_mv": 1324000000.0,
-      "total_mv": 7906999999.999999,
-      "main_net_hint": -2569.68,
-      "pct_5d": 0.07,
-      "pct_10d": 17.35,
-      "pct_20d": 0.4,
-      "pct_60d": 148.76,
-      "prev_close": 31.51,
-      "open": 30.95,
-      "trade_time": "2026-10-09T16:14:03+08:00",
-      "high": 30.95,
-      "low": 29.17
-    },
-    {
       "symbol": "sz000892",
       "code": "000892",
       "name": "欢瑞世纪",
@@ -5037,7 +5010,7 @@
       "pct_60d": 20.79,
       "prev_close": 7.35,
       "open": 7.39,
-      "trade_time": "2026-10-09T15:35:42+08:00",
+      "trade_time": "2026-10-09T15:35:30+08:00",
       "high": 9.18,
       "low": 7.16
     },
@@ -5199,7 +5172,7 @@
       "pct_60d": 54.32,
       "prev_close": 17.83,
       "open": 17.17,
-      "trade_time": "2026-10-09T15:35:42+08:00",
+      "trade_time": "2026-10-09T15:35:30+08:00",
       "high": 23.17,
       "low": 17.12
     },
@@ -5580,6 +5553,33 @@
       "trade_time": "2026-10-09T16:14:42+08:00",
       "high": 13.2,
       "low": 12.21
+    },
+    {
+      "symbol": "sh600207",
+      "code": "600207",
+      "name": "安彩高科",
+      "last": 5.6,
+      "change": 0.51,
+      "pct": 10.02,
+      "amplitude": 12.77,
+      "turnover_rate": 4.53,
+      "volume_ratio": 0.73,
+      "amount": 271154865.0,
+      "volume": 493298.0,
+      "speed": 0.0,
+      "pe_ttm": -7.27,
+      "float_mv": 6100000000.0,
+      "total_mv": 6100000000.0,
+      "main_net_hint": 11494.79,
+      "pct_5d": 8.53,
+      "pct_10d": 17.15,
+      "pct_20d": 26.98,
+      "pct_60d": 22.27,
+      "prev_close": 5.09,
+      "open": 5.17,
+      "trade_time": "2026-10-09T16:14:57+08:00",
+      "high": 5.6,
+      "low": 4.95
     }
   ],
   "market_segments": {
@@ -8261,7 +8261,7 @@
         "pct_60d": 20.79,
         "prev_close": 7.35,
         "open": 7.39,
-        "trade_time": "2026-10-09T15:35:42+08:00",
+        "trade_time": "2026-10-09T15:35:30+08:00",
         "high": 9.18,
         "low": 7.16
       },
@@ -8288,7 +8288,7 @@
         "pct_60d": 54.32,
         "prev_close": 17.83,
         "open": 17.17,
-        "trade_time": "2026-10-09T15:35:42+08:00",
+        "trade_time": "2026-10-09T15:35:30+08:00",
         "high": 23.17,
         "low": 17.12
       }
@@ -12151,7 +12151,7 @@
     "catalog_candidates_checked": 40,
     "member_fetch_failures": [],
     "supports_new_sector_discovery": true,
-    "classification_generated_at": "2026-10-09T18:48:22+08:00",
+    "classification_generated_at": "2026-10-09T19:10:00+08:00",
     "rule": "All Sina industry/concept catalogs are ranked live; leading candidates require >=80% Tencent constituent coverage and at least three priced members.",
     "endpoint": "Sina complete industry/concept catalogs + Sina memberships + Tencent live quotes",
     "classification_trade_date": "2026-10-09"
@@ -13484,35 +13484,35 @@
     },
     "status": "success",
     "data_timestamps_ms": [
-      1791542850029,
-      1791542848013,
-      1791542859091
+      1791544166686,
+      1791544170403,
+      1791544168427
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-10-09T18:47:39+08:00",
+      "fetched_at": "2026-10-09T19:09:13+08:00",
       "reported_total": 5573,
       "rows": 5573,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-10-09T18:47:50+08:00",
+      "fetched_at": "2026-10-09T19:09:23+08:00",
       "requested": 5577,
       "matches": 5577,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-10-09T18:47:51+08:00",
+      "fetched_at": "2026-10-09T19:09:24+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-10-09T18:47:54+08:00",
+      "fetched_at": "2026-10-09T19:09:28+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
@@ -13525,8 +13525,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1791542873000,
-        1791542877000
+        1791544178000,
+        1791544179000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -13563,11 +13563,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-10-09T18:48:22+08:00",
+    "completed_at": "2026-10-09T19:10:00+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "37919751099",
+    "run_id": "37921952034",
     "run_attempt": "1",
     "event_name": "schedule",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/37919751099"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/37921952034"
   }
 }

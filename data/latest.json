@@ -1,8 +1,8 @@
 {
   "schema_version": "2.2.0",
-  "generated_at": "2026-10-12T23:15:52+08:00",
+  "generated_at": "2026-10-13T00:29:38+08:00",
   "trade_date": "2026-10-12",
-  "is_trading_day": true,
+  "is_trading_day": false,
   "valid_for_tail_selection": false,
   "validity_profiles": {
     "live_intraday": false,
@@ -11,9 +11,9 @@
     "core_market_data": true
   },
   "validation": {
-    "current_trade_day": true,
+    "current_trade_day": false,
     "latest_trade_time": "2026-10-12T16:15:00+08:00",
-    "freshness_seconds": 25252.6,
+    "freshness_seconds": 29678.9,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5294,
@@ -5577,7 +5577,7 @@
       "pct_60d": 12.0,
       "prev_close": 28.26,
       "open": 27.79,
-      "trade_time": "2026-10-12T15:35:30+08:00",
+      "trade_time": "2026-10-12T15:35:45+08:00",
       "high": 35.0,
       "low": 27.66
     }
@@ -8106,7 +8106,7 @@
         "pct_60d": 12.0,
         "prev_close": 28.26,
         "open": 27.79,
-        "trade_time": "2026-10-12T15:35:30+08:00",
+        "trade_time": "2026-10-12T15:35:45+08:00",
         "high": 35.0,
         "low": 27.66
       }
@@ -11223,29 +11223,29 @@
       }
     ],
     "data_timestamps_ms": [
-      1791818114520,
-      1791818116231,
-      1791818117000,
-      1791818121000,
-      1791818122000,
-      1791818124000,
-      1791818126000,
-      1791818127000,
-      1791818129000,
-      1791818131000,
-      1791818132000,
-      1791818134944,
-      1791818136640,
-      1791818139760,
-      1791818140945,
-      1791818143725,
-      1791818144571,
-      1791818146298,
-      1791818148024,
-      1791818148838,
-      1791818150509,
-      1791818151367,
-      1791818152470
+      1791822547988,
+      1791822549703,
+      1791822551000,
+      1791822553000,
+      1791822554000,
+      1791822556000,
+      1791822557000,
+      1791822559000,
+      1791822561000,
+      1791822562000,
+      1791822563000,
+      1791822565514,
+      1791822566916,
+      1791822568349,
+      1791822569146,
+      1791822570212,
+      1791822571878,
+      1791822572957,
+      1791822574802,
+      1791822575670,
+      1791822577111,
+      1791822577918,
+      1791822578731
     ],
     "catalog_count": 710,
     "industry_count": 320,
@@ -11983,516 +11983,44 @@
       ]
     },
     "limit_down": {
-      "total": 22,
-      "item": [
-        {
-          "thscode": "603657.SH",
-          "ticker": "603657",
-          "name": "春光科技",
-          "last_price": 32.99,
-          "price_change_ratio_pct": -9.9864,
-          "first_limit_time": "15:00",
-          "last_limit_time": "15:00",
-          "turnover_ratio_pct": 4.7607
-        },
-        {
-          "thscode": "601086.SH",
-          "ticker": "601086",
-          "name": "国芳集团",
-          "last_price": 13.45,
-          "price_change_ratio_pct": -9.9732,
-          "first_limit_time": "14:52",
-          "last_limit_time": "14:56",
-          "turnover_ratio_pct": 16.0401
-        },
-        {
-          "thscode": "002413.SZ",
-          "ticker": "002413",
-          "name": "雷科防务",
-          "last_price": 7.87,
-          "price_change_ratio_pct": -9.9542,
-          "first_limit_time": "14:52",
-          "last_limit_time": "14:52",
-          "turnover_ratio_pct": 11.436
-        },
-        {
-          "thscode": "603021.SH",
-          "ticker": "603021",
-          "name": "*ST华鹏",
-          "last_price": 4.05,
-          "price_change_ratio_pct": -10.0,
-          "first_limit_time": "10:59",
-          "last_limit_time": "14:51",
-          "turnover_ratio_pct": 3.5734
-        },
-        {
-          "thscode": "002285.SZ",
-          "ticker": "002285",
-          "name": "世联行",
-          "last_price": 2.94,
-          "price_change_ratio_pct": -10.0917,
-          "first_limit_time": "09:50",
-          "last_limit_time": "14:49",
-          "turnover_ratio_pct": 12.7506
-        },
-        {
-          "thscode": "002396.SZ",
-          "ticker": "002396",
-          "name": "星网锐捷",
-          "last_price": 28.11,
-          "price_change_ratio_pct": -9.9904,
-          "first_limit_time": "13:40",
-          "last_limit_time": "14:38",
-          "turnover_ratio_pct": 9.7981
-        },
-        {
-          "thscode": "605366.SH",
-          "ticker": "605366",
-          "name": "宏柏新材",
-          "last_price": 8.95,
-          "price_change_ratio_pct": -9.9598,
-          "first_limit_time": "10:58",
-          "last_limit_time": "14:33",
-          "turnover_ratio_pct": 12.2423
-        },
-        {
-          "thscode": "603395.SH",
-          "ticker": "603395",
-          "name": "红四方",
-          "last_price": 23.93,
-          "price_change_ratio_pct": -10.0038,
-          "first_limit_time": "13:08",
-          "last_limit_time": "14:25",
-          "turnover_ratio_pct": 19.0166
-        },
-        {
-          "thscode": "605177.SH",
-          "ticker": "605177",
-          "name": "东亚药业",
-          "last_price": 25.46,
-          "price_change_ratio_pct": -10.0035,
-          "first_limit_time": "10:24",
-          "last_limit_time": "14:19",
-          "turnover_ratio_pct": 10.3773
-        },
-        {
-          "thscode": "603186.SH",
-          "ticker": "603186",
-          "name": "华正新材",
-          "last_price": 185.81,
-          "price_change_ratio_pct": -10.0019,
-          "first_limit_time": "14:14",
-          "last_limit_time": "14:14",
-          "turnover_ratio_pct": 12.0093
-        },
-        {
-          "thscode": "603588.SH",
-          "ticker": "603588",
-          "name": "高能环境",
-          "last_price": 14.93,
-          "price_change_ratio_pct": -10.006,
-          "first_limit_time": "14:11",
-          "last_limit_time": "14:12",
-          "turnover_ratio_pct": 3.9265
-        },
-        {
-          "thscode": "002636.SZ",
-          "ticker": "002636",
-          "name": "金安国纪",
-          "last_price": 64.5,
-          "price_change_ratio_pct": -10.0042,
-          "first_limit_time": "10:05",
-          "last_limit_time": "14:09",
-          "turnover_ratio_pct": 5.2481
-        },
-        {
-          "thscode": "000678.SZ",
-          "ticker": "000678",
-          "name": "襄阳轴承",
-          "last_price": 11.36,
-          "price_change_ratio_pct": -9.9842,
-          "first_limit_time": "09:32",
-          "last_limit_time": "13:36",
-          "turnover_ratio_pct": 14.2252
-        },
-        {
-          "thscode": "603002.SH",
-          "ticker": "603002",
-          "name": "宏昌电子",
-          "last_price": 15.91,
-          "price_change_ratio_pct": -10.0113,
-          "first_limit_time": "10:01",
-          "last_limit_time": "13:18",
-          "turnover_ratio_pct": 7.8697
-        },
-        {
-          "thscode": "603668.SH",
-          "ticker": "603668",
-          "name": "天马科技",
-          "last_price": 9.41,
-          "price_change_ratio_pct": -10.0382,
-          "first_limit_time": "10:12",
-          "last_limit_time": "11:12",
-          "turnover_ratio_pct": 4.102
-        },
-        {
-          "thscode": "600722.SH",
-          "ticker": "600722",
-          "name": "金牛化工",
-          "last_price": 15.19,
-          "price_change_ratio_pct": -10.0118,
-          "first_limit_time": "10:08",
-          "last_limit_time": "10:43",
-          "turnover_ratio_pct": 12.5022
-        },
-        {
-          "thscode": "601579.SH",
-          "ticker": "601579",
-          "name": "会稽山",
-          "last_price": 36.25,
-          "price_change_ratio_pct": -10.005,
-          "first_limit_time": "10:31",
-          "last_limit_time": "10:31",
-          "turnover_ratio_pct": 5.0296
-        },
-        {
-          "thscode": "688670.SH",
-          "ticker": "688670",
-          "name": "金迪克",
-          "last_price": 15.34,
-          "price_change_ratio_pct": -19.9791,
-          "first_limit_time": "09:49",
-          "last_limit_time": "09:49",
-          "turnover_ratio_pct": 2.7274
-        },
-        {
-          "thscode": "605303.SH",
-          "ticker": "605303",
-          "name": "园林股份",
-          "last_price": 28.99,
-          "price_change_ratio_pct": -9.9969,
-          "first_limit_time": "09:31",
-          "last_limit_time": "09:42",
-          "turnover_ratio_pct": 4.4904
-        },
-        {
-          "thscode": "000056.SZ",
-          "ticker": "000056",
-          "name": "*ST皇庭",
-          "last_price": 2.43,
-          "price_change_ratio_pct": -10.0,
-          "first_limit_time": "09:36",
-          "last_limit_time": "09:37",
-          "turnover_ratio_pct": 2.2865
-        },
-        {
-          "thscode": "002717.SZ",
-          "ticker": "002717",
-          "name": "*ST岭南",
-          "last_price": 0.45,
-          "price_change_ratio_pct": -10.0,
-          "first_limit_time": "09:25",
-          "last_limit_time": "09:25",
-          "turnover_ratio_pct": 0.2688
-        },
-        {
-          "thscode": "600664.SH",
-          "ticker": "600664",
-          "name": "哈药股份",
-          "last_price": 6.65,
-          "price_change_ratio_pct": -10.0135,
-          "first_limit_time": "09:25",
-          "last_limit_time": "09:25",
-          "turnover_ratio_pct": 2.3639
-        }
-      ]
+      "total": 0,
+      "item": []
     },
     "limit_break": {
-      "total": 25,
-      "item": [
-        {
-          "thscode": "300690.SZ",
-          "ticker": "300690",
-          "name": "双一科技",
-          "last_price": 27.02,
-          "price_change_ratio_pct": 9.7928,
-          "open_times": 1,
-          "turnover_ratio_pct": 22.1108,
-          "turnover": 681920650.0
-        },
-        {
-          "thscode": "603730.SH",
-          "ticker": "603730",
-          "name": "岱美股份",
-          "last_price": 10.42,
-          "price_change_ratio_pct": 7.8675,
-          "open_times": 5,
-          "turnover_ratio_pct": 2.3746,
-          "turnover": 530117330.0
-        },
-        {
-          "thscode": "300389.SZ",
-          "ticker": "300389",
-          "name": "艾比森",
-          "last_price": 13.61,
-          "price_change_ratio_pct": 7.8447,
-          "open_times": 1,
-          "turnover_ratio_pct": 9.5625,
-          "turnover": 374010570.0
-        },
-        {
-          "thscode": "002487.SZ",
-          "ticker": "002487",
-          "name": "大金重工",
-          "last_price": 47.1,
-          "price_change_ratio_pct": 7.6571,
-          "open_times": 1,
-          "turnover_ratio_pct": 15.845,
-          "turnover": 4566761800.0
-        },
-        {
-          "thscode": "603810.SH",
-          "ticker": "603810",
-          "name": "丰山集团",
-          "last_price": 13.88,
-          "price_change_ratio_pct": 7.1815,
-          "open_times": 1,
-          "turnover_ratio_pct": 8.5696,
-          "turnover": 190215980.0
-        },
-        {
-          "thscode": "001356.SZ",
-          "ticker": "001356",
-          "name": "富岭股份",
-          "last_price": 9.93,
-          "price_change_ratio_pct": 6.8891,
-          "open_times": 2,
-          "turnover_ratio_pct": 10.2064,
-          "turnover": 218553310.0
-        },
-        {
-          "thscode": "002919.SZ",
-          "ticker": "002919",
-          "name": "名臣健康",
-          "last_price": 17.44,
-          "price_change_ratio_pct": 6.8627,
-          "open_times": 1,
-          "turnover_ratio_pct": 5.423,
-          "turnover": 247178670.0
-        },
-        {
-          "thscode": "603956.SH",
-          "ticker": "603956",
-          "name": "威派格",
-          "last_price": 7.41,
-          "price_change_ratio_pct": 6.3128,
-          "open_times": 3,
-          "turnover_ratio_pct": 12.1184,
-          "turnover": 518817110.0
-        },
-        {
-          "thscode": "603155.SH",
-          "ticker": "603155",
-          "name": "新亚强",
-          "last_price": 16.39,
-          "price_change_ratio_pct": 6.2216,
-          "open_times": 3,
-          "turnover_ratio_pct": 12.9,
-          "turnover": 952248780.0
-        },
-        {
-          "thscode": "603065.SH",
-          "ticker": "603065",
-          "name": "宿迁联盛",
-          "last_price": 14.49,
-          "price_change_ratio_pct": 5.9211,
-          "open_times": 1,
-          "turnover_ratio_pct": 8.4187,
-          "turnover": 504598070.0
-        },
-        {
-          "thscode": "600550.SH",
-          "ticker": "600550",
-          "name": "保变电气",
-          "last_price": 10.94,
-          "price_change_ratio_pct": 5.9051,
-          "open_times": 2,
-          "turnover_ratio_pct": 5.2811,
-          "turnover": 1078150070.0
-        },
-        {
-          "thscode": "603690.SH",
-          "ticker": "603690",
-          "name": "至纯科技",
-          "last_price": 21.91,
-          "price_change_ratio_pct": 5.6922,
-          "open_times": 1,
-          "turnover_ratio_pct": 9.1516,
-          "turnover": 770220320.0
-        },
-        {
-          "thscode": "600207.SH",
-          "ticker": "600207",
-          "name": "安彩高科",
-          "last_price": 5.91,
-          "price_change_ratio_pct": 5.5357,
-          "open_times": 3,
-          "turnover_ratio_pct": 11.6923,
-          "turnover": 739719640.0
-        },
-        {
-          "thscode": "002549.SZ",
-          "ticker": "002549",
-          "name": "凯美特气",
-          "last_price": 12.95,
-          "price_change_ratio_pct": 5.1136,
-          "open_times": 2,
-          "turnover_ratio_pct": 9.0578,
-          "turnover": 823050110.0
-        },
-        {
-          "thscode": "000601.SZ",
-          "ticker": "000601",
-          "name": "韶能股份",
-          "last_price": 6.38,
-          "price_change_ratio_pct": 4.9342,
-          "open_times": 1,
-          "turnover_ratio_pct": 15.5847,
-          "turnover": 1069306290.0
-        },
-        {
-          "thscode": "601118.SH",
-          "ticker": "601118",
-          "name": "海南橡胶",
-          "last_price": 7.46,
-          "price_change_ratio_pct": 4.1899,
-          "open_times": 2,
-          "turnover_ratio_pct": 8.0953,
-          "turnover": 2567989300.0
-        },
-        {
-          "thscode": "002655.SZ",
-          "ticker": "002655",
-          "name": "共达电声",
-          "last_price": 31.65,
-          "price_change_ratio_pct": 4.1804,
-          "open_times": 2,
-          "turnover_ratio_pct": 9.8434,
-          "turnover": 1164278740.0
-        },
-        {
-          "thscode": "002938.SZ",
-          "ticker": "002938",
-          "name": "鹏鼎控股",
-          "last_price": 76.48,
-          "price_change_ratio_pct": 2.4514,
-          "open_times": 3,
-          "turnover_ratio_pct": 2.5958,
-          "turnover": 4740588600.0
-        },
-        {
-          "thscode": "603217.SH",
-          "ticker": "603217",
-          "name": "元利科技",
-          "last_price": 25.98,
-          "price_change_ratio_pct": 1.0895,
-          "open_times": 1,
-          "turnover_ratio_pct": 3.743,
-          "turnover": 207851060.0
-        },
-        {
-          "thscode": "600251.SH",
-          "ticker": "600251",
-          "name": "冠农股份",
-          "last_price": 10.45,
-          "price_change_ratio_pct": 0.5775,
-          "open_times": 1,
-          "turnover_ratio_pct": 5.4817,
-          "turnover": 458374650.0
-        },
-        {
-          "thscode": "000420.SZ",
-          "ticker": "000420",
-          "name": "吉林化纤",
-          "last_price": 3.81,
-          "price_change_ratio_pct": 0.0,
-          "open_times": 1,
-          "turnover_ratio_pct": 12.4418,
-          "turnover": 1229045880.0
-        },
-        {
-          "thscode": "001255.SZ",
-          "ticker": "001255",
-          "name": "博菲电气",
-          "last_price": 26.8,
-          "price_change_ratio_pct": -1.7235,
-          "open_times": 1,
-          "turnover_ratio_pct": 7.0907,
-          "turnover": 151701030.0
-        },
-        {
-          "thscode": "603101.SH",
-          "ticker": "603101",
-          "name": "汇嘉时代",
-          "last_price": 7.73,
-          "price_change_ratio_pct": -3.2541,
-          "open_times": 1,
-          "turnover_ratio_pct": 11.4173,
-          "turnover": 444551170.0
-        },
-        {
-          "thscode": "600127.SH",
-          "ticker": "600127",
-          "name": "金健米业",
-          "last_price": 13.9,
-          "price_change_ratio_pct": -8.4321,
-          "open_times": 7,
-          "turnover_ratio_pct": 58.2268,
-          "turnover": 5880540900.0
-        },
-        {
-          "thscode": "001300.SZ",
-          "ticker": "001300",
-          "name": "三柏硕",
-          "last_price": 13.39,
-          "price_change_ratio_pct": -9.8923,
-          "open_times": 1,
-          "turnover_ratio_pct": 13.814,
-          "turnover": 483870740.0
-        }
-      ]
+      "total": 0,
+      "item": []
     },
     "status": "success",
     "data_timestamps_ms": [
-      1791818086721,
-      1791818113278,
-      1791818100874
+      1791822542427,
+      1791822539027,
+      1791822544003
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-10-12T23:14:55+08:00",
+      "fetched_at": "2026-10-13T00:28:50+08:00",
       "reported_total": 5573,
       "rows": 5573,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-10-12T23:15:08+08:00",
+      "fetched_at": "2026-10-13T00:29:02+08:00",
       "requested": 5577,
       "matches": 5577,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-10-12T23:15:09+08:00",
+      "fetched_at": "2026-10-13T00:29:04+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-10-12T23:15:11+08:00",
+      "fetched_at": "2026-10-13T00:29:06+08:00",
       "requested": 124,
       "matches": 124,
       "calls": 2,
@@ -12505,8 +12033,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1791818114000,
-        1791818114000
+        1791822544000,
+        1791822547000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -12541,11 +12069,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-10-12T23:15:52+08:00",
+    "completed_at": "2026-10-13T00:29:38+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "38268803876",
+    "run_id": "38277649998",
     "run_attempt": "1",
     "event_name": "schedule",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/38268803876"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/38277649998"
   }
 }

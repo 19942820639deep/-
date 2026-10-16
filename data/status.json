@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "run_status": "success",
-  "started_at": "2026-10-16T16:47:24+08:00",
-  "completed_at": "2026-10-16T16:48:04+08:00",
+  "started_at": "2026-10-16T19:16:03+08:00",
+  "completed_at": "2026-10-16T19:16:49+08:00",
   "snapshot_updated": true,
-  "snapshot_generated_at": "2026-10-16T16:48:04+08:00",
+  "snapshot_generated_at": "2026-10-16T19:16:49+08:00",
   "trade_date": "2026-10-16",
   "valid_for_tail_selection": false,
   "validity_profiles": {
@@ -16,7 +16,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-10-16T16:15:00+08:00",
-    "freshness_seconds": 1984.6,
+    "freshness_seconds": 10909.4,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5298,
@@ -40,17 +40,17 @@
     "hithink_sector_count": 11,
     "sector_data_pass": true,
     "sector_data_source": "verified",
-    "sector_catalog_count": 711,
+    "sector_catalog_count": 710,
     "sector_industry_count": 320,
-    "sector_concept_count": 391,
+    "sector_concept_count": 390,
     "sector_candidates_checked": 12,
     "sector_verified_count": 11,
     "sector_supports_new_sector_discovery": true
   },
   "errors": [],
   "repository": "19942820639deep/-",
-  "run_id": "38876021294",
+  "run_id": "38892630126",
   "run_attempt": "1",
   "event_name": "schedule",
-  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/38876021294"
+  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/38892630126"
 }

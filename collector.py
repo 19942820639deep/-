@@ -532,10 +532,19 @@ def choose_candidates(stocks: list[dict[str,Any]]) -> list[dict[str,Any]]:
         for s in sorted(eligible,key=lambda x:x.get(key) if x.get(key) is not None else -999,reverse=True)[:count]:selected[s["symbol"]]=dict(s)
     return sorted(selected.values(),key=lambda x:x.get("amount") or 0,reverse=True)[:180]
 
+FOCUS_SYMBOLS = {
+    "sh601872": "招商轮船", "sh600026": "中远海能",
+    "sh688322": "奥比中光", "sh688507": "索辰科技",
+    "sz003021": "兆威机电", "sz000559": "万向钱潮",
+    "sz301313": "凡拓数创", "sz300308": "中际旭创",
+    "sz300502": "新易盛", "sz300394": "天孚通信",
+}
+
 def build_snapshot() -> dict[str,Any]:
     generated=now_shanghai(); previous=load_previous(); client=HttpClient(); warnings=[]; errors=[]
     ths_api_key=os.environ.get("THS_API_KEY","").strip()
     raw,rank_meta=fetch_tencent_rank(client); stocks=[normalize_rank(x) for x in raw]; stocks=[s for s in stocks if s["symbol"] and s["name"]]
+    stock_lookup={s["symbol"]:s for s in stocks}
     details,detail_meta=fetch_tencent_detail(client,[s["symbol"] for s in stocks]+list(INDEX_SYMBOLS.values()))
     trade_times=[]
     for s in stocks:
@@ -551,7 +560,7 @@ def build_snapshot() -> dict[str,Any]:
             if q.get("trade_time"):trade_times.append(datetime.fromisoformat(q["trade_time"]))
     market=market_summary(stocks); candidates=choose_candidates(stocks); secondary={}; sina_meta={"matches":0}
     refresh_meta={"requested":0,"matches":0,"calls":0,"endpoint":"Tencent qt.gtimg.cn candidate refresh"}
-    refresh_symbols=list(INDEX_SYMBOLS.values())+[s["symbol"] for s in candidates[:120]]
+    refresh_symbols=list(dict.fromkeys(list(INDEX_SYMBOLS.values())+[s["symbol"] for s in candidates[:120]]+list(FOCUS_SYMBOLS)))
     try:
         refreshed,refresh_meta=fetch_tencent_detail(client,refresh_symbols)
         refresh_meta["endpoint"]="Tencent qt.gtimg.cn candidate refresh"
@@ -560,13 +569,19 @@ def build_snapshot() -> dict[str,Any]:
             if q:
                 s.update({k:v for k,v in q.items() if v is not None})
                 if q.get("trade_time"):trade_times.append(datetime.fromisoformat(q["trade_time"]))
+        for symbol in FOCUS_SYMBOLS:
+            s=stock_lookup.get(symbol)
+            q=refreshed.get(symbol)
+            if s and q:
+                s.update({k:v for k,v in q.items() if v is not None})
+                if q.get("trade_time"):trade_times.append(datetime.fromisoformat(q["trade_time"]))
         for name,symbol in INDEX_SYMBOLS.items():
             q=refreshed.get(symbol)
             if q:
                 indices[name]=q
                 if q.get("trade_time"):trade_times.append(datetime.fromisoformat(q["trade_time"]))
     except Exception as exc:errors.append(f"Tencent candidate refresh: {exc}")
-    try: secondary,sina_meta=fetch_sina_quotes(client,list(INDEX_SYMBOLS.values())+[s["symbol"] for s in candidates[:120]])
+    try: secondary,sina_meta=fetch_sina_quotes(client,list(dict.fromkeys(list(INDEX_SYMBOLS.values())+[s["symbol"] for s in candidates[:120]]+list(FOCUS_SYMBOLS))))
     except Exception as exc:errors.append(f"Sina cross-check: {exc}")
     diffs=[]; time_diffs=[]; secondary_trade_times=[]; matches=0
     for s in candidates:
@@ -649,6 +664,32 @@ def build_snapshot() -> dict[str,Any]:
             "sector_candidates_checked":safe_int(sector_data.get("catalog_candidates_checked")) or 0,
             "sector_verified_count":safe_int(sector_data.get("verified_count")) or 0,
             "sector_supports_new_sector_discovery":bool(sector_data.get("supports_new_sector_discovery"))}
+    # Independent, compact public quotes for the user's key A-share candidates.
+    # Never include brokerage holdings, position sizes, credentials or private account data.
+    focus_quotes=[]
+    for symbol,label in FOCUS_SYMBOLS.items():
+        stock=stock_lookup.get(symbol)
+        if stock is None:continue
+        quote_time=stock.get("trade_time")
+        try: quote_stamp=datetime.fromisoformat(quote_time) if quote_time else None
+        except (TypeError,ValueError):quote_stamp=None
+        quote_age=(generated-quote_stamp).total_seconds() if quote_stamp else None
+        alt=secondary.get(symbol) or {}
+        main_price=safe_float(stock.get("last"))
+        alt_price=safe_float(alt.get("last"))
+        cross_diff=(abs(main_price-alt_price)/main_price if main_price and alt_price else None)
+        focus_quotes.append({
+            "symbol":symbol,"code":stock.get("code"),"name":stock.get("name") or label,
+            "last":main_price,"pct":safe_float(stock.get("pct")),
+            "open":safe_float(stock.get("open")),"high":safe_float(stock.get("high")),
+            "low":safe_float(stock.get("low")),"amount":safe_float(stock.get("amount")),
+            "trade_time":quote_time,
+            "quote_fresh_live":bool(quote_stamp and quote_stamp.date()==generated.date()
+                                   and quote_age is not None and 0<=quote_age<=240),
+            "sina_last":alt_price,"sina_trade_time":alt.get("trade_time"),
+            "cross_price_diff":round(cross_diff,6) if cross_diff is not None else None,
+            "cross_price_pass":bool(cross_diff is not None and cross_diff<=.003)
+        })
     valid=all((current,fresh,coverage,index_pass,cross))
     tail_valid=bool(valid and sector_data.get("pass"))
     if not fresh:warnings.append("Quote timestamp is stale for tail-session use")
@@ -673,7 +714,7 @@ def build_snapshot() -> dict[str,Any]:
             warnings.append("Sector leaders were verified, but the full directory was incomplete; do not claim complete new-direction discovery")
     return {"schema_version":"2.2.0","generated_at":iso(generated),"trade_date":trade_date,"is_trading_day":current,
             "valid_for_tail_selection":tail_valid,"validity_profiles":{"live_intraday":live_analysis,"midday_close":midday_analysis,
-            "previous_close":previous_close_analysis,"core_market_data":core},"validation":checks,"market":market,"indices":indices,"candidates":candidates,
+            "previous_close":previous_close_analysis,"core_market_data":core},"validation":checks,"market":market,"indices":indices,"focus_quotes":focus_quotes,"candidates":candidates,
             "market_segments":{"main":[s for s in candidates if s["code"].startswith(("600","601","603","605","000","001","002","003"))][:30],
                                "chinext":[s for s in candidates if s["code"].startswith(("300","301"))][:30],
                                "star":[s for s in candidates if s["code"].startswith(("688","689"))][:30],
@@ -720,7 +761,7 @@ def main() -> int:
                       "completed_at":iso(completed),"snapshot_updated":True,"snapshot_generated_at":s["generated_at"],
                       "trade_date":s["trade_date"],"valid_for_tail_selection":s["valid_for_tail_selection"],
                       "validity_profiles":s["validity_profiles"],"validation":s["validation"],
-                      "errors":s["errors"],**context})
+                      "errors":s["errors"],"focus_quotes":s.get("focus_quotes",[]),**context})
         print(json.dumps({"generated_at":s["generated_at"],"trade_date":s["trade_date"],"valid":s["valid_for_tail_selection"],
             "universe":s["market"]["universe_count"],"checks":s["validation"],"errors":s["errors"]},ensure_ascii=False));return 0
     except Exception as exc:

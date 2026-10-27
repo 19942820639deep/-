@@ -534,6 +534,7 @@ def choose_candidates(stocks: list[dict[str,Any]]) -> list[dict[str,Any]]:
 
 FOCUS_SYMBOLS = {
     "sh601872": "招商轮船", "sh600026": "中远海能",
+    "sh603268": "松发股份", "sh600150": "中国船舶",
     "sh688322": "奥比中光", "sh688507": "索辰科技",
     "sz003021": "兆威机电", "sz000559": "万向钱潮",
     "sz301313": "凡拓数创", "sz300308": "中际旭创",

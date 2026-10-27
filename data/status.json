@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "run_status": "success",
-  "started_at": "2026-10-27T17:38:28+08:00",
-  "completed_at": "2026-10-27T17:39:08+08:00",
+  "started_at": "2026-10-27T20:04:08+08:00",
+  "completed_at": "2026-10-27T20:05:04+08:00",
   "snapshot_updated": true,
-  "snapshot_generated_at": "2026-10-27T17:39:08+08:00",
+  "snapshot_generated_at": "2026-10-27T20:05:04+08:00",
   "trade_date": "2026-10-27",
   "valid_for_tail_selection": false,
   "validity_profiles": {
@@ -16,7 +16,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-10-27T16:15:00+08:00",
-    "freshness_seconds": 5048.8,
+    "freshness_seconds": 13804.7,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5298,
@@ -28,7 +28,7 @@
     "cross_source_time_diff_p95_seconds": 2399.0,
     "cross_source_time_pass": false,
     "cross_source_pass": false,
-    "midday_close_anchor_time": "2026-10-27T15:35:00+08:00",
+    "midday_close_anchor_time": "2026-10-27T16:29:00+08:00",
     "midday_execution_window_pass": false,
     "midday_secondary_time_pass": false,
     "midday_price_cross_pass": true,
@@ -164,7 +164,7 @@
       "trade_time": "2026-10-27T16:14:39+08:00",
       "quote_fresh_live": false,
       "sina_last": 92.5,
-      "sina_trade_time": "2026-10-27T15:35:00+08:00",
+      "sina_trade_time": "2026-10-27T16:29:00+08:00",
       "cross_price_diff": 0.0,
       "cross_price_pass": true
     },
@@ -181,7 +181,7 @@
       "trade_time": "2026-10-27T16:14:15+08:00",
       "quote_fresh_live": false,
       "sina_last": 11.98,
-      "sina_trade_time": "2026-10-27T15:35:15+08:00",
+      "sina_trade_time": "2026-10-27T16:29:15+08:00",
       "cross_price_diff": 0.0,
       "cross_price_pass": true
     },
@@ -198,7 +198,7 @@
       "trade_time": "2026-10-27T16:14:42+08:00",
       "quote_fresh_live": false,
       "sina_last": 64.4,
-      "sina_trade_time": "2026-10-27T15:35:15+08:00",
+      "sina_trade_time": "2026-10-27T16:29:15+08:00",
       "cross_price_diff": 0.0,
       "cross_price_pass": true
     },
@@ -215,7 +215,7 @@
       "trade_time": "2026-10-27T16:14:48+08:00",
       "quote_fresh_live": false,
       "sina_last": 577.0,
-      "sina_trade_time": "2026-10-27T15:35:45+08:00",
+      "sina_trade_time": "2026-10-27T16:29:45+08:00",
       "cross_price_diff": 0.0,
       "cross_price_pass": true
     },
@@ -232,7 +232,7 @@
       "trade_time": "2026-10-27T16:14:57+08:00",
       "quote_fresh_live": false,
       "sina_last": 237.59,
-      "sina_trade_time": "2026-10-27T15:35:15+08:00",
+      "sina_trade_time": "2026-10-27T16:29:15+08:00",
       "cross_price_diff": 0.0,
       "cross_price_pass": true
     },
@@ -249,14 +249,14 @@
       "trade_time": "2026-10-27T16:14:45+08:00",
       "quote_fresh_live": false,
       "sina_last": 188.62,
-      "sina_trade_time": "2026-10-27T15:35:45+08:00",
+      "sina_trade_time": "2026-10-27T16:29:45+08:00",
       "cross_price_diff": 0.0,
       "cross_price_pass": true
     }
   ],
   "repository": "19942820639deep/-",
-  "run_id": "40482304085",
+  "run_id": "40500866819",
   "run_attempt": "1",
   "event_name": "schedule",
-  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/40482304085"
+  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/40500866819"
 }

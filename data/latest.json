@@ -1,6 +1,6 @@
 {
   "schema_version": "2.2.0",
-  "generated_at": "2026-10-27T17:39:08+08:00",
+  "generated_at": "2026-10-27T20:05:04+08:00",
   "trade_date": "2026-10-27",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,7 +13,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-10-27T16:15:00+08:00",
-    "freshness_seconds": 5048.8,
+    "freshness_seconds": 13804.7,
     "freshness_limit_seconds": 240,
     "freshness_pass": false,
     "coverage_floor": 5298,
@@ -25,7 +25,7 @@
     "cross_source_time_diff_p95_seconds": 2399.0,
     "cross_source_time_pass": false,
     "cross_source_pass": false,
-    "midday_close_anchor_time": "2026-10-27T15:35:00+08:00",
+    "midday_close_anchor_time": "2026-10-27T16:29:00+08:00",
     "midday_execution_window_pass": false,
     "midday_secondary_time_pass": false,
     "midday_price_cross_pass": true,
@@ -236,7 +236,7 @@
       "trade_time": "2026-10-27T16:14:39+08:00",
       "quote_fresh_live": false,
       "sina_last": 92.5,
-      "sina_trade_time": "2026-10-27T15:35:00+08:00",
+      "sina_trade_time": "2026-10-27T16:29:00+08:00",
       "cross_price_diff": 0.0,
       "cross_price_pass": true
     },
@@ -253,7 +253,7 @@
       "trade_time": "2026-10-27T16:14:15+08:00",
       "quote_fresh_live": false,
       "sina_last": 11.98,
-      "sina_trade_time": "2026-10-27T15:35:15+08:00",
+      "sina_trade_time": "2026-10-27T16:29:15+08:00",
       "cross_price_diff": 0.0,
       "cross_price_pass": true
     },
@@ -270,7 +270,7 @@
       "trade_time": "2026-10-27T16:14:42+08:00",
       "quote_fresh_live": false,
       "sina_last": 64.4,
-      "sina_trade_time": "2026-10-27T15:35:15+08:00",
+      "sina_trade_time": "2026-10-27T16:29:15+08:00",
       "cross_price_diff": 0.0,
       "cross_price_pass": true
     },
@@ -287,7 +287,7 @@
       "trade_time": "2026-10-27T16:14:48+08:00",
       "quote_fresh_live": false,
       "sina_last": 577.0,
-      "sina_trade_time": "2026-10-27T15:35:45+08:00",
+      "sina_trade_time": "2026-10-27T16:29:45+08:00",
       "cross_price_diff": 0.0,
       "cross_price_pass": true
     },
@@ -304,7 +304,7 @@
       "trade_time": "2026-10-27T16:14:57+08:00",
       "quote_fresh_live": false,
       "sina_last": 237.59,
-      "sina_trade_time": "2026-10-27T15:35:15+08:00",
+      "sina_trade_time": "2026-10-27T16:29:15+08:00",
       "cross_price_diff": 0.0,
       "cross_price_pass": true
     },
@@ -321,7 +321,7 @@
       "trade_time": "2026-10-27T16:14:45+08:00",
       "quote_fresh_live": false,
       "sina_last": 188.62,
-      "sina_trade_time": "2026-10-27T15:35:45+08:00",
+      "sina_trade_time": "2026-10-27T16:29:45+08:00",
       "cross_price_diff": 0.0,
       "cross_price_pass": true
     }
@@ -386,7 +386,7 @@
       "high": 617.19,
       "low": 576.5,
       "secondary_last": 577.0,
-      "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:45+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 577.0,
       "hithink_price_diff": 0.0
@@ -418,7 +418,7 @@
       "high": 260.21,
       "low": 237.22,
       "secondary_last": 237.59,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 237.59,
       "hithink_price_diff": 0.0
@@ -450,7 +450,7 @@
       "high": 238.8,
       "low": 232.67,
       "secondary_last": 233.0,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 233.0,
       "hithink_price_diff": 0.0
@@ -578,7 +578,7 @@
       "high": 109.3,
       "low": 101.06,
       "secondary_last": 101.09,
-      "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:30+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 101.09,
       "hithink_price_diff": 0.0
@@ -610,7 +610,7 @@
       "high": 204.0,
       "low": 188.5,
       "secondary_last": 188.62,
-      "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:45+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 188.62,
       "hithink_price_diff": 0.0
@@ -674,7 +674,7 @@
       "high": 247.88,
       "low": 224.0,
       "secondary_last": 224.0,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 224.0,
       "hithink_price_diff": 0.0
@@ -802,7 +802,7 @@
       "high": 525.22,
       "low": 488.0,
       "secondary_last": 488.5,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 488.5,
       "hithink_price_diff": 0.0
@@ -866,7 +866,7 @@
       "high": 8.77,
       "low": 7.93,
       "secondary_last": 8.24,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 8.24,
       "hithink_price_diff": 0.0
@@ -930,7 +930,7 @@
       "high": 190.9,
       "low": 173.94,
       "secondary_last": 174.09,
-      "secondary_trade_time": "2026-10-27T15:35:00+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:00+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 174.09,
       "hithink_price_diff": 0.0
@@ -962,7 +962,7 @@
       "high": 102.89,
       "low": 99.17,
       "secondary_last": 99.2,
-      "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:45+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 99.2,
       "hithink_price_diff": 0.0
@@ -994,7 +994,7 @@
       "high": 16.17,
       "low": 14.75,
       "secondary_last": 15.39,
-      "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:30+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 15.39,
       "hithink_price_diff": 0.0
@@ -1026,7 +1026,7 @@
       "high": 269.8,
       "low": 253.0,
       "secondary_last": 253.14,
-      "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:45+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 253.14,
       "hithink_price_diff": 0.0
@@ -1154,7 +1154,7 @@
       "high": 189.58,
       "low": 174.0,
       "secondary_last": 174.56,
-      "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:45+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 174.56,
       "hithink_price_diff": 0.0
@@ -1218,7 +1218,7 @@
       "high": 88.03,
       "low": 81.22,
       "secondary_last": 81.5,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 81.5,
       "hithink_price_diff": 0.0
@@ -1314,7 +1314,7 @@
       "high": 192.38,
       "low": 170.0,
       "secondary_last": 170.6,
-      "secondary_trade_time": "2026-10-27T15:35:00+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:00+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 170.6,
       "hithink_price_diff": 0.0
@@ -1570,7 +1570,7 @@
       "high": 37.05,
       "low": 36.01,
       "secondary_last": 36.6,
-      "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:45+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 36.6,
       "hithink_price_diff": 0.0
@@ -1602,7 +1602,7 @@
       "high": 50.3,
       "low": 48.8,
       "secondary_last": 48.8,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 48.8,
       "hithink_price_diff": 0.0
@@ -1634,7 +1634,7 @@
       "high": 6.98,
       "low": 6.31,
       "secondary_last": 6.31,
-      "secondary_trade_time": "2026-10-27T15:35:00+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:00+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 6.31,
       "hithink_price_diff": 0.0
@@ -1698,7 +1698,7 @@
       "high": 13.1,
       "low": 12.27,
       "secondary_last": 12.37,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 12.37,
       "hithink_price_diff": 0.0
@@ -1730,7 +1730,7 @@
       "high": 126.2,
       "low": 119.8,
       "secondary_last": 119.97,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 119.97,
       "hithink_price_diff": 0.0
@@ -1762,7 +1762,7 @@
       "high": 243.55,
       "low": 228.09,
       "secondary_last": 228.09,
-      "secondary_trade_time": "2026-10-27T15:35:00+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:00+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 228.09,
       "hithink_price_diff": 0.0
@@ -1794,7 +1794,7 @@
       "high": 30.3,
       "low": 28.1,
       "secondary_last": 28.35,
-      "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:45+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 28.35,
       "hithink_price_diff": 0.0
@@ -1858,7 +1858,7 @@
       "high": 18.62,
       "low": 18.11,
       "secondary_last": 18.11,
-      "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:30+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 18.11,
       "hithink_price_diff": 0.0
@@ -1890,7 +1890,7 @@
       "high": 22.28,
       "low": 21.0,
       "secondary_last": 21.34,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 21.34,
       "hithink_price_diff": 0.0
@@ -1954,7 +1954,7 @@
       "high": 246.2,
       "low": 201.03,
       "secondary_last": 203.3,
-      "secondary_trade_time": "2026-10-27T15:35:00+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:00+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 203.3,
       "hithink_price_diff": 0.0
@@ -1986,7 +1986,7 @@
       "high": 33.65,
       "low": 31.0,
       "secondary_last": 31.01,
-      "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:30+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 31.01,
       "hithink_price_diff": 0.0
@@ -2018,7 +2018,7 @@
       "high": 210.5,
       "low": 195.88,
       "secondary_last": 195.99,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 195.99,
       "hithink_price_diff": 0.0
@@ -2050,7 +2050,7 @@
       "high": 403.01,
       "low": 368.0,
       "secondary_last": 373.79,
-      "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:45+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 373.79,
       "hithink_price_diff": 0.0
@@ -2082,7 +2082,7 @@
       "high": 78.88,
       "low": 73.8,
       "secondary_last": 73.89,
-      "secondary_trade_time": "2026-10-27T15:36:00+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:00+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 73.89,
       "hithink_price_diff": 0.0
@@ -2146,7 +2146,7 @@
       "high": 86.0,
       "low": 84.29,
       "secondary_last": 85.04,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 85.04,
       "hithink_price_diff": 0.0
@@ -2178,7 +2178,7 @@
       "high": 4.92,
       "low": 4.73,
       "secondary_last": 4.73,
-      "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:30+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 4.73,
       "hithink_price_diff": 0.0
@@ -2210,7 +2210,7 @@
       "high": 30.74,
       "low": 28.45,
       "secondary_last": 28.45,
-      "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:30+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 28.45,
       "hithink_price_diff": 0.0
@@ -2242,7 +2242,7 @@
       "high": 71.6,
       "low": 68.23,
       "secondary_last": 68.24,
-      "secondary_trade_time": "2026-10-27T15:35:00+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:00+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 68.24,
       "hithink_price_diff": 0.0
@@ -2306,7 +2306,7 @@
       "high": 60.47,
       "low": 55.3,
       "secondary_last": 55.54,
-      "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:45+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 55.54,
       "hithink_price_diff": 0.0
@@ -2338,7 +2338,7 @@
       "high": 185.99,
       "low": 177.54,
       "secondary_last": 177.8,
-      "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:30+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 177.8,
       "hithink_price_diff": 0.0
@@ -2370,7 +2370,7 @@
       "high": 29.09,
       "low": 28.3,
       "secondary_last": 28.33,
-      "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:45+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 28.33,
       "hithink_price_diff": 0.0
@@ -2402,7 +2402,7 @@
       "high": 28.45,
       "low": 24.0,
       "secondary_last": 24.03,
-      "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:30+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 24.03,
       "hithink_price_diff": 0.0
@@ -2434,7 +2434,7 @@
       "high": 13.19,
       "low": 11.89,
       "secondary_last": 11.98,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 11.98,
       "hithink_price_diff": 0.0
@@ -2658,7 +2658,7 @@
       "high": 25.4,
       "low": 23.05,
       "secondary_last": 23.45,
-      "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:30+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 23.45,
       "hithink_price_diff": 0.0
@@ -2690,7 +2690,7 @@
       "high": 107.99,
       "low": 92.28,
       "secondary_last": 92.8,
-      "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:45+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 92.8,
       "hithink_price_diff": 0.0
@@ -2722,7 +2722,7 @@
       "high": 16.05,
       "low": 15.14,
       "secondary_last": 15.3,
-      "secondary_trade_time": "2026-10-27T15:35:00+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:00+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 15.3,
       "hithink_price_diff": 0.0
@@ -2786,7 +2786,7 @@
       "high": 55.48,
       "low": 53.21,
       "secondary_last": 53.31,
-      "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:30+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 53.31,
       "hithink_price_diff": 0.0
@@ -2914,7 +2914,7 @@
       "high": 45.64,
       "low": 42.71,
       "secondary_last": 42.75,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 42.75,
       "hithink_price_diff": 0.0
@@ -2932,7 +2932,7 @@
       "amount": 2270266450.0,
       "volume": 940881.0,
       "speed": -0.55,
-      "pe_ttm": 66.01,
+      "pe_ttm": 103.47,
       "float_mv": 23990000000.0,
       "total_mv": 43925000000.0,
       "main_net_hint": -5176.21,
@@ -2946,7 +2946,7 @@
       "high": 24.86,
       "low": 23.31,
       "secondary_last": 23.48,
-      "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:30+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 23.48,
       "hithink_price_diff": 0.0
@@ -3010,7 +3010,7 @@
       "high": 38.58,
       "low": 35.92,
       "secondary_last": 35.92,
-      "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:45+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 35.92,
       "hithink_price_diff": 0.0
@@ -3074,7 +3074,7 @@
       "high": 14.92,
       "low": 13.49,
       "secondary_last": 14.27,
-      "secondary_trade_time": "2026-10-27T15:36:00+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:00+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 14.27,
       "hithink_price_diff": 0.0
@@ -3106,7 +3106,7 @@
       "high": 112.5,
       "low": 104.44,
       "secondary_last": 104.53,
-      "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:45+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 104.53,
       "hithink_price_diff": 0.0
@@ -3138,7 +3138,7 @@
       "high": 44.3,
       "low": 40.59,
       "secondary_last": 40.59,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 40.59,
       "hithink_price_diff": 0.0
@@ -3170,7 +3170,7 @@
       "high": 169.49,
       "low": 154.0,
       "secondary_last": 155.8,
-      "secondary_trade_time": "2026-10-27T15:35:00+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:00+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 155.8,
       "hithink_price_diff": 0.0
@@ -3234,7 +3234,7 @@
       "high": 13.09,
       "low": 11.89,
       "secondary_last": 13.09,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 13.09,
       "hithink_price_diff": 0.0
@@ -3298,7 +3298,7 @@
       "high": 10.74,
       "low": 9.6,
       "secondary_last": 10.4,
-      "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:30+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 10.4,
       "hithink_price_diff": 0.0
@@ -3330,7 +3330,7 @@
       "high": 10.67,
       "low": 8.88,
       "secondary_last": 10.12,
-      "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:30+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 10.12,
       "hithink_price_diff": 0.0
@@ -3362,7 +3362,7 @@
       "high": 16.01,
       "low": 14.68,
       "secondary_last": 16.01,
-      "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:30+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 16.01,
       "hithink_price_diff": 0.0
@@ -3426,7 +3426,7 @@
       "high": 7.7,
       "low": 6.84,
       "secondary_last": 7.7,
-      "secondary_trade_time": "2026-10-27T15:36:00+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:00+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 7.7,
       "hithink_price_diff": 0.0
@@ -3490,7 +3490,7 @@
       "high": 12.09,
       "low": 11.76,
       "secondary_last": 11.92,
-      "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:30+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 11.92,
       "hithink_price_diff": 0.0
@@ -3554,7 +3554,7 @@
       "high": 62.28,
       "low": 54.51,
       "secondary_last": 57.13,
-      "secondary_trade_time": "2026-10-27T15:35:00+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:00+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 57.13,
       "hithink_price_diff": 0.0
@@ -3586,7 +3586,7 @@
       "high": 11.07,
       "low": 9.93,
       "secondary_last": 10.97,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 10.97,
       "hithink_price_diff": 0.0
@@ -3618,7 +3618,7 @@
       "high": 39.66,
       "low": 35.91,
       "secondary_last": 37.46,
-      "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:30+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 37.46,
       "hithink_price_diff": 0.0
@@ -3650,7 +3650,7 @@
       "high": 17.85,
       "low": 16.51,
       "secondary_last": 17.45,
-      "secondary_trade_time": "2026-10-27T15:36:00+08:00",
+      "secondary_trade_time": "2026-10-27T16:30:00+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 17.45,
       "hithink_price_diff": 0.0
@@ -3714,7 +3714,7 @@
       "high": 45.5,
       "low": 42.88,
       "secondary_last": 44.82,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 44.82,
       "hithink_price_diff": 0.0
@@ -3746,7 +3746,7 @@
       "high": 15.92,
       "low": 14.64,
       "secondary_last": 15.32,
-      "secondary_trade_time": "2026-10-27T15:36:00+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:00+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 15.32,
       "hithink_price_diff": 0.0
@@ -3796,7 +3796,7 @@
       "amount": 891644145.0,
       "volume": 3347675.0,
       "speed": 0.78,
-      "pe_ttm": 86.16,
+      "pe_ttm": 54.41,
       "float_mv": 35133000000.0,
       "total_mv": 35762000000.0,
       "main_net_hint": 13846.66,
@@ -3874,7 +3874,7 @@
       "high": 58.98,
       "low": 52.8,
       "secondary_last": 54.71,
-      "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:45+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 54.71,
       "hithink_price_diff": 0.0
@@ -3924,7 +3924,7 @@
       "amount": 809980207.0,
       "volume": 822586.0,
       "speed": 0.0,
-      "pe_ttm": -114.67,
+      "pe_ttm": -184.78,
       "float_mv": 6953000000.0,
       "total_mv": 6953000000.0,
       "main_net_hint": -296.05,
@@ -3970,7 +3970,7 @@
       "high": 6.42,
       "low": 5.87,
       "secondary_last": 6.33,
-      "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:30+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 6.33,
       "hithink_price_diff": 0.0
@@ -4002,7 +4002,7 @@
       "high": 14.7,
       "low": 12.85,
       "secondary_last": 14.28,
-      "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:45+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 14.28,
       "hithink_price_diff": 0.0
@@ -4066,7 +4066,7 @@
       "high": 56.15,
       "low": 46.5,
       "secondary_last": 56.15,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 56.15,
       "hithink_price_diff": 0.0
@@ -4116,7 +4116,7 @@
       "amount": 716457986.0,
       "volume": 191225.0,
       "speed": 0.0,
-      "pe_ttm": -737.28,
+      "pe_ttm": -476.76,
       "float_mv": 11010000000.0,
       "total_mv": 15763999999.999998,
       "main_net_hint": 11230.66,
@@ -4130,7 +4130,7 @@
       "high": 38.52,
       "low": 35.06,
       "secondary_last": 38.52,
-      "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:15+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 38.52,
       "hithink_price_diff": 0.0
@@ -4162,7 +4162,7 @@
       "high": 102.1,
       "low": 85.94,
       "secondary_last": 102.1,
-      "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+      "secondary_trade_time": "2026-10-27T16:29:30+08:00",
       "source_price_diff": 0.0,
       "hithink_last": 102.1,
       "hithink_price_diff": 0.0
@@ -4261,7 +4261,7 @@
       "amount": 590833132.0,
       "volume": 40944.0,
       "speed": -0.04,
-      "pe_ttm": 57.04,
+      "pe_ttm": 60.45,
       "float_mv": 1296000000.0,
       "total_mv": 7322000000.0,
       "main_net_hint": -360.27,
@@ -4801,7 +4801,7 @@
       "amount": 435326823.0,
       "volume": 584518.0,
       "speed": 1.2,
-      "pe_ttm": -2322.68,
+      "pe_ttm": -68.07,
       "float_mv": 4106000000.0,
       "total_mv": 6497000000.0,
       "main_net_hint": -248.26,
@@ -4828,7 +4828,7 @@
       "amount": 430654065.0,
       "volume": 110540.0,
       "speed": 1.59,
-      "pe_ttm": -28.62,
+      "pe_ttm": -28.42,
       "float_mv": 1942000000.0000002,
       "total_mv": 3396000000.0,
       "main_net_hint": 131.84,
@@ -5125,7 +5125,7 @@
       "amount": 382176042.0,
       "volume": 297788.0,
       "speed": 0.77,
-      "pe_ttm": 31.7,
+      "pe_ttm": 29.66,
       "float_mv": 5791000000.0,
       "total_mv": 5791000000.0,
       "main_net_hint": 1309.53,
@@ -5206,7 +5206,7 @@
       "amount": 370410794.0,
       "volume": 1893501.0,
       "speed": 0.78,
-      "pe_ttm": -375.34,
+      "pe_ttm": -6603.38,
       "float_mv": 27414000000.0,
       "total_mv": 31256000000.0,
       "main_net_hint": 524.88,
@@ -5395,7 +5395,7 @@
       "amount": 318696226.0,
       "volume": 107374.0,
       "speed": 0.0,
-      "pe_ttm": 40.24,
+      "pe_ttm": 42.74,
       "float_mv": 2602000000.0,
       "total_mv": 5390000000.0,
       "main_net_hint": 5447.29,
@@ -5530,7 +5530,7 @@
       "amount": 298270602.0,
       "volume": 292052.0,
       "speed": 0.0,
-      "pe_ttm": 37.08,
+      "pe_ttm": -116.53,
       "float_mv": 5930000000.0,
       "total_mv": 5930000000.0,
       "main_net_hint": 11096.07,
@@ -5638,7 +5638,7 @@
       "amount": 269137698.0,
       "volume": 91899.0,
       "speed": -0.2,
-      "pe_ttm": 39.43,
+      "pe_ttm": 36.11,
       "float_mv": 7015000000.000001,
       "total_mv": 7015000000.000001,
       "main_net_hint": 4540.96,
@@ -5881,7 +5881,7 @@
         "high": 109.3,
         "low": 101.06,
         "secondary_last": 101.09,
-        "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:30+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 101.09,
         "hithink_price_diff": 0.0
@@ -5945,7 +5945,7 @@
         "high": 247.88,
         "low": 224.0,
         "secondary_last": 224.0,
-        "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:15+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 224.0,
         "hithink_price_diff": 0.0
@@ -6073,7 +6073,7 @@
         "high": 525.22,
         "low": 488.0,
         "secondary_last": 488.5,
-        "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:15+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 488.5,
         "hithink_price_diff": 0.0
@@ -6105,7 +6105,7 @@
         "high": 8.77,
         "low": 7.93,
         "secondary_last": 8.24,
-        "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:15+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 8.24,
         "hithink_price_diff": 0.0
@@ -6137,7 +6137,7 @@
         "high": 102.89,
         "low": 99.17,
         "secondary_last": 99.2,
-        "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:45+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 99.2,
         "hithink_price_diff": 0.0
@@ -6169,7 +6169,7 @@
         "high": 16.17,
         "low": 14.75,
         "secondary_last": 15.39,
-        "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:30+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 15.39,
         "hithink_price_diff": 0.0
@@ -6553,7 +6553,7 @@
         "high": 37.05,
         "low": 36.01,
         "secondary_last": 36.6,
-        "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:45+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 36.6,
         "hithink_price_diff": 0.0
@@ -6585,7 +6585,7 @@
         "high": 50.3,
         "low": 48.8,
         "secondary_last": 48.8,
-        "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:15+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 48.8,
         "hithink_price_diff": 0.0
@@ -6617,7 +6617,7 @@
         "high": 126.2,
         "low": 119.8,
         "secondary_last": 119.97,
-        "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:15+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 119.97,
         "hithink_price_diff": 0.0
@@ -6649,7 +6649,7 @@
         "high": 22.28,
         "low": 21.0,
         "secondary_last": 21.34,
-        "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:15+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 21.34,
         "hithink_price_diff": 0.0
@@ -6713,7 +6713,7 @@
         "high": 33.65,
         "low": 31.0,
         "secondary_last": 31.01,
-        "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:30+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 31.01,
         "hithink_price_diff": 0.0
@@ -6745,7 +6745,7 @@
         "high": 78.88,
         "low": 73.8,
         "secondary_last": 73.89,
-        "secondary_trade_time": "2026-10-27T15:36:00+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:00+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 73.89,
         "hithink_price_diff": 0.0
@@ -6779,7 +6779,7 @@
         "high": 617.19,
         "low": 576.5,
         "secondary_last": 577.0,
-        "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:45+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 577.0,
         "hithink_price_diff": 0.0
@@ -6811,7 +6811,7 @@
         "high": 260.21,
         "low": 237.22,
         "secondary_last": 237.59,
-        "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:15+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 237.59,
         "hithink_price_diff": 0.0
@@ -6843,7 +6843,7 @@
         "high": 238.8,
         "low": 232.67,
         "secondary_last": 233.0,
-        "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:15+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 233.0,
         "hithink_price_diff": 0.0
@@ -6875,7 +6875,7 @@
         "high": 204.0,
         "low": 188.5,
         "secondary_last": 188.62,
-        "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:45+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 188.62,
         "hithink_price_diff": 0.0
@@ -6907,7 +6907,7 @@
         "high": 190.9,
         "low": 173.94,
         "secondary_last": 174.09,
-        "secondary_trade_time": "2026-10-27T15:35:00+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:00+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 174.09,
         "hithink_price_diff": 0.0
@@ -6939,7 +6939,7 @@
         "high": 269.8,
         "low": 253.0,
         "secondary_last": 253.14,
-        "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:45+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 253.14,
         "hithink_price_diff": 0.0
@@ -6971,7 +6971,7 @@
         "high": 189.58,
         "low": 174.0,
         "secondary_last": 174.56,
-        "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:45+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 174.56,
         "hithink_price_diff": 0.0
@@ -7003,7 +7003,7 @@
         "high": 88.03,
         "low": 81.22,
         "secondary_last": 81.5,
-        "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:15+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 81.5,
         "hithink_price_diff": 0.0
@@ -7035,7 +7035,7 @@
         "high": 192.38,
         "low": 170.0,
         "secondary_last": 170.6,
-        "secondary_trade_time": "2026-10-27T15:35:00+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:00+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 170.6,
         "hithink_price_diff": 0.0
@@ -7067,7 +7067,7 @@
         "high": 6.98,
         "low": 6.31,
         "secondary_last": 6.31,
-        "secondary_trade_time": "2026-10-27T15:35:00+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:00+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 6.31,
         "hithink_price_diff": 0.0
@@ -7099,7 +7099,7 @@
         "high": 13.1,
         "low": 12.27,
         "secondary_last": 12.37,
-        "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:15+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 12.37,
         "hithink_price_diff": 0.0
@@ -7131,7 +7131,7 @@
         "high": 243.55,
         "low": 228.09,
         "secondary_last": 228.09,
-        "secondary_trade_time": "2026-10-27T15:35:00+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:00+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 228.09,
         "hithink_price_diff": 0.0
@@ -7163,7 +7163,7 @@
         "high": 30.3,
         "low": 28.1,
         "secondary_last": 28.35,
-        "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:45+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 28.35,
         "hithink_price_diff": 0.0
@@ -7195,7 +7195,7 @@
         "high": 18.62,
         "low": 18.11,
         "secondary_last": 18.11,
-        "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:30+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 18.11,
         "hithink_price_diff": 0.0
@@ -7227,7 +7227,7 @@
         "high": 246.2,
         "low": 201.03,
         "secondary_last": 203.3,
-        "secondary_trade_time": "2026-10-27T15:35:00+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:00+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 203.3,
         "hithink_price_diff": 0.0
@@ -7259,7 +7259,7 @@
         "high": 210.5,
         "low": 195.88,
         "secondary_last": 195.99,
-        "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:15+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 195.99,
         "hithink_price_diff": 0.0
@@ -7291,7 +7291,7 @@
         "high": 403.01,
         "low": 368.0,
         "secondary_last": 373.79,
-        "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:45+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 373.79,
         "hithink_price_diff": 0.0
@@ -7323,7 +7323,7 @@
         "high": 71.6,
         "low": 68.23,
         "secondary_last": 68.24,
-        "secondary_trade_time": "2026-10-27T15:35:00+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:00+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 68.24,
         "hithink_price_diff": 0.0
@@ -7355,7 +7355,7 @@
         "high": 185.99,
         "low": 177.54,
         "secondary_last": 177.8,
-        "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:30+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 177.8,
         "hithink_price_diff": 0.0
@@ -7387,7 +7387,7 @@
         "high": 28.45,
         "low": 24.0,
         "secondary_last": 24.03,
-        "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:30+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 24.03,
         "hithink_price_diff": 0.0
@@ -7419,7 +7419,7 @@
         "high": 25.4,
         "low": 23.05,
         "secondary_last": 23.45,
-        "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:30+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 23.45,
         "hithink_price_diff": 0.0
@@ -7451,7 +7451,7 @@
         "high": 107.99,
         "low": 92.28,
         "secondary_last": 92.8,
-        "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:45+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 92.8,
         "hithink_price_diff": 0.0
@@ -7483,7 +7483,7 @@
         "high": 16.05,
         "low": 15.14,
         "secondary_last": 15.3,
-        "secondary_trade_time": "2026-10-27T15:35:00+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:00+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 15.3,
         "hithink_price_diff": 0.0
@@ -7515,7 +7515,7 @@
         "high": 55.48,
         "low": 53.21,
         "secondary_last": 53.31,
-        "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:30+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 53.31,
         "hithink_price_diff": 0.0
@@ -7533,7 +7533,7 @@
         "amount": 2270266450.0,
         "volume": 940881.0,
         "speed": -0.55,
-        "pe_ttm": 66.01,
+        "pe_ttm": 103.47,
         "float_mv": 23990000000.0,
         "total_mv": 43925000000.0,
         "main_net_hint": -5176.21,
@@ -7547,7 +7547,7 @@
         "high": 24.86,
         "low": 23.31,
         "secondary_last": 23.48,
-        "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:30+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 23.48,
         "hithink_price_diff": 0.0
@@ -7579,7 +7579,7 @@
         "high": 112.5,
         "low": 104.44,
         "secondary_last": 104.53,
-        "secondary_trade_time": "2026-10-27T15:35:45+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:45+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 104.53,
         "hithink_price_diff": 0.0
@@ -7611,7 +7611,7 @@
         "high": 44.3,
         "low": 40.59,
         "secondary_last": 40.59,
-        "secondary_trade_time": "2026-10-27T15:35:15+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:15+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 40.59,
         "hithink_price_diff": 0.0
@@ -7643,7 +7643,7 @@
         "high": 169.49,
         "low": 154.0,
         "secondary_last": 155.8,
-        "secondary_trade_time": "2026-10-27T15:35:00+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:00+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 155.8,
         "hithink_price_diff": 0.0
@@ -7675,7 +7675,7 @@
         "high": 10.67,
         "low": 8.88,
         "secondary_last": 10.12,
-        "secondary_trade_time": "2026-10-27T15:35:30+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:30+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 10.12,
         "hithink_price_diff": 0.0
@@ -7707,7 +7707,7 @@
         "high": 62.28,
         "low": 54.51,
         "secondary_last": 57.13,
-        "secondary_trade_time": "2026-10-27T15:35:00+08:00",
+        "secondary_trade_time": "2026-10-27T16:29:00+08:00",
         "source_price_diff": 0.0,
         "hithink_last": 57.13,
         "hithink_price_diff": 0.0
@@ -8239,7 +8239,7 @@
         "amount": 891644145.0,
         "volume": 3347675.0,
         "speed": 0.78,
-        "pe_ttm": 86.16,
+        "pe_ttm": 54.41,
         "float_mv": 35133000000.0,
         "total_mv": 35762000000.0,
         "main_net_hint": 13846.66,
@@ -8325,7 +8325,7 @@
         "amount": 370410794.0,
         "volume": 1893501.0,
         "speed": 0.78,
-        "pe_ttm": -375.34,
+        "pe_ttm": -6603.38,
         "float_mv": 27414000000.0,
         "total_mv": 31256000000.0,
         "main_net_hint": 524.88,
@@ -11411,29 +11411,29 @@
       }
     ],
     "data_timestamps_ms": [
-      1793093928599,
-      1793093929773,
-      1793093931000,
-      1793093932000,
-      1793093933000,
-      1793093933000,
-      1793093934000,
-      1793093935000,
-      1793093936000,
-      1793093937000,
-      1793093938000,
-      1793093939407,
-      1793093940602,
-      1793093942389,
-      1793093942913,
-      1793093944025,
-      1793093944544,
-      1793093945110,
-      1793093946386,
-      1793093946957,
-      1793093947575,
-      1793093948072,
-      1793093948625
+      1793102672895,
+      1793102674574,
+      1793102676000,
+      1793102677000,
+      1793102679000,
+      1793102681000,
+      1793102683000,
+      1793102684000,
+      1793102685000,
+      1793102686000,
+      1793102688000,
+      1793102689516,
+      1793102690717,
+      1793102694565,
+      1793102696035,
+      1793102696789,
+      1793102697554,
+      1793102698358,
+      1793102699098,
+      1793102700611,
+      1793102701388,
+      1793102702814,
+      1793102704305
     ],
     "catalog_count": 710,
     "industry_count": 320,
@@ -12602,35 +12602,35 @@
     },
     "status": "success",
     "data_timestamps_ms": [
-      1793093910729,
-      1793093915130,
-      1793093903177
+      1793102671008,
+      1793102648545,
+      1793102655460
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-10-27T17:38:34+08:00",
+      "fetched_at": "2026-10-27T20:04:15+08:00",
       "reported_total": 5577,
       "rows": 5577,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-10-27T17:38:44+08:00",
+      "fetched_at": "2026-10-27T20:04:27+08:00",
       "requested": 5581,
       "matches": 5581,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-10-27T17:38:44+08:00",
+      "fetched_at": "2026-10-27T20:04:28+08:00",
       "requested": 131,
       "matches": 131,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-10-27T17:38:46+08:00",
+      "fetched_at": "2026-10-27T20:04:30+08:00",
       "requested": 131,
       "matches": 131,
       "calls": 2,
@@ -12643,8 +12643,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1793093927000,
-        1793093926000
+        1793102672000,
+        1793102673000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -12679,11 +12679,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-10-27T17:39:08+08:00",
+    "completed_at": "2026-10-27T20:05:04+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "40482304085",
+    "run_id": "40500866819",
     "run_attempt": "1",
     "event_name": "schedule",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/40482304085"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/40500866819"
   }
 }

@@ -15,6 +15,14 @@ from collector import (CollectorError, ema, fetch_hithink_price_cross, get_ths_j
 
 
 class CollectorLogicTests(unittest.TestCase):
+    def test_focus_symbols_include_shipbuilding_and_capacity_core_comparators(self):
+        symbols = collector.FOCUS_SYMBOLS
+        for code in ("sh603268", "sh600150", "sh601872", "sh600026",
+                     "sz300308", "sz300502", "sh688322"):
+            with self.subTest(code=code):
+                self.assertIn(code, symbols)
+                self.assertTrue(symbols[code])
+
     def test_symbol_conversion_for_all_a_share_venues(self):
         self.assertEqual(tx_to_thscode("sh600000"), "600000.SH")
         self.assertEqual(tx_to_thscode("sz000001"), "000001.SZ")

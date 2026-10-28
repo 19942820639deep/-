@@ -7,22 +7,27 @@ on:
       - collector.py
       - test_collector.py
       - .github/workflows/a-share-snapshot.yml
+      # Emergency on-demand trigger: update only this marker file via an approved GitHub write.
+      - data/refresh-request.txt
+  # Re-registered 2026-10-28 after a missed A-share morning schedule window.
+  # GitHub schedule has no execution-time SLA; use workflow_dispatch or the
+  # data/refresh-request.txt push trigger whenever the snapshot is stale.
   schedule:
     # All cron entries are UTC; comments show Asia/Shanghai.
     # Avoid minute 00/05/10 etc. GitHub documents heavier schedule delay near
     # common clock boundaries; odd offsets materially reduce queue contention.
-    # 09:32 through 09:52 every five minutes: prime 09:45 PRE and NEW decisions.
-    - cron: "32,37,42,47,52 1 * * 1-5"
-    # 10:12 through 10:32 every five minutes.
-    - cron: "12,17,22,27,32 2 * * 1-5"
-    # 11:32 through 11:57: capture the 11:30 close before noon validation.
-    - cron: "32,37,42,47,52,57 3 * * 1-5"
-    # 12:02 through 12:12 backup runs; lunch-close validation accepts delay.
-    - cron: "2,7,12 4 * * 1-5"
-    # 14:12 through 14:52 every five minutes; odd-minute retries reduce missed tail snapshots.
-    - cron: "12,17,22,27,32,37,42,47,52 6 * * 1-5"
-    # 15:02 through 15:12 (final close snapshot for the next premarket plan).
-    - cron: "2,7,12 7 * * 1-5"
+    # 09:34 through 09:54 every five minutes: prime 09:45 PRE and NEW decisions.
+    - cron: "34,39,44,49,54 1 * * 1-5"
+    # 10:14 through 10:34 every five minutes.
+    - cron: "14,19,24,29,34 2 * * 1-5"
+    # 11:34 through 11:59: capture the 11:30 close before noon validation.
+    - cron: "34,39,44,49,54,59 3 * * 1-5"
+    # 12:04 through 12:14 backup runs; lunch-close validation accepts delay.
+    - cron: "4,9,14 4 * * 1-5"
+    # 14:14 through 14:54 every five minutes; odd-minute retries reduce missed tail snapshots.
+    - cron: "14,19,24,29,34,39,44,49,54 6 * * 1-5"
+    # 15:04 through 15:14 (final close snapshot for the next premarket plan).
+    - cron: "4,9,14 7 * * 1-5"
   workflow_dispatch:
 
 permissions:

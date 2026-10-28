@@ -1,0 +1,4 @@
+# A-share snapshot emergency refresh trigger
+# Editing this marker on main triggers the collector via GitHub push independently of cron.
+# Do not include brokerage data, credentials, or account details.
+2026-10-28T10:27:00+08:00 initial recovery-channel verification

@@ -2,3 +2,5 @@
 # Editing this marker on main triggers the collector via GitHub push independently of cron.
 # Do not include brokerage data, credentials, or account details.
 2026-10-28T10:27:00+08:00 initial recovery-channel verification
+
+2026-10-30 midday 11:30 close backfill requested; snapshot must pass midday_close profile, not live_intraday

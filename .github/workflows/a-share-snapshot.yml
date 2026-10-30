@@ -19,8 +19,9 @@ on:
     - cron: "34,39,44,49,54,59 1 * * 1-5"
     # 10:04-10:59 Beijing
     - cron: "4,9,14,19,24,29,34,39,44,49,54,59 2 * * 1-5"
-    # 11:04-11:44 Beijing; also preserves the 11:30 closing anchor
+    # 11:04-11:44 Beijing; special 11:30 exact, 11:35/11:40 catch-ups
     - cron: "4,9,14,19,24,29,34,39,44 3 * * 1-5"
+    - cron: "30,35,40 3 * * 1-5"
     # 12:04-12:14 Beijing; midday-close backup
     - cron: "4,9,14 4 * * 1-5"
     # 13:04-13:59 Beijing
@@ -71,12 +72,15 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           cp data/latest.json /tmp/a-share-latest.json
           cp data/status.json /tmp/a-share-status.json
+          if [ -f data/midday_latest.json ]; then cp data/midday_latest.json /tmp/a-share-midday.json; fi
           for attempt in 1 2 3; do
             git fetch origin main
             git reset --hard origin/main
             cp /tmp/a-share-latest.json data/latest.json
             cp /tmp/a-share-status.json data/status.json
+            if [ -f /tmp/a-share-midday.json ]; then cp /tmp/a-share-midday.json data/midday_latest.json; fi
             git add data/latest.json data/status.json
+            if [ -f data/midday_latest.json ]; then git add data/midday_latest.json; fi
             if git diff --cached --quiet; then
               exit 0
             fi

@@ -571,6 +571,23 @@ def limit_price(prev: float, ratio: Decimal, up: bool) -> float:
 def market_summary(stocks: list[dict[str,Any]]) -> dict[str,Any]:
     valid = [s for s in stocks if s.get("last") and s.get("prev_close") and s.get("pct") is not None]
     normal = [s for s in valid if not is_special(s)]; up = sum(s["pct"]>0 for s in normal); down = sum(s["pct"]<0 for s in normal)
+    # Mean stock price is useful for breadth and index divergence, but this
+    # cross-sectional calculation is NOT a substitute for TongDaXin 880003.
+    # Match the current-day constituents to their own prior closes so that
+    # newly listed or newly suspended stocks do not contaminate the comparison.
+    mean_last=statistics.mean(s["last"] for s in valid) if valid else None
+    mean_prev=statistics.mean(s["prev_close"] for s in valid) if valid else None
+    mean_change=((mean_last / mean_prev - 1) * 100 if mean_last and mean_prev else None)
+    average_stock_price_proxy={
+        "status":"derived_proxy" if len(valid)>=5000 else "insufficient_coverage",
+        "last":round(mean_last,4) if mean_last is not None else None,
+        "previous_close_same_constituents":round(mean_prev,4) if mean_prev is not None else None,
+        "pct_change":round(mean_change,4) if mean_change is not None else None,
+        "constituent_count":len(valid),
+        "method":"arithmetic mean of all valid A-share prices; compare current constituents with their own previous closes",
+        "not_equivalent_to":"TongDaXin 880003 adjusted market-statistics index",
+        "historical_new_low_confirmed":None,
+    }
     limit_up=limit_down=opened=0
     for s in normal:
         ratio=price_limit_ratio(s["code"]); upper=limit_price(s["prev_close"],ratio,True); lower=limit_price(s["prev_close"],ratio,False)
@@ -580,7 +597,8 @@ def market_summary(stocks: list[dict[str,Any]]) -> dict[str,Any]:
     return {"universe_count":len(stocks),"valid_count":len(valid),"non_st_count":len(normal),"up":up,"down":down,
             "flat":len(normal)-up-down,"advance_decline_ratio":round(up/down,4) if down else None,"limit_up_non_st":limit_up,
             "limit_down_non_st":limit_down,"opened_limit_up_non_st":opened,"turnover_amount":round(sum(s.get("amount") or 0 for s in valid),2),
-            "median_pct":round(statistics.median([s["pct"] for s in normal]),4) if normal else None}
+            "median_pct":round(statistics.median([s["pct"] for s in normal]),4) if normal else None,
+            "average_stock_price_proxy":average_stock_price_proxy}
 
 def ema(values: Iterable[float], span: int) -> list[float]:
     seq=list(values)
@@ -754,6 +772,8 @@ def build_snapshot() -> dict[str,Any]:
             "cross_source_pass":cross,"midday_close_anchor_time":iso(secondary_close_anchor),
             "midday_execution_window_pass":midday_execution_window,
             "midday_secondary_time_pass":midday_secondary_time_pass,
+            "average_stock_price_880003_direct_verified":False,
+            "average_stock_price_proxy_pass":bool(market["average_stock_price_proxy"]["status"]=="derived_proxy"),
             "kospi_quote_time":kospi_at,"kospi_fresh_pass":kospi_fresh,
             "kospi_midday_1130_aligned":kospi_midday_aligned,
             "midday_price_cross_pass":price_cross,"midday_close_pass":midday_analysis,
@@ -841,6 +861,7 @@ def build_snapshot() -> dict[str,Any]:
             "sector_limit":"HiThink is preferred; without it, the complete Sina industry/concept catalogs discover leaders and Tencent quotes verify constituent breadth and capacity leaders",
             "cross_source_timing":"Live intraday use requires near-synchronous quotes. During the lunch break, the 11:30 Sina consensus timestamp anchors the close while Tencent may advance its display timestamp; prices must still match.",
             "midday_close":"Valid from 11:29 through 13:00 when the secondary consensus timestamp is 11:29-11:35 on the trade date and cross-source prices pass.",
+            "average_stock_price":"Official TongDaXin 880003 historical indicator not connected; use labeled same-universe arithmetic proxy for current cross-sectional direction only, never as a verified 5-day or 20-day breakdown.",
             "kospi":"NAVER live KOSPI with actual source timestamp; 11:30 aligned only when quoted 11:25-11:35 Beijing time.",
             "technical":"EMA is auxiliary and omitted while no stable free 60-minute source is verified"}}
 
@@ -872,7 +893,8 @@ def main() -> int:
                       "completed_at":iso(completed),"snapshot_updated":True,"snapshot_generated_at":s["generated_at"],
                       "trade_date":s["trade_date"],"valid_for_tail_selection":s["valid_for_tail_selection"],
                       "validity_profiles":s["validity_profiles"],"validation":s["validation"],
-                      "errors":s["errors"],"focus_quotes":s.get("focus_quotes",[]),**context})
+                      "errors":s["errors"],"average_stock_price_proxy":s.get("market",{}).get("average_stock_price_proxy"),
+                      "focus_quotes":s.get("focus_quotes",[]),**context})
         print(json.dumps({"generated_at":s["generated_at"],"trade_date":s["trade_date"],"valid":s["valid_for_tail_selection"],
             "universe":s["market"]["universe_count"],"checks":s["validation"],"errors":s["errors"]},ensure_ascii=False));return 0
     except Exception as exc:

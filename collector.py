@@ -30,7 +30,11 @@ SINA_INDUSTRY_CATALOG = "https://vip.stock.finance.sina.com.cn/q/view/newSinaHy.
 SINA_CONCEPT_CATALOG = "https://money.finance.sina.com.cn/q/view/newFLJK.php?param=class"
 SINA_SECTOR_MEMBERS = "https://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeData"
 THS_BASE = "https://fuyao.aicubes.cn"
-INDEX_SYMBOLS = {"上证指数":"sh000001", "深证成指":"sz399001", "创业板指":"sz399006", "科创50":"sh000688"}
+INDEX_SYMBOLS = {"上证指数":"sh000001", "深证成指":"sz399001", "创业板指":"sz399006",
+                 "科创50":"sh000688", "沪深300":"sh000300", "中证1000":"sh000852",
+                 "中证银行":"sz399986"}
+CRITICAL_INDEX_NAMES = ("上证指数", "中证银行")
+MAX_LIVE_AGE_SECONDS = 300  # max acceptable live quote delay; inclusive
 
 class CollectorError(RuntimeError): pass
 
@@ -66,6 +70,42 @@ def median_datetime(values: list[datetime]) -> datetime | None:
 
 def minute_of_day(value: datetime) -> int:
     return value.hour*60+value.minute
+
+def is_active_session(at: datetime) -> bool:
+    minute = minute_of_day(at)
+    return at.weekday() < 5 and (570 <= minute < 690 or 780 <= minute < 900)
+
+def is_live_quote(quote_time: str | None, at: datetime, max_age: int = MAX_LIVE_AGE_SECONDS) -> bool:
+    if not quote_time:
+        return False
+    try:
+        stamp = datetime.fromisoformat(quote_time).astimezone(SH_TZ)
+    except (TypeError, ValueError):
+        return False
+    age = (at - stamp).total_seconds()
+    return stamp.date() == at.date() and 0 <= age <= max_age
+
+def fetch_eastmoney_index(client: HttpClient, symbol: str) -> dict[str, Any]:
+    """Fallback for critical indices only; never silently accept stale quotes."""
+    secid = ("1." if symbol.startswith("sh") else "0.") + symbol[2:]
+    raw = client.get("https://push2.eastmoney.com/api/qt/stock/get",
+                     params={"secid": secid, "fltt": 2, "fields": "f43,f57,f58,f60,f170,f86"},
+                     referer="https://quote.eastmoney.com/", timeout=5)
+    data = json.loads(raw.decode("utf-8")).get("data") or {}
+    last, previous = safe_float(data.get("f43")), safe_float(data.get("f60"))
+    pct = safe_float(data.get("f170"))
+    stamp = safe_int(data.get("f86"))
+    if not last or not previous or stamp is None:
+        raise CollectorError("Eastmoney index price or timestamp missing")
+    if stamp > 10**12:
+        stamp = stamp / 1000
+    when = datetime.fromtimestamp(stamp, tz=SH_TZ)
+    if pct is not None and abs((last / previous - 1) * 100 - pct) > .3:
+        raise CollectorError("Eastmoney index price/change mismatch")
+    return {"symbol": symbol, "code": symbol[2:],
+            "name": data.get("f58") or symbol, "last": last,
+            "prev_close": previous, "pct": pct,
+            "trade_time": iso(when), "source": "Eastmoney fallback"}
 
 def midday_close_profile(generated: datetime, primary_latest: datetime | None,
                           secondary_anchor: datetime | None, core: bool,
@@ -629,16 +669,36 @@ def build_snapshot() -> dict[str,Any]:
     if sector_data.get("pass") and not sector_data.get("classification_trade_date"):
         sector_data["classification_trade_date"]=trade_date
     generated=now_shanghai()
-    current=bool(latest and latest.date()==generated.date()); freshness=max(0,(generated-latest).total_seconds()) if latest else None
+    # Independently recover a missing/stale critical index, especially 中证银行399986.
+    if is_active_session(generated):
+        for name in CRITICAL_INDEX_NAMES:
+            symbol = INDEX_SYMBOLS[name]
+            if not is_live_quote((indices.get(name) or {}).get("trade_time"), generated):
+                try:
+                    alternative = fetch_eastmoney_index(client, symbol)
+                    if is_live_quote(alternative.get("trade_time"), generated):
+                        indices[name] = alternative
+                        warnings.append(f"{name} verified from Eastmoney fallback; Tencent was stale/missing")
+                except Exception as exc:
+                    errors.append(f"{name} Eastmoney fallback: {exc}")
+    current=bool(latest and latest.date()==generated.date())
+    freshness=(generated-latest).total_seconds() if latest else None
     previous_count=safe_int(((previous or {}).get("market") or {}).get("universe_count")) or 0; floor=max(5000,math.floor(previous_count*.95))
     ratio=market["valid_count"]/len(stocks) if stocks else 0; p95=percentile(diffs,.95); time_p95=percentile(time_diffs,.95)
-    coverage=len(stocks)>=floor and ratio>=.95; index_pass=len(indices)==len(INDEX_SYMBOLS)
+    coverage=len(stocks)>=floor and ratio>=.95
+    index_pass=all(name in indices for name in CRITICAL_INDEX_NAMES)
+    critical_index_fresh_pass=all(is_live_quote((indices.get(name) or {}).get("trade_time"),generated)
+                                  for name in CRITICAL_INDEX_NAMES)
+    market_quote_fresh_ratio=(sum(is_live_quote(s.get("trade_time"),generated) for s in stocks)/len(stocks)) if stocks else 0
+    market_quote_fresh_pass=market_quote_fresh_ratio>=.90
     price_cross=matches>=30 and p95 is not None and p95<=.003
-    time_cross=time_p95 is not None and time_p95<=300
+    time_cross=time_p95 is not None and time_p95<=MAX_LIVE_AGE_SECONDS
     cross=price_cross and time_cross
-    fresh=freshness is not None and freshness<=240
+    fresh=freshness is not None and 0<=freshness<=MAX_LIVE_AGE_SECONDS
     core=coverage and index_pass and price_cross
-    live_analysis=bool(current and core and time_cross and freshness is not None and freshness<=300)
+    live_analysis=bool(current and core and time_cross and fresh
+                       and critical_index_fresh_pass and market_quote_fresh_pass
+                       and is_active_session(generated))
     midday_execution_window=bool(11*60+29<=minute_of_day(generated)<=13*60)
     midday_secondary_time_pass=bool(secondary_close_anchor
                                     and secondary_close_anchor.date()==generated.date()
@@ -646,9 +706,13 @@ def build_snapshot() -> dict[str,Any]:
     midday_analysis=midday_close_profile(generated,latest,secondary_close_anchor,core,price_cross)
     previous_close_analysis=bool(core and latest and (latest.hour>14 or (latest.hour==14 and latest.minute>=55)))
     checks={"current_trade_day":current,"latest_trade_time":iso(latest),"freshness_seconds":round(freshness,1) if freshness is not None else None,
-            "freshness_limit_seconds":240,"freshness_pass":fresh,"coverage_floor":floor,"coverage_ratio":round(ratio,4),"coverage_pass":coverage,
+            "freshness_limit_seconds":MAX_LIVE_AGE_SECONDS,"freshness_pass":fresh,
+            "critical_index_fresh_pass":critical_index_fresh_pass,
+            "market_quote_fresh_ratio":round(market_quote_fresh_ratio,4),
+            "market_quote_fresh_pass":market_quote_fresh_pass,
+            "coverage_floor":floor,"coverage_ratio":round(ratio,4),"coverage_pass":coverage,
             "index_pass":index_pass,"cross_source_matches":matches,"cross_source_price_diff_p95":round(p95,6) if p95 is not None else None,
-            "cross_source_time_diff_p95_seconds":round(time_p95,1) if time_p95 is not None else None,"cross_source_time_pass":bool(time_p95 is not None and time_p95<=300),
+            "cross_source_time_diff_p95_seconds":round(time_p95,1) if time_p95 is not None else None,"cross_source_time_pass":bool(time_p95 is not None and time_p95<=MAX_LIVE_AGE_SECONDS),
             "cross_source_pass":cross,"midday_close_anchor_time":iso(secondary_close_anchor),
             "midday_execution_window_pass":midday_execution_window,
             "midday_secondary_time_pass":midday_secondary_time_pass,
@@ -685,15 +749,17 @@ def build_snapshot() -> dict[str,Any]:
             "open":safe_float(stock.get("open")),"high":safe_float(stock.get("high")),
             "low":safe_float(stock.get("low")),"amount":safe_float(stock.get("amount")),
             "trade_time":quote_time,
-            "quote_fresh_live":bool(quote_stamp and quote_stamp.date()==generated.date()
-                                   and quote_age is not None and 0<=quote_age<=240),
+            "quote_fresh_live":is_live_quote(quote_time,generated),
             "sina_last":alt_price,"sina_trade_time":alt.get("trade_time"),
             "cross_price_diff":round(cross_diff,6) if cross_diff is not None else None,
             "cross_price_pass":bool(cross_diff is not None and cross_diff<=.003)
         })
-    valid=all((current,fresh,coverage,index_pass,cross))
-    tail_valid=bool(valid and sector_data.get("pass"))
-    if not fresh:warnings.append("Quote timestamp is stale for tail-session use")
+    valid=bool(current and fresh and coverage and index_pass and cross
+               and critical_index_fresh_pass and market_quote_fresh_pass)
+    tail_valid=bool(valid and is_active_session(generated) and sector_data.get("pass"))
+    if not fresh:warnings.append("Quote timestamp exceeds the 300-second live limit or lies in the future")
+    if not critical_index_fresh_pass:warnings.append("Critical index (Shanghai/CSI Banks) not fresh within 300 seconds")
+    if not market_quote_fresh_pass:warnings.append("Full-market quote timestamps lack 90% freshness within 300 seconds")
     if not coverage:warnings.append("Full-market detailed quote coverage below threshold")
     if not price_cross:warnings.append("Tencent/Sina price cross-check failed")
     elif not time_cross and midday_analysis:

@@ -136,6 +136,21 @@ class CollectorLogicTests(unittest.TestCase):
         self.assertEqual(summary["limit_up_non_st"], 2)
         self.assertEqual(summary["turnover_amount"], 3.1e9)
 
+    def test_average_stock_price_proxy_uses_same_constituents_and_is_not_vendor_880003(self):
+        stocks=[
+            {"code":"600001","name":"A","last":11.0,"prev_close":10.0,"pct":10.0,"high":11,"low":10,"amount":10},
+            {"code":"300001","name":"B","last":22.0,"prev_close":20.0,"pct":10.0,"high":22,"low":20,"amount":10},
+            {"code":"600002","name":"ST示例","last":3.0,"prev_close":2.0,"pct":50.0,"high":3,"low":2,"amount":10}
+        ]
+        row=market_summary(stocks)["average_stock_price_proxy"]
+        self.assertEqual(row["last"],12.0)
+        self.assertEqual(row["previous_close_same_constituents"],10.6667)
+        self.assertEqual(row["pct_change"],12.5)
+        self.assertEqual(row["constituent_count"],3)
+        self.assertEqual(row["historical_new_low_confirmed"],None)
+        self.assertEqual(row["status"],"insufficient_coverage")
+        self.assertIn("880003",row["not_equivalent_to"])
+
     def test_cached_sector_memberships_are_repriced_with_live_quotes(self):
         previous={"trade_date":"2026-08-26","generated_at":"2026-08-26T12:00:00+08:00",
                   "sector_data":{"top_sectors":[]}}

@@ -4,3 +4,5 @@
 2026-10-28T10:27:00+08:00 initial recovery-channel verification
 
 2026-10-30 midday 11:30 close backfill requested; snapshot must pass midday_close profile, not live_intraday
+
+2026-10-30T14:12:00+08:00 intraday afternoon pullback validation, verify 880003 proxy and KOSPI

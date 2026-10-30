@@ -15,6 +15,29 @@ from collector import (CollectorError, ema, fetch_hithink_price_cross, get_ths_j
 
 
 class CollectorLogicTests(unittest.TestCase):
+    def test_kospi_quote_preserves_seoul_trade_time(self):
+        payload={"datas":[{"itemCode":"KOSPI","closePriceRaw":"5600.00",
+                           "compareToPreviousClosePriceRaw":"-337.66",
+                           "fluctuationsRatioRaw":"-5.69",
+                           "localTradedAt":"2026-10-30T12:30:02+09:00",
+                           "marketStatus":"OPEN"}]}
+        client=mock.Mock()
+        client.get.return_value=json.dumps(payload).encode("utf-8")
+        row=collector.fetch_kospi_naver(client)
+        self.assertEqual(row["trade_time"],"2026-10-30T11:30:02+08:00")
+        self.assertEqual(row["last"],5600.0)
+        self.assertEqual(row["market_status"],"OPEN")
+
+    def test_verified_midday_snapshot_is_archived(self):
+        with tempfile.TemporaryDirectory() as folder:
+            latest=Path(folder)/"latest.json"
+            midday=Path(folder)/"midday_latest.json"
+            with mock.patch.object(collector,"LATEST_PATH",latest), mock.patch.object(collector,"MIDDAY_PATH",midday):
+                collector.write_snapshot({"validity_profiles":{"midday_close":False},"value":1})
+                self.assertFalse(midday.exists())
+                collector.write_snapshot({"validity_profiles":{"midday_close":True},"value":2})
+                self.assertEqual(json.loads(midday.read_text())["value"],2)
+
     def test_focus_symbols_include_shipbuilding_and_capacity_core_comparators(self):
         symbols = collector.FOCUS_SYMBOLS
         for code in ("sh603268", "sh600150", "sh601872", "sh600026",

@@ -23,9 +23,11 @@ SH_TZ = ZoneInfo("Asia/Shanghai")
 ROOT = Path(__file__).resolve().parent
 LATEST_PATH = ROOT / "data" / "latest.json"
 STATUS_PATH = ROOT / "data" / "status.json"
+MIDDAY_PATH = ROOT / "data" / "midday_latest.json"
 TX_RANK = "https://proxy.finance.qq.com/cgi/cgi-bin/rank/hs/getBoardRankList"
 TX_QUOTE = "https://qt.gtimg.cn/q="
 SINA_QUOTE = "https://hq.sinajs.cn/list="
+NAVER_KOSPI = "https://polling.finance.naver.com/api/realtime/domestic/index/KOSPI"
 SINA_INDUSTRY_CATALOG = "https://vip.stock.finance.sina.com.cn/q/view/newSinaHy.php"
 SINA_CONCEPT_CATALOG = "https://money.finance.sina.com.cn/q/view/newFLJK.php?param=class"
 SINA_SECTOR_MEMBERS = "https://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeData"
@@ -106,6 +108,30 @@ def fetch_eastmoney_index(client: HttpClient, symbol: str) -> dict[str, Any]:
             "name": data.get("f58") or symbol, "last": last,
             "prev_close": previous, "pct": pct,
             "trade_time": iso(when), "source": "Eastmoney fallback"}
+
+
+def fetch_kospi_naver(client: HttpClient) -> dict[str,Any]:
+    """Return KOSPI with the exchange-local source timestamp, never assumed to be 11:30."""
+    raw = client.get(NAVER_KOSPI, referer="https://finance.naver.com/", timeout=8)
+    records = (json.loads(raw.decode("utf-8")).get("datas") or [])
+    item = next((x for x in records if x.get("itemCode")=="KOSPI"), None)
+    if not item: raise CollectorError("NAVER KOSPI record missing")
+    price = safe_float(item.get("closePriceRaw") or str(item.get("closePrice") or "").replace(",", ""))
+    pct = safe_float(item.get("fluctuationsRatioRaw") or item.get("fluctuationsRatio"))
+    change = safe_float(item.get("compareToPreviousClosePriceRaw") or str(item.get("compareToPreviousClosePrice") or "").replace(",", ""))
+    raw_time=item.get("localTradedAt")
+    if not raw_time: raise CollectorError("NAVER KOSPI trade timestamp missing")
+    stamp=datetime.fromisoformat(raw_time)
+    if stamp.tzinfo is None: raise CollectorError("NAVER KOSPI missing timezone")
+    if price is None or price <= 0 or pct is None or change is None:
+        raise CollectorError("NAVER KOSPI quote missing price/change")
+    prev=price-change
+    if prev <= 0 or abs((price/prev-1)*100-pct)>.2:
+        raise CollectorError("NAVER KOSPI percentage mismatch")
+    return {"symbol":"KOSPI","name":"韩国综合指数","last":round(price,2),
+            "pct":round(pct,2),"change":round(change,2),"prev_close":round(prev,2),
+            "trade_time":iso(stamp),"source":"NAVER Finance public quote",
+            "market_status":item.get("marketStatus")}
 
 def midday_close_profile(generated: datetime, primary_latest: datetime | None,
                           secondary_anchor: datetime | None, core: bool,
@@ -669,6 +695,18 @@ def build_snapshot() -> dict[str,Any]:
     if sector_data.get("pass") and not sector_data.get("classification_trade_date"):
         sector_data["classification_trade_date"]=trade_date
     generated=now_shanghai()
+    overseas_indices={}
+    try: overseas_indices["KOSPI"]=fetch_kospi_naver(client)
+    except Exception as exc: warnings.append(f"KOSPI quote unavailable: {exc}")
+    kospi_at=(overseas_indices.get("KOSPI") or {}).get("trade_time")
+    kospi_fresh=is_live_quote(kospi_at,now_shanghai())
+    kospi_midday_aligned=False
+    if kospi_at:
+        try:
+            kospi_stamp=datetime.fromisoformat(kospi_at).astimezone(SH_TZ)
+            kospi_midday_aligned=bool(kospi_stamp.date()==generated.date()
+                                      and 11*60+25<=minute_of_day(kospi_stamp)<=11*60+35)
+        except (TypeError,ValueError): pass
     # Independently recover a missing/stale critical index, especially 中证银行399986.
     if is_active_session(generated):
         for name in CRITICAL_INDEX_NAMES:
@@ -716,6 +754,8 @@ def build_snapshot() -> dict[str,Any]:
             "cross_source_pass":cross,"midday_close_anchor_time":iso(secondary_close_anchor),
             "midday_execution_window_pass":midday_execution_window,
             "midday_secondary_time_pass":midday_secondary_time_pass,
+            "kospi_quote_time":kospi_at,"kospi_fresh_pass":kospi_fresh,
+            "kospi_midday_1130_aligned":kospi_midday_aligned,
             "midday_price_cross_pass":price_cross,"midday_close_pass":midday_analysis,
             "hithink_configured":bool(ths_api_key),"hithink_price_cross_matches":safe_int(hithink_price.get("matches")) or 0,
             "hithink_price_diff_p95":safe_float(hithink_price.get("price_diff_p95")),
@@ -781,7 +821,7 @@ def build_snapshot() -> dict[str,Any]:
             warnings.append("Sector leaders were verified, but the full directory was incomplete; do not claim complete new-direction discovery")
     return {"schema_version":"2.2.0","generated_at":iso(generated),"trade_date":trade_date,"is_trading_day":current,
             "valid_for_tail_selection":tail_valid,"validity_profiles":{"live_intraday":live_analysis,"midday_close":midday_analysis,
-            "previous_close":previous_close_analysis,"core_market_data":core},"validation":checks,"market":market,"indices":indices,"focus_quotes":focus_quotes,"candidates":candidates,
+            "previous_close":previous_close_analysis,"core_market_data":core},"validation":checks,"market":market,"indices":indices,"overseas_indices":overseas_indices,"focus_quotes":focus_quotes,"candidates":candidates,
             "market_segments":{"main":[s for s in candidates if s["code"].startswith(("600","601","603","605","000","001","002","003"))][:30],
                                "chinext":[s for s in candidates if s["code"].startswith(("300","301"))][:30],
                                "star":[s for s in candidates if s["code"].startswith(("688","689"))][:30],
@@ -794,12 +834,14 @@ def build_snapshot() -> dict[str,Any]:
                        "sina_sector_source":{"status":sina_sectors.get("status"),"endpoint":sina_sectors.get("endpoint"),
                                              "catalog_count":sina_sectors.get("catalog_count"),
                                              "verified_count":sina_sectors.get("verified_count")},
-                       "hithink_special_source":{"status":hithink_special.get("status"),"endpoint":hithink_special.get("endpoint")}},
+                       "hithink_special_source":{"status":hithink_special.get("status"),"endpoint":hithink_special.get("endpoint")},
+                       "naver_kospi":{"status":"verified" if kospi_at else "unavailable","endpoint":NAVER_KOSPI}},
             "warnings":warnings,"errors":errors,"methodology":{"primary":"Tencent full-market rank plus detailed quotes","secondary":"Sina and HiThink candidate-price checks",
             "breadth_limits_turnover":"recomputed from full-market detailed quotes; HiThink special pools retained separately",
             "sector_limit":"HiThink is preferred; without it, the complete Sina industry/concept catalogs discover leaders and Tencent quotes verify constituent breadth and capacity leaders",
             "cross_source_timing":"Live intraday use requires near-synchronous quotes. During the lunch break, the 11:30 Sina consensus timestamp anchors the close while Tencent may advance its display timestamp; prices must still match.",
             "midday_close":"Valid from 11:29 through 13:00 when the secondary consensus timestamp is 11:29-11:35 on the trade date and cross-source prices pass.",
+            "kospi":"NAVER live KOSPI with actual source timestamp; 11:30 aligned only when quoted 11:25-11:35 Beijing time.",
             "technical":"EMA is auxiliary and omitted while no stable free 60-minute source is verified"}}
 
 def write_json(path: Path, payload: dict[str,Any]) -> None:
@@ -808,6 +850,8 @@ def write_json(path: Path, payload: dict[str,Any]) -> None:
 
 def write_snapshot(snapshot: dict[str,Any]) -> None:
     write_json(LATEST_PATH,snapshot)
+    if snapshot.get("validity_profiles",{}).get("midday_close"):
+        write_json(MIDDAY_PATH,snapshot)
 
 def write_status(status: dict[str,Any]) -> None:
     write_json(STATUS_PATH,status)

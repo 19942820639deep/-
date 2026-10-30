@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "run_status": "success",
-  "started_at": "2026-10-30T12:29:04+08:00",
-  "completed_at": "2026-10-30T12:29:48+08:00",
+  "started_at": "2026-10-30T12:54:55+08:00",
+  "completed_at": "2026-10-30T12:55:43+08:00",
   "snapshot_updated": true,
-  "snapshot_generated_at": "2026-10-30T12:29:46+08:00",
+  "snapshot_generated_at": "2026-10-30T12:55:42+08:00",
   "trade_date": "2026-10-30",
   "valid_for_tail_selection": false,
   "validity_profiles": {
@@ -16,7 +16,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-10-30T12:05:59+08:00",
-    "freshness_seconds": 1428.0,
+    "freshness_seconds": 2983.7,
     "freshness_limit_seconds": 300,
     "freshness_pass": false,
     "critical_index_fresh_pass": false,
@@ -28,13 +28,15 @@
     "index_pass": true,
     "cross_source_matches": 120,
     "cross_source_price_diff_p95": 0.0,
-    "cross_source_time_diff_p95_seconds": 2155.0,
+    "cross_source_time_diff_p95_seconds": 2155.1,
     "cross_source_time_pass": false,
     "cross_source_pass": false,
     "midday_close_anchor_time": "2026-10-30T11:30:00+08:00",
     "midday_execution_window_pass": true,
     "midday_secondary_time_pass": true,
-    "kospi_quote_time": "2026-10-30T12:29:47+08:00",
+    "average_stock_price_880003_direct_verified": false,
+    "average_stock_price_proxy_pass": true,
+    "kospi_quote_time": "2026-10-30T12:55:42+08:00",
     "kospi_fresh_pass": true,
     "kospi_midday_1130_aligned": false,
     "midday_price_cross_pass": true,
@@ -54,6 +56,16 @@
     "sector_supports_new_sector_discovery": true
   },
   "errors": [],
+  "average_stock_price_proxy": {
+    "status": "derived_proxy",
+    "last": 23.2721,
+    "previous_close_same_constituents": 23.3351,
+    "pct_change": -0.2699,
+    "constituent_count": 5577,
+    "method": "arithmetic mean of all valid A-share prices; compare current constituents with their own previous closes",
+    "not_equivalent_to": "TongDaXin 880003 adjusted market-statistics index",
+    "historical_new_low_confirmed": null
+  },
   "focus_quotes": [
     {
       "symbol": "sh601872",
@@ -261,8 +273,8 @@
     }
   ],
   "repository": "19942820639deep/-",
-  "run_id": "41003069636",
+  "run_id": "41005495942",
   "run_attempt": "1",
   "event_name": "push",
-  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/41003069636"
+  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/41005495942"
 }

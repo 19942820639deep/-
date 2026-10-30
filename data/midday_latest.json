@@ -1,6 +1,6 @@
 {
   "schema_version": "2.2.0",
-  "generated_at": "2026-10-30T12:29:46+08:00",
+  "generated_at": "2026-10-30T12:55:42+08:00",
   "trade_date": "2026-10-30",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,7 +13,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-10-30T12:05:59+08:00",
-    "freshness_seconds": 1428.0,
+    "freshness_seconds": 2983.7,
     "freshness_limit_seconds": 300,
     "freshness_pass": false,
     "critical_index_fresh_pass": false,
@@ -25,13 +25,15 @@
     "index_pass": true,
     "cross_source_matches": 120,
     "cross_source_price_diff_p95": 0.0,
-    "cross_source_time_diff_p95_seconds": 2155.0,
+    "cross_source_time_diff_p95_seconds": 2155.1,
     "cross_source_time_pass": false,
     "cross_source_pass": false,
     "midday_close_anchor_time": "2026-10-30T11:30:00+08:00",
     "midday_execution_window_pass": true,
     "midday_secondary_time_pass": true,
-    "kospi_quote_time": "2026-10-30T12:29:47+08:00",
+    "average_stock_price_880003_direct_verified": false,
+    "average_stock_price_proxy_pass": true,
+    "kospi_quote_time": "2026-10-30T12:55:42+08:00",
     "kospi_fresh_pass": true,
     "kospi_midday_1130_aligned": false,
     "midday_price_cross_pass": true,
@@ -62,7 +64,17 @@
     "limit_down_non_st": 18,
     "opened_limit_up_non_st": 15,
     "turnover_amount": 1018054221469.0,
-    "median_pct": -0.08
+    "median_pct": -0.08,
+    "average_stock_price_proxy": {
+      "status": "derived_proxy",
+      "last": 23.2721,
+      "previous_close_same_constituents": 23.3351,
+      "pct_change": -0.2699,
+      "constituent_count": 5577,
+      "method": "arithmetic mean of all valid A-share prices; compare current constituents with their own previous closes",
+      "not_equivalent_to": "TongDaXin 880003 adjusted market-statistics index",
+      "historical_new_low_confirmed": null
+    }
   },
   "indices": {
     "上证指数": {
@@ -175,11 +187,11 @@
     "KOSPI": {
       "symbol": "KOSPI",
       "name": "韩国综合指数",
-      "last": 5754.05,
-      "pct": -3.09,
-      "change": -183.61,
+      "last": 5745.0,
+      "pct": -3.24,
+      "change": -192.66,
       "prev_close": 5937.66,
-      "trade_time": "2026-10-30T12:29:47+08:00",
+      "trade_time": "2026-10-30T12:55:42+08:00",
       "source": "NAVER Finance public quote",
       "market_status": "OPEN"
     }
@@ -2622,7 +2634,7 @@
       "pct_60d": 0.97,
       "prev_close": 273.6,
       "open": 258.79,
-      "trade_time": "2026-10-30T12:05:28+08:00",
+      "trade_time": "2026-10-30T12:05:58+08:00",
       "high": 266.54,
       "low": 248.01,
       "secondary_last": 264.92,
@@ -4659,7 +4671,7 @@
       "pct_60d": -6.3,
       "prev_close": 20.0,
       "open": 21.66,
-      "trade_time": "2026-10-30T12:05:28+08:00",
+      "trade_time": "2026-10-30T12:05:58+08:00",
       "high": 22.0,
       "low": 21.28
     },
@@ -11872,29 +11884,29 @@
       }
     ],
     "data_timestamps_ms": [
-      1793334565848,
-      1793334567349,
-      1793334568000,
-      1793334569000,
-      1793334571000,
-      1793334572000,
-      1793334573000,
-      1793334574000,
-      1793334575000,
-      1793334577000,
-      1793334578000,
-      1793334578958,
-      1793334579528,
-      1793334580092,
-      1793334580680,
-      1793334581261,
-      1793334581840,
-      1793334582953,
-      1793334583684,
-      1793334584986,
-      1793334585731,
-      1793334586324,
-      1793334586917
+      1793336119153,
+      1793336120832,
+      1793336122000,
+      1793336123000,
+      1793336124000,
+      1793336125000,
+      1793336126000,
+      1793336128000,
+      1793336129000,
+      1793336130000,
+      1793336131000,
+      1793336132865,
+      1793336133602,
+      1793336134334,
+      1793336135815,
+      1793336136530,
+      1793336137227,
+      1793336137977,
+      1793336138921,
+      1793336139690,
+      1793336141170,
+      1793336141865,
+      1793336142581
     ],
     "catalog_count": 710,
     "industry_count": 320,
@@ -12971,35 +12983,35 @@
     },
     "status": "success",
     "data_timestamps_ms": [
-      1793334538252,
-      1793334563403,
-      1793334541871
+      1793336106107,
+      1793336107386,
+      1793336109112
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-10-30T12:29:10+08:00",
+      "fetched_at": "2026-10-30T12:55:01+08:00",
       "reported_total": 5577,
       "rows": 5577,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-10-30T12:29:21+08:00",
+      "fetched_at": "2026-10-30T12:55:13+08:00",
       "requested": 5584,
       "matches": 5584,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-10-30T12:29:22+08:00",
+      "fetched_at": "2026-10-30T12:55:14+08:00",
       "requested": 135,
       "matches": 135,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-10-30T12:29:23+08:00",
+      "fetched_at": "2026-10-30T12:55:17+08:00",
       "requested": 135,
       "matches": 135,
       "calls": 2,
@@ -13012,8 +13024,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1793334563000,
-        1793334564000
+        1793336116000,
+        1793336119000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -13050,16 +13062,17 @@
     "sector_limit": "HiThink is preferred; without it, the complete Sina industry/concept catalogs discover leaders and Tencent quotes verify constituent breadth and capacity leaders",
     "cross_source_timing": "Live intraday use requires near-synchronous quotes. During the lunch break, the 11:30 Sina consensus timestamp anchors the close while Tencent may advance its display timestamp; prices must still match.",
     "midday_close": "Valid from 11:29 through 13:00 when the secondary consensus timestamp is 11:29-11:35 on the trade date and cross-source prices pass.",
+    "average_stock_price": "Official TongDaXin 880003 historical indicator not connected; use labeled same-universe arithmetic proxy for current cross-sectional direction only, never as a verified 5-day or 20-day breakdown.",
     "kospi": "NAVER live KOSPI with actual source timestamp; 11:30 aligned only when quoted 11:25-11:35 Beijing time.",
     "technical": "EMA is auxiliary and omitted while no stable free 60-minute source is verified"
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-10-30T12:29:48+08:00",
+    "completed_at": "2026-10-30T12:55:43+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "41003069636",
+    "run_id": "41005495942",
     "run_attempt": "1",
     "event_name": "push",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/41003069636"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/41005495942"
   }
 }

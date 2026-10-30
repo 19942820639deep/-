@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "run_status": "success",
-  "started_at": "2026-10-30T12:25:08+08:00",
-  "completed_at": "2026-10-30T12:25:52+08:00",
+  "started_at": "2026-10-30T12:27:58+08:00",
+  "completed_at": "2026-10-30T12:28:55+08:00",
   "snapshot_updated": true,
-  "snapshot_generated_at": "2026-10-30T12:25:52+08:00",
+  "snapshot_generated_at": "2026-10-30T12:28:53+08:00",
   "trade_date": "2026-10-30",
   "valid_for_tail_selection": false,
   "validity_profiles": {
@@ -16,13 +16,13 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-10-30T12:05:59+08:00",
-    "freshness_seconds": 1193.6,
+    "freshness_seconds": 1375.0,
     "freshness_limit_seconds": 300,
     "freshness_pass": false,
     "critical_index_fresh_pass": false,
     "market_quote_fresh_ratio": 0.0,
     "market_quote_fresh_pass": false,
-    "coverage_floor": 5297,
+    "coverage_floor": 5298,
     "coverage_ratio": 1.0,
     "coverage_pass": true,
     "index_pass": true,
@@ -34,6 +34,9 @@
     "midday_close_anchor_time": "2026-10-30T11:30:00+08:00",
     "midday_execution_window_pass": true,
     "midday_secondary_time_pass": true,
+    "kospi_quote_time": "2026-10-30T12:28:54+08:00",
+    "kospi_fresh_pass": true,
+    "kospi_midday_1130_aligned": false,
     "midday_price_cross_pass": true,
     "midday_close_pass": true,
     "hithink_configured": true,
@@ -258,8 +261,8 @@
     }
   ],
   "repository": "19942820639deep/-",
-  "run_id": "41002765351",
+  "run_id": "41003025846",
   "run_attempt": "1",
   "event_name": "push",
-  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/41002765351"
+  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/41003025846"
 }

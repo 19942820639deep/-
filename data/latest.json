@@ -1,6 +1,6 @@
 {
   "schema_version": "2.2.0",
-  "generated_at": "2026-10-30T12:25:52+08:00",
+  "generated_at": "2026-10-30T12:28:53+08:00",
   "trade_date": "2026-10-30",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,13 +13,13 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-10-30T12:05:59+08:00",
-    "freshness_seconds": 1193.6,
+    "freshness_seconds": 1375.0,
     "freshness_limit_seconds": 300,
     "freshness_pass": false,
     "critical_index_fresh_pass": false,
     "market_quote_fresh_ratio": 0.0,
     "market_quote_fresh_pass": false,
-    "coverage_floor": 5297,
+    "coverage_floor": 5298,
     "coverage_ratio": 1.0,
     "coverage_pass": true,
     "index_pass": true,
@@ -31,6 +31,9 @@
     "midday_close_anchor_time": "2026-10-30T11:30:00+08:00",
     "midday_execution_window_pass": true,
     "midday_secondary_time_pass": true,
+    "kospi_quote_time": "2026-10-30T12:28:54+08:00",
+    "kospi_fresh_pass": true,
+    "kospi_midday_1130_aligned": false,
     "midday_price_cross_pass": true,
     "midday_close_pass": true,
     "hithink_configured": true,
@@ -166,6 +169,19 @@
       "high": 7933.78,
       "low": 7857.08,
       "amount": 22116157332.0
+    }
+  },
+  "overseas_indices": {
+    "KOSPI": {
+      "symbol": "KOSPI",
+      "name": "韩国综合指数",
+      "last": 5747.77,
+      "pct": -3.2,
+      "change": -189.89,
+      "prev_close": 5937.66,
+      "trade_time": "2026-10-30T12:28:54+08:00",
+      "source": "NAVER Finance public quote",
+      "market_status": "OPEN"
     }
   },
   "focus_quotes": [
@@ -2926,7 +2942,7 @@
       "pct_60d": 14.79,
       "prev_close": 223.79,
       "open": 210.0,
-      "trade_time": "2026-10-30T12:04:57+08:00",
+      "trade_time": "2026-10-30T12:05:57+08:00",
       "high": 219.98,
       "low": 201.99,
       "secondary_last": 219.46,
@@ -3662,7 +3678,7 @@
       "pct_60d": 43.94,
       "prev_close": 80.55,
       "open": 76.65,
-      "trade_time": "2026-10-30T12:05:59+08:00",
+      "trade_time": "2026-10-30T12:05:29+08:00",
       "high": 89.18,
       "low": 76.0,
       "secondary_last": 88.22,
@@ -4427,7 +4443,7 @@
       "pct_60d": 67.37,
       "prev_close": 45.57,
       "open": 42.4,
-      "trade_time": "2026-10-30T12:05:59+08:00",
+      "trade_time": "2026-10-30T12:05:29+08:00",
       "high": 48.19,
       "low": 41.47
     },
@@ -7399,7 +7415,7 @@
         "pct_60d": 14.79,
         "prev_close": 223.79,
         "open": 210.0,
-        "trade_time": "2026-10-30T12:04:57+08:00",
+        "trade_time": "2026-10-30T12:05:57+08:00",
         "high": 219.98,
         "low": 201.99,
         "secondary_last": 219.46,
@@ -8233,7 +8249,7 @@
         "pct_60d": 43.94,
         "prev_close": 80.55,
         "open": 76.65,
-        "trade_time": "2026-10-30T12:05:59+08:00",
+        "trade_time": "2026-10-30T12:05:29+08:00",
         "high": 89.18,
         "low": 76.0,
         "secondary_last": 88.22,
@@ -8297,7 +8313,7 @@
         "pct_60d": 67.37,
         "prev_close": 45.57,
         "open": 42.4,
-        "trade_time": "2026-10-30T12:05:59+08:00",
+        "trade_time": "2026-10-30T12:05:29+08:00",
         "high": 48.19,
         "low": 41.47
       },
@@ -11856,29 +11872,29 @@
       }
     ],
     "data_timestamps_ms": [
-      1793334328375,
-      1793334330194,
-      1793334331000,
-      1793334332000,
-      1793334333000,
-      1793334334000,
-      1793334336000,
-      1793334337000,
-      1793334339000,
-      1793334340000,
-      1793334341000,
-      1793334342581,
-      1793334343272,
-      1793334344650,
-      1793334346078,
-      1793334346752,
-      1793334347472,
-      1793334348197,
-      1793334349611,
-      1793334350315,
-      1793334350989,
-      1793334351642,
-      1793334352502
+      1793334504173,
+      1793334506019,
+      1793334507000,
+      1793334508000,
+      1793334510000,
+      1793334512000,
+      1793334514000,
+      1793334515000,
+      1793334516000,
+      1793334518000,
+      1793334519000,
+      1793334521105,
+      1793334521921,
+      1793334523401,
+      1793334524763,
+      1793334525596,
+      1793334526415,
+      1793334527689,
+      1793334529202,
+      1793334530057,
+      1793334530878,
+      1793334532474,
+      1793334533806
     ],
     "catalog_count": 710,
     "industry_count": 320,
@@ -12955,35 +12971,35 @@
     },
     "status": "success",
     "data_timestamps_ms": [
-      1793334325544,
-      1793334301600,
-      1793334329256
+      1793334500574,
+      1793334502571,
+      1793334503828
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-10-30T12:25:14+08:00",
+      "fetched_at": "2026-10-30T12:28:05+08:00",
       "reported_total": 5577,
       "rows": 5577,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-10-30T12:25:23+08:00",
+      "fetched_at": "2026-10-30T12:28:18+08:00",
       "requested": 5584,
       "matches": 5584,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-10-30T12:25:24+08:00",
+      "fetched_at": "2026-10-30T12:28:19+08:00",
       "requested": 135,
       "matches": 135,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-10-30T12:25:26+08:00",
+      "fetched_at": "2026-10-30T12:28:21+08:00",
       "requested": 135,
       "matches": 135,
       "calls": 2,
@@ -12996,8 +13012,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1793334327000,
-        1793334329000
+        1793334503000,
+        1793334505000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -13014,6 +13030,10 @@
     "hithink_special_source": {
       "status": "success",
       "endpoint": "HiThink limit-up/down/break pools"
+    },
+    "naver_kospi": {
+      "status": "verified",
+      "endpoint": "https://polling.finance.naver.com/api/realtime/domestic/index/KOSPI"
     }
   },
   "warnings": [
@@ -13030,15 +13050,16 @@
     "sector_limit": "HiThink is preferred; without it, the complete Sina industry/concept catalogs discover leaders and Tencent quotes verify constituent breadth and capacity leaders",
     "cross_source_timing": "Live intraday use requires near-synchronous quotes. During the lunch break, the 11:30 Sina consensus timestamp anchors the close while Tencent may advance its display timestamp; prices must still match.",
     "midday_close": "Valid from 11:29 through 13:00 when the secondary consensus timestamp is 11:29-11:35 on the trade date and cross-source prices pass.",
+    "kospi": "NAVER live KOSPI with actual source timestamp; 11:30 aligned only when quoted 11:25-11:35 Beijing time.",
     "technical": "EMA is auxiliary and omitted while no stable free 60-minute source is verified"
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-10-30T12:25:52+08:00",
+    "completed_at": "2026-10-30T12:28:55+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "41002765351",
+    "run_id": "41003025846",
     "run_attempt": "1",
     "event_name": "push",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/41002765351"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/41003025846"
   }
 }

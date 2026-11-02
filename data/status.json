@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "run_status": "success",
-  "started_at": "2026-11-02T19:33:25+08:00",
-  "completed_at": "2026-11-02T19:34:16+08:00",
+  "started_at": "2026-11-02T20:00:04+08:00",
+  "completed_at": "2026-11-02T20:01:03+08:00",
   "snapshot_updated": true,
-  "snapshot_generated_at": "2026-11-02T19:34:15+08:00",
+  "snapshot_generated_at": "2026-11-02T20:01:02+08:00",
   "trade_date": "2026-11-02",
   "valid_for_tail_selection": false,
   "validity_profiles": {
@@ -16,7 +16,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-11-02T16:15:00+08:00",
-    "freshness_seconds": 11955.6,
+    "freshness_seconds": 13563.0,
     "freshness_limit_seconds": 300,
     "freshness_pass": false,
     "critical_index_fresh_pass": false,
@@ -273,8 +273,8 @@
     }
   ],
   "repository": "19942820639deep/-",
-  "run_id": "41437743282",
+  "run_id": "41441138342",
   "run_attempt": "1",
   "event_name": "schedule",
-  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/41437743282"
+  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/41441138342"
 }

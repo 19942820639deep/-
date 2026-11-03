@@ -1,6 +1,6 @@
 {
   "schema_version": "2.2.0",
-  "generated_at": "2026-11-03T17:27:51+08:00",
+  "generated_at": "2026-11-03T18:43:42+08:00",
   "trade_date": "2026-11-03",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,7 +13,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-11-03T16:15:00+08:00",
-    "freshness_seconds": 4371.6,
+    "freshness_seconds": 8922.4,
     "freshness_limit_seconds": 300,
     "freshness_pass": false,
     "critical_index_fresh_pass": false,
@@ -10513,29 +10513,29 @@
       }
     ],
     "data_timestamps_ms": [
-      1793698041648,
-      1793698043672,
-      1793698045000,
-      1793698046000,
-      1793698048000,
-      1793698049000,
-      1793698051000,
-      1793698052000,
-      1793698054000,
-      1793698055000,
-      1793698056000,
-      1793698058498,
-      1793698059917,
-      1793698061548,
-      1793698062659,
-      1793698063493,
-      1793698064310,
-      1793698065936,
-      1793698066755,
-      1793698067541,
-      1793698068365,
-      1793698069841,
-      1793698071486
+      1793702597734,
+      1793702599422,
+      1793702601000,
+      1793702602000,
+      1793702603000,
+      1793702604000,
+      1793702606000,
+      1793702607000,
+      1793702608000,
+      1793702609000,
+      1793702610000,
+      1793702611427,
+      1793702612907,
+      1793702613628,
+      1793702614373,
+      1793702615688,
+      1793702617166,
+      1793702618575,
+      1793702619287,
+      1793702620031,
+      1793702620749,
+      1793702621480,
+      1793702622240
     ],
     "catalog_count": 710,
     "industry_count": 320,
@@ -11560,7 +11560,7 @@
       ]
     },
     "limit_break": {
-      "total": 33,
+      "total": 34,
       "item": [
         {
           "thscode": "301311.SZ",
@@ -11643,7 +11643,7 @@
           "open_times": 12,
           "turnover_ratio_pct": 20.1975,
           "turnover": 2582474400.0,
-          "first_seal_time": "09:31",
+          "first_seal_time": "09:30",
           "last_seal_time": "14:31"
         },
         {
@@ -11707,6 +11707,18 @@
           "last_seal_time": "14:38"
         },
         {
+          "thscode": "002425.SZ",
+          "ticker": "002425",
+          "name": "凯撒文化",
+          "last_price": 3.35,
+          "price_change_ratio_pct": 6.3492,
+          "open_times": 1,
+          "turnover_ratio_pct": 14.7034,
+          "turnover": 457205640.0,
+          "first_seal_time": "09:30",
+          "last_seal_time": "09:30"
+        },
+        {
           "thscode": "605318.SH",
           "ticker": "605318",
           "name": "法狮龙",
@@ -11763,7 +11775,7 @@
           "open_times": 2,
           "turnover_ratio_pct": 44.1981,
           "turnover": 1758983000.0,
-          "first_seal_time": "09:41",
+          "first_seal_time": "09:40",
           "last_seal_time": "09:47"
         },
         {
@@ -11823,7 +11835,7 @@
           "open_times": 3,
           "turnover_ratio_pct": 42.6037,
           "turnover": 2259858000.0,
-          "first_seal_time": "09:38",
+          "first_seal_time": "09:37",
           "last_seal_time": "09:39"
         },
         {
@@ -11896,7 +11908,7 @@
           "turnover_ratio_pct": 3.848,
           "turnover": 158995180.0,
           "first_seal_time": "09:32",
-          "last_seal_time": "09:35"
+          "last_seal_time": "09:36"
         },
         {
           "thscode": "603536.SH",
@@ -11931,7 +11943,7 @@
           "open_times": 2,
           "turnover_ratio_pct": 18.0246,
           "turnover": 632996060.0,
-          "first_seal_time": "09:34",
+          "first_seal_time": "09:30",
           "last_seal_time": "09:34"
         },
         {
@@ -11956,41 +11968,41 @@
           "turnover_ratio_pct": 15.8697,
           "turnover": 315084950.0,
           "first_seal_time": "09:25",
-          "last_seal_time": "09:30"
+          "last_seal_time": "09:31"
         }
       ]
     },
     "status": "success",
     "data_timestamps_ms": [
-      1793698026940,
-      1793698016358,
-      1793698025174
+      1793702588856,
+      1793702584715,
+      1793702571139
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-11-03T17:27:03+08:00",
+      "fetched_at": "2026-11-03T18:43:01+08:00",
       "reported_total": 5578,
       "rows": 5578,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-11-03T17:27:15+08:00",
+      "fetched_at": "2026-11-03T18:43:12+08:00",
       "requested": 5585,
       "matches": 5585,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-11-03T17:27:16+08:00",
+      "fetched_at": "2026-11-03T18:43:13+08:00",
       "requested": 135,
       "matches": 135,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-11-03T17:27:19+08:00",
+      "fetched_at": "2026-11-03T18:43:15+08:00",
       "requested": 135,
       "matches": 135,
       "calls": 2,
@@ -12003,8 +12015,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1793698039000,
-        1793698042000
+        1793702597000,
+        1793702597000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -12047,11 +12059,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-11-03T17:27:52+08:00",
+    "completed_at": "2026-11-03T18:43:43+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "41611089945",
+    "run_id": "41621541396",
     "run_attempt": "1",
     "event_name": "schedule",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/41611089945"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/41621541396"
   }
 }

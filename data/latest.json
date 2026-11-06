@@ -1,6 +1,6 @@
 {
   "schema_version": "2.2.0",
-  "generated_at": "2026-11-06T19:51:08+08:00",
+  "generated_at": "2026-11-06T20:51:25+08:00",
   "trade_date": "2026-11-06",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,7 +13,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-11-06T16:15:00+08:00",
-    "freshness_seconds": 12968.4,
+    "freshness_seconds": 16585.1,
     "freshness_limit_seconds": 300,
     "freshness_pass": false,
     "critical_index_fresh_pass": false,
@@ -1275,13 +1275,13 @@
       "change": -7.82,
       "pct": -6.92,
       "amplitude": 6.06,
-      "turnover_rate": 10.89,
+      "turnover_rate": 10.9,
       "volume_ratio": 0.77,
       "amount": 4824870629.0,
       "volume": 460654.0,
       "speed": 0.41,
       "pe_ttm": 19.8,
-      "float_mv": 44486000000.0,
+      "float_mv": 44473000000.0,
       "total_mv": 54173000000.0,
       "main_net_hint": -13063.36,
       "pct_5d": -4.02,
@@ -4957,7 +4957,7 @@
       "volume_ratio": 2.36,
       "amount": 384235466.0,
       "volume": 273209.0,
-      "speed": 2.06,
+      "speed": 1.91,
       "pe_ttm": 54.56,
       "float_mv": 1114000000.0,
       "total_mv": 1804000000.0,
@@ -4968,7 +4968,7 @@
       "pct_60d": 29.17,
       "prev_close": 14.3,
       "open": 13.6,
-      "trade_time": "2026-11-06T15:32:38+08:00",
+      "trade_time": "2026-11-06T15:32:32+08:00",
       "high": 15.22,
       "low": 12.95
     },
@@ -5805,7 +5805,7 @@
       "pct_60d": -3.46,
       "prev_close": 19.9,
       "open": 19.0,
-      "trade_time": "2026-11-06T15:32:38+08:00",
+      "trade_time": "2026-11-06T15:32:32+08:00",
       "high": 23.68,
       "low": 18.88
     },
@@ -7028,13 +7028,13 @@
         "change": -7.82,
         "pct": -6.92,
         "amplitude": 6.06,
-        "turnover_rate": 10.89,
+        "turnover_rate": 10.9,
         "volume_ratio": 0.77,
         "amount": 4824870629.0,
         "volume": 460654.0,
         "speed": 0.41,
         "pe_ttm": 19.8,
-        "float_mv": 44486000000.0,
+        "float_mv": 44473000000.0,
         "total_mv": 54173000000.0,
         "main_net_hint": -13063.36,
         "pct_5d": -4.02,
@@ -8606,7 +8606,7 @@
         "volume_ratio": 2.36,
         "amount": 384235466.0,
         "volume": 273209.0,
-        "speed": 2.06,
+        "speed": 1.91,
         "pe_ttm": 54.56,
         "float_mv": 1114000000.0,
         "total_mv": 1804000000.0,
@@ -8617,7 +8617,7 @@
         "pct_60d": 29.17,
         "prev_close": 14.3,
         "open": 13.6,
-        "trade_time": "2026-11-06T15:32:38+08:00",
+        "trade_time": "2026-11-06T15:32:32+08:00",
         "high": 15.22,
         "low": 12.95
       },
@@ -8671,7 +8671,7 @@
         "pct_60d": -3.46,
         "prev_close": 19.9,
         "open": 19.0,
-        "trade_time": "2026-11-06T15:32:38+08:00",
+        "trade_time": "2026-11-06T15:32:32+08:00",
         "high": 23.68,
         "low": 18.88
       }
@@ -10433,29 +10433,29 @@
       }
     ],
     "data_timestamps_ms": [
-      1793965837316,
-      1793965838769,
-      1793965840000,
-      1793965841000,
-      1793965842000,
-      1793965844000,
-      1793965845000,
-      1793965849000,
-      1793965850000,
-      1793965852000,
-      1793965853000,
-      1793965855527,
-      1793965856270,
-      1793965857795,
-      1793965858603,
-      1793965859355,
-      1793965860817,
-      1793965862066,
-      1793965863314,
-      1793965864067,
-      1793965865415,
-      1793965866848,
-      1793965868288
+      1793969453670,
+      1793969455341,
+      1793969456000,
+      1793969458000,
+      1793969459000,
+      1793969461000,
+      1793969463000,
+      1793969464000,
+      1793969466000,
+      1793969468000,
+      1793969470000,
+      1793969471602,
+      1793969472433,
+      1793969473256,
+      1793969474676,
+      1793969476005,
+      1793969477647,
+      1793969479161,
+      1793969479985,
+      1793969481070,
+      1793969482111,
+      1793969483517,
+      1793969484903
     ],
     "catalog_count": 710,
     "industry_count": 320,
@@ -11318,35 +11318,35 @@
     },
     "status": "success",
     "data_timestamps_ms": [
-      1793965824774,
-      1793965830565,
-      1793965838728
+      1793969428992,
+      1793969437778,
+      1793969446320
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-11-06T19:50:20+08:00",
+      "fetched_at": "2026-11-06T20:50:35+08:00",
       "reported_total": 5579,
       "rows": 5579,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-11-06T19:50:32+08:00",
+      "fetched_at": "2026-11-06T20:50:48+08:00",
       "requested": 5586,
       "matches": 5586,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-11-06T19:50:33+08:00",
+      "fetched_at": "2026-11-06T20:50:49+08:00",
       "requested": 136,
       "matches": 136,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-11-06T19:50:35+08:00",
+      "fetched_at": "2026-11-06T20:50:51+08:00",
       "requested": 136,
       "matches": 136,
       "calls": 2,
@@ -11359,8 +11359,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1793965836000,
-        1793965836000
+        1793969452000,
+        1793969452000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -11403,11 +11403,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-11-06T19:51:09+08:00",
+    "completed_at": "2026-11-06T20:51:26+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "42213149677",
+    "run_id": "42220734675",
     "run_attempt": "1",
     "event_name": "schedule",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/42213149677"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/42220734675"
   }
 }

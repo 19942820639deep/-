@@ -1,6 +1,6 @@
 {
   "schema_version": "2.2.0",
-  "generated_at": "2026-11-11T19:20:51+08:00",
+  "generated_at": "2026-11-11T19:41:53+08:00",
   "trade_date": "2026-11-11",
   "is_trading_day": true,
   "valid_for_tail_selection": false,
@@ -13,7 +13,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-11-11T16:15:00+08:00",
-    "freshness_seconds": 11151.7,
+    "freshness_seconds": 12414.0,
     "freshness_limit_seconds": 300,
     "freshness_pass": false,
     "critical_index_fresh_pass": false,
@@ -13960,29 +13960,29 @@
       }
     ],
     "data_timestamps_ms": [
-      1794396032385,
-      1794396033186,
-      1794396034000,
-      1794396035000,
-      1794396036000,
-      1794396037000,
-      1794396038000,
-      1794396039000,
-      1794396040000,
-      1794396041000,
-      1794396042000,
-      1794396043162,
-      1794396043927,
-      1794396044708,
-      1794396045442,
-      1794396046195,
-      1794396046979,
-      1794396047752,
-      1794396048491,
-      1794396049245,
-      1794396049991,
-      1794396050741,
-      1794396051470
+      1794397269156,
+      1794397269853,
+      1794397270000,
+      1794397271000,
+      1794397272000,
+      1794397273000,
+      1794397274000,
+      1794397275000,
+      1794397276000,
+      1794397277000,
+      1794397278000,
+      1794397278915,
+      1794397279563,
+      1794397280369,
+      1794397307310,
+      1794397307991,
+      1794397308635,
+      1794397309285,
+      1794397310030,
+      1794397311816,
+      1794397312462,
+      1794397313146,
+      1794397313838
     ],
     "catalog_count": 710,
     "industry_count": 320,
@@ -15593,35 +15593,35 @@
     },
     "status": "success",
     "data_timestamps_ms": [
-      1794396022795,
-      1794396012429,
-      1794396033851
+      1794397243745,
+      1794397267033,
+      1794397264315
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-11-11T19:20:15+08:00",
+      "fetched_at": "2026-11-11T19:40:57+08:00",
       "reported_total": 5580,
       "rows": 5580,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-11-11T19:20:26+08:00",
+      "fetched_at": "2026-11-11T19:41:06+08:00",
       "requested": 5587,
       "matches": 5587,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-11-11T19:20:27+08:00",
+      "fetched_at": "2026-11-11T19:41:06+08:00",
       "requested": 136,
       "matches": 136,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-11-11T19:20:29+08:00",
+      "fetched_at": "2026-11-11T19:41:08+08:00",
       "requested": 136,
       "matches": 136,
       "calls": 2,
@@ -15634,8 +15634,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1794396030000,
-        1794396030000
+        1794397266000,
+        1794397267000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -15678,11 +15678,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-11-11T19:20:52+08:00",
+    "completed_at": "2026-11-11T19:41:54+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "43011072790",
+    "run_id": "43013927680",
     "run_attempt": "1",
     "event_name": "schedule",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/43011072790"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/43013927680"
   }
 }

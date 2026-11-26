@@ -1,8 +1,8 @@
 {
   "schema_version": "2.2.0",
-  "generated_at": "2026-11-26T22:58:49+08:00",
+  "generated_at": "2026-11-27T00:46:53+08:00",
   "trade_date": "2026-11-26",
-  "is_trading_day": true,
+  "is_trading_day": false,
   "valid_for_tail_selection": false,
   "validity_profiles": {
     "live_intraday": false,
@@ -11,9 +11,9 @@
     "core_market_data": true
   },
   "validation": {
-    "current_trade_day": true,
+    "current_trade_day": false,
     "latest_trade_time": "2026-11-26T16:15:00+08:00",
-    "freshness_seconds": 24229.0,
+    "freshness_seconds": 30713.7,
     "freshness_limit_seconds": 300,
     "freshness_pass": false,
     "critical_index_fresh_pass": false,
@@ -11721,29 +11721,29 @@
       }
     ],
     "data_timestamps_ms": [
-      1795705103078,
-      1795705103806,
-      1795705104000,
-      1795705106000,
-      1795705107000,
-      1795705109000,
-      1795705110000,
-      1795705111000,
-      1795705113000,
-      1795705115000,
-      1795705116000,
-      1795705117117,
-      1795705117839,
-      1795705118637,
-      1795705119281,
-      1795705120437,
-      1795705121192,
-      1795705122897,
-      1795705123666,
-      1795705125937,
-      1795705126679,
-      1795705128162,
-      1795705128930
+      1795711596120,
+      1795711596885,
+      1795711597000,
+      1795711598000,
+      1795711599000,
+      1795711600000,
+      1795711601000,
+      1795711602000,
+      1795711603000,
+      1795711604000,
+      1795711605000,
+      1795711605967,
+      1795711606633,
+      1795711607314,
+      1795711608004,
+      1795711608721,
+      1795711609372,
+      1795711610040,
+      1795711610722,
+      1795711611420,
+      1795711612098,
+      1795711612821,
+      1795711613507
     ],
     "catalog_count": 710,
     "industry_count": 320,
@@ -11804,7 +11804,7 @@
           "continue_day_cnt": 1,
           "seal_money": 4145967.6,
           "max_seal_money": 74279285.37,
-          "open_times": 1
+          "open_times": null
         },
         {
           "thscode": "603203.SH",
@@ -11868,7 +11868,7 @@
           "continue_day_cnt": 1,
           "seal_money": 24271132,
           "max_seal_money": 569049070.0,
-          "open_times": 3
+          "open_times": null
         },
         {
           "thscode": "000678.SZ",
@@ -11916,7 +11916,7 @@
           "continue_day_cnt": 1,
           "seal_money": 11039632,
           "max_seal_money": 1365102771.04,
-          "open_times": 7
+          "open_times": null
         },
         {
           "thscode": "603960.SH",
@@ -11932,7 +11932,7 @@
           "continue_day_cnt": 5,
           "seal_money": 68985064,
           "max_seal_money": 319324989.72,
-          "open_times": 3
+          "open_times": null
         },
         {
           "thscode": "600520.SH",
@@ -11964,7 +11964,7 @@
           "continue_day_cnt": 1,
           "seal_money": 14278500,
           "max_seal_money": 241925425.08,
-          "open_times": 7
+          "open_times": null
         },
         {
           "thscode": "000530.SZ",
@@ -11996,7 +11996,7 @@
           "continue_day_cnt": 1,
           "seal_money": 116265604,
           "max_seal_money": 1449283264.66,
-          "open_times": 1
+          "open_times": null
         },
         {
           "thscode": "603109.SH",
@@ -12012,7 +12012,7 @@
           "continue_day_cnt": 1,
           "seal_money": 10148265,
           "max_seal_money": 92950275.0,
-          "open_times": 5
+          "open_times": null
         },
         {
           "thscode": "603386.SH",
@@ -12060,7 +12060,7 @@
           "continue_day_cnt": 1,
           "seal_money": 38632698,
           "max_seal_money": 329272438.55,
-          "open_times": 1
+          "open_times": null
         },
         {
           "thscode": "000158.SZ",
@@ -12076,7 +12076,7 @@
           "continue_day_cnt": 1,
           "seal_money": 280313910,
           "max_seal_money": 1904815415.2,
-          "open_times": 1
+          "open_times": null
         },
         {
           "thscode": "603118.SH",
@@ -12092,7 +12092,7 @@
           "continue_day_cnt": 1,
           "seal_money": 19142136,
           "max_seal_money": 503359849.98,
-          "open_times": 17
+          "open_times": null
         },
         {
           "thscode": "603586.SH",
@@ -12108,7 +12108,7 @@
           "continue_day_cnt": 1,
           "seal_money": 1077120,
           "max_seal_money": 56518440.0,
-          "open_times": 5
+          "open_times": null
         },
         {
           "thscode": "600629.SH",
@@ -12140,7 +12140,7 @@
           "continue_day_cnt": 1,
           "seal_money": 35576894,
           "max_seal_money": 890423876.45,
-          "open_times": 1
+          "open_times": null
         },
         {
           "thscode": "600499.SH",
@@ -12156,7 +12156,7 @@
           "continue_day_cnt": 1,
           "seal_money": 80271319,
           "max_seal_money": 403442979.0,
-          "open_times": 1
+          "open_times": null
         },
         {
           "thscode": "002639.SZ",
@@ -12172,7 +12172,7 @@
           "continue_day_cnt": 1,
           "seal_money": 143270290,
           "max_seal_money": 784975976.38,
-          "open_times": 1
+          "open_times": null
         },
         {
           "thscode": "603687.SH",
@@ -12188,7 +12188,7 @@
           "continue_day_cnt": 1,
           "seal_money": 24709590,
           "max_seal_money": 200775510.0,
-          "open_times": 5
+          "open_times": null
         },
         {
           "thscode": "603278.SH",
@@ -12220,7 +12220,7 @@
           "continue_day_cnt": 1,
           "seal_money": 31999191,
           "max_seal_money": 118545000.0,
-          "open_times": 2
+          "open_times": null
         },
         {
           "thscode": "301059.SZ",
@@ -12236,7 +12236,7 @@
           "continue_day_cnt": 1,
           "seal_money": 8994375.4,
           "max_seal_money": 159191909.5,
-          "open_times": 1
+          "open_times": null
         },
         {
           "thscode": "000993.SZ",
@@ -12284,7 +12284,7 @@
           "continue_day_cnt": 1,
           "seal_money": 43570674,
           "max_seal_money": 135955116.0,
-          "open_times": 1
+          "open_times": null
         },
         {
           "thscode": "002949.SZ",
@@ -12300,7 +12300,7 @@
           "continue_day_cnt": 1,
           "seal_money": 9789552,
           "max_seal_money": 125481862.0,
-          "open_times": 1
+          "open_times": null
         },
         {
           "thscode": "002144.SZ",
@@ -12316,7 +12316,7 @@
           "continue_day_cnt": 2,
           "seal_money": 456813730,
           "max_seal_money": 466782750.0,
-          "open_times": 3
+          "open_times": null
         },
         {
           "thscode": "600127.SH",
@@ -12348,7 +12348,7 @@
           "continue_day_cnt": 4,
           "seal_money": 8594304.2,
           "max_seal_money": 416758219.81,
-          "open_times": 9
+          "open_times": null
         },
         {
           "thscode": "002651.SZ",
@@ -12460,7 +12460,7 @@
           "continue_day_cnt": 1,
           "seal_money": 16337553,
           "max_seal_money": 71492105.6,
-          "open_times": 3
+          "open_times": null
         },
         {
           "thscode": "002197.SZ",
@@ -12476,7 +12476,7 @@
           "continue_day_cnt": 2,
           "seal_money": 103996665,
           "max_seal_money": 388396344.0,
-          "open_times": 1
+          "open_times": null
         },
         {
           "thscode": "002298.SZ",
@@ -12492,7 +12492,7 @@
           "continue_day_cnt": 1,
           "seal_money": 60503805,
           "max_seal_money": 301599000.0,
-          "open_times": 2
+          "open_times": null
         },
         {
           "thscode": "600628.SH",
@@ -12508,7 +12508,7 @@
           "continue_day_cnt": 1,
           "seal_money": 6610318,
           "max_seal_money": 138198456.0,
-          "open_times": 8
+          "open_times": null
         },
         {
           "thscode": "600229.SH",
@@ -12524,7 +12524,7 @@
           "continue_day_cnt": 2,
           "seal_money": 5707870.7,
           "max_seal_money": 84085995.0,
-          "open_times": 4
+          "open_times": null
         },
         {
           "thscode": "002226.SZ",
@@ -12540,7 +12540,7 @@
           "continue_day_cnt": 1,
           "seal_money": 41458608,
           "max_seal_money": 257559060.0,
-          "open_times": 2
+          "open_times": null
         },
         {
           "thscode": "300324.SZ",
@@ -12556,7 +12556,7 @@
           "continue_day_cnt": 1,
           "seal_money": 12249150.5,
           "max_seal_money": 1233888415.2,
-          "open_times": 13
+          "open_times": null
         },
         {
           "thscode": "002086.SZ",
@@ -12572,7 +12572,7 @@
           "continue_day_cnt": 1,
           "seal_money": 64709343,
           "max_seal_money": 562544841.33,
-          "open_times": 9
+          "open_times": null
         },
         {
           "thscode": "600185.SH",
@@ -12604,7 +12604,7 @@
           "continue_day_cnt": 1,
           "seal_money": 39011264,
           "max_seal_money": 442205780.8,
-          "open_times": 3
+          "open_times": null
         },
         {
           "thscode": "002453.SZ",
@@ -12636,7 +12636,7 @@
           "continue_day_cnt": 1,
           "seal_money": 103490640,
           "max_seal_money": 696835486.8,
-          "open_times": 1
+          "open_times": null
         },
         {
           "thscode": "600103.SH",
@@ -12652,7 +12652,7 @@
           "continue_day_cnt": 2,
           "seal_money": 34563381,
           "max_seal_money": 485527078.4,
-          "open_times": 4
+          "open_times": null
         },
         {
           "thscode": "600467.SH",
@@ -12684,7 +12684,7 @@
           "continue_day_cnt": 1,
           "seal_money": 18497819,
           "max_seal_money": 390180855.0,
-          "open_times": 4
+          "open_times": null
         },
         {
           "thscode": "600227.SH",
@@ -12700,7 +12700,7 @@
           "continue_day_cnt": 2,
           "seal_money": 10310030.7,
           "max_seal_money": 145850685.0,
-          "open_times": 6
+          "open_times": null
         },
         {
           "thscode": "600963.SH",
@@ -12748,7 +12748,7 @@
           "continue_day_cnt": 2,
           "seal_money": 32508572,
           "max_seal_money": 81976400.0,
-          "open_times": 5
+          "open_times": null
         },
         {
           "thscode": "603030.SH",
@@ -12764,7 +12764,7 @@
           "continue_day_cnt": 3,
           "seal_money": 54166061,
           "max_seal_money": 154990022.04,
-          "open_times": 3
+          "open_times": null
         },
         {
           "thscode": "600691.SH",
@@ -12780,7 +12780,7 @@
           "continue_day_cnt": 1,
           "seal_money": 5585160,
           "max_seal_money": 32874364.0,
-          "open_times": 5
+          "open_times": null
         },
         {
           "thscode": "002470.SZ",
@@ -12796,7 +12796,7 @@
           "continue_day_cnt": 1,
           "seal_money": 44672292,
           "max_seal_money": 182192500.0,
-          "open_times": 3
+          "open_times": null
         },
         {
           "thscode": "600340.SH",
@@ -12849,464 +12849,44 @@
       ]
     },
     "limit_down": {
-      "total": 7,
-      "item": [
-        {
-          "thscode": "300044.SZ",
-          "ticker": "300044",
-          "name": "*ST赛为",
-          "last_price": 3.42,
-          "price_change_ratio_pct": -20.0935,
-          "first_limit_time": "14:14",
-          "last_limit_time": "14:54",
-          "turnover_ratio_pct": 10.0111
-        },
-        {
-          "thscode": "605378.SH",
-          "ticker": "605378",
-          "name": "野马电池",
-          "last_price": 13.3,
-          "price_change_ratio_pct": -10.0135,
-          "first_limit_time": "14:41",
-          "last_limit_time": "14:41",
-          "turnover_ratio_pct": 5.4773
-        },
-        {
-          "thscode": "300469.SZ",
-          "ticker": "300469",
-          "name": "信息发展",
-          "last_price": 28.28,
-          "price_change_ratio_pct": -20.0,
-          "first_limit_time": "14:08",
-          "last_limit_time": "14:08",
-          "turnover_ratio_pct": 5.4495
-        },
-        {
-          "thscode": "001278.SZ",
-          "ticker": "001278",
-          "name": "一彬科技",
-          "last_price": 12.76,
-          "price_change_ratio_pct": -10.0141,
-          "first_limit_time": "09:38",
-          "last_limit_time": "13:41",
-          "turnover_ratio_pct": 14.1752
-        },
-        {
-          "thscode": "300670.SZ",
-          "ticker": "300670",
-          "name": "ST大烨",
-          "last_price": 3.6,
-          "price_change_ratio_pct": -20.0,
-          "first_limit_time": "09:31",
-          "last_limit_time": "09:34",
-          "turnover_ratio_pct": 10.1237
-        },
-        {
-          "thscode": "000820.SZ",
-          "ticker": "000820",
-          "name": "ST节能",
-          "last_price": 2.4,
-          "price_change_ratio_pct": -10.1124,
-          "first_limit_time": "09:25",
-          "last_limit_time": "09:25",
-          "turnover_ratio_pct": 0.2836
-        },
-        {
-          "thscode": "603391.SH",
-          "ticker": "603391",
-          "name": "力聚热能",
-          "last_price": 56.54,
-          "price_change_ratio_pct": -9.9968,
-          "first_limit_time": "09:25",
-          "last_limit_time": "09:25",
-          "turnover_ratio_pct": 4.1143
-        }
-      ]
+      "total": 0,
+      "item": []
     },
     "limit_break": {
-      "total": 29,
-      "item": [
-        {
-          "thscode": "301282.SZ",
-          "ticker": "301282",
-          "name": "金禄电子",
-          "last_price": 34.98,
-          "price_change_ratio_pct": 19.3857,
-          "open_times": 1,
-          "turnover_ratio_pct": 21.8299,
-          "turnover": 1291244470.0,
-          "first_seal_time": "10:12",
-          "last_seal_time": "10:56"
-        },
-        {
-          "thscode": "301112.SZ",
-          "ticker": "301112",
-          "name": "信邦智能",
-          "last_price": 27.93,
-          "price_change_ratio_pct": 19.0537,
-          "open_times": 7,
-          "turnover_ratio_pct": 5.171,
-          "turnover": 158063320.0,
-          "first_seal_time": "09:35",
-          "last_seal_time": "14:21"
-        },
-        {
-          "thscode": "688820.SH",
-          "ticker": "688820",
-          "name": "盛合晶微",
-          "last_price": 101.1,
-          "price_change_ratio_pct": 18.9412,
-          "open_times": 2,
-          "turnover_ratio_pct": 22.8952,
-          "turnover": 4148339100.0,
-          "first_seal_time": "10:19",
-          "last_seal_time": "13:38"
-        },
-        {
-          "thscode": "301041.SZ",
-          "ticker": "301041",
-          "name": "金百泽",
-          "last_price": 27.63,
-          "price_change_ratio_pct": 16.8782,
-          "open_times": 1,
-          "turnover_ratio_pct": 26.199,
-          "turnover": 560189920.0,
-          "first_seal_time": "10:07",
-          "last_seal_time": "14:11"
-        },
-        {
-          "thscode": "002148.SZ",
-          "ticker": "002148",
-          "name": "北纬科技",
-          "last_price": 11.3,
-          "price_change_ratio_pct": 10.0292,
-          "open_times": 3,
-          "turnover_ratio_pct": 54.3223,
-          "turnover": 2503414000.0,
-          "first_seal_time": "14:54",
-          "last_seal_time": "14:55"
-        },
-        {
-          "thscode": "603708.SH",
-          "ticker": "603708",
-          "name": "家家悦",
-          "last_price": 10.65,
-          "price_change_ratio_pct": 10.0207,
-          "open_times": 4,
-          "turnover_ratio_pct": 9.2982,
-          "turnover": 591812120.0,
-          "first_seal_time": "13:49",
-          "last_seal_time": "14:54"
-        },
-        {
-          "thscode": "002913.SZ",
-          "ticker": "002913",
-          "name": "奥士康",
-          "last_price": 62.97,
-          "price_change_ratio_pct": 9.9145,
-          "open_times": 2,
-          "turnover_ratio_pct": 5.8698,
-          "turnover": 1104013170.0,
-          "first_seal_time": "10:10",
-          "last_seal_time": "13:33"
-        },
-        {
-          "thscode": "301210.SZ",
-          "ticker": "301210",
-          "name": "金杨精密",
-          "last_price": 24.31,
-          "price_change_ratio_pct": 9.6527,
-          "open_times": 1,
-          "turnover_ratio_pct": 24.588,
-          "turnover": 372501370.0,
-          "first_seal_time": "13:06",
-          "last_seal_time": "13:47"
-        },
-        {
-          "thscode": "300719.SZ",
-          "ticker": "300719",
-          "name": "安达维尔",
-          "last_price": 9.42,
-          "price_change_ratio_pct": 9.5349,
-          "open_times": 3,
-          "turnover_ratio_pct": 12.2905,
-          "turnover": 214940140.0,
-          "first_seal_time": "09:31",
-          "last_seal_time": "09:35"
-        },
-        {
-          "thscode": "001226.SZ",
-          "ticker": "001226",
-          "name": "拓山重工",
-          "last_price": 41.1,
-          "price_change_ratio_pct": 8.9319,
-          "open_times": 2,
-          "turnover_ratio_pct": 8.2432,
-          "turnover": 118746128,
-          "first_seal_time": "10:10",
-          "last_seal_time": "13:58"
-        },
-        {
-          "thscode": "002242.SZ",
-          "ticker": "002242",
-          "name": "九阳股份",
-          "last_price": 41.9,
-          "price_change_ratio_pct": 8.6618,
-          "open_times": 5,
-          "turnover_ratio_pct": 16.6798,
-          "turnover": 5175133400.0,
-          "first_seal_time": "14:43",
-          "last_seal_time": "14:55"
-        },
-        {
-          "thscode": "000506.SZ",
-          "ticker": "000506",
-          "name": "招金黄金",
-          "last_price": 12.5,
-          "price_change_ratio_pct": 8.4128,
-          "open_times": 4,
-          "turnover_ratio_pct": 9.408,
-          "turnover": 1082606960.0,
-          "first_seal_time": "10:35",
-          "last_seal_time": "13:44"
-        },
-        {
-          "thscode": "600610.SH",
-          "ticker": "600610",
-          "name": "中毅达",
-          "last_price": 6.5,
-          "price_change_ratio_pct": 7.9734,
-          "open_times": 2,
-          "turnover_ratio_pct": 7.7163,
-          "turnover": 356009900.0,
-          "first_seal_time": "09:36",
-          "last_seal_time": "11:29"
-        },
-        {
-          "thscode": "002579.SZ",
-          "ticker": "002579",
-          "name": "中京电子",
-          "last_price": 19.23,
-          "price_change_ratio_pct": 7.9125,
-          "open_times": 3,
-          "turnover_ratio_pct": 40.1024,
-          "turnover": 4343534400.0,
-          "first_seal_time": "14:47",
-          "last_seal_time": "14:56"
-        },
-        {
-          "thscode": "600397.SH",
-          "ticker": "600397",
-          "name": "江钨装备",
-          "last_price": 11.38,
-          "price_change_ratio_pct": 7.7652,
-          "open_times": 1,
-          "turnover_ratio_pct": 5.7077,
-          "turnover": 637545940.0,
-          "first_seal_time": "10:10",
-          "last_seal_time": "13:59"
-        },
-        {
-          "thscode": "002721.SZ",
-          "ticker": "002721",
-          "name": "金一文化",
-          "last_price": 2.36,
-          "price_change_ratio_pct": 7.7626,
-          "open_times": 2,
-          "turnover_ratio_pct": 5.509,
-          "turnover": 343104590.0,
-          "first_seal_time": "10:34",
-          "last_seal_time": "11:17"
-        },
-        {
-          "thscode": "002149.SZ",
-          "ticker": "002149",
-          "name": "西部材料",
-          "last_price": 27.18,
-          "price_change_ratio_pct": 7.3036,
-          "open_times": 6,
-          "turnover_ratio_pct": 16.1136,
-          "turnover": 2157963700.0,
-          "first_seal_time": "09:25",
-          "last_seal_time": "13:33"
-        },
-        {
-          "thscode": "603336.SH",
-          "ticker": "603336",
-          "name": "宏辉果蔬",
-          "last_price": 7.84,
-          "price_change_ratio_pct": 6.6667,
-          "open_times": 1,
-          "turnover_ratio_pct": 5.1284,
-          "turnover": 247336970.0,
-          "first_seal_time": "09:32",
-          "last_seal_time": "13:50"
-        },
-        {
-          "thscode": "605598.SH",
-          "ticker": "605598",
-          "name": "上海港湾",
-          "last_price": 19.06,
-          "price_change_ratio_pct": 6.54,
-          "open_times": 2,
-          "turnover_ratio_pct": 7.5244,
-          "turnover": 346582720.0,
-          "first_seal_time": "09:30",
-          "last_seal_time": "14:11"
-        },
-        {
-          "thscode": "000533.SZ",
-          "ticker": "000533",
-          "name": "顺钠股份",
-          "last_price": 8.82,
-          "price_change_ratio_pct": 6.5217,
-          "open_times": 1,
-          "turnover_ratio_pct": 11.5023,
-          "turnover": 691836940.0,
-          "first_seal_time": "09:45",
-          "last_seal_time": "09:52"
-        },
-        {
-          "thscode": "002865.SZ",
-          "ticker": "002865",
-          "name": "钧达股份",
-          "last_price": 29.47,
-          "price_change_ratio_pct": 6.3899,
-          "open_times": 1,
-          "turnover_ratio_pct": 16.1605,
-          "turnover": 1100801500.0,
-          "first_seal_time": "09:30",
-          "last_seal_time": "09:54"
-        },
-        {
-          "thscode": "000628.SZ",
-          "ticker": "000628",
-          "name": "高新发展",
-          "last_price": 44.66,
-          "price_change_ratio_pct": 6.0556,
-          "open_times": 1,
-          "turnover_ratio_pct": 8.0236,
-          "turnover": 681045230.0,
-          "first_seal_time": "13:32",
-          "last_seal_time": "13:33"
-        },
-        {
-          "thscode": "002310.SZ",
-          "ticker": "002310",
-          "name": "东方新能",
-          "last_price": 2.3,
-          "price_change_ratio_pct": 5.9908,
-          "open_times": 1,
-          "turnover_ratio_pct": 9.6164,
-          "turnover": 974091230.0,
-          "first_seal_time": "09:40",
-          "last_seal_time": "09:55"
-        },
-        {
-          "thscode": "002324.SZ",
-          "ticker": "002324",
-          "name": "普利特",
-          "last_price": 7.55,
-          "price_change_ratio_pct": 5.8906,
-          "open_times": 1,
-          "turnover_ratio_pct": 9.1711,
-          "turnover": 538102330.0,
-          "first_seal_time": "10:40",
-          "last_seal_time": "14:09"
-        },
-        {
-          "thscode": "600844.SH",
-          "ticker": "600844",
-          "name": "金煤科技",
-          "last_price": 2.56,
-          "price_change_ratio_pct": 4.918,
-          "open_times": 1,
-          "turnover_ratio_pct": 9.0555,
-          "turnover": 189600500.0,
-          "first_seal_time": "09:38",
-          "last_seal_time": "09:41"
-        },
-        {
-          "thscode": "001270.SZ",
-          "ticker": "001270",
-          "name": "铖昌科技",
-          "last_price": 67.35,
-          "price_change_ratio_pct": 2.7774,
-          "open_times": 1,
-          "turnover_ratio_pct": 5.5391,
-          "turnover": 787170330.0,
-          "first_seal_time": "09:30",
-          "last_seal_time": "09:34"
-        },
-        {
-          "thscode": "001360.SZ",
-          "ticker": "001360",
-          "name": "南矿集团",
-          "last_price": 16.6,
-          "price_change_ratio_pct": 2.5324,
-          "open_times": 1,
-          "turnover_ratio_pct": 7.5956,
-          "turnover": 162052150.0,
-          "first_seal_time": "10:37",
-          "last_seal_time": "10:38"
-        },
-        {
-          "thscode": "603131.SH",
-          "ticker": "603131",
-          "name": "上海沪工",
-          "last_price": 13.35,
-          "price_change_ratio_pct": 2.3773,
-          "open_times": 1,
-          "turnover_ratio_pct": 12.4116,
-          "turnover": 566601210.0,
-          "first_seal_time": "09:25",
-          "last_seal_time": "09:31"
-        },
-        {
-          "thscode": "601177.SH",
-          "ticker": "601177",
-          "name": "杭齿前进",
-          "last_price": 12.37,
-          "price_change_ratio_pct": 1.727,
-          "open_times": 1,
-          "turnover_ratio_pct": 6.9769,
-          "turnover": 358131280.0,
-          "first_seal_time": "09:32",
-          "last_seal_time": "09:46"
-        }
-      ]
+      "total": 0,
+      "item": []
     },
     "status": "success",
     "data_timestamps_ms": [
-      1795705075845,
-      1795705077273,
-      1795705102271
+      1795711589617,
+      1795711587509,
+      1795711574923
     ],
     "endpoint": "HiThink limit-up/down/break pools"
   },
   "sources": {
     "tencent_full_market": {
-      "fetched_at": "2026-11-26T22:58:06+08:00",
+      "fetched_at": "2026-11-27T00:46:22+08:00",
       "reported_total": 5581,
       "rows": 5581,
       "endpoint": "Tencent getBoardRankList"
     },
     "tencent_detailed_quotes": {
-      "fetched_at": "2026-11-26T22:58:17+08:00",
+      "fetched_at": "2026-11-27T00:46:32+08:00",
       "requested": 5588,
       "matches": 5588,
       "calls": 70,
       "endpoint": "Tencent qt.gtimg.cn"
     },
     "tencent_candidate_refresh": {
-      "fetched_at": "2026-11-26T22:58:18+08:00",
+      "fetched_at": "2026-11-27T00:46:33+08:00",
       "requested": 135,
       "matches": 135,
       "calls": 2,
       "endpoint": "Tencent qt.gtimg.cn candidate refresh"
     },
     "sina_independent_check": {
-      "fetched_at": "2026-11-26T22:58:21+08:00",
+      "fetched_at": "2026-11-27T00:46:34+08:00",
       "requested": 135,
       "matches": 135,
       "calls": 2,
@@ -13319,8 +12899,8 @@
       "price_diff_p95": 0.0,
       "pass": true,
       "data_timestamps_ms": [
-        1795705101000,
-        1795705101000
+        1795711595000,
+        1795711595000
       ],
       "endpoint": "HiThink A-share prices snapshot"
     },
@@ -13363,11 +12943,11 @@
   },
   "pipeline_status": {
     "run_status": "success",
-    "completed_at": "2026-11-26T22:58:49+08:00",
+    "completed_at": "2026-11-27T00:46:54+08:00",
     "repository": "19942820639deep/-",
-    "run_id": "45844240489",
+    "run_id": "45861794717",
     "run_attempt": "1",
     "event_name": "schedule",
-    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/45844240489"
+    "workflow_url": "https://github.com/19942820639deep/-/actions/runs/45861794717"
   }
 }

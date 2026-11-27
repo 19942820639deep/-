@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "run_status": "success",
-  "started_at": "2026-11-27T22:53:30+08:00",
-  "completed_at": "2026-11-27T22:54:11+08:00",
+  "started_at": "2026-11-28T00:30:57+08:00",
+  "completed_at": "2026-11-28T00:31:40+08:00",
   "snapshot_updated": true,
-  "snapshot_generated_at": "2026-11-27T22:54:10+08:00",
+  "snapshot_generated_at": "2026-11-28T00:31:38+08:00",
   "trade_date": "2026-11-27",
   "valid_for_tail_selection": false,
   "validity_profiles": {
@@ -14,9 +14,9 @@
     "core_market_data": true
   },
   "validation": {
-    "current_trade_day": true,
+    "current_trade_day": false,
     "latest_trade_time": "2026-11-27T16:15:00+08:00",
-    "freshness_seconds": 23950.2,
+    "freshness_seconds": 29799.0,
     "freshness_limit_seconds": 300,
     "freshness_pass": false,
     "critical_index_fresh_pass": false,
@@ -55,9 +55,7 @@
     "sector_verified_count": 12,
     "sector_supports_new_sector_discovery": true
   },
-  "errors": [
-    "HiThink special: HiThink /api/a-share/special-data/limit-up-pool failed: HiThink /api/a-share/special-data/limit-up-pool: code=5003 message=hotspot_focus get_limit_up_stocks transport error, date=20261127, cate=limit_up_all, filter=main,chinext,ssestar,north,st"
-  ],
+  "errors": [],
   "average_stock_price_proxy": {
     "status": "derived_proxy",
     "last": 22.1297,
@@ -275,8 +273,8 @@
     }
   ],
   "repository": "19942820639deep/-",
-  "run_id": "46019953817",
+  "run_id": "46034245752",
   "run_attempt": "1",
   "event_name": "schedule",
-  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/46019953817"
+  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/46034245752"
 }

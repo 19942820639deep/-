@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "run_status": "success",
-  "started_at": "2026-11-27T18:45:31+08:00",
-  "completed_at": "2026-11-27T18:48:49+08:00",
+  "started_at": "2026-11-27T19:59:42+08:00",
+  "completed_at": "2026-11-27T20:00:28+08:00",
   "snapshot_updated": true,
-  "snapshot_generated_at": "2026-11-27T18:48:48+08:00",
+  "snapshot_generated_at": "2026-11-27T20:00:27+08:00",
   "trade_date": "2026-11-27",
   "valid_for_tail_selection": false,
   "validity_profiles": {
@@ -16,7 +16,7 @@
   "validation": {
     "current_trade_day": true,
     "latest_trade_time": "2026-11-27T16:15:00+08:00",
-    "freshness_seconds": 9228.8,
+    "freshness_seconds": 13527.6,
     "freshness_limit_seconds": 300,
     "freshness_pass": false,
     "critical_index_fresh_pass": false,
@@ -36,7 +36,7 @@
     "midday_secondary_time_pass": false,
     "average_stock_price_880003_direct_verified": false,
     "average_stock_price_proxy_pass": true,
-    "kospi_quote_time": "2026-11-27T15:15:00+08:00",
+    "kospi_quote_time": "2026-11-27T19:15:00+08:00",
     "kospi_fresh_pass": false,
     "kospi_midday_1130_aligned": false,
     "midday_price_cross_pass": true,
@@ -55,7 +55,9 @@
     "sector_verified_count": 12,
     "sector_supports_new_sector_discovery": true
   },
-  "errors": [],
+  "errors": [
+    "HiThink special: HiThink /api/a-share/special-data/limit-up-pool failed: HiThink /api/a-share/special-data/limit-up-pool: code=5003 message=hotspot_focus get_limit_up_stocks transport error, date=20261127, cate=limit_up_all, filter=main,chinext,ssestar,north,st"
+  ],
   "average_stock_price_proxy": {
     "status": "derived_proxy",
     "last": 22.1297,
@@ -273,8 +275,8 @@
     }
   ],
   "repository": "19942820639deep/-",
-  "run_id": "45984771711",
+  "run_id": "45994925876",
   "run_attempt": "1",
   "event_name": "schedule",
-  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/45984771711"
+  "workflow_url": "https://github.com/19942820639deep/-/actions/runs/45994925876"
 }
